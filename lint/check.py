@@ -1,0 +1,118 @@
+"""Editorial linter. Masks non-prose, then checks each rule tagged [LINT] in rules/writing.md."""
+import re, sys, os, html
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+def load(n):
+    p = os.path.join(HERE, 'data', n)
+    return [l.strip() for l in open(p, encoding='utf-8') if l.strip() and not l.startswith('#')]
+
+BANNED_WORDS = load('banned-words.txt')
+BANNED_PHRASES = load('banned-phrases.txt')
+FIG_VERBS = load('figurative-verbs.txt')
+FACTS = [l.split('|', 1) for l in load('fact-conflicts.txt')]
+
+# ---------- masking: rules apply to body prose, not to these ----------
+def mask(text):
+    """Blank out regions where the rules do not apply, preserving offsets."""
+    def blank(m): return ' ' * len(m.group(0))
+    t = text
+    t = re.sub(r'```.*?```', blank, t, flags=re.S)      # code fences
+    t = re.sub(r'`[^`\n]*`', blank, t)                   # inline code
+    t = re.sub(r'^\s*>.*$', blank, t, flags=re.M)        # blockquotes (verbatim quotes)
+    t = re.sub(r'"[^"\n]{25,}"', blank, t)               # long quoted spans = review quotes
+    t = re.sub(r'^\s*\|.*$', blank, t, flags=re.M)       # tables
+    t = re.sub(r'\]\([^)\s]*\)', blank, t)               # link targets
+    t = re.sub(r'https?://\S+', blank, t)                # bare urls
+    return t
+
+def sentences(prose_lines):
+    out = []
+    for l in prose_lines:
+        l = re.sub(r'^\s*[-*]\s*', '', l)
+        l = l.replace('**', '')
+        l = re.sub(r'\b([A-Z])\.', r'\1', l)              # initials
+        for s in re.split(r'(?<=[.!?])\s+(?=[A-Z(])', l):
+            s = s.strip()
+            if len(s.split()) > 2: out.append(s)
+    return out
+
+def check(title, meta, text, label):
+    body = mask(text)
+    lines = body.splitlines()
+    prose = [l for l in lines if l.strip() and not l.lstrip().startswith(('#', '|'))]
+    findings = []
+    def add(sev, rule, detail): findings.append((sev, rule, detail))
+
+    # words and phrases
+    for w in BANNED_WORDS:
+        for m in re.finditer(r'\b' + re.escape(w) + r'\b', body, re.I):
+            add('ERROR', 'banned-word:' + w, ctx(body, m.start()))
+    for p in BANNED_PHRASES:
+        for m in re.finditer(re.escape(p), body, re.I):
+            add('ERROR', 'banned-phrase:' + p, ctx(body, m.start()))
+
+    # first person plural. 'us' case-sensitive lowercase only, to spare "US"
+    for m in re.finditer(r'\b(?:we|We|our|Our)\b|(?<![A-Z])\bus\b(?![A-Z])', body):
+        w = m.group(0)
+        if w.lower() == 'us' and re.search(r'\b(US|U\.S\.)\b', body[max(0, m.start()-3):m.start()+3]): continue
+        add('ERROR', 'first-person-plural:' + w, ctx(body, m.start()))
+
+    # figurative verbs where the subject looks like a product
+    for v in FIG_VERBS:
+        for m in re.finditer(r'\b(?:The|the|It|it)\s+\w*\s?\b' + v + r'\b', body):
+            add('WARN', 'figurative-verb:' + v, ctx(body, m.start()))
+
+    # punctuation
+    for m in re.finditer(r';', body):
+        if 'TL;DR' in ctx(body, m.start(), 8): continue
+        add('ERROR', 'semicolon', ctx(body, m.start()))
+    for m in re.finditer(r'!', body):
+        add('WARN', 'exclamation', ctx(body, m.start()))
+
+    # sentence + paragraph shape
+    ss = sentences(prose)
+    over = [s for s in ss if len(s.split()) > 25]
+    for s in over[:40]:
+        add('WARN', 'sentence>25w(%dw)' % len(s.split()), s[:100])
+    paras = [p for p in re.split(r'\n\s*\n', body)
+             if p.strip() and not p.lstrip().startswith(('#', '-', '*', '|'))]
+    pcounts = [len(sentences([p])) for p in paras]
+    for p, c in zip(paras, pcounts):
+        if c > 3: add('WARN', 'paragraph>3sent(%d)' % c, p.strip()[:100])
+
+    # seo
+    if title and len(title) > 55: add('WARN', 'title>55(%d)' % len(title), title)
+    if meta and len(meta) > 155: add('WARN', 'meta>155(%d)' % len(meta), meta[:80])
+    if not meta: add('WARN', 'meta-missing', 'no meta description on page')
+
+    # facts
+    for needle, why in FACTS:
+        n = len(re.findall(re.escape(needle), text, re.I))
+        if n: add('ERROR', 'fact:' + needle, '%dx  %s' % (n, why))
+
+    # placeholders
+    for m in re.finditer(r'\[\[FIGURE:', text):
+        add('ERROR', 'unresolved-placeholder', ctx(text, m.start()))
+
+    return findings, {'sentences': len(ss), 'over25': len(over),
+                      'paras': len(paras), 'over3': sum(1 for c in pcounts if c > 3),
+                      'avg_para': round(sum(pcounts)/max(1, len(pcounts)), 1),
+                      'chars': len(text)}
+
+def ctx(t, i, w=42):
+    return ('...' + t[max(0, i-w):i+w].replace('\n', ' ').strip() + '...')
+
+def interlinks(text):
+    urls = re.findall(r'\]\((https?://[^)\s]+)\)', text)
+    return sum(1 for u in urls if '/blog/' in u), len(urls)
+
+def opening_frames(text):
+    """Repetition across per-tool section openers. Returns (pattern, hits, total)."""
+    bf = re.findall(r'\*\*Best (?:For|for):\*\*\s*(\S+\s+\S+\s+\S+)', text)
+    if len(bf) < 3: return None
+    heads = {}
+    for b in bf:
+        key = ' '.join(b.split()[1:3]).lower()
+        heads[key] = heads.get(key, 0) + 1
+    top = max(heads.items(), key=lambda kv: kv[1])
+    return top[0], top[1], len(bf)

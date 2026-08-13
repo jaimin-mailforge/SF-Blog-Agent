@@ -1,0 +1,6 @@
+21+ languages|canonical is "20+ languages"
+withdraw request|not a Salesforge LinkedIn action; the sixth is profile views
+100 personalization credits|live page says 300/month on Pro
+intent signal|Leadsforge signals are event-based, not topic intent
+1000+ integrations|hero copy; 27 documented integrations
+billed quarterly|only Agent Frank at $599 is quarterly; check the figure
