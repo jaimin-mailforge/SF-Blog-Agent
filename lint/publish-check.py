@@ -34,6 +34,9 @@ def main():
     target = sys.argv[1]
     title, meta, text = load(target)
     findings, st = C.check(title, meta, text, target)
+    # a [[FIGURE:]] marker is allowed in a draft and never in published copy
+    findings = [(('ERROR' if f[1] == 'unresolved-placeholder' else f[0]), f[1], f[2])
+                for f in findings]
     err = [f for f in findings if f[0] == 'ERROR']
     warn = [f for f in findings if f[0] == 'WARN']
     bl, al = C.interlinks(text)

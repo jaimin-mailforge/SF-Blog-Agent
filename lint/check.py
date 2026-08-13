@@ -154,9 +154,10 @@ def check(title, meta, text, label):
                 add('ERROR', 'brand-casing:' + brand,
                     'write "%s" mid-sentence. %s' % (brand, ctx(text, m.start())))
 
-    # placeholders
+    # placeholders. WARN here so a marker can live in a draft, which is the whole
+    # point of it. publish-check.py escalates it to blocking.
     for m in re.finditer(r'\[\[FIGURE:', text):
-        add('ERROR', 'unresolved-placeholder', ctx(text, m.start()))
+        add('WARN', 'unresolved-placeholder', ctx(text, m.start()))
 
     return findings, {'sentences': len(ss), 'over25': len(over),
                       'paras': len(paras), 'over3': sum(1 for c in pcounts if c > 3),

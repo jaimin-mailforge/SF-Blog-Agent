@@ -504,3 +504,118 @@ The G2 con tags are too thin to carry a theme, with Poor Customer Support and Mi
 A 21.6% one-star share is more than double the next worst tool here, and roughly forty times Waalaxy's. Against Capterra's 1.9 support sub-score, that reads as a specific failure rather than general dissatisfaction.
 
 If you want the three-channel sequence, the honest advice is to run the trial hard and open a support ticket during it deliberately. You will learn more from the reply time than from any feature page.
+
+## 5. Waalaxy {#waalaxy}
+
+**Best for:** solo operators and small teams running LinkedIn only, who want the lowest entry price and the widest import options.
+
+**Not for:** anyone email-led or running several LinkedIn accounts at volume. Email needs the top tier and invites cap at 800 a month.
+
+**G2 Rating:** 4.5 out of 5 (1,503 reviews)
+
+Waalaxy is the tool most people in this category tried first, back when it had a free plan. That free plan is gone, and the paid entry point is now the thing worth looking at.
+
+At €19 per user per month on annual billing it is the cheapest genuine way onto this list. Unlimited campaigns are included at that price, and for LinkedIn-only prospecting by one or two people, nothing here undercuts it.
+
+Two gates decide whether that price is real for you. Email sequences and LinkedIn-plus-email campaigns exist only on the €69 Business tier, so the two cheaper plans are LinkedIn-only.
+
+And the LinkedIn Inbox is a €20 per month add-on that is never bundled on any plan, with a free allowance of 500 conversations. On a list where four other tools include an inbox, that one deserves reading twice.
+
+The invite ceiling is the third thing. Waalaxy caps connection requests at 800 a month even on the top tier, which is a deliberate safety decision rather than a defect. It also means the tool has a volume you cannot buy your way past.
+
+### Key features
+
+- **The widest import surface here.** LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of the people who liked or commented on a post.
+- **Unlimited campaigns on the €19 tier**, which is unusual at that price.
+- **Customer service is its best-scoring dimension**, at 4.5 on Capterra against a 4.4 overall.
+- **A 14-day trial on all three plans**, with no free tier behind it any more.
+- **Email sequences on Business only.** The €69 tier is the first one that runs LinkedIn and email together.
+- **The LinkedIn Inbox as a paid add-on** at €20 a month, free up to 500 conversations.
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Cheapest real entry point in this comparison at €19 per user | Email needs the €69 Business tier, so the cheap plans are LinkedIn-only |
+| Unlimited campaigns included from the entry tier | The inbox is a €20 monthly add-on, never bundled |
+| Best import breadth, including post likers and commenters | Invites cap at 800 a month on every tier, including the top one |
+| Support rates above its own overall score | No email warm-up anywhere in the product, and the free plan is discontinued |
+
+### Pricing
+
+| Plan | Billed annually | Monthly rate | Channels |
+|---|---|---|---|
+| Pro | **€19 per user** | [[FIGURE: Waalaxy Pro monthly euro rate, live pricing page toggle]] | LinkedIn only |
+| Advanced | **€49 per user** | [[FIGURE: Waalaxy Advanced monthly euro rate]] | LinkedIn only |
+| Business | **€69 per user** | [[FIGURE: Waalaxy Business monthly euro rate]] | LinkedIn and email |
+| Enterprise | Not published | Not published | Teams of 5+ |
+
+Those annual figures are the ones the page shows by default. The monthly rates load only after a click, and they are absent from the page source, so I am not going to print a number I could not read. Waalaxy's own FAQ states quarterly at 20% off and annual at up to 50%.
+
+Add the inbox where you need it. Business plus the inbox is €89 per user per month, which is the number to compare against the rest of this table.
+
+### What real users say
+
+Waalaxy has the second-largest review base here, 1,503 on G2 at 4.5, and 253 on Capterra at 4.4. Seven of the 1,503 are one star, which is 0.5% and the cleanest ratio in this comparison.
+
+The con tags say where the friction is. Expensive leads at 30 mentions, then Campaign Management at 22, Missing Features at 21 and Plan Limitations at 19.
+
+Plan Limitations at 19 is the tag that matches the pricing structure above. It is what tier gating feels like when the feature you wanted is two plans up.
+
+One sourcing note, because it affected what I could use. A large share of the Reddit discussion about Waalaxy is written by competing vendors, so nothing from there is in this section.
+
+## 6. La Growth Machine {#la-growth-machine}
+
+**Best for:** small teams where several people work a handful of sending profiles, and enrichment quality matters more than seat count.
+
+**G2 Rating:** 4.6 out of 5 (56 reviews)
+
+There is one workflow La Growth Machine runs end to end that nothing else in this comparison can. Import the people who liked a post, enrich them across nine email providers in sequence, then open with an AI-generated voice message on LinkedIn.
+
+Each piece of that exists elsewhere in fragments. The waterfall enrichment is the part that matters, because it tries providers in order until one returns a verified address. A single-provider lookup just fails on the first miss.
+
+The voice message is the other half. It is a native LinkedIn action here, not a workaround, and it is the only tool in this list that has one.
+
+The billing unit is unusual too, and in a good way for teams. La Growth Machine charges per identity, meaning per sending profile, and includes 3 team members on Basic and 25 free on Pro.
+
+So the people cost nothing and the profiles cost. That is the same logic as HeyReach, applied to email and LinkedIn together instead of LinkedIn alone.
+
+### Key features
+
+- **Waterfall enrichment across 9 email providers and 2 verification tools.** Providers are tried in order until an address verifies.
+- **AI-generated voice messages on LinkedIn**, alongside profile visits, post likes, connection requests and DMs. Five actions in total.
+- **Per-identity pricing with team members included.** 3 on Basic, 25 free on Pro, unlimited on Ultimate.
+- **LinkedIn intent import** from post likers, commenters and event attendees.
+- **Documented human support response times** of under 24 hours, 4 hours and 2 hours by tier, which is the only published SLA in this comparison.
+- **A 14-day trial with no card.**
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Best-rated tool in this comparison on both platforms | The unified LinkedIn and email inbox is Pro and above. Basic excludes it |
+| Teammates are free, so cost scales by sending profile rather than headcount | Basic gives you one email sender, so the entry tier fits one person |
+| Waterfall enrichment and voice messages are genuinely unmatched here | Per-identity billing gets expensive fast. Three senders on Pro is €300 a month on annual billing |
+| Published support SLAs by tier, and a 5.0 customer service score on Capterra | Agency requires 6 identities minimum, and Custom needs a 6-month commitment |
+
+### Pricing
+
+| Plan | Billed monthly | Billed annually | Channels | Team members |
+|---|---|---|---|---|
+| Basic | €60 / $70 | **€50 / $60** | LinkedIn, email | 3 included |
+| Pro | €120 / $135 | **€100 / $110** | plus calls | **25 free** |
+| Ultimate | €180 / $195 | **€150 / $165** | plus X | Unlimited |
+
+Those prices are per identity, and identities are billed separately on every tier. One person with one sending profile pays one unit. An agency running six clients pays six.
+
+The gate to check before you buy is the inbox. Basic has LinkedIn and email but no unified inbox, and one email sender, so the LinkedIn-plus-email motion this article is about really starts at Pro.
+
+### What real users say
+
+La Growth Machine is the best-rated tool in this comparison. 4.6 on G2 from 56 reviews, and 4.9 on Capterra from 45, with a customer service score of 5.0.
+
+Two of the 56 G2 reviews are one star, which is 3.6%. The con tags are thin and evenly spread, with Technical Issues, Software Bugs and Error Issues at 3 mentions each and Data Inaccuracy at 2.
+
+I looked for a stronger negative case and it is not in the public data. The recurring themes across the readable reviews are identity management overhead and reporting depth, at about 3 voices each.
+
+The review base is small, at 56 and 45. A 4.9 from 45 reviews is a good sign rather than a settled fact, so weigh it against Dripify's 477 accordingly.
