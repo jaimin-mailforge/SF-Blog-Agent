@@ -20,6 +20,7 @@ def _fact(line):
 
 FACTS = [_fact(l) for l in load('fact-conflicts.txt')]
 LOWERCASE_BRANDS = load('lowercase-brands.txt')
+SPELLINGS = [tuple(f.strip() for f in l.split('|', 1)) for l in load('spellings.txt')]
 
 def _protected_spans(text):
     """Character ranges covered by a product name. Banned-word hits inside these are exempt."""
@@ -201,6 +202,12 @@ def check(title, meta, text, label):
         pat = needle[3:] if needle.startswith('re:') else re.escape(needle)
         n = len(re.findall(pat, text, re.I))
         if n: add('ERROR', 'fact:' + label, '%dx  %s' % (n, why))
+
+    # case-sensitive spellings. the fact and banned-phrase checks are both case-
+    # insensitive, so neither can tell Co-pilot from Co-Pilot. this one can.
+    for wrong, fix in SPELLINGS:
+        for m in re.finditer(r'(?<![\w-])' + re.escape(wrong) + r'(?![\w-])', text):
+            add('ERROR', 'spelling:' + wrong, 'write ' + fix + '  ' + ctx(text, m.start()))
 
     # lowercase-branded competitor names, capitalised only to open a heading or sentence
     for brand in LOWERCASE_BRANDS:

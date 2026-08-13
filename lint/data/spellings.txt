@@ -1,0 +1,16 @@
+# Case-sensitive spelling rules.  `wrong|correction`
+#
+# The fact-conflict and banned-phrase checks both match case-insensitively, so
+# neither can tell Co-pilot from Co-Pilot.  This file is matched case-SENSITIVELY
+# for exactly that reason.  Keep entries to forms that are always wrong.
+#
+# Primebox modes.  Resolved by Jaimin on 2026-08-13 in favour of the hyphenated,
+# capitalised form, against the spelling in the positioning guidelines doc.
+Autopilot|Auto-Pilot, hyphen and capital P
+autopilot|Auto-Pilot, hyphen and capital P
+AutoPilot|Auto-Pilot, hyphen not camel case
+Auto-pilot|Auto-Pilot, capital P
+Copilot|Co-Pilot, hyphen and capital P
+copilot|Co-Pilot, hyphen and capital P
+CoPilot|Co-Pilot, hyphen not camel case
+Co-pilot|Co-Pilot, capital P

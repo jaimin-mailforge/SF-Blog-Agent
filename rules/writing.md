@@ -458,7 +458,7 @@ Collective term: "Forge stack".
 
 **Fixed feature names live in `rules/forge-positioning-guidelines.md`.** That file's do-not-paraphrase list is the authority: Bounce Shield, Primebox™, Heat Score™, "AI personalization across 21+ languages", waterfall enrichment, ESP matching. Always 21+, never 20+.
 
-**One open conflict, flagged 2026-08-13.** The guidelines write "Autopilot and Co-pilot modes". This section and the linter require "Auto-Pilot" and "Co-Pilot" and ban "Autopilot". Autopilot is not in the guidelines' own fixed-names list, so drafts keep Auto-Pilot and Co-Pilot until Jaimin picks one. Do not flip it on your own.
+**The Primebox modes are Auto-Pilot and Co-Pilot.** Resolved by Jaimin on 2026-08-13, in favour of this section over the guidelines doc, which has been corrected in all nine places it wrote "Autopilot and Co-pilot". Enforced case-sensitively from `lint/data/spellings.txt`, because the fact and banned-phrase checks are both case-insensitive and neither can tell `Co-pilot` from `Co-Pilot`. Add any future spelling that differs only by case to that file rather than to `banned-phrases.txt`.
 
 Agent Frank is he/him. You hire Agent Frank. You never buy him or activate him. He is an AI SDR, never a bot, an automation, or a workflow.
 

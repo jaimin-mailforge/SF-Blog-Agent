@@ -31,11 +31,13 @@ Nine conflicts surfaced when this file landed. Each one is resolved below. Do no
 
 10. **Competitor Followers Search.** This file names the Leadsforge feature "Competitor Followers Search". The live site calls it company followers, and `rules/positioning.md` carries an explicit guardrail against writing "competitor followers". Both are describing the same feature, so write the name as **Company Followers search** and keep this file's use case, which is pointing it at a competitor's page to work their audience.
 
+7. **Auto-Pilot and Co-Pilot spelling.** Resolved by Jaimin on 2026-08-13 in favour of the hyphenated, capitalised form. The two modes are **Auto-Pilot** and **Co-Pilot**, everywhere, and this file has been corrected to match in all nine places it had them wrong. `Autopilot`, `Copilot`, `Auto-pilot` and `Co-pilot` are now hard linter errors, checked case-sensitively.
+
+9. **Waalaxy pricing and free plan.** Resolved by Jaimin on 2026-08-13 in favour of the live page. Waalaxy has **no free plan**, only a 14-day trial, and Pro is **$16 per user per month billed annually**. The free plan at 80 invites a month and the roughly EUR 9.50 entry price in the comparison-table template are both superseded. Waalaxy is serving more than one version of its pricing page, so screenshot the toggle before quoting a discount percentage.
+
 **Open, awaiting Jaimin.**
 
-7. **Autopilot spelling.** This file writes "Autopilot and Co-pilot modes". `rules/writing.md` section 20 and the linter require "Auto-Pilot" and "Co-Pilot" and explicitly ban "Autopilot". Autopilot is not in this file's own fixed-names list, so the drafts keep Auto-Pilot and Co-Pilot until Jaimin picks one.
 8. **Localized Greeting variable.** Jaimin's comparison-table template pairs it with the 21+ languages claim. No Forge page and neither positioning file documents it, so it is left out of drafts until it can be verified.
-9. **Waalaxy pricing and free plan.** Jaimin's comparison-table template shows a free plan at 80 invites a month and Pro at roughly EUR 9.50 billed annually. The live page read on 2026-08-13 showed USD 16 per user annually and no free tier, and Waalaxy is serving more than one version of that page. The verified live figure stands in drafts and the free-plan claim is cut until it can be confirmed.
 
 ## Purpose
 This document is the positioning reference for the full Forge Stack.
@@ -86,7 +88,7 @@ Positioning statement (paraphrase, do not copy verbatim): Salesforge is a multic
 - AI personalization across 21+ languages: Every message can be personalized at scale with AI. AI variables pull prospect-specific details like company news, LinkedIn activity, and industry context. Native support for 21+ languages so localized campaigns run without a separate copywriter per region.
 - Native LinkedIn actions: Six native LinkedIn actions available inside a sequence, which are connection requests, messages, InMails, post likes, follows, and withdraw requests. This lets sequences mimic how an actual SDR works on LinkedIn: warm up the profile, engage before pitching, and clean up stale invites. Each action type is capped at 30 per day per profile to stay within LinkedIn's safe usage thresholds.
 - Account safety as standard: All LinkedIn actions route through high-quality shared proxies, with optional custom proxy support. Authentication is session-token-only, so the user's LinkedIn password is never stored. Daily action limits are conservative and mimic human behavior patterns. No Chrome extension injection, no DOM manipulation. LinkedIn accounts stay safe long-term.
-- Primebox™ with Autopilot and Co-pilot modes: All LinkedIn and email replies land in one inbox. Autopilot lets AI handle replies end-to-end. Co-pilot drafts replies for a human to approve before sending.
+- Primebox™ with Auto-Pilot and Co-Pilot modes: All LinkedIn and email replies land in one inbox. Auto-Pilot lets AI handle replies end-to-end. Co-Pilot drafts replies for a human to approve before sending.
 - LinkedIn email & phone finder Chrome Extension: Extracts verified emails from LinkedIn profiles and searches. Powered by Leadsforge: connects to the user's Leadsforge account and pulls from the 500M+ contact database. New users get 100 free credits on signup, additional lookups use Leadsforge credits.
 - Testing and analytics: A/B testing on messaging variants (Growth plan only), plus campaign-level analytics covering send volume, connect rate, reply rate, and meeting conversion.
 - Agent Frank support: Agent Frank can operate the entire email and LinkedIn workflow autonomously: prospecting, sequencing, replying, and booking meetings 24/7.
@@ -105,7 +107,7 @@ Positioning statement (paraphrase, do not copy verbatim): Salesforge is a multic
 - Sender rotation: Volume is distributed across multiple sending mailboxes and domains automatically so no single mailbox burns through reputation.
 - Bounce Shield: Blocks sends to addresses likely to bounce, protecting sender reputation before it gets damaged.
 - Built-in email validation: Every contact is validated before send to keep bounce rates low.
-- Primebox™ with Autopilot and Co-pilot modes: All replies across mailboxes and channels flow into one inbox. Autopilot handles replies fully. Co-pilot drafts responses for human approval.
+- Primebox™ with Auto-Pilot and Co-Pilot modes: All replies across mailboxes and channels flow into one inbox. Auto-Pilot handles replies fully. Co-Pilot drafts responses for human approval.
 - LinkedIn email & phone finder Chrome Extension: Finds verified email addresses directly from LinkedIn. Powered by Leadsforge: connects to the user's Leadsforge account and pulls from the 500M+ contact database. New users get 100 free credits on signup, additional lookups use Leadsforge credits.
 - Testing and analytics: A/B testing on subject lines and body variants, plus campaign performance tracking on open, reply, positive reply, and meeting rates.
 - Agent Frank support: Agent Frank runs the full cold email workflow autonomously: prospecting, sequencing, replying, and booking meetings 24/7.
@@ -122,7 +124,7 @@ Every multichannel article positions Salesforge as the answer in Category A whil
 - Multichannel with conditional sequences: LinkedIn and cold email steps run inside a single sequence with actual if/then logic. Example: if a connection request gets accepted, trigger a LinkedIn message. If it does not, fall back to email. Not two parallel campaigns manually stitched together, one sequence with branching logic.
 - Six native LinkedIn actions plus email in one flow: Connection requests, messages, InMails, post likes, follows, withdraw requests, and cold email touches all executable within the same sequence.
 - AI personalization across 21+ languages: Same AI variables work for both LinkedIn messages and cold email copy. Company news, LinkedIn activity, industry context. 21+ languages so localized campaigns run without a separate copywriter per region.
-- Primebox™ with Autopilot and Co-pilot modes: All LinkedIn and email replies land in one inbox. Autopilot handles routine replies end-to-end. Co-pilot drafts responses for a human to approve. One place instead of switching between LinkedIn tabs and email clients.
+- Primebox™ with Auto-Pilot and Co-Pilot modes: All LinkedIn and email replies land in one inbox. Auto-Pilot handles routine replies end-to-end. Co-Pilot drafts responses for a human to approve. One place instead of switching between LinkedIn tabs and email clients.
 - A/B testing and cross-channel analytics: A/B test messaging variants across both channels (Growth plan). Analytics cover open rate, reply rate, connection acceptance rate, and meeting conversion in one dashboard.
 - LinkedIn email & phone finder Chrome Extension: Powered by Leadsforge. Bridges LinkedIn prospecting into email outreach without leaving the workflow.
 - Unified pricing: One subscription covers both channels. No separate LinkedIn tool license, no separate email tool license.
@@ -279,7 +281,7 @@ Fixed features to cover:
 - Built-in email validation
 - Domain reputation and inbox placement monitoring
 - Waterfall enrichment
-- Primebox™ with Autopilot and Co-pilot modes
+- Primebox™ with Auto-Pilot and Co-Pilot modes
 - Multichannel with conditional sequences
 - LinkedIn email & phone finder Chrome Extension (powered by Leadsforge)
 - A/B testing and campaign analytics
@@ -287,7 +289,7 @@ Fixed features to cover:
 - CRM integrations (HubSpot, Pipedrive, API), MCP, CLI
 Narrative angle:
 Most cold email tools handle sending. That is where they stop. The writer's job is to show that competitor X handles part of the workflow well but leaves the customer to bolt on infrastructure, warmup, lead finder, and reply management from other vendors. Salesforge, running on the full Forge Stack, handles all of that in one product with one login. However, the narrative angle will depend on the specific tool alternative article we're writing.
-The core positioning story: sending is a solved problem. The fight in 2026 is deliverability and reply management. Salesforge wins on deliverability (Warmforge included free, ESP matching, Bounce Shield, sender rotation, text-only, domain monitoring) and reply management (Primebox with Autopilot and Co-pilot).
+The core positioning story: sending is a solved problem. The fight in 2026 is deliverability and reply management. Salesforge wins on deliverability (Warmforge included free, ESP matching, Bounce Shield, sender rotation, text-only, domain monitoring) and reply management (Primebox with Auto-Pilot and Co-Pilot).
 Common competitor weak points to compare against:
 - Warmup as a paid add-on or third-party bolt-on
 - No native LinkedIn support in the same sequence
@@ -309,7 +311,7 @@ Fixed features to cover:
 - AI personalization across 21+ languages
 - Six native LinkedIn actions (connection requests, messages, InMails, post likes, follows, withdraw requests)
 - Account safety as standard
-- Primebox™ with Autopilot and Co-pilot modes
+- Primebox™ with Auto-Pilot and Co-Pilot modes
 - LinkedIn email & phone finder Chrome Extension (powered by Leadsforge)
 - A/B testing and campaign analytics
 - Agent Frank support
