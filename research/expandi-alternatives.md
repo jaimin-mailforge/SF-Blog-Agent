@@ -72,7 +72,7 @@ Approved 2026-08-13, with four amendments agreed the same day.
 Every tool section runs in this order:
 
 1. `**Best for:** [specific buyer] [specific use case] [specific constraint]` (added)
-2. `**G2 Rating:** X.X out of 5 (N,NNN reviews)` (added)
+2. `**Capterra Rating:** X.X out of 5 (N reviews)` (added, source changed from G2 on 2026-08-13)
 3. Narrative intro, 2 to 4 paragraphs, distinct opening angle per tool
 4. Key features, bold-label bullets
 5. Pros and cons, table, rows reflect reality and are not padded to match
@@ -396,6 +396,30 @@ These are the three patterns the article's argument rests on. All from the evide
 **3. Seven different billing units, which is the spine of the piece.** Per seat where a seat is one LinkedIn account: **Expandi** $99 / $79, **Dripify** $59 to $99 / $39 to $79. Per sender with humans free: **HeyReach** $79 / $63. Per identity with humans free: **La Growth Machine** €60 / €50. Per user: **Meet Alfred** $59 / $29, **Waalaxy** €19 to €69, **lemlist Multichannel** $109 / $87. Flat with unlimited seats: **Snov.io** $39 / $29.25 plus $69 per LinkedIn slot, and **lemlist Email** $55 flat by volume. Salesforge is flat with unlimited mailboxes on both plans and unlimited LinkedIn senders and users on Growth at $80 annual.
 
 That third pattern is the honest reason Salesforge earns the top slot on this article's dimension. Not "more features". A team of five running five LinkedIn accounts pays five multiples almost everywhere in this set.
+
+## Ratings: decided
+
+**Capterra only. No Trustpilot, no G2.** Decided by Jaimin 2026-08-13. Both are hard-403 to every automated route, and chasing them is not worth the time. The per-tool line therefore reads **`Capterra Rating:`**, not `G2 Rating:`, which is a change to the approved per-tool shape.
+
+Verified 2026-08-13, all from live Capterra product pages:
+
+| Tool | Capterra | Reviews | Notable sub-score |
+|---|---|---|---|
+| Dripify | 4.7 | **477** | support 4.6 |
+| lemlist | 4.6 | **387** | ease 4.5, support 4.6 |
+| Waalaxy | 4.4 | **253** | support 4.5 |
+| Snov.io | 4.5 | **215** | support 4.7 |
+| La Growth Machine | 4.9 | 45 | **support 5.0** |
+| Expandi | 4.4 | 31 | support 4.3 |
+| Meet Alfred | **2.8** | 13 | **support 1.9** |
+| HeyReach | 5.0 | **2** | n too small to mean anything |
+
+**Always print the review count with the score.** The spread runs from 477 reviews to 2, and a score without its base is misleading.
+
+**Two gaps to close.**
+
+1. **HeyReach's base is 2 reviews.** State the score with the count and add a one-line note that the base is too small to read anything into. That is honest, and it doubles as a fair signal that HeyReach is the newest tool here.
+2. **Salesforge has no Capterra listing at all.** Confirmed by a domain-scoped search, which returns Salesforce products and no Salesforge page. So the routed product would be the only tool in the article without a rating line, which reads badly. **Jaimin to supply the Salesforge G2 figure**, since it is his own product and a live read takes a minute. The benchmark cold email article used "4.6 out of 5, based on 84 reviews" but that is unverified and must not be reused without a fresh check.
 
 ## Why People Leave Expandi: claim status
 
