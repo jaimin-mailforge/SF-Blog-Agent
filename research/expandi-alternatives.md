@@ -2,7 +2,7 @@
 
 Drafting reads this file plus `rules/writing.md`, `rules/positioning.md`, and `rules/observations.md`. Nothing else.
 
-**Status:** SERP, teardown, cannibalization and evidence for Expandi, HeyReach, Dripify and Meet Alfred complete. Waalaxy, La Growth Machine, lemlist and Snov.io still pending.
+**Status:** research complete. All nine tools evidenced. Three decisions open, listed at the end.
 
 ---
 
@@ -295,6 +295,107 @@ Two hard sourcing warnings:
 **Strengths.** Cheapest annual entry here at $29 per user, with published EUR and GBP pricing rather than a checkout conversion surprise. **Three channels in one sequence, LinkedIn plus email plus X**, which nothing else in this comparison offers. The broadest set of LinkedIn campaign entry points and relationship tooling, including auto-withdrawal of pending invitations, automated greetings on birthdays and job changes, a 600+ template library, and white label from 5 users.
 
 **Architecture.** LinkedIn, email and X in one sequence. Email is your own mailbox over SMTP or IMAP. No native infrastructure, no warm-up. **The unified inbox is LinkedIn-side only:** the pricing table lists a LinkedIn inbox, an InMail inbox and a Sales Navigator inbox, with no email inbox row. Multichannel requires Pro or Team.
+
+## Evidence: Waalaxy
+
+**Pricing**, waalaxy.com/pricing, read 2026-08-13. Per user. Pro **€19**, Advanced **€49**, Business **€69** per user per month. Enterprise unpriced, for teams of 5+.
+
+**Those are annual-tab prices, and the monthly figures could not be recovered.** The toggle defaults to Yearly at minus 50 percent, and the monthly and quarterly numbers exist only after a JavaScript click. They are absent from the HTML and from all 28 Framer bundles. The vendor FAQ confirms quarterly at minus 20 percent and annual at up to 50 percent savings. **Do not print a monthly euro figure.** The page's own JSON-LD lists 19 / 39 / 69 USD, which contradicts the rendered €49, so ignore the schema.
+
+**Two gating facts that matter more than the price.** Email sequences and LinkedIn-plus-email campaigns exist **only on the €69 Business tier**, so Pro and Advanced are LinkedIn-only. And the **LinkedIn Inbox is a €20 per month add-on**, never bundled on any plan, with a free tier of 500 conversations. The invite ceiling is **800 a month even at the top tier**. No email warm-up anywhere on the site. 14-day trial on all three plans, and **the free plan people remember is gone**.
+
+**Ratings.** Capterra **4.4 from 253 reviews**, ease 4.3, customer service 4.5.
+
+**Complaints.** Missing features and thin native integrations, around 8 reviewers. Extension and reliability bugs, around 6. Price against value, around 6. LinkedIn limits and account restrictions, around 5, including a suspension after four months and campaigns blocking before reaching daily limits. **Caveat: a large share of Waalaxy's Reddit threads are authored by competing vendors.** Only first-person user statements were counted.
+
+**Strengths.** Cheapest genuine entry point in the set at €19 with unlimited campaigns included. Customer service is its best-scoring dimension. Import breadth covers LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of post likers and commenters.
+
+**Wrong for** agencies running multiple LinkedIn accounts at volume, and for anyone email-led: email needs the €69 tier, invites never exceed 800 a month, there is no warm-up, and the inbox costs extra.
+
+## Evidence: La Growth Machine
+
+**Pricing**, lagrowthmachine.com/pricing, read 2026-08-13 from the inline pricing object, which is authoritative since the server-rendered card values are stale. **Priced per identity, meaning per sending profile, not per human seat.**
+
+| Plan | Monthly | Annual | Channels | Team members |
+|---|---|---|---|---|
+| Basic | €60 / $70 | **€50 / $60** | LinkedIn, email | 3 included |
+| Pro | €120 / $135 | **€100 / $110** | plus calls | **25 free** |
+| Ultimate | €180 / $195 | **€150 / $165** | plus X | unlimited |
+
+**The gating fact that matters for this article: the unified LinkedIn-and-email inbox is Pro and above. Basic explicitly excludes it, and Basic also gives you one email sender.** So the cheap-looking tier lacks the two things a LinkedIn-plus-email motion needs. Identities are billed separately on every tier. Agency needs 6 identities minimum, Custom needs a 6-month commitment. 14-day trial, no card. No email warm-up product.
+
+**Ratings.** Capterra **4.9 from 45 reviews**, ease 4.7, **customer service 5.0**. Best-rated tool in the set. Trustpilot shows 2.9 from 8 reviews but the page is unreadable and the base is tiny, so note the divergence at most and do not build on it.
+
+**Complaints, thin and stated as such.** Widget and identity management overhead, 3 reviewers. Set limits not always respected, 3 mentions. Weak reporting and complexity for the price, 3 voices. Per-identity cost, 2 voices. **Reddit has almost no organic criticism of this tool, most of it is competitor-authored.** If the article needs a stronger negative case for La Growth Machine, that evidence does not exist in public data. Say so or drop it.
+
+**Strengths.** Best-rated here, with documented human support SLAs of under 24, 4 and 2 hours by tier. Cost scales by sender rather than headcount, with 25 team members free on Pro. Native waterfall enrichment across 9 email providers and 2 verification tools, plus LinkedIn intent import from likers, commenters and event attendees.
+
+**LinkedIn actions, 5:** visit profile, like latest posts, connection request, DM, and AI-generated voice message.
+
+**Wrong for** solo founders and agencies with many LinkedIn accounts. Three senders on Pro is €300 a month annual, €360 monthly, before enrichment credits.
+
+## Evidence: lemlist
+
+**Correction to an assumption in this brief.** The earlier note that lemlist's Email plan is "$55 per user per month" is **wrong**. The plan card reads "$55 a month, **unlimited users**, 50,000 emails a month", and the comparison table checks "unlimited users and email senders" for the Email plan only. The price is keyed to **send volume**, not seats. The page's own comparison header says "From $55 per user per month", contradicting its own card. Flag the contradiction, do not repeat it.
+
+**Pricing**, lemlist.com/pricing, read 2026-08-13 from the embedded pricing dataset, so all three cycles are directly confirmed.
+
+**Multichannel, per user:** $109 monthly, $99 quarterly, **$87 yearly**. Enterprise is talk-to-sales, 5 users minimum.
+
+**Email, flat by volume with unlimited users:** 50,000 emails at $69 monthly and **$55 yearly**. Then 100,000 at $89 / $80, 200,000 at $159 / $127, 500,000 at $359 / $287, 1,000,000 at $659 / $527.
+
+**LinkedIn automation requires the Multichannel plan**, confirmed twice: it appears only in that plan's feature block, and the comparison table gates LinkedIn profile visits, follows and invites, text messages, voice messages, in-app calling, VoIP, SMS, the WhatsApp add-on and the unified inbox to Multichannel and Enterprise. **The unified inbox is Multichannel only**, despite the Email plan's marketing card listing it. Another internal contradiction, and the comparison table is the more specific source.
+
+**lemwarm is included in every plan**, per the vendor FAQ. That is a genuine differentiator against most of this set.
+
+**Credits.** 1 credit is $0.01, 1,000 credits $10. Verified email 5 credits, phone number 20. Intent signals from 20 credits for a website visit up to 400 for LinkedIn engagement. 14-day full Multichannel trial, no card, no free plan.
+
+**Ratings.** Capterra **4.6 from 387 reviews**, ease 4.5, customer service 4.6.
+
+**Complaints.** Per-seat cost at team scale, around 8 voices, including criticism of no discounts until 20+ seats. **Lead database value below the pitch, around 4 users**, with the most concrete being a trialist who ran 130 target companies through Sales Navigator, Scrupp, Clay and lemlist and found only 9 unique to lemlist, about 12 percent, verdict "wouldn't be worth the price of admission". Support depth, around 4 voices, including "their support is not technical and only relays what their technical people tell them". Reporting accuracy, 2 voices.
+
+**Strengths.** Widest channel span in one sequence: email, LinkedIn with 4 action types, SMS, WhatsApp, and in-app calling, with **conditional next steps on every plan including Email**. Email infrastructure bundled rather than bolted on, including lemwarm, inbox rotation, rotating IPs, custom tracking domain, deliverability hub, and in-app domain and mailbox purchase. The Email plan's unlimited-users volume pricing is genuinely cheap for email-only teams.
+
+**Wrong for** LinkedIn-first teams on a budget. A five-rep team on Multichannel is $545 a month month-to-month, against $55 flat for the email-only plan they cannot use. Also wrong for anyone buying it as a lead database.
+
+## Evidence: Snov.io
+
+**Pricing**, snov.io/pricing, read 2026-08-13 from the page's own price attributes. **Flat per plan, with unlimited team seats on every paid plan.** No per-seat multiplier anywhere.
+
+| Plan | Monthly | Annual | Credits/mo | Warm-up slots |
+|---|---|---|---|---|
+| Trial | Free, renewable 30-day cycles | Free | 50 | 1 |
+| Starter | **$39** | **$29.25** | 1,000 | 3 |
+| Pro S | **$99** | **$74.25** | 5,000 | Unlimited |
+| Pro M | $189 | $141.75 | 20,000 | Unlimited |
+| Pro L | $369 | $276.75 | 50,000 | Unlimited |
+| Ultra | $738 | $553.50 | 100,000 | Unlimited |
+
+**LinkedIn automation is a paid add-on, not included.** Verbatim from the plan features: LinkedIn account slots "are not included in the price and are purchased separately at **$69/mo per slot**", or **$62 with an annual subscription**, with a further $10 off each slot for Sales Suite subscribers. A free 7-day LinkedIn trial is available on Starter and above. **So one LinkedIn seat costs the plan plus $69.** A three-rep LinkedIn team is $207 a month of slots before the plan.
+
+Other add-ons: enrichment tokens at $0.02 each with 90-day validity, sending domains from $12 a year, and done-for-you Google mailboxes at $5 a month per account.
+
+**Ratings.** Capterra **4.5 from 215 reviews**, ease 4.6, customer service 4.7.
+
+**Complaints.** Data accuracy and freshness, around 5 users, including a 3-star reviewer who found "the delivery rate was pretty low and when I ran the similar contacts in different tool, I received a 20% higher open rate". Deliverability degradation at scale, 3 users. Bugs and UX gaps, around 4 reviewers, including duplicate contacts created for no reason. Credit expiry, 2 voices, thin. **Snov's Reddit history is mostly 2017 to 2018 noise plus competitor comparison posts.** Roughly four genuine user complaints exist. Do not inflate.
+
+**Strengths.** Cheapest credible all-in-one and it does not charge per seat: $29.25 annual with unlimited seats, senders, campaigns and follow-ups. **Deliverability tooling is native and unusually complete for the price**, including warm-up with unlimited slots on Pro tiers, a premium business-domain pool, a 7-tier verifier, mailbox rotation, placement checks, and blacklist and reputation checks. The LinkedIn add-on is architecturally serious, with cloud execution and a dedicated location-based proxy per account.
+
+**LinkedIn actions, 7**, the most granular in the set: messages, InMail, connection requests, follows, skill endorsements, post likes, profile views. **Unibox included on all paid plans**, and recipients are charged once whether first contact is email or LinkedIn, which implies genuinely shared campaign state.
+
+**Wrong for** anyone whose primary channel is LinkedIn, since the product is email-first and LinkedIn inverts its price advantage. Also wrong as a lead database.
+
+## Cross-cutting findings
+
+These are the three patterns the article's argument rests on. All from the evidence above.
+
+**1. Almost nobody bundles email warm-up.** Of the eight alternatives, only **lemlist** (lemwarm on every plan) and **Snov.io** (unlimited slots on Pro tiers) include it. Expandi, HeyReach, Dripify, Meet Alfred, Waalaxy and La Growth Machine have **no warm-up product at all**. Salesforge includes unlimited Warmforge slots free on both plans, covering any mailbox type.
+
+**2. A unified inbox covering both channels is rarer still.** Expandi, HeyReach, Meet Alfred and Waalaxy are all **LinkedIn-only inboxes**, and Waalaxy charges €20 a month for its. Dripify's email-reply handling is unverified. La Growth Machine gates it to Pro. lemlist gates it to Multichannel. Only **Snov.io** includes it on every paid plan. Salesforge's Primebox™ carries both channels on both plans.
+
+**3. Seven different billing units, which is the spine of the piece.** Per seat where a seat is one LinkedIn account: **Expandi** $99 / $79, **Dripify** $59 to $99 / $39 to $79. Per sender with humans free: **HeyReach** $79 / $63. Per identity with humans free: **La Growth Machine** €60 / €50. Per user: **Meet Alfred** $59 / $29, **Waalaxy** €19 to €69, **lemlist Multichannel** $109 / $87. Flat with unlimited seats: **Snov.io** $39 / $29.25 plus $69 per LinkedIn slot, and **lemlist Email** $55 flat by volume. Salesforge is flat with unlimited mailboxes on both plans and unlimited LinkedIn senders and users on Growth at $80 annual.
+
+That third pattern is the honest reason Salesforge earns the top slot on this article's dimension. Not "more features". A team of five running five LinkedIn accounts pays five multiples almost everywhere in this set.
 
 ## Why People Leave Expandi: claim status
 
