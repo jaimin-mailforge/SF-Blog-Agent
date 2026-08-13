@@ -47,6 +47,14 @@
   somewhere the extractor does not read, or the articles genuinely ship without
   one. Needs a look in Webflow before it can be treated as a real defect.
 
+- **`PreToolUse` only sees Write and Edit.** A file written through Bash, such as a
+  Python heredoc doing a bulk find-and-replace across a draft, never reaches the
+  gate. The `Stop` hook still lints the tree and holds the turn open, so a violation
+  cannot survive a turn, but `CLAUDE.md`'s stronger claim that it "cannot reach
+  disk" is only true for Write and Edit. Either widen the matcher to Bash or soften
+  the claim. Found during the judge pass on the Expandi draft, where the whole
+  contraction rewrite went in through Bash.
+
 ## Rule promotion status
 
 `PreToolUse` and `Stop` hooks are live and blocking on `drafts/` and `articles/`.
