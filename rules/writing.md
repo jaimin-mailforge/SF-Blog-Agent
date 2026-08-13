@@ -235,7 +235,11 @@ Human does not mean fake typos, deliberate grammar mistakes, lowercase "i", or m
 
 ## 13. Who it's for, and who it's not for `[JUDGE]`
 
-Every product section states both. This is the single highest-value habit in the file, for two reasons.
+**Every article states both. Per tool it is optional.** Changed 2026-08-13 by Jaimin, on the Expandi alternatives outline. The per-tool disqualifier was previously required in every product section and is now carried at article level instead: the Final Verdict routes by reader type, the "When [Competitor] Is Still the Better Choice" section does it for the incumbent, and each tool's cons already carry the signal. Write the per-tool line when a tool has a sharp disqualifier worth naming. Do not pad one in for symmetry.
+
+What has not changed is the requirement itself. An article that never tells a reader to walk away fails this rule no matter how many tool sections it has.
+
+This is the single highest-value habit in the file, for two reasons.
 
 Readers trust a writer who tells them to walk away. And LLM recommendations are personalised to the person asking, so their real prompt carries company size, budget, and deal size. Content that says "good fit if your ACV runs $5K to $100K and you sell to 3,000-plus-employee companies, not a fit for Fortune 500 RFP motions" can be matched to the right person. Honest disqualification is how we get recommended, not a weakness.
 
@@ -341,6 +345,8 @@ Collective term: "Forge stack".
 Agent Frank is he/him. You hire Agent Frank. You never buy him or activate him. He is an AI SDR, never a bot, an automation, or a workflow.
 
 Competitors are spelled exactly as they spell themselves on their own site.
+
+**Lowercase-branded names.** Some vendors style their name lowercase. Use their spelling in body prose, and capitalise only where the name opens a heading or a sentence. So "Lemlist charges per seat" at the start of a sentence, and "the thing lemlist does best" mid-sentence. Current lowercase brands: lemlist. The linter enforces this.
 
 ---
 

@@ -11,6 +11,7 @@ PRODUCT_NAMES = load('product-names.txt')
 BANNED_PHRASES = load('banned-phrases.txt')
 FIG_VERBS = load('figurative-verbs.txt')
 FACTS = [l.split('|', 1) for l in load('fact-conflicts.txt')]
+LOWERCASE_BRANDS = load('lowercase-brands.txt')
 
 def _protected_spans(text):
     """Character ranges covered by a product name. Banned-word hits inside these are exempt."""
@@ -121,6 +122,19 @@ def check(title, meta, text, label):
     for needle, why in FACTS:
         n = len(re.findall(re.escape(needle), text, re.I))
         if n: add('ERROR', 'fact:' + needle, '%dx  %s' % (n, why))
+
+    # lowercase-branded competitor names, capitalised only to open a heading or sentence
+    for brand in LOWERCASE_BRANDS:
+        cap = brand[0].upper() + brand[1:]
+        for m in re.finditer(r'\b' + re.escape(cap) + r'\b', text):
+            before = text[:m.start()]
+            # opens a heading, a line, a list item, a table cell, or a new sentence
+            opens = (not before.strip()
+                     or re.search(r'(?:^|\n)[#>|\s*_\-\d.)]*$', before) is not None
+                     or re.search(r'[.?!:]["\')\]]?\s+$', before) is not None)
+            if not opens:
+                add('ERROR', 'brand-casing:' + brand,
+                    'write "%s" mid-sentence. %s' % (brand, ctx(text, m.start())))
 
     # placeholders
     for m in re.finditer(r'\[\[FIGURE:', text):
