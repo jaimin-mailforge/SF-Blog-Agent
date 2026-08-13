@@ -136,10 +136,11 @@ No standalone free trial, since you need to buy slots to warm anything.
 
 ### Pre-warmed mailboxes
 
-Pricing is not on either marketing page. It exists only on the vendor help desk, and the two help articles are structurally inconsistent with each other. Treat these as soft figures and confirm in-app before publishing a number.
+**Never publish a price for these.** Pre-warmed mailboxes on Infraforge and Primeforge are sold separately from the standard mailbox slots, and pricing is quoted in-app. No vendor marketing page carries a figure, and the two help-desk articles that do describe incompatible structures, so any number we print is a coin flip.
 
-- **Primeforge pre-warmed**, sold as an add-on, warmed at least 3 months: $18/year per .com domain, and mailboxes from $9.00/month or $90.00/year per unit at 1 to 100. Minimum 4 domains, with 3 mailboxes already set up per domain.
-- **Infraforge pre-warmed:** $14 per domain, minimum 4 domains, $4 per mailbox with 2 mailboxes per domain included, so a minimum purchase of 8 mailboxes at $88. The 10-slot minimum still applies.
+What you can say: pre-warmed mailboxes are available separately on both Infraforge and Primeforge, they ship ready to send on day one, and they save the standard two to four week warm up wait. Primeforge pre-warmed mailboxes have been warming for at least three months before you get them. For cost, point the reader to the app.
+
+This also means pricing-math sections must not silently assume pre-warmed. If an article works out cost at scale, use the standard slot rates and say pre-warmed is extra.
 
 ---
 
@@ -306,11 +307,14 @@ Aim for four to six of these a year, roughly quarterly. Version the dataset and 
 
 Do not publish any of these until resolved. Each needs an in-app check or a product-team answer, not another web search.
 
-1. **"20+ languages" or "21+".** The previous rule set mandated "always 21+, never 20+". The site says "20+" in its marketing copy and names 21 languages in its FAQ. This file uses "20+" to match the vendor. Confirm which the product team wants.
-2. **Pre-warmed mailbox pricing.** Only on the help desk, and the Primeforge and Infraforge articles describe different structures. Confirm both before quoting a number.
-3. **The full integrations list.** The previous positioning doc named CRMs (Salesforce, HighLevel, Breakcold, Attio, Folk), data providers (Clay, Bitscale, RB2B, Databar AI, Persana AI, Sendspark, Weezly), and automation platforms (Slack, Zapier, Make, webhooks). None were verified live. Only HubSpot, Pipedrive, and the API are confirmed. Get the live integrations page checked before any of the others goes into an article or a comparison table.
-4. **Withdraw requests as a LinkedIn action.** Both previous rule sets listed six actions including "withdraw requests" and excluding "profile views". The live product page and the help desk both list profile views and omit withdraw requests. This file follows the live product. Confirm whether withdraw is a real seventh action.
+1. **The full integrations list.** Only HubSpot, Pipedrive, and the API are confirmed on a live page. A verification pass against the live integrations pages is in progress. Until it lands, name no integration beyond those three.
 
 ## Resolved, do not re-open
+
+**AI personalization language count.** Use **"20+ languages"**, the phrase the vendor uses on its own pages. Decided by Jaimin on 2026-08-13, overriding the previous rule set's "always 21+, never 20+". The FAQ names 21 individual languages, so 21 is countable, but we quote the vendor's phrasing rather than our own arithmetic.
+
+**Pre-warmed mailbox pricing.** Decided by Jaimin on 2026-08-13: never print a figure. See the pre-warmed section above.
+
+**LinkedIn actions.** Six, exactly as the live product page and the help-desk action-cap list name them: connection requests, messages, InMails, profile views, post likes, follows. Decided by Jaimin on 2026-08-13. Withdraw requests appeared in both previous rule sets and is not a Salesforge LinkedIn action. Do not add it back.
 
 **Chrome extension credit consumption.** Verified by Jaimin directly in-app on 2026-08-13: the extension is free to install and lookups do consume Leadsforge credits, 1 per email and 10 per mobile. Recorded here because the Chrome Web Store listing says "Free Unlimited contact lookups", which contradicts it. That listing is marketing copy, and in-app behaviour wins. Do not "correct" this back off the store page.
