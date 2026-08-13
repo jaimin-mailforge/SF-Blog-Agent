@@ -391,3 +391,116 @@ G2 puts HeyReach at 4.6 from 71 reviews, with 2 one-star reviews, so 2.8% of the
 The con tags are the interesting part, because there is no theme in them. Update Issues, Poor Customer Support, Limited Features and Expensive are all tagged twice, and nothing goes above two.
 
 For a tool with 71 reviews that is a genuinely clean record. I am not going to manufacture a complaint section where the evidence does not support one.
+
+## 3. Dripify {#dripify}
+
+**Best for:** solo operators and two-person teams who want native email in the LinkedIn sequence at the lowest price on this list.
+
+**Not for:** anyone sending real email volume. One mailbox per account, capped at 200 emails a day.
+
+**G2 Rating:** 4.5 out of 5 (348 reviews)
+
+Dripify is the cheapest route to LinkedIn and email in one sequence, and the arithmetic decides whether that stays true for you.
+
+Basic is $59 per user per month, or $39 on annual billing. That $39 tier includes email steps inside the sequence, which the $99 Expandi seat does not.
+
+Then the billing unit catches up. One Dripify seat connects one LinkedIn account, so five reps on annual Basic comes to $195 a month.
+
+Move up to Pro, where the daily action quotas stop constraining you, and five seats is $295 a month on annual billing. Salesforge Growth is $80 flat for the same five LinkedIn senders.
+
+So Dripify is the value pick at one or two seats and loses ground steadily after that. Know which side of that line you are on before you buy the annual plan.
+
+### Key features
+
+- **Published daily action quotas, per plan.** Nothing else here publishes them. Basic allows 20 connection requests, 30 messages and 10 InMails a day. Pro and Advanced allow 75, 100+ and 30.
+- **Native email inside the sequence on every paid plan.** Including the $39 tier. This is a real step with branching, not a handoff into another tool.
+- **A built-in email finder.** 100 credits a month on every plan, valid 30 days with no rollover. Credit packs run $29 per 1,000 up to $99 per 10,000.
+- **15+ LinkedIn actions and conditions**, covering connection requests, messages, InMails, profile views, endorsements, post likes and follows.
+- **A dedicated LinkedIn inbox on Pro and above.** Whether email replies also land there is not documented, so treat it as LinkedIn-side until you test it.
+- **A 7-day trial with Advanced features and no card.**
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Native email on the $39 tier, which no other tool here matches | One seat connects one LinkedIn account, so five reps means five seats |
+| Publishes exact daily quotas for all seven action types | Email runs through your own Gmail or Outlook, one mailbox per account, capped at 200 a day |
+| The largest verified satisfaction record in this comparison at 477 Capterra reviews | No email infrastructure and no warm-up, so deliverability is your problem |
+| Email finder included rather than sold as a separate product | Reviewers report Basic's single-campaign limit is tighter than expected, and that editing a campaign means losing its data |
+
+### Pricing
+
+| Plan | Billed monthly | Billed annually | What it adds |
+|---|---|---|---|
+| Basic | $59 per user | **$39 per user** | The low daily quotas, one campaign |
+| Pro | $79 per user | **$59 per user** | Quotas roughly triple, dedicated LinkedIn inbox |
+| Advanced | $99 per user | **$79 per user** | Team management, same quotas as Pro |
+| Enterprise | Custom | Custom | Not published |
+
+Read the quota column as part of the price. Basic at 20 connection requests a day is a different product from Pro at 75, and most people comparing the $39 headline are picturing the Pro numbers.
+
+### What real users say
+
+Dripify holds 4.5 on G2 from 348 reviews and 4.7 on Capterra from 477. That is the deepest verified review base in this article, and the two platforms diverge upward, which is rare.
+
+The G2 con tags are blunt about the objection. Expensive leads at 37 mentions, then Limited Features at 22, Inefficient Workflow at 15 and Email Limitations at 11.
+
+That last tag is the useful one, because it corroborates the product limit rather than a mood. Email Limitations at 11 mentions is what a 200-a-day single-mailbox cap looks like from the user side.
+
+Seventeen of the 348 reviews are one star, so 4.9%. Across the reviews I could read, not one mentions a LinkedIn ban or a support failure.
+
+## 4. Meet Alfred {#meet-alfred}
+
+**Best for:** solo operators who want LinkedIn, email and X in one sequence at the lowest annual price in this comparison.
+
+**Not for:** anyone who will need support to answer quickly, and anyone buying the $29 tier expecting multichannel.
+
+**G2 Rating:** 3.4 out of 5 (37 reviews)
+
+Meet Alfred is the one tool here where the review data changed what I planned to write about it.
+
+It rates 3.4 on G2 from 37 reviews, the lowest score in this comparison. Eight of those 37 are one star, which is 21.6% of the total.
+
+Capterra is lower still at 2.8 from 13 reviews, and the sub-scores are where it turns specific. Ease of use is 2.7. Customer service is 1.9.
+
+Two independent platforms landing at the bottom of the same category matters more than either would alone. The recurring theme across the readable reviews is support responsiveness, raised by roughly five of the thirteen. One reports up to four days without a reply.
+
+Which is a shame, because the product does something nothing else on this list does. LinkedIn, email and X run as three channels of one sequence.
+
+### Key features
+
+- **Three channels in one sequence.** LinkedIn, email and X. Every other tool in this comparison stops at two.
+- **The cheapest annual entry here at $29 per user per month**, with EUR and GBP published alongside USD rather than converted at checkout.
+- **The broadest LinkedIn entry points and relationship tooling**, including auto-withdrawal of pending invitations and automated greetings on birthdays and job changes.
+- **A 600+ template library**, which is the largest published here.
+- **White label from five users**, which puts agency features below the price point most tools gate them at.
+- **Three separate inboxes:** LinkedIn, InMail and Sales Navigator. The pricing table lists no email inbox, so email replies live in your mail client.
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Three channels in one sequence, unmatched in this list | The lowest-rated tool here on both G2 and Capterra |
+| $29 per user per month on annual billing | Customer service scores 1.9 on Capterra, on a 13-review base |
+| EUR and GBP published, no conversion surprise | Basic is LinkedIn-only. Email and X start at Pro, so the $29 headline is not the multichannel price |
+| Relationship automation and a 600+ template library | No email inbox, so replies from the two extra channels are not unified |
+
+### Pricing
+
+| Plan | Billed monthly | Billed quarterly | Billed annually | Channels |
+|---|---|---|---|---|
+| Basic | $59 per user | $49 per user | **$29 per user** | LinkedIn only |
+| Pro | $99 per user | $79 per user | **$49 per user** | LinkedIn, email, X |
+| Team | $79 per user | $59 per user | **$39 per user** | LinkedIn, email, X |
+
+Two things on that table need saying out loud. Team is cheaper than Pro on every billing cycle, which is unusual enough that you should read both columns before choosing.
+
+And the annual toggle is marketed as 50% off while the quarterly toggle says 20% and delivers closer to 17. The pricing page does not state the trial length anywhere.
+
+### What real users say
+
+The G2 con tags are too thin to carry a theme, with Poor Customer Support and Missing Features tagged once each across 37 reviews. The rating shape does the work instead.
+
+A 21.6% one-star share is more than double the next worst tool here, and roughly forty times Waalaxy's. Against Capterra's 1.9 support sub-score, that reads as a specific failure rather than general dissatisfaction.
+
+If you want the three-channel sequence, the honest advice is to run the trial hard and open a support ticket during it deliberately. You will learn more from the reply time than from any feature page.
