@@ -178,7 +178,7 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 - **Built-in email validation.** Every contact validated before send.
 - **A/B testing** (Growth only) plus campaign analytics on open, reply, positive reply, and meeting rates.
 - **Agent Frank support.** Agent Frank can run the whole workflow autonomously.
-- **Integrations and API.** HubSpot and Pipedrive, plus open API access on Growth. Those are the ones confirmed on the live pricing page. Do not name any other integration without checking it live first.
+- **Integrations and API.** 27 integrations listed on salesforge.ai/integrations, each with its own page. Growth plan only, along with API access. The native and mediated split is in the integrations subsection below, and the two are different claims that must never be blurred.
 - **Salesforge MCP and CLI** (Growth only). Agent-native access from Claude, Cursor, or a custom agent.
 
 **Two-layer framing, required in every multichannel article.** Anchor the piece in the category buyers actually search, then use the stack as the reason we win it.
@@ -187,6 +187,30 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 - **The wedge: a deliverability-first outbound operating system.** Competitors sell the outreach layer alone. Salesforge comes with the deliverability layer (Warmforge), the infrastructure layer (Mailforge, Infraforge, Primeforge), the lead layer (Leadsforge), and the autonomous execution layer (Agent Frank).
 
 Position Salesforge as the answer in the category, and pull wedge evidence to justify why.
+
+### Integrations
+
+Verified against salesforge.ai/integrations on 2026-08-13. The site carries 27 integration cards, each with a child page, and it labels every one **Native** or **Custom** through its own "Integration type" field. That split is the vendor's, not ours, so use it.
+
+Of the 27, five are other Forge products, so **22 are genuinely third-party.**
+
+**Native, OAuth straight from Salesforge:** HubSpot, Salesforce, GoHighLevel, Attio, Slack, Sendspark.
+
+**Native, set up partner-side with a Salesforge API key:** Clay, folk, Databar.ai, Persana AI.
+
+**Native, other shapes:** RB2B by first-party webhook, Breakcold as a marketplace app, Weezly in-sequence.
+
+**Custom or mediated:** Zapier, Make, Bitscale, OutboundSync, plain webhooks, SMTP, and Pipedrive.
+
+**Pipedrive is mediated, not native.** Its own page carries a Native label and mentions OAuth, then its How To Use It section opens by saying the integration is supported through Zapier or webhooks, and both routes described are a Zap or a webhook build. There is no Salesforge app in the Pipedrive Marketplace. Never call Pipedrive a native integration.
+
+**Make** is labelled Custom while its body calls it "our native integration with Make". Sidestep the contradiction and call it an official Make app, which the Make directory confirms.
+
+**Gating.** Integrations and API access are Growth-only. The Pro plan lists neither. One carve-out: connecting Google Workspace, Microsoft 365, and SMTP mailboxes, plus Warmforge warm up, is ungated, because Pro includes unlimited mailboxes and unlimited premium warm up. No individual third-party integration is available on Pro.
+
+**n8n** has 10 templates at salesforge.ai/directory/n8n-templates but no card on the integrations page. Safe to mention as templates, not as a listed integration.
+
+**Never write "1000+ integrations".** That is hero copy on the hub page. The documented count is 27.
 
 ### Leadsforge
 
@@ -202,7 +226,7 @@ AI-native lead finder. Plain-English chat instead of filter stacking.
 - **Signals, event-based sourcing.** Five signal types: **job change, acquisition, funding, investor, and hiring.** The workflow: pick Signals as the sourcing path, pick a signal type, set the provider-specific filters, see the estimated number of matching companies or contacts, extract with credits, review the per-match evidence in the Details view, then enrich and move the leads into the Enriched table. For company-based signals, Leadsforge finds matching companies, matches them against its database, then surfaces the relevant employees. Hiring signals carry company name, job title, department, seniority, date posted, open-until date, and the job posting URL. **Hiring signals are currently US-only.** Credits are charged at extraction based on how many companies or contacts you select, and enrichment costs more on top. Do not invent a fixed per-signal price.
 - **API, MCP, and CLI** for programmatic access. The API key is generated in app settings.
 - **Chrome extension** for enrichment while browsing LinkedIn or the web. Salesforge-branded and shared across the stack, not Leadsforge-only. **Free to install, and lookups consume Leadsforge credits** at the rates above, 1 per email and 10 per mobile number. New users get 100 free credits on Leadsforge signup.
-- **Integrations.** Hands lists straight to Salesforge under the shared login, with no CSV export step. Third-party integrations were not verified live, so do not name a specific one without checking it first.
+- **Integrations.** Hands lists straight to Salesforge under the shared login with no export step, or exports to CSV in one click. HubSpot and Salesforce both have direct OAuth integrations with field mapping. Sourcing matters here: leadsforge.ai/integrations does not exist, and the marketing site answers the integrations question without naming a single partner. Both integrations are documented only in the help centre, so attribute them there and never say the site advertises them.
 
 **Accuracy guardrail, confirmed against the live site:** Signals are event-based, and they are not topic intent. The words "researching" and "topic" appear nowhere on leadsforge.ai. Never describe Leadsforge as surfacing "accounts actively researching your category", and never imply it licenses a topic-intent feed. The nearest thing to category-level interest is the company followers feature, which is follower-based.
 
@@ -305,11 +329,11 @@ Aim for four to six of these a year, roughly quarterly. Version the dataset and 
 
 ## Open verification items
 
-Do not publish any of these until resolved. Each needs an in-app check or a product-team answer, not another web search.
-
-1. **The full integrations list.** Only HubSpot, Pipedrive, and the API are confirmed on a live page. A verification pass against the live integrations pages is in progress. Until it lands, name no integration beyond those three.
+None currently open. Add one here the moment a fact looks uncertain, rather than shipping it and hoping.
 
 ## Resolved, do not re-open
+
+**Integrations.** Verified against salesforge.ai/integrations on 2026-08-13. Every one of the 18 names carried by the old positioning doc turned out to be real and vendor-documented, so the list was accurate and the earlier decision to cut it back to three was wrong. Two things had gone wrong in the other direction: the claim that salesforge.ai/pricing confirms HubSpot and Pipedrive came from a false positive, since those strings live inside a HubSpot booking-tracker script in the page head and the pricing page names no partner at all. And Pipedrive is mediated rather than native, on the evidence of its own page. Details in the integrations subsection above.
 
 **AI personalization language count.** Use **"20+ languages"**, the phrase the vendor uses on its own pages. Decided by Jaimin on 2026-08-13, overriding the previous rule set's "always 21+, never 20+". The FAQ names 21 individual languages, so 21 is countable, but we quote the vendor's phrasing rather than our own arithmetic.
 
