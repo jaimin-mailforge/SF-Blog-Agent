@@ -619,3 +619,134 @@ Two of the 56 G2 reviews are one star, which is 3.6%. The con tags are thin and 
 I looked for a stronger negative case and it is not in the public data. The recurring themes across the readable reviews are identity management overhead and reporting depth, at about 3 voices each.
 
 The review base is small, at 56 and 45. A 4.9 from 45 reviews is a good sign rather than a settled fact, so weigh it against Dripify's 477 accordingly.
+
+## 7. Lemlist {#lemlist}
+
+**Best for:** email-led teams who want the widest channel span in one sequence, and email-only teams who want volume pricing with unlimited users.
+
+**Not for:** LinkedIn-first teams on a budget. LinkedIn lives on the $109 per user plan and the cheap plan cannot reach it.
+
+**G2 Rating:** 4.6 out of 5 (1,906 reviews)
+
+Reply rates are what lemlist sells, and reply rates depend on two things. Whether your email lands, and whether you can follow up on a second channel when it does not.
+
+lemlist bundles the first half on every plan. lemwarm is included everywhere, alongside inbox rotation, rotating IPs, a custom tracking domain and a deliverability hub. That is more email infrastructure than anything else in this comparison.
+
+The second half is where the price changes. LinkedIn automation exists only on the Multichannel plan at $109 per user per month, or $87 on annual billing.
+
+So the honest way to read lemlist is to decide which half of the reply-rate problem you actually have. If it is deliverability, the Email plan at $55 a month with unlimited users is the best value on this page.
+
+If you need LinkedIn in the sequence, you are on a per-user plan, and a five-rep team is $545 a month at the monthly rate. That is the most expensive configuration in this comparison.
+
+### Key features
+
+- **The widest channel span in one sequence.** Email, LinkedIn with four action types, SMS, WhatsApp and in-app calling.
+- **Conditional next steps on every plan**, including the cheap Email plan, which most tools gate to a higher tier.
+- **lemwarm on every plan.** One of only two tools here with warm-up included rather than sold separately.
+- **Email infrastructure built in**, covering inbox rotation, rotating IPs, a custom tracking domain, a deliverability hub, and domain and mailbox purchase in the app.
+- **Volume-based pricing on the Email plan** with unlimited users, from 50,000 emails a month up to a million.
+- **Credits for data.** One credit costs $0.01. A verified email is 5 credits and a phone number is 20. Intent signals run from 20 credits up to 400.
+- **A 14-day full Multichannel trial** with no card, and no free plan.
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| More channels in one sequence than anything else here | LinkedIn requires Multichannel at $109 per user, and there are no volume discounts until 20+ seats |
+| lemwarm and a full deliverability stack included on every plan | The unified inbox is gated to Multichannel, despite the Email plan's card listing it |
+| The Email plan is flat by volume with unlimited users | Missing Features is its top con tag at 208 mentions, the highest count in this comparison |
+| Conditional branching even on the entry plan | Reviewers rate the built-in lead database below the pitch. One trialist found only 12% of their target list was unique to it |
+
+### Pricing
+
+**Multichannel, per user:**
+
+| Billed monthly | Billed quarterly | Billed yearly |
+|---|---|---|
+| $109 per user | $99 per user | **$87 per user** |
+
+**Email, flat by volume with unlimited users:**
+
+| Emails per month | Billed monthly | Billed yearly |
+|---|---|---|
+| 50,000 | $69 | **$55** |
+| 100,000 | $89 | **$80** |
+| 200,000 | $159 | **$127** |
+| 500,000 | $359 | **$287** |
+| 1,000,000 | $659 | **$527** |
+
+Two things on lemlist's own pricing page contradict each other, so check both at signup. The Email plan card reads $55 a month with unlimited users, while the comparison header above it says "From $55 per user per month".
+
+The plan card and the feature table both check unlimited users for that plan, so the per-user header looks like the error. The same page also lists the unified inbox on the Email card while the feature table gates it to Multichannel. Where they disagree, the feature table is the more specific source.
+
+### What real users say
+
+lemlist has the largest verified review base in this comparison by a wide margin. 4.6 on G2 from 1,906 reviews, and 4.6 on Capterra from 387, with the two platforms in exact agreement.
+
+Twenty of the 1,906 are one star, which is 1.0%. Only Waalaxy is cleaner, and that is a strong record at that volume.
+
+The con tags are large enough to be meaningful. Missing Features leads at 208 mentions, then Expensive at 140, Learning Curve at 125 and Email Management at 77.
+
+Expensive at 140 is the per-seat objection showing up at scale, which matches the arithmetic above. Around eight reviewers raise it directly, including the absence of any discount below 20 seats.
+
+## 8. Snov.io {#snov-io}
+
+**Best for:** email-first teams at low volume who want native warm-up and unlimited seats without a per-user multiplier.
+
+**Not for:** anyone whose primary channel is LinkedIn. The add-on pricing inverts the whole cost advantage.
+
+**G2 Rating:** 4.5 out of 5 (497 reviews)
+
+At low volume Snov.io is the cheapest credible tool on this page, and it is worth seeing exactly how cheap. Starter is $39 a month, or $29.25 on annual billing, and that price carries unlimited team seats.
+
+Not unlimited-with-an-asterisk. Every paid plan includes unlimited seats, senders, campaigns and follow-ups, so a five-person team pays the same $29.25 as one person.
+
+The deliverability tooling at that price is the part that surprised me. Warm-up is native, with three slots on Starter and unlimited on the Pro tiers, alongside a 7-tier verifier, mailbox rotation, placement checks and blacklist checks.
+
+Then LinkedIn arrives and the arithmetic inverts. LinkedIn account slots are not included on any plan, and each one costs $69 a month, or $62 on an annual subscription.
+
+So one LinkedIn seat is the plan plus $69, and a three-rep LinkedIn team is $207 a month of slots before the plan itself. The cheapest tool here becomes a mid-priced one the moment LinkedIn is your main channel.
+
+### Key features
+
+- **Flat pricing with unlimited seats on every paid plan.** No per-user multiplier anywhere in the product.
+- **Seven LinkedIn actions, the most granular here.** Messages, InMail, connection requests, follows, skill endorsements, post likes and profile views.
+- **Native warm-up**, three slots on Starter and unlimited on Pro tiers, with a premium business-domain pool behind it.
+- **Unibox on every paid plan**, covering both channels. A recipient is charged once whether the first touch is email or LinkedIn, so campaign state is genuinely shared.
+- **A 7-tier email verifier**, plus mailbox rotation, placement checks and blacklist and reputation checks.
+- **Cloud LinkedIn execution** with a dedicated location-based proxy per account, which is the architecture you want rather than a browser extension.
+- **A free renewable trial** on 30-day cycles with 50 credits, plus a 7-day LinkedIn trial on Starter and above.
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Cheapest credible entry here at $29.25 a month with unlimited seats | LinkedIn slots cost $69 a month each and are not included on any plan |
+| Native warm-up and deliverability tooling unusually deep for the price | Email Issues is its top con tag at 46 mentions, on an email-first product |
+| Unibox on every paid plan, with shared state across both channels | Reviewers report data accuracy and freshness problems, around five voices |
+| Seven LinkedIn actions, more than any other tool in this comparison | Enrichment tokens expire after 90 days |
+
+### Pricing
+
+| Plan | Billed monthly | Billed annually | Credits per month | Warm-up slots |
+|---|---|---|---|---|
+| Trial | Free, renewable | Free | 50 | 1 |
+| Starter | $39 | **$29.25** | 1,000 | 3 |
+| Pro S | $99 | **$74.25** | 5,000 | Unlimited |
+| Pro M | $189 | **$141.75** | 20,000 | Unlimited |
+| Pro L | $369 | **$276.75** | 50,000 | Unlimited |
+| Ultra | $738 | **$553.50** | 100,000 | Unlimited |
+
+Add $69 per LinkedIn slot per month to any line in that table, or $62 on annual billing, with a further $10 off each slot for Sales Suite subscribers.
+
+Three other add-ons to budget for. Enrichment tokens at $0.02 each with 90-day validity, sending domains from $12 a year, and managed Google mailboxes at $5 a month each.
+
+### What real users say
+
+Snov.io rates 4.5 on G2 from 497 reviews and 4.5 on Capterra from 215. Fifteen of the 497 are one star, which is 3.0%.
+
+The con tags point at one thing, and it is the awkward one. Email Issues leads at 46 mentions, then Email Management at 32 and Missing Features at 29.
+
+An email-first tool whose top complaint is email deserves a straight reading. Around five reviewers raise data accuracy and freshness, and three describe deliverability getting worse as volume grows.
+
+Treat the low price as a reason to test properly rather than a reason to skip testing. Run a placement check on your own domains during the free trial before you commit a list to it.

@@ -1,7 +1,17 @@
+# Each rule is a fact about a Forge product that has been got wrong before.
+#
+# `needle|why` matches the needle literally, anywhere. Only use that form when no
+# competitor could legitimately write the same phrase, because these run against
+# raw text and a false positive here blocks a correct draft.
+#
+# `re:pattern|label|why` matches a regex. The pattern below scopes a rule to one
+# sentence containing the product name, which is how a Forge fact rule stays out of
+# the way of a true fact about a competitor. No field may contain a pipe.
+#
 21+ languages|canonical is "20+ languages"
-withdraw request|not a Salesforge LinkedIn action; the sixth is profile views
 100 personalization credits|live page says 300/month on Pro
-intent signal|Leadsforge signals are event-based, not topic intent
 1000+ integrations|hero copy; 27 documented integrations
+re:(?<![^.\n])(?=[^.\n]*Salesforge)(?=[^.\n]*withdraw)[^.\n]*|Salesforge withdraw action|not a Salesforge LinkedIn action; the sixth is profile views. Competitors do have it, Meet Alfred auto-withdraws pending invitations
+re:(?<![^.\n])(?=[^.\n]*Leadsforge)(?=[^.\n]*intent signal)[^.\n]*|Leadsforge intent signals|Leadsforge signals are event-based, not topic intent. Competitors do sell intent signals, lemlist prices them in credits
 re:(?<![^.\n])(?=[^.\n]*Agent Frank)(?=[^.\n]*\$499)(?=[^.\n]*quarter)[^.\n]*|Agent Frank $499 quarterly|Agent Frank quarterly is $599 per month. The $499 is the annual rate, or the 1,000-contact add-on slider
 re:(?<![^.\n])(?=[^.\n]*Infraforge)(?=[^.\n]*billed monthly)[^.\n]*|Infraforge billed monthly|Infraforge's short cycle is quarterly, not monthly
