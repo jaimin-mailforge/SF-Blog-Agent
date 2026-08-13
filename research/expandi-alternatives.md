@@ -10,8 +10,8 @@ Drafting reads this file plus `rules/writing.md`, `rules/positioning.md`, and `r
 
 - **Type:** Alternatives listicle
 - **Primary keyword:** expandi alternatives (US)
-- **Working title:** 8 Best Expandi Alternatives for LinkedIn + Email (2026) — 54 chars
-- **Target URL:** salesforge.ai/blog/expandi-alternatives — refresh of the existing page, pending the cannibalization check
+- **Working title:** 8 Best Expandi Alternatives for LinkedIn + Email (2026), 54 chars
+- **Target URL:** salesforge.ai/blog/expandi-alternatives. Refresh of the existing page, pending the cannibalization check
 - **Byline:** Frank Sondors
 
 ## Routing
