@@ -2,7 +2,7 @@
 
 Drafting reads this file plus `rules/writing.md`, `rules/positioning.md`, and `rules/observations.md`. Nothing else.
 
-**Status:** SERP, teardown and cannibalization complete. Per-tool evidence still pending.
+**Status:** SERP, teardown, cannibalization and evidence for Expandi, HeyReach, Dripify and Meet Alfred complete. Waalaxy, La Growth Machine, lemlist and Snov.io still pending.
 
 ---
 
@@ -199,20 +199,108 @@ Three things to carry forward:
 
 The live page covers seven tools: Salesforge, HeyReach, Skylead, La Growth Machine, lemlist, Dripify, Meet Alfred. The approved outline covers eight. **Skylead is dropped, Waalaxy and Snov.io are added.** Note that one of the four live PAA questions asks about the difference between Skylead and Expandi, so dropping Skylead entirely leaves that question unanswered. Options: answer it in the FAQ without giving Skylead a section, or reinstate Skylead. Flagged for a decision.
 
-## Evidence per tool
+## Evidence: access limits that shape the article
 
-TBD. Pricing on both cycles with source URL and date, ratings with counts, two or three recurring complaint themes with a count of how many users raised each, genuine strengths, and channel architecture.
+**G2, Trustpilot and TrustRadius all return 403 to automated fetching, and Reddit is blocked.** Every route was tried: browser user agents, full navigation headers, regional Trustpilot domains, the legacy g2crowd domain, a text-rendering proxy, Reddit's JSON API, old.reddit, and the PullPush archive. The agent proxy reports no relay failures, so these are the destinations' own bot walls.
+
+**Capterra is readable and is the verified base for everything below.** Anything from G2, Trustpilot or Reddit is marked unverified and must not enter the draft.
+
+Two hard sourcing warnings:
+
+- **Do not use these circulating figures.** "Expandi has a 23% account restriction rate within 90 days" and "LinkedIn detection increased 340% from 2023 to 2025" come from competitor marketing pages with no stated methodology. The widely repeated "Expandi G2 4.2 from 112 reviews" and "HeyReach 4.8 from 280+ reviews" appear only in third-party posts and conflict across sources.
+- `meetalfred.com/alternatives/expandi` and `dripify.com/comparison/why-choose-dripify-over-meet-alfred/` both rank for our keyword. Their own pricing pages are fine sources for their own prices. Nothing on their comparison pages is a fact about a rival.
+
+## Evidence: Expandi
+
+**Pricing**, expandi.io/pricing, read 2026-08-13. Business **$99 per seat monthly, $79 per seat annual** (20% off, marketed as two months free). Agency is custom, 10+ seats, adding roles and permissions, client reporting, dedicated CSM and white label. 7-day trial, all features, no card charged.
+
+**The billing unit is the story.** From Expandi's own help centre: one seat connects to one LinkedIn account at a time, pricing is per seat, and **you pay for purchased seats whether or not they are connected to a LinkedIn account.**
+
+**Add-ons.** Image and GIF personalization, the feature every top-ranking page cites as Expandi's selling point, is not included. Expandi's page says only that it "requires an additional cost". It runs through Hyperise, whose own live pricing starts at **$69 per seat per month** for unlimited designs, up to 5 active images and 5,000 image views, with annual at roughly $57.50. Video personalization needs Hyperise's $149 tier or a separate Senspark integration, price not published.
+
+**Ratings.** Capterra **4.4 from 31 reviews** (5 star 22, 4 star 4, 3 star 1, 2 star 2, 1 star 2. Ease 4.1, value 4.2, support 4.3, features 4.4). G2 and Trustpilot unverified.
+
+**Not published anywhere reachable:** contact limits, email account limits, sending caps, Agency per-seat rate. Expandi's own recommended-limits and email-integration help articles are login-gated.
+
+### The four claims, rated
+
+| Claim | Verdict | Action |
+|---|---|---|
+| Per-seat pricing doubles with add-ons | **Thinly supported.** The arithmetic is $99 plus $69 equals $168, a 70% increase, not a doubling. As a user grievance it is one 2023 review about being charged for 7 seats while using 4. | Publish the arithmetic as fact with both vendor pages cited. **Drop the word "doubles".** Do not attribute it to users. |
+| Account restrictions inside safe limits | **Unsupported. Zero of 31 Capterra reviews mention a restriction or ban.** The only quote found had no reachable source. The quantified figures circulating are competitor marketing. Expandi's own safe-limits doc is login-gated, so the premise cannot even be stated. | **Cut.** |
+| LinkedIn-first, email bolted on | **Well supported, from Expandi's own documentation.** 11 campaign types and **none is an email campaign**. Email exists as a single step plus an "if email exists" condition, inside the Builder campaign only. The inbox is explicitly LinkedIn and Sales Navigator only, so **email replies never appear in it**. Email needs your own mailbox, and IMAP for reply detection. Expandi publishes its own guide to using Smartlead for the email leg. No native email infrastructure, no warm-up. | **Keep. This is the strongest claim in the article.** |
+| Billing disputes and refund refusals | **Thinly supported and stale.** Two Capterra users, both March 2023, one platform. Capterra's aggregated cons do list billing issues. | Soften to "a small number of older reviews" or cut. |
+
+### Expandi's genuine strengths, for section 14
+
+1. **The widest LinkedIn campaign surface of any tool here.** 11 named campaign types including Mobile Connector, which Expandi says adds 100 connection requests a week, plus free Open InMail, Group, Event Invite, Company Follow Invite, Inbound and Recovery.
+2. **A real conditional builder.** Three true/false conditions plus engagement actions nothing else here matches: skill endorsement, like a post, like a company post, invite to follow company, and signals on profile visits, company visits and post engagement.
+3. **Safety scaffolding as a product feature.** Cloud-based, a dedicated country-based IP per account, profile auto warm-up, and randomised limits the tool refuses to let you exceed.
+
+## Evidence: HeyReach
+
+**Pricing**, heyreach.io/pricing, read 2026-08-13. Growth **$79 per sender monthly, $71 quarterly, $63 yearly**. Agency **$999 / $899 / $799** for 25 senders, expandable to 50. Unlimited **$2,999 / $2,699 / $2,399**. Plus a managed Done For You tier.
+
+**Billing is flat per LinkedIn sender, not per user.** From the vendor FAQ: a sender is a LinkedIn account, and HeyReach does not charge for adding teammates, VAs, clients or users. **Human seats are unlimited and free.** Whitelabel add-on $500 per additional brand on Unlimited. Growth includes a dedicated residential proxy per sender; Agency and Unlimited require you to bring your own. Trial is 14 days, no card, 3 LinkedIn accounts.
+
+**Ratings.** Capterra **5.0 from 2 reviews**, which is statistically meaningless and must be stated with the count. G2 and Trustpilot unverified.
+
+**No usable complaint themes exist.** Two accessible reviews, neither negative. **Do not write a complaint section implying otherwise.** Two defensible product-level limitations instead:
+
+- **No native email sending.** Multichannel means paying separately for Instantly, Smartlead or EmailBison on top.
+- **The Agency floor.** At $79 per sender, 12 senders is $948, so the $999 bundle only pays off above roughly 12 to 13 senders. Mid-size teams sit in a gap.
+
+**Strengths.** Flat per-sender pricing with free unlimited human users and whitelabel at Agency. A unified LinkedIn inbox across every connected account, with sender rotation and per-client workspaces under one login. Real plumbing: API, webhooks, an MCP server, and bidirectional Instantly and Smartlead sync so a reply on either channel pauses steps on both.
+
+**Architecture.** LinkedIn-only for sending. Confirmed actions: connection requests, messages, follows, profile views, plus an "if connected" condition. InMail is unverified, so do not claim it. Email is a handoff step into Smartlead or Instantly. Inbox is LinkedIn-only.
+
+## Evidence: Dripify
+
+**Pricing**, dripify.com/pricing, read 2026-08-13. Basic **$59 per user monthly, $39 annual**. Pro **$79 / $59**. Advanced **$99 / $79**. Enterprise custom. One seat connects one LinkedIn account, so five reps need five seats.
+
+**Dripify publishes exact daily quotas per plan**, which nothing else here does. Basic, Pro, Advanced: connection requests 20 / 75 / 75, messages 30 / 100+ / 100+, Sales Navigator InMails 10 / 30 / 30, profile views 100 / 200+ / 200+, endorsements 10 / 50+ / 50+, post likes 10 / 50+ / 50+, follows 10 / 50+ / 50+.
+
+**Add-ons.** Email-finder credit packs at $29 per 1,000, $49 per 2,000, $69 per 5,000, $99 per 10,000. 100 credits included monthly on every plan, valid 30 days, no rollover. Credits cover finding and verifying addresses, not sending. Trial is 7 days with Advanced features, no card.
+
+**Ratings.** Capterra **4.7 from 477 reviews**, ease 4.7, support 4.6. **The largest verified review base in this article by a wide margin.** G2 and Trustpilot unverified.
+
+**Complaint themes.** Note the method: Capterra's filter surfaces mostly 4 and 5 star reviews whose cons field is critical, so these are cons mentioned rather than low ratings.
+
+1. **Cost relative to value, especially stacked on Sales Navigator, 5 separate users.** Named: Saif I. (CEO), Joyce H., Victoria D., plus two more.
+2. **Basic is more limited than people expect, 2 users.** Richard L. (fCMO, 3 star, July 2025) on one campaign that cannot be edited or archived, where editing means deleting the campaign's data.
+3. Borderline at 2 users: sequence bugs when the first step is a connection request to an existing contact.
+
+**Zero mentions of LinkedIn bans and zero support-failure complaints** in the readable reviews.
+
+**Strengths.** Genuine native email inside the same sequence on every paid plan including the $39 tier, not an integration handoff, with the email finder built in. Published per-plan daily quotas for all seven action types. The deepest verified satisfaction record here.
+
+**Architecture.** LinkedIn plus email in one sequence, 15+ actions and conditions. **Email uses your own mailbox, Gmail or Outlook only, one mailbox per account, capped at 200 emails a day.** No native infrastructure, no warm-up. Pro and above get a dedicated LinkedIn inbox; whether email replies land there is unverified.
+
+## Evidence: Meet Alfred
+
+**Pricing**, meetalfred.com/pricing, read 2026-08-13 from raw HTML since the page 403s to normal fetching. Basic **$59 monthly, $49 quarterly, $29 annual**. Pro **$99 / $79 / $49**. Team **$79 / $59 / $39**. Per user. EUR and GBP published alongside USD.
+
+**Two oddities worth naming in the article.** Team is cheaper than Pro on every billing cycle. And the page markets annual as 50% off while the quarterly toggle says 20% but delivers closer to 17.
+
+**Basic is LinkedIn-only.** Email and X automation start at Pro, which makes the $29 headline misleading for anyone buying it for multichannel. Trial length is not stated anywhere on the pricing page.
+
+**Ratings.** Capterra **2.8 from 13 reviews**. Distribution: 5 star 4, 4 star 1, 3 star 2, 2 star 0, **1 star 6**. Ease of use 2.7 and **customer service 1.9**. That 1.9 is the single most quotable verified number in this article. Always state the 13-review base with it.
+
+**Complaint themes**, from a 13-review base with six one-star reviews:
+
+1. **Support unresponsive or ineffective, around 5 users.** One reports up to four days without a reply, another that support was unavailable for weeks during an outage. Corroborated by the 1.9 support sub-score.
+2. **Buggy or non-functional, around 4 users.** Chat windows disappearing after messages, failures connecting or sending through LinkedIn.
+3. **Refunds refused under a no-refund policy, around 4 users**, including one citing email bounces and reconnection failures on a paid account.
+
+**Strengths.** Cheapest annual entry here at $29 per user, with published EUR and GBP pricing rather than a checkout conversion surprise. **Three channels in one sequence, LinkedIn plus email plus X**, which nothing else in this comparison offers. The broadest set of LinkedIn campaign entry points and relationship tooling, including auto-withdrawal of pending invitations, automated greetings on birthdays and job changes, a 600+ template library, and white label from 5 users.
+
+**Architecture.** LinkedIn, email and X in one sequence. Email is your own mailbox over SMTP or IMAP. No native infrastructure, no warm-up. **The unified inbox is LinkedIn-side only:** the pricing table lists a LinkedIn inbox, an InMail inbox and a Sales Navigator inbox, with no email inbox row. Multichannel requires Pro or Team.
 
 ## Why People Leave Expandi: claim status
 
 Each of the four sub-sections needs real support or it gets cut. Ratings pending.
 
-| Claim | Support | Decision |
-|---|---|---|
-| Per-seat pricing doubles with add-ons | TBD | |
-| Account restrictions inside safe limits | TBD | |
-| LinkedIn-first, email bolted on | TBD | |
-| Billing disputes and refund refusals | TBD | |
+Rated in the Expandi evidence section above. Summary: one claim is well supported and keeps its section, one needs rewriting as arithmetic, one is unsupported and gets cut, one is thin and stale. A replacement sub-section is proposed in the outline-change note below.
 
 A thinly supported ban or refund claim about a named competitor is the riskiest sentence in this article. Cut rather than soften.
 
