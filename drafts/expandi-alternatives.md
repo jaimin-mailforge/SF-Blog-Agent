@@ -26,7 +26,7 @@ Most of the ones that did not fell down on the same thing. They do LinkedIn only
 - **[HeyReach](#heyreach)** charges per LinkedIn sender and gives you unlimited human seats free. $79 per sender monthly, $63 on annual billing.
 - **[Dripify](#dripify)** puts native email in the sequence on every paid plan, and it publishes its exact daily action limits. $59 per user monthly, $39 annually.
 - **[Meet Alfred](#meet-alfred)** runs LinkedIn, email and X in one sequence, and has the cheapest annual entry here. $59 per user monthly, $29 annually.
-- **[Waalaxy](#waalaxy)** is the cheapest way in if LinkedIn is all you need. €19 per user per month on annual billing.
+- **[Waalaxy](#waalaxy)** is the cheapest way in if LinkedIn is all you need. $16 per user per month on annual billing, capped at 300 invites.
 - **[La Growth Machine](#la-growth-machine)** bills per sending identity rather than per person, so teammates cost nothing. €60 per identity monthly, €50 annually.
 - **[lemlist](#lemlist)** spans the most channels in one sequence, and lemwarm is included on every plan. Email from $55 a month billed yearly. LinkedIn needs Multichannel at $87 per user yearly.
 - **[Snov.io](#snov-io)** is flat-priced with unlimited seats and native warm-up. $39 monthly, $29.25 annually, plus $69 a month for each LinkedIn slot.
@@ -509,50 +509,50 @@ If you want the three-channel sequence, the honest advice is to run the trial ha
 
 **Best for:** solo operators and small teams running LinkedIn only, who want the lowest entry price and the widest import options.
 
-**Not for:** anyone email-led or running several LinkedIn accounts at volume. Email needs the top tier and invites cap at 800 a month.
+**Not for:** anyone email-led or running several LinkedIn accounts at volume. Email needs the top tier, and invites cap at 800 a month even there.
 
 **G2 Rating:** 4.5 out of 5 (1,503 reviews)
 
 Waalaxy is the tool most people in this category tried first, back when it had a free plan. That free plan is gone, and the paid entry point is now the thing worth looking at.
 
-At €19 per user per month on annual billing it is the cheapest genuine way onto this list. Unlimited campaigns are included at that price, and for LinkedIn-only prospecting by one or two people, nothing here undercuts it.
+At $16 per user per month on annual billing it is the cheapest genuine way onto this list. Unlimited campaigns are included at that price, and for LinkedIn-only prospecting by one or two people, nothing here undercuts it.
 
-Two gates decide whether that price is real for you. Email sequences and LinkedIn-plus-email campaigns exist only on the €69 Business tier, so the two cheaper plans are LinkedIn-only.
+Two gates decide whether that price is real for you. Cold email sequences and multichannel LinkedIn-plus-email campaigns exist only on the $55 Business tier, so the two cheaper plans are LinkedIn-only.
 
-And the LinkedIn Inbox is a €20 per month add-on that is never bundled on any plan, with a free allowance of 500 conversations. On a list where four other tools include an inbox, that one deserves reading twice.
+The invite allowance is the second gate, and it is per tier. Pro allows 300 invitations a month, and only Advanced and Business reach LinkedIn's maximum invitation limits at 800.
 
-The invite ceiling is the third thing. Waalaxy caps connection requests at 800 a month even on the top tier, which is a deliberate safety decision rather than a defect. It also means the tool has a volume you cannot buy your way past.
+That 800 is the ceiling on every tier, including Business, which is a deliberate safety decision rather than a defect. It also means the tool has a volume you cannot buy your way past.
 
 ### Key features
 
 - **The widest import surface here.** LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of the people who liked or commented on a post.
-- **Unlimited campaigns on the €19 tier**, which is unusual at that price.
+- **Unlimited campaigns on the $16 tier**, alongside pre-built prospecting sequences, automated follow-ups and CRM synchronisation.
 - **Customer service is its best-scoring dimension**, at 4.5 on Capterra against a 4.4 overall.
 - **A 14-day trial on all three plans**, with no free tier behind it any more.
-- **Email sequences on Business only.** The €69 tier is the first one that runs LinkedIn and email together.
-- **The LinkedIn Inbox as a paid add-on** at €20 a month, free up to 500 conversations.
+- **Cold email sequences on Business only.** The $55 tier is the first one that runs LinkedIn and email together, and it adds 500 email finder credits.
+- **API access and the Make, Zapier and N8N modules start at Advanced**, along with live chat support.
 
 ### Pros and cons
 
 | Pros | Cons |
 |---|---|
-| Cheapest real entry point in this comparison at €19 per user | Email needs the €69 Business tier, so the cheap plans are LinkedIn-only |
-| Unlimited campaigns included from the entry tier | The inbox is a €20 monthly add-on, never bundled |
-| Best import breadth, including post likers and commenters | Invites cap at 800 a month on every tier, including the top one |
+| Cheapest real entry point in this comparison at $16 per user | Email needs the $55 Business tier, so the cheap plans are LinkedIn-only |
+| Unlimited campaigns included from the entry tier | Pro allows only 300 invitations a month. The 800 limit starts at Advanced |
+| Best import breadth, including post likers and commenters | 800 invites a month is the ceiling on every tier, including Business |
 | Support rates above its own overall score | No email warm-up anywhere in the product, and the free plan is discontinued |
 
 ### Pricing
 
-| Plan | Billed annually | Monthly rate | Channels |
+| Plan | Billed yearly | Invitations per month | Channels |
 |---|---|---|---|
-| Pro | **€19 per user** | [[FIGURE: Waalaxy Pro monthly euro rate, live pricing page toggle]] | LinkedIn only |
-| Advanced | **€49 per user** | [[FIGURE: Waalaxy Advanced monthly euro rate]] | LinkedIn only |
-| Business | **€69 per user** | [[FIGURE: Waalaxy Business monthly euro rate]] | LinkedIn and email |
+| Pro | **$16 per user** | 300 | LinkedIn only |
+| Advanced | **$32 per user** | 800 | LinkedIn only |
+| Business | **$55 per user** | 800 | LinkedIn and email |
 | Enterprise | Not published | Not published | Teams of 5+ |
 
-Those annual figures are the ones the page shows by default. The monthly rates load only after a click, and they are absent from the page source, so I am not going to print a number I could not read. Waalaxy's own FAQ states quarterly at 20% off and annual at up to 50%.
+Those are the yearly rates, which is the tab the page opens on. The toggle states 20% off for yearly billing, so the monthly rate is higher on all three tiers. Read it on the page rather than from this table if you are buying month to month.
 
-Add the inbox where you need it. Business plus the inbox is €89 per user per month, which is the number to compare against the rest of this table.
+The invitations column belongs next to the price. Pro at 300 a month is a different product from Advanced at 800, and that jump is the real reason to move up a tier.
 
 ### What real users say
 
@@ -777,7 +777,7 @@ Eight tools, and the right one depends almost entirely on your billing unit rath
 
 **One or two people who want native email at the lowest price:** Dripify. It is the value pick below three seats, and the [full Expandi and Dripify comparison](https://www.salesforge.ai/blog/expandi-vs-dripify) goes deeper than this page can.
 
-**LinkedIn only, cheapest possible entry:** Waalaxy at €19. Accept the 800-invite ceiling and the €20 inbox add-on, and it is unbeatable on price.
+**LinkedIn only, cheapest possible entry:** Waalaxy at $16. Accept the 300-invite allowance on that tier and the 800 ceiling above it, and it is unbeatable on price.
 
 **A small team where enrichment quality decides everything:** La Growth Machine. Best-rated tool here, teammates are free, and the waterfall enrichment is real. Budget from Pro, because Basic has no unified inbox.
 
@@ -825,7 +825,7 @@ The caveat is the shape of that score. 9.5% of its G2 reviews are one star, whic
 
 Snov.io comes closest, with a free trial that renews on 30-day cycles and includes 50 credits and one warm-up slot. Waalaxy's free plan, which many people remember, has been discontinued.
 
-Nothing on this list is genuinely free at working volume. If budget is the constraint, the honest comparison is Waalaxy at €19 against Snov.io at $29.25, both on annual billing.
+Nothing on this list is genuinely free at working volume. If budget is the constraint, the honest comparison is Waalaxy at $16 against Snov.io at $29.25, both on annual billing.
 
 **Does Expandi send email?**
 

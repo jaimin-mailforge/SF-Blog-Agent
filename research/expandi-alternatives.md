@@ -2,7 +2,9 @@
 
 Drafting reads this file plus `rules/writing.md`, `rules/positioning.md`, and `rules/observations.md`. Nothing else.
 
-**Status:** research complete. All nine tools evidenced. Three decisions open, listed at the end.
+**Status:** research complete, article drafted. All nine tools evidenced.
+
+**Decisions resolved 2026-08-13 by Jaimin.** Skylead is FAQ-only with no section. The Meet Alfred refund theme stays out. Waalaxy pricing corrected from a live screenshot. One first-person specific is accepted for this article rather than the two `rules/writing.md` section 7 asks for, since `observations.md` funds only OBS-001 here. That gap is a known shortfall, not an oversight, and the fix is a real LinkedIn test feeding the observation log.
 
 ---
 
@@ -196,7 +198,9 @@ Three things to carry forward:
 
 ## Tool list change from the current page
 
-The live page covers seven tools: Salesforge, HeyReach, Skylead, La Growth Machine, lemlist, Dripify, Meet Alfred. The approved outline covers eight. **Skylead is dropped, Waalaxy and Snov.io are added.** Note that one of the four live PAA questions asks about the difference between Skylead and Expandi, so dropping Skylead entirely leaves that question unanswered. Options: answer it in the FAQ without giving Skylead a section, or reinstate Skylead. Flagged for a decision.
+The live page covers seven tools: Salesforge, HeyReach, Skylead, La Growth Machine, lemlist, Dripify, Meet Alfred. The approved outline covers eight. **Skylead is dropped, Waalaxy and Snov.io are added.**
+
+**Resolved 2026-08-13 by Jaimin: Skylead is answered in the FAQ with no tool section, and the title stays at 8.** Its live pricing is recorded below. Do not write ratings, a LinkedIn action list, or an annual rate for it, because none of those are verified.
 
 ## Evidence: access limits that shape the article
 
@@ -297,11 +301,25 @@ Two hard sourcing warnings:
 
 ## Evidence: Waalaxy
 
-**Pricing**, waalaxy.com/pricing, read 2026-08-13. Per user. Pro **€19**, Advanced **€49**, Business **€69** per user per month. Enterprise unpriced, for teams of 5+.
+**CORRECTED 2026-08-13 from a screenshot of the live pricing page, verified by Jaimin.** The earlier extraction in this brief was wrong on currency, on price, and on the discount. Everything below replaces it.
 
-**Those are annual-tab prices, and the monthly figures could not be recovered.** The toggle defaults to Yearly at minus 50 percent, and the monthly and quarterly numbers exist only after a JavaScript click. They are absent from the HTML and from all 28 Framer bundles. The vendor FAQ confirms quarterly at minus 20 percent and annual at up to 50 percent savings. **Do not print a monthly euro figure.** The page's own JSON-LD lists 19 / 39 / 69 USD, which contradicts the rendered €49, so ignore the schema.
+**Pricing**, waalaxy.com/pricing. **USD, not EUR.** Per user per month on the **Yearly** tab, which is the tab the page opens on:
 
-**Two gating facts that matter more than the price.** Email sequences and LinkedIn-plus-email campaigns exist **only on the €69 Business tier**, so Pro and Advanced are LinkedIn-only. And the **LinkedIn Inbox is a €20 per month add-on**, never bundled on any plan, with a free tier of 500 conversations. The invite ceiling is **800 a month even at the top tier**. No email warm-up anywhere on the site. 14-day trial on all three plans, and **the free plan people remember is gone**.
+| Plan | Billed yearly | Invitations per month |
+|---|---|---|
+| Pro | **$16** | 300 |
+| Advanced | **$32** | 800 |
+| Business | **$55** | 800 |
+
+Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 percent**, not the "up to 50 percent" the FAQ claims. 14-day free trial on all three plans.
+
+**Still not recovered: the monthly rates.** The screenshot shows the Yearly tab selected. Do not derive the monthly figures from the 20 percent, because the rounding is unknown. The draft states the discount and sends the reader to the page.
+
+**What the earlier extraction got wrong, recorded so the same error is not repeated.** It reported €19 / €49 / €69 against an actual $16 / $32 / $55, and a 50 percent annual discount against an actual 20 percent. The euro figures were probably a geolocated variant, a stale render, or the JSON-LD this brief already flagged as contradictory. **A screenshot of the rendered page beats any extraction of it.**
+
+**Gating facts, from the screenshot's own feature lists.** Cold email sequences and multichannel LinkedIn-plus-email campaigns are **Business only**, which also adds 500 email finder credits. Pro covers unlimited campaigns, pre-built prospecting sequences, automated follow-ups, CRM synchronisation and team collaboration tools. **Advanced is where the maximum LinkedIn invitation limits, API access, the Make, Zapier and N8N modules, and live chat support begin.** The invite ceiling is **800 a month even at the top tier**, and Pro is capped at 300. No email warm-up anywhere on the site.
+
+**Two claims from the old extraction are now unverified and are out of the draft.** The **€20 per month LinkedIn Inbox add-on** with a 500-conversation free tier does not appear anywhere in the screenshot, and the pricing that surrounded it was wrong, so it cannot be trusted. The claim that **the free plan is discontinued** is still in the draft's FAQ and needs a second look on the live page before publishing.
 
 **Ratings.** Capterra **4.4 from 253 reviews**, ease 4.3, customer service 4.5.
 
