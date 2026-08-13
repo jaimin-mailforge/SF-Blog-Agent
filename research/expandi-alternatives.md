@@ -48,13 +48,12 @@ Approved 2026-08-13, with four amendments agreed the same day.
 
 1. Introduction
 2. TL;DR: 8 Expandi Alternatives
-3. Why People Leave Expandi
-   1. Per-Seat Pricing That Doubles With Add-Ons
-   2. Account Restrictions Even Inside "Safe" Limits
-   3. LinkedIn-First, Email Bolted On
-   4. Billing Disputes and Refund Refusals
+3. Why People Leave Expandi (three sub-sections, revised 2026-08-13)
+   1. The $99 Seat That Becomes $168
+   2. LinkedIn-First, Email Bolted On
+   3. One Seat Per LinkedIn Account, Paid Whether You Use It Or Not
 4. How I Evaluated These Expandi Alternatives
-5. Feature Comparison: Top 5 Expandi Alternatives (HTML template, 6 columns: Salesforge plus 4)
+5. Feature Comparison: Top 5 Expandi Alternatives (HTML template, 6 columns: **Salesforge, HeyReach, Dripify, lemlist, Snov.io**, decided 2026-08-13)
 6. Salesforge
 7. HeyReach
 8. Dripify
@@ -65,14 +64,14 @@ Approved 2026-08-13, with four amendments agreed the same day.
 13. Snov.io
 14. **When Expandi Is Still the Better Choice** (added)
 15. Final Verdict: Which Expandi Alternative is Best?
-16. FAQs
+16. FAQs, including a two-sentence answer to "What is the difference between Skylead and Expandi?" Skylead gets **no section**, decided 2026-08-13
 
 ### Per-tool section shape
 
 Every tool section runs in this order:
 
 1. `**Best for:** [specific buyer] [specific use case] [specific constraint]` (added)
-2. `**Capterra Rating:** X.X out of 5 (N reviews)` (added, source changed from G2 on 2026-08-13)
+2. `**G2 Rating:** X.X out of 5 (N reviews)` (added)
 3. Narrative intro, 2 to 4 paragraphs, distinct opening angle per tool
 4. Key features, bold-label bullets
 5. Pros and cons, table, rows reflect reality and are not padded to match
@@ -397,29 +396,65 @@ These are the three patterns the article's argument rests on. All from the evide
 
 That third pattern is the honest reason Salesforge earns the top slot on this article's dimension. Not "more features". A team of five running five LinkedIn accounts pays five multiples almost everywhere in this set.
 
-## Ratings: decided
+## Ratings: decided and verified
 
-**Capterra only. No Trustpilot, no G2.** Decided by Jaimin 2026-08-13. Both are hard-403 to every automated route, and chasing them is not worth the time. The per-tool line therefore reads **`Capterra Rating:`**, not `G2 Rating:`, which is a change to the approved per-tool shape.
+**G2 is the primary source. Capterra is the secondary. No Trustpilot.** Jaimin captured all nine G2 pages directly on 2026-08-13 after every automated route failed, including curl, the fetch tool, and headless Chromium through the agent proxy. Recorded as verified by Jaimin.
 
-Verified 2026-08-13, all from live Capterra product pages:
+The per-tool line reads **`G2 Rating: X.X out of 5 (N reviews)`**, which restores the original approved shape.
 
-| Tool | Capterra | Reviews | Notable sub-score |
-|---|---|---|---|
-| Dripify | 4.7 | **477** | support 4.6 |
-| lemlist | 4.6 | **387** | ease 4.5, support 4.6 |
-| Waalaxy | 4.4 | **253** | support 4.5 |
-| Snov.io | 4.5 | **215** | support 4.7 |
-| La Growth Machine | 4.9 | 45 | **support 5.0** |
-| Expandi | 4.4 | 31 | support 4.3 |
-| Meet Alfred | **2.8** | 13 | **support 1.9** |
-| HeyReach | 5.0 | **2** | n too small to mean anything |
+| Tool | G2 | Reviews | Capterra | Reviews |
+|---|---|---|---|---|
+| lemlist | 4.6 | **1,906** | 4.6 | 387 |
+| Waalaxy | 4.5 | **1,503** | 4.4 | 253 |
+| Snov.io | 4.5 | 497 | 4.5 | 215 |
+| Dripify | 4.5 | 348 | 4.7 | 477 |
+| Expandi.io | **4.2** | 158 | 4.4 | 31 |
+| Salesforge | 4.6 | 137 | not listed | none |
+| HeyReach | 4.6 | 71 | 5.0 | 2 |
+| La Growth Machine | 4.6 | 56 | 4.9 | 45 |
+| Meet Alfred | **3.4** | 37 | **2.8** | 13 |
 
-**Always print the review count with the score.** The spread runs from 477 reviews to 2, and a score without its base is misleading.
+Two problems solved. **HeyReach now has 71 reviews instead of 2**, so it gets a normal rating line and the small-base caveat is gone. And **Salesforge has a verified figure**, so the routed product is no longer the only tool without one.
 
-**Two gaps to close.**
+The two platforms agree closely everywhere except Dripify, where Capterra is higher, and Meet Alfred, where both are low. **Use G2 in the rating line, and reach for the Capterra figure only where the divergence is the point.**
 
-1. **HeyReach's base is 2 reviews.** State the score with the count and add a one-line note that the base is too small to read anything into. That is honest, and it doubles as a fair signal that HeyReach is the newest tool here.
-2. **Salesforge has no Capterra listing at all.** Confirmed by a domain-scoped search, which returns Salesforce products and no Salesforge page. So the routed product would be the only tool in the article without a rating line, which reads badly. **Jaimin to supply the Salesforge G2 figure**, since it is his own product and a live read takes a minute. The benchmark cold email article used "4.6 out of 5, based on 84 reviews" but that is unverified and must not be reused without a fresh check.
+### The one-star share, which replaces the cut ban claim
+
+Computed from G2's own star distributions. This is the strongest evidence in the article for why people leave Expandi, and it needs no unverifiable complaint sourcing.
+
+| Tool | 1-star reviews | Share of total |
+|---|---|---|
+| Meet Alfred | 8 of 37 | **21.6%** |
+| **Expandi.io** | **15 of 158** | **9.5%** |
+| Dripify | 17 of 348 | 4.9% |
+| Salesforge | 5 of 137 | 3.6% |
+| La Growth Machine | 2 of 56 | 3.6% |
+| Snov.io | 15 of 497 | 3.0% |
+| HeyReach | 2 of 71 | 2.8% |
+| lemlist | 20 of 1,906 | 1.0% |
+| Waalaxy | 7 of 1,503 | 0.5% |
+
+**Expandi's one-star share is roughly ten times Waalaxy's and nineteen times lemlist's**, against a respectable 4.2 overall. That is a bimodal distribution: most users are happy and a hard tenth are not. State the arithmetic, do not speculate about what those 15 reviews say, because the review text is not reachable.
+
+Meet Alfred at 21.6 percent is worse still, and it is the lowest-rated tool on **both** platforms, 3.4 on G2 and 2.8 on Capterra. Two independent platforms agreeing is far stronger than the 13-review Capterra base alone.
+
+### G2 con tags, which corroborate the complaint themes
+
+G2 counts these across its full review set, so they are better evidence than per-page reviewer counting. Every theme the agents found now has an independent number behind it.
+
+| Tool | Top con tags | What it corroborates |
+|---|---|---|
+| Expandi.io | Technical Issues (4), Delays (4), Integration Issues (2), Credit Limitations (2) | Campaign instability, and note that **no ban or restriction tag appears at all** |
+| Dripify | **Expensive (37)**, Limited Features (22), Inefficient Workflow (15), **Email Limitations (11)** | The cost complaint, and independently the 200-a-day single-mailbox email cap |
+| Waalaxy | **Expensive (30)**, Campaign Management (22), Missing Features (21), **Plan Limitations (19)** | Price against value, and the tier gating that puts email on the €69 plan |
+| lemlist | **Missing Features (208)**, **Expensive (140)**, Learning Curve (125), Email Management (77) | Per-seat cost at team scale |
+| Snov.io | **Email Issues (46)**, Email Management (32), Missing Features (29) | Deliverability degradation at scale. Its top con is email, on an email-first tool |
+| La Growth Machine | Technical Issues (3), Software Bugs (3), Error Issues (3), Data Inaccuracy (2) | The bugs theme, and confirms it stays thin |
+| HeyReach | Update Issues (2), Poor Customer Support (2), Limited Features (2), Expensive (2) | **Confirms there is no strong complaint theme.** Nothing above 2 |
+| Meet Alfred | Poor Customer Support (1), Missing Features (1) | Thin on G2, but the 3.4 rating and 21.6% one-star share carry it |
+| Salesforge | **Learning Curve (15)**, Missing Features (7), Expensive (7), Complexity (5), Confusion (4) | Our own evidenced limitation, see below |
+
+**Salesforge's honest limitation is now evidenced rather than invented.** `rules/writing.md` requires at least one real limitation of our own product, and Learning Curve at 15 mentions is the one to use, with Complexity at 5 and Confusion at 4 behind it. Write it as the interface taking a few days to get comfortable with, which is what the tags describe and what a heavy multichannel product costs a new user.
 
 ## Why People Leave Expandi: claim status
 
