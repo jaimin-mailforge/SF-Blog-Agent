@@ -384,6 +384,31 @@ Other add-ons: enrichment tokens at $0.02 each with 90-day validity, sending dom
 
 **Wrong for** anyone whose primary channel is LinkedIn, since the product is email-first and LinkedIn inverts its price advantage. Also wrong as a lead database.
 
+## Evidence: Skylead, for the PAA answer only
+
+Added 2026-08-13 to resolve the flagged Skylead decision. **Answered in the FAQ, no tool section.**
+
+**Pricing**, skylead.io/pricing, read 2026-08-13 from rendered page text. All-in-one **$100 per seat per month**. Agency **$999 for 50 seats per month, or $1,999 for unlimited seats**, both talk-to-sales. A third Annual plan is unpriced and described only as "Pay 10 months & get 2 months free" with a white-label option. 7-day free trial.
+
+**Why this is the sharpest available answer to the PAA question.** All-in-one includes **unlimited Image and GIF personalization** in the $100 seat price, which is the exact feature Expandi charges Hyperise $69 a seat for. It also includes infinite email warm-up, unlimited email accounts, 100,000 emails a month, and an email finder and verifier. So Skylead is the closer like-for-like swap at $100 against Expandi's $99, and Expandi's real comparable is $168.
+
+**Verified feature list** from the same page: account-based prospecting, B2B database, AI data enrichment add-on, AI SDR add-on, LinkedIn automation, unlimited email automation, spintax and Liquid syntax, API integration, smart sequences, cloud-based, localized in 7 languages.
+
+**Not verified:** review ratings, LinkedIn action list, per-seat annual rate. Do not write any of those.
+
+## Internal link targets, verified live 2026-08-13
+
+All return 200. Anchors must be distinct and read as prose.
+
+| URL | Use |
+|---|---|
+| /blog/linkedin-automation-tools | The category page this article links up to. Never compete with it |
+| /blog/heyreach-vs-expandi | From the HeyReach routing line |
+| /blog/expandi-vs-dripify | From the Dripify routing line |
+| /blog/cold-email-software | From the email-led routing line |
+| /blog/email-sequence-software | From the sequencing or FAQ context |
+| /blog/linkedin-ai-tools | From the personalization or AI context |
+
 ## Cross-cutting findings
 
 These are the three patterns the article's argument rests on. All from the evidence above.

@@ -37,6 +37,12 @@
   product, but adding bare `Seamless` to the exemption list would let real uses of
   the banned word through. Leaving it to fire and be dismissed by a human. One
   false positive per article is an acceptable price for not opening that hole.
+- **A sentence ending on a single capital letter does not split.** The initials rule
+  strips the period from `\b[A-Z]\.` so "Frank S. Sondors" stays one sentence, and
+  that also eats the period in "LinkedIn, email and X. It is cheaper", gluing two
+  sentences together. X is a real brand in this category, so this will recur. Every
+  narrower rule tried also matches "J. Smith", so it needs a real fix rather than a
+  tweak. Worked around in the Expandi draft by not ending a sentence on X.
 - **`meta-missing` on every published page.** Either Webflow sets the description
   somewhere the extractor does not read, or the articles genuinely ship without
   one. Needs a look in Webflow before it can be treated as a real defect.

@@ -750,3 +750,91 @@ The con tags point at one thing, and it is the awkward one. Email Issues leads a
 An email-first tool whose top complaint is email deserves a straight reading. Around five reviewers raise data accuracy and freshness, and three describe deliverability getting worse as volume grows.
 
 Treat the low price as a reason to test properly rather than a reason to skip testing. Run a placement check on your own domains during the free trial before you commit a list to it.
+
+## When Expandi Is Still the Better Choice
+
+I have spent this article arguing that Expandi's billing unit is the wrong shape for most teams. That is a pricing argument, not a product one. On LinkedIn alone, Expandi does things nothing else on this page can.
+
+**It has the widest LinkedIn campaign surface here, by a distance.** Eleven campaign types, including Mobile Connector, which Expandi says adds 100 connection requests a week on top of your normal quota. Open InMail, Group, Event Invite, Company Follow Invite, Inbound and Recovery all exist as their own campaign types rather than as steps.
+
+**Its conditional builder is genuinely deeper than the alternatives.** Three true or false conditions, plus engagement actions no other tool in this comparison offers. Skill endorsement, liking a post, liking a company post, and inviting someone to follow your company page.
+
+**It also treats account safety as a feature rather than a disclaimer.** Execution is cloud-based with a dedicated country-based IP per account, profile auto warm-up, and randomised daily limits the tool refuses to let you exceed.
+
+So stay on Expandi if you run one LinkedIn account and LinkedIn is the whole motion. Stay too if image or GIF personalization is central to how you open. You are already paying Hyperise, and switching costs you the campaign types above.
+
+Stay too if you are an agency at ten or more seats. Expandi's Agency tier is unpublished, and a negotiated rate at that volume may well beat anything on this list. Ask for it before you migrate.
+
+If LinkedIn really is the whole motion, the broader category of [LinkedIn automation tools](https://www.salesforge.ai/blog/linkedin-automation-tools) is worth reading before you commit to any of these eight.
+
+## Final Verdict
+
+Eight tools, and the right one depends almost entirely on your billing unit rather than your feature list. Here is how I would route it.
+
+**Running email and LinkedIn as one motion, three to fifteen people:** Salesforge. Flat pricing, unlimited mailboxes and senders on Growth, warm-up included, both channels in one inbox. This is the one place it clearly leads, and it is the dimension this article is about.
+
+**An agency running many LinkedIn accounts with several people on each:** HeyReach. Humans are free and only LinkedIn accounts are billable, which is the cleanest agency structure here. The head-to-head is worth reading if you are deciding between [HeyReach and Expandi](https://www.salesforge.ai/blog/heyreach-vs-expandi) specifically.
+
+**One or two people who want native email at the lowest price:** Dripify. It is the value pick below three seats, and the [full Expandi and Dripify comparison](https://www.salesforge.ai/blog/expandi-vs-dripify) goes deeper than this page can.
+
+**LinkedIn only, cheapest possible entry:** Waalaxy at €19. Accept the 800-invite ceiling and the €20 inbox add-on, and it is unbeatable on price.
+
+**A small team where enrichment quality decides everything:** La Growth Machine. Best-rated tool here, teammates are free, and the waterfall enrichment is real. Budget from Pro, because Basic has no unified inbox.
+
+**Email-only at volume:** the lemlist Email plan at $55 flat with unlimited users. If you need every channel in one sequence and the budget allows, lemlist Multichannel spans more than anything else.
+
+**Email-first at low volume with a big team:** Snov.io. $29.25 with unlimited seats is the cheapest credible entry, as long as LinkedIn stays secondary.
+
+**Three channels including X, on the tightest budget:** Meet Alfred, with your eyes open about the support record.
+
+**And who none of this is for.** If you run one LinkedIn account and send nothing by email, every option here costs you something and saves you nothing. Stay on Expandi.
+
+The through-line, if you take one thing from this page: count what you are billed for before you count features. Expandi bills per seat where a seat is a LinkedIn account, and you pay for idle ones. Most of this list does not.
+
+If email and LinkedIn in one branching sequence is what you came for, [start a free 14-day trial](https://app.salesforge.ai/signup), no credit card needed.
+
+## Frequently Asked Questions
+
+**How much does Expandi cost?**
+
+$99 per seat per month, or $79 per seat on annual billing. One seat connects one LinkedIn account, and you pay for purchased seats whether or not anything is connected to them.
+
+The number to plan around is higher. Image and GIF personalization is not included, and it runs through Hyperise from $69 per seat per month. So the configuration most people are comparing costs $168 per seat.
+
+The Agency tier starts at ten seats and its rate is not published anywhere.
+
+**What is the difference between Skylead and Expandi?**
+
+Skylead's All-in-one plan is $100 per seat per month against Expandi's $99. That $100 includes unlimited image and GIF personalization plus email warm-up. Expandi charges neither, because it has no warm-up and routes personalization through Hyperise at $69 a seat.
+
+So on a like-for-like basis Skylead is roughly $100 where Expandi is $168. Skylead's agency pricing is published too, at $999 for 50 seats or $1,999 for unlimited seats, where Expandi's is behind a sales call.
+
+**What is the difference between Meet Alfred and Expandi?**
+
+Meet Alfred runs LinkedIn, email and X as three channels of one sequence. It is also much cheaper at $29 per user per month on annual billing. Note that its Basic plan is LinkedIn-only, so the real multichannel price is $49.
+
+Expandi is the stronger LinkedIn product and has the better record. On G2 it holds 4.2 from 158 reviews against Meet Alfred's 3.4 from 37, and Meet Alfred's one-star share is 21.6% against Expandi's 9.5%.
+
+**Is expandi.io good?**
+
+Yes, with a specific caveat. It rates 4.2 out of 5 on G2 from 158 reviews and 4.4 on Capterra from 31. It also has the deepest LinkedIn campaign builder in this comparison.
+
+The caveat is the shape of that score. 9.5% of its G2 reviews are one star, which is roughly ten times Waalaxy's share, so satisfaction is split rather than middling. It is also LinkedIn-first: email is a single step inside one campaign type, email replies do not reach the inbox, and there is no warm-up.
+
+**What is the best free Expandi alternative?**
+
+Snov.io comes closest, with a free trial that renews on 30-day cycles and includes 50 credits and one warm-up slot. Waalaxy's free plan, which many people remember, has been discontinued.
+
+Nothing on this list is genuinely free at working volume. If budget is the constraint, the honest comparison is Waalaxy at €19 against Snov.io at $29.25, both on annual billing.
+
+**Does Expandi send email?**
+
+It sends email, but not as a channel. There is an Email action and an "If email exists" condition, and both exist only inside the Builder campaign type.
+
+You connect your own Gmail or Outlook mailbox, and reply detection needs IMAP rather than SMTP. There is no email infrastructure and no warm-up, and Expandi publishes its own guide to running the email leg through Smartlead instead. If email is half your motion, compare dedicated [cold email software](https://www.salesforge.ai/blog/cold-email-software) or an [email sequence tool](https://www.salesforge.ai/blog/email-sequence-software) rather than a LinkedIn tool with an email step.
+
+**Which Expandi alternative has the best AI personalization?**
+
+lemlist and Salesforge are the two to look at, for different reasons. lemlist built its reputation on personalization and prices intent signals in credits, from 20 for a website visit up to 400 for LinkedIn engagement.
+
+Salesforge writes email and LinkedIn copy across 20+ languages using AI variables that pull company news and LinkedIn activity. For a wider view of what these tools can and cannot write, the [LinkedIn AI tools](https://www.salesforge.ai/blog/linkedin-ai-tools) roundup covers the category in more depth.
