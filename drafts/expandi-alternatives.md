@@ -16,7 +16,9 @@ Then there is the line its own pricing page footnotes. Image and GIF personaliza
 
 So the setup people are actually comparing against costs $168 per seat per month. I have not found a single article that prints that number.
 
-I went through the live pricing page, the product docs and the G2 review data for every tool below. Eight made the list. Most of the ones that did not fell down on the same thing. They do LinkedIn only, and email arrives later as a step rather than a channel.
+I went through the live pricing page, the product docs and the G2 review data for every tool below. Eight made the list.
+
+Most of the ones that did not fell down on the same thing. They do LinkedIn only, and email arrives later as a step rather than a channel.
 
 ## TL;DR: 8 Expandi Alternatives
 
