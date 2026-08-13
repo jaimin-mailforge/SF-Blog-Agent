@@ -54,6 +54,8 @@ def mask(text):
     t = re.sub(r'^.*\s{6,}.*$', blank, t, flags=re.M)     # padded table remnants
     t = re.sub(r'\]\([^)\s]*\)', blank, t)               # link targets
     t = re.sub(r'https?://\S+', blank, t)                # bare urls
+    t = re.sub(r'(?is)<style\b.*?</style>', blank, t)     # css blocks in the comparison table
+    t = re.sub(r'<[^>]+>', blank, t)                     # html tag markup, cell text survives
     return t
 
 def sentences(prose_lines):
