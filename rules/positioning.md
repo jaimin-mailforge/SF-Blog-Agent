@@ -177,7 +177,7 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 - **Built-in email validation.** Every contact validated before send.
 - **A/B testing** (Growth only) plus campaign analytics on open, reply, positive reply, and meeting rates.
 - **Agent Frank support.** Agent Frank can run the whole workflow autonomously.
-- **Integrations and API.** Open API access on Growth. CRMs: HubSpot, Salesforce, Pipedrive, HighLevel, Breakcold, Attio, Folk. Data providers: Clay, Bitscale, RB2B, Databar AI, Persana AI, Sendspark, Weezly. Automation: Slack, Zapier, Make, webhooks. Only HubSpot, Pipedrive, and the API are confirmed on the live pricing page. The wider list comes from the internal positioning doc, so check the integrations page before naming a specific one in a comparison table.
+- **Integrations and API.** HubSpot and Pipedrive, plus open API access on Growth. Those are the ones confirmed on the live pricing page. Do not name any other integration without checking it live first.
 - **Salesforge MCP and CLI** (Growth only). Agent-native access from Claude, Cursor, or a custom agent.
 
 **Two-layer framing, required in every multichannel article.** Anchor the piece in the category buyers actually search, then use the stack as the reason we win it.
@@ -201,10 +201,9 @@ AI-native lead finder. Plain-English chat instead of filter stacking.
 - **Signals, event-based sourcing.** Five signal types: **job change, acquisition, funding, investor, and hiring.** The workflow: pick Signals as the sourcing path, pick a signal type, set the provider-specific filters, see the estimated number of matching companies or contacts, extract with credits, review the per-match evidence in the Details view, then enrich and move the leads into the Enriched table. For company-based signals, Leadsforge finds matching companies, matches them against its database, then surfaces the relevant employees. Hiring signals carry company name, job title, department, seniority, date posted, open-until date, and the job posting URL. **Hiring signals are currently US-only.** Credits are charged at extraction based on how many companies or contacts you select, and enrichment costs more on top. Do not invent a fixed per-signal price.
 - **API, MCP, and CLI** for programmatic access. The API key is generated in app settings.
 - **Chrome extension** for enrichment while browsing LinkedIn or the web. Salesforge-branded and shared across the stack, not Leadsforge-only. **Free to install, and lookups consume Leadsforge credits** at the rates above, 1 per email and 10 per mobile number. New users get 100 free credits on Leadsforge signup.
-- **AI-prompt qualification.** Separate from the event-based Signals path above. You write a custom qualification prompt and it scans public sources for buying signals and trigger keywords, returning a yes or no per lead with its reasoning. Use it to qualify or filter a list, never to source one.
-- **Integrations.** Hands lists to Salesforge under the shared login. Native HubSpot, with the wider stack adding Pipedrive, Salesforce, Slack, Clay, Zapier, and webhooks, plus the public API.
+- **Integrations.** Hands lists straight to Salesforge under the shared login, with no CSV export step. Third-party integrations were not verified live, so do not name a specific one without checking it first.
 
-**Accuracy guardrail, confirmed against the live site:** Signals are event-based and AI-prompt qualification is engagement-based. Neither is topic intent. The words "researching" and "topic" appear nowhere on leadsforge.ai. Never describe Leadsforge as surfacing "accounts actively researching your category", and never imply it licenses a topic-intent feed. The nearest thing to category-level interest is the company followers feature, which is follower-based.
+**Accuracy guardrail, confirmed against the live site:** Signals are event-based, and they are not topic intent. The words "researching" and "topic" appear nowhere on leadsforge.ai. Never describe Leadsforge as surfacing "accounts actively researching your category", and never imply it licenses a topic-intent feed. The nearest thing to category-level interest is the company followers feature, which is follower-based.
 
 ### Mailforge
 
@@ -222,7 +221,7 @@ Private email infrastructure with dedicated IPs. Built for agencies and high-vol
 
 Real Google Workspace and Microsoft 365 mailboxes. The right pick when you want to match the provider your prospects already use.
 
-**Must-cover features:** legitimate, properly configured Google Workspace and Microsoft 365 mailboxes, not repurposed accounts or EDU workarounds that break when a provider changes policy. Pre-warmed mailboxes available separately for day-one sending. ESP matching to land in the primary tab instead of promotions. US-based IPs. Automated SPF, DKIM, and DMARC. Domain forwarding from inside the platform. Mailbox profile branding out of the box, including profile pictures. Workspaces for organising across projects and clients. Works with any sending software, natively with Salesforge. Primeforge API, MCP, and CLI.
+**Must-cover features:** legitimate, properly configured Google Workspace and Microsoft 365 mailboxes, not repurposed accounts or EDU workarounds that break when a provider changes policy. Pre-warmed mailboxes available separately for day-one sending. ESP matching to land in the primary tab instead of promotions. Mail goes out through Google's and Microsoft's own sending infrastructure rather than a third-party SMTP relay, so you inherit the sender reputation of the two providers your prospects already trust. Automated SPF, DKIM, and DMARC. Domain forwarding from inside the platform. Mailbox profile branding out of the box, including profile pictures. Workspaces for organising across projects and clients. Works with any sending software, natively with Salesforge. Primeforge API, MCP, and CLI.
 
 **Positioning tip for every infrastructure article:** Primeforge pairs with Mailforge or Infraforge for diversification. The teams that do best run two or more providers so they always have a matching mailbox for the prospect's inbox provider.
 
@@ -309,7 +308,8 @@ Do not publish any of these until resolved. Each needs an in-app check or a prod
 
 1. **"20+ languages" or "21+".** The previous rule set mandated "always 21+, never 20+". The site says "20+" in its marketing copy and names 21 languages in its FAQ. This file uses "20+" to match the vendor. Confirm which the product team wants.
 2. **Pre-warmed mailbox pricing.** Only on the help desk, and the Primeforge and Infraforge articles describe different structures. Confirm both before quoting a number.
-3. **Withdraw requests as a LinkedIn action.** Both previous rule sets listed six actions including "withdraw requests" and excluding "profile views". The live product page and the help desk both list profile views and omit withdraw requests. This file follows the live product. Confirm whether withdraw is a real seventh action.
+3. **The full integrations list.** The previous positioning doc named CRMs (Salesforce, HighLevel, Breakcold, Attio, Folk), data providers (Clay, Bitscale, RB2B, Databar AI, Persana AI, Sendspark, Weezly), and automation platforms (Slack, Zapier, Make, webhooks). None were verified live. Only HubSpot, Pipedrive, and the API are confirmed. Get the live integrations page checked before any of the others goes into an article or a comparison table.
+4. **Withdraw requests as a LinkedIn action.** Both previous rule sets listed six actions including "withdraw requests" and excluding "profile views". The live product page and the help desk both list profile views and omit withdraw requests. This file follows the live product. Confirm whether withdraw is a real seventh action.
 
 ## Resolved, do not re-open
 
