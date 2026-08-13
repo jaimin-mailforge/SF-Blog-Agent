@@ -268,7 +268,7 @@ Almost every article needs one. Use the HTML template in `assets/comparison-tabl
 
 Row swaps by routed product: for Leadsforge, replace rows 3 and 5 with "Chat-based lead finder" and "Company Lookalikes and Competitor Followers". For Warmforge, replace row 5 with "Heat Score™ tracking" and add "Inbox placement tests". For Mailforge, Infraforge, or Primeforge, replace rows 5 and 6 with "DNS setup (SPF, DKIM, DMARC)" and "Pre-warmed mailboxes".
 
-SurferSEO strips inline `<style>` blocks on export. Re-inject the CSS into the Webflow rich text block before publishing.
+Check that the CSS block survived the paste into Webflow. Rich-text editors sometimes strip an inline `<style>`, and the table looks broken without it.
 
 ---
 

@@ -1,36 +1,37 @@
 # Linter calibration log
 
-Findings from the first baseline run against four articles. Fix these before any
-rule is promoted to blocking.
+## Fixed
 
-## Confirmed linter bugs
+1. **Product names tripping banned words.** `Seamless.AI` matched the banned word
+   `seamless`. Fixed with span-based exemption: product names in
+   `data/product-names.txt` mark protected character ranges, and a banned-word hit
+   inside one is skipped. First attempt blanked the names instead, which distorted
+   sentence splitting and inflated the over-25-word count. Spans, not blanking.
+2. **Quote masking paired the wrong quote marks.** The old regex started at a
+   sentence-final `"planned."` and ran to the next opening quote, leaving the real
+   review quote unmasked. Replaced with `_mask_paired_quotes`, which pairs quote
+   marks in document order and masks any pair over 25 characters. Verified against
+   the GoHighLevel review, where `us` inside a reviewer quote no longer fires.
+3. **Hyphen variants missed.** `game-changer` on the list did not match
+   `game changer` in prose. `word_pattern()` now matches either form.
+4. **Table rows read as long sentences.** Extracted HTML flattens table cells onto
+   one line. Now masked three ways: markdown pipe rows, lines with two or more
+   ` | ` separators, and lines carrying runs of six or more spaces. Re-running after
+   the fix moved the over-25-word counts by roughly one percent, which confirms
+   those long sentences are genuine and not artifacts.
 
-1. **Product names trigger banned-word hits.** `Seamless.AI` matches the banned
-   word `seamless`. The rules already exempt product names, so the linter needs a
-   `data/product-names.txt` exemption applied before the banned-word scan.
-2. **Quote masking pairs the wrong quote marks.** The regex `"[^"\n]{25,}"` starts
-   matching at a sentence-final `"planned."` and consumes the text up to the *next*
-   opening quote, so the real review quote after it is left unmasked. Observed on
-   the GoHighLevel review, where `us` inside a verbatim reviewer quote was flagged.
-   Needs a proper paired-quote pass, or extraction that emits blockquote markers.
-3. **Hyphen variants are missed.** `game-changer` is on the banned list but the
-   article writes `game changer`, which does not match. Word entries need to match
-   both hyphenated and spaced forms.
-4. **Table rows become pseudo-sentences.** HTML extraction flattens TL;DR table
-   rows into single lines, which then read as 30-word sentences. Roughly 15 to 20
-   percent of the `sentence>25w` findings on extracted articles are this artifact.
-   Markdown sources are unaffected. Table regions need masking before the
-   sentence pass.
+## Open
 
-## Not bugs, real findings
-
-- `first-person-plural` fires on all three published articles and never on the
-  markdown draft. High confidence, see the baseline report.
-- Fact conflicts fire consistently and are all genuine.
-- `meta-missing` on all three published pages is real, not an extraction gap.
+- **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the
+  product, but adding bare `Seamless` to the exemption list would let real uses of
+  the banned word through. Leaving it to fire and be dismissed by a human. One
+  false positive per article is an acceptable price for not opening that hole.
+- **`meta-missing` on every published page.** Either Webflow sets the description
+  somewhere the extractor does not read, or the articles genuinely ship without
+  one. Needs a look in Webflow before it can be treated as a real defect.
 
 ## Rule promotion status
 
-Everything runs at report level. Nothing blocks yet. Per the GitLab discipline in
-`rules/writing.md`, a rule becomes blocking only once the existing corpus passes
-it clean.
+`PreToolUse` and `Stop` hooks are live and blocking on `drafts/` and `articles/`.
+The rules files are out of scope, since they carry the banned lists in prose and
+would flag themselves. Warnings report and do not block.

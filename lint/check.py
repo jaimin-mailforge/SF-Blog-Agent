@@ -7,9 +7,37 @@ def load(n):
     return [l.strip() for l in open(p, encoding='utf-8') if l.strip() and not l.startswith('#')]
 
 BANNED_WORDS = load('banned-words.txt')
+PRODUCT_NAMES = load('product-names.txt')
 BANNED_PHRASES = load('banned-phrases.txt')
 FIG_VERBS = load('figurative-verbs.txt')
 FACTS = [l.split('|', 1) for l in load('fact-conflicts.txt')]
+
+def _protected_spans(text):
+    """Character ranges covered by a product name. Banned-word hits inside these are exempt."""
+    spans = []
+    for name in PRODUCT_NAMES:
+        for m in re.finditer(re.escape(name), text, re.I):
+            spans.append((m.start(), m.end()))
+    return spans
+
+def _in_spans(i, spans):
+    return any(a <= i < b for a, b in spans)
+
+def _mask_paired_quotes(t, minlen=25):
+    """Mask review quotes by pairing quote marks in order, so a sentence-final
+    quoted word cannot swallow the text up to the next real quote."""
+    pos = [m.start() for m in re.finditer(r'"', t)]
+    out = list(t)
+    for a, b in zip(pos[0::2], pos[1::2]):
+        if b - a - 1 >= minlen:
+            for i in range(a, b + 1):
+                if out[i] != '\n': out[i] = ' '
+    return ''.join(out)
+
+def word_pattern(w):
+    """Match a banned word with either a hyphen or a space between its parts."""
+    parts = re.split(r'[-\s]', w)
+    return r'\b' + r'[-\s]'.join(re.escape(p) for p in parts) + r'\b'
 
 # ---------- masking: rules apply to body prose, not to these ----------
 def mask(text):
@@ -19,8 +47,10 @@ def mask(text):
     t = re.sub(r'```.*?```', blank, t, flags=re.S)      # code fences
     t = re.sub(r'`[^`\n]*`', blank, t)                   # inline code
     t = re.sub(r'^\s*>.*$', blank, t, flags=re.M)        # blockquotes (verbatim quotes)
-    t = re.sub(r'"[^"\n]{25,}"', blank, t)               # long quoted spans = review quotes
-    t = re.sub(r'^\s*\|.*$', blank, t, flags=re.M)       # tables
+    t = _mask_paired_quotes(t)                           # review quotes, properly paired
+    t = re.sub(r'^\s*\|.*$', blank, t, flags=re.M)       # markdown tables
+    t = re.sub(r'^.*(?:\s\|\s).*(?:\s\|\s).*$', blank, t, flags=re.M)   # extracted table rows
+    t = re.sub(r'^.*\s{6,}.*$', blank, t, flags=re.M)     # padded table remnants
     t = re.sub(r'\]\([^)\s]*\)', blank, t)               # link targets
     t = re.sub(r'https?://\S+', blank, t)                # bare urls
     return t
@@ -44,8 +74,10 @@ def check(title, meta, text, label):
     def add(sev, rule, detail): findings.append((sev, rule, detail))
 
     # words and phrases
+    prot = _protected_spans(body)
     for w in BANNED_WORDS:
-        for m in re.finditer(r'\b' + re.escape(w) + r'\b', body, re.I):
+        for m in re.finditer(word_pattern(w), body, re.I):
+            if _in_spans(m.start(), prot): continue
             add('ERROR', 'banned-word:' + w, ctx(body, m.start()))
     for p in BANNED_PHRASES:
         for m in re.finditer(re.escape(p), body, re.I):

@@ -70,7 +70,7 @@ Also re-check the Forge figures in `rules/positioning.md` against the live pages
 
 Build the gap list from the Ahrefs variants and the competitor teardown: covered, partly covered, missing. Flag the missing terms that appear in top-3 pages and carry real volume.
 
-SurferSEO is optional. Use it when the API key is current and `app.surferseo.com` is reachable, or paste the terms table manually. When it runs, treat term ranges as directional and aim for 30 to 40 percent of terms in range. Above 50 percent means the draft is over-optimized. The gap list from Ahrefs plus the teardown is enough on its own, so a missing Surfer pull does not block the article.
+No third-party term tool is in this process. The Ahrefs variants plus the competitor teardown give you the gap list, and that is enough. Chasing a term-frequency score means writing to the same template as the pages already ranking, which is the opposite of what we want.
 
 ---
 
@@ -127,7 +127,7 @@ Jaimin's checks, and none of them are delegable:
 - Any legal or comparative claim about a named vendor reviewed
 - Byline set to Frank Sondors
 
-Then paste into Webflow, re-inject the comparison table CSS because SurferSEO strips inline `<style>` on export, and publish.
+Then paste into Webflow, confirm the comparison table CSS survived the paste, and publish.
 
 ---
 
