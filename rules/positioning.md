@@ -193,7 +193,7 @@ AI-native lead finder. Plain-English chat instead of filter stacking.
 - **Waterfall enrichment.** Each lookup cascades across multiple verified providers until it finds a match. Never name the underlying providers, because the site does not.
 - **Signals, event-based sourcing.** Five signal types: **job change, acquisition, funding, investor, and hiring.** You pick the trigger, narrow by location, industry, company size and role, then extract and enrich. Every match carries evidence for why it matched. **Hiring signals are currently US-only.**
 - **API, MCP, and CLI** for programmatic access.
-- **Chrome extension** for enrichment while browsing LinkedIn or the web.
+- **Chrome extension** for enrichment while browsing LinkedIn or the web. Salesforge-branded and shared across the stack, not Leadsforge-only. **Free to install, and lookups consume Leadsforge credits** at the rates above, 1 per email and 10 per mobile number. New users get 100 free credits on Leadsforge signup.
 - **Integrations** across the Forge stack and third-party CRMs.
 
 **Accuracy guardrail, confirmed against the live site:** Signals are event-based. The words "researching" and "topic" appear nowhere on leadsforge.ai. Never describe Leadsforge as surfacing "accounts actively researching your category", and never imply it licenses a topic-intent feed. The nearest thing to category-level interest is the company followers feature, which is follower-based.
@@ -283,7 +283,10 @@ Every comparison piece includes the first two. Use the others where they fit.
 
 Do not publish any of these until resolved. Each needs an in-app check or a product-team answer, not another web search.
 
-1. **Does the Chrome extension consume Leadsforge credits?** Both previous rule sets state that lookups cost credits at 1 per email and 10 per mobile. The Chrome Web Store listing, published by Salesforge, says "Free Unlimited contact lookups". No vendor page confirms credit consumption through the extension. There is also no vendor-domain page for the extension at all. **Until this is settled, say only that the extension is free to install.**
-2. **"20+ languages" or "21+".** The previous rule set mandated "always 21+, never 20+". The site says "20+" in its marketing copy and names 21 languages in its FAQ. This file uses "20+" to match the vendor. Confirm which the product team wants.
-3. **Pre-warmed mailbox pricing.** Only on the help desk, and the Primeforge and Infraforge articles describe different structures. Confirm both before quoting a number.
-4. **Withdraw requests as a LinkedIn action.** Both previous rule sets listed six actions including "withdraw requests" and excluding "profile views". The live product page and the help desk both list profile views and omit withdraw requests. This file follows the live product. Confirm whether withdraw is a real seventh action.
+1. **"20+ languages" or "21+".** The previous rule set mandated "always 21+, never 20+". The site says "20+" in its marketing copy and names 21 languages in its FAQ. This file uses "20+" to match the vendor. Confirm which the product team wants.
+2. **Pre-warmed mailbox pricing.** Only on the help desk, and the Primeforge and Infraforge articles describe different structures. Confirm both before quoting a number.
+3. **Withdraw requests as a LinkedIn action.** Both previous rule sets listed six actions including "withdraw requests" and excluding "profile views". The live product page and the help desk both list profile views and omit withdraw requests. This file follows the live product. Confirm whether withdraw is a real seventh action.
+
+## Resolved, do not re-open
+
+**Chrome extension credit consumption.** Verified by Jaimin directly in-app on 2026-08-13: the extension is free to install and lookups do consume Leadsforge credits, 1 per email and 10 per mobile. Recorded here because the Chrome Web Store listing says "Free Unlimited contact lookups", which contradicts it. That listing is marketing copy, and in-app behaviour wins. Do not "correct" this back off the store page.
