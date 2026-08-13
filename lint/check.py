@@ -82,7 +82,15 @@ def sentences(prose_lines):
         # counting it would charge the same words twice against the 25-word ceiling.
         l = re.sub(r'^\*\*(.+?)(?:\*\*\s*:|\s*:\*\*)\s*', '', l)
         l = l.replace('**', '')
-        l = re.sub(r'\b([A-Z])\.', r'\1', l)              # initials
+        # No initials rule. It used to strip the period from `\b[A-Z]\.` so that
+        # "Frank S. Sondors" stayed one sentence, but it also ate the period in
+        # "LinkedIn, email and X. Every other tool" and glued two sentences into a
+        # false long one. Across every draft and article in the repo, that pattern
+        # matched only the bug and never a real initial, and the byline is fixed as
+        # "Frank Sondors" with no middle initial, so there is nothing to protect.
+        # If an initial ever does appear, it splits into a fragment under three
+        # words, which the filter below drops. That under-reports rather than
+        # inventing an error, which is the safer direction to fail in.
         for s in re.split(r'(?<=[.!?])\s+' + _SENT_START, l):
             s = s.strip()
             if len(s.split()) > 2: out.append(s)

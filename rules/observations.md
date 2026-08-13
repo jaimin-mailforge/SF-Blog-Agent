@@ -44,7 +44,20 @@ Real first-hand observations, recorded so the practitioner voice has true materi
 
 Gaps worth filling on the next test cycle, because articles keep needing them and we have nothing real to use.
 
-- LinkedIn connection accept rate and message reply rate from a Salesforge sequence
+**Blocking, and it blocks a whole article type.** Every LinkedIn article draws on OBS-001, the mailbox count, because that is the only usable LinkedIn-adjacent entry in this file. One entry cannot carry the two or three first-hand moments section 7 requires, so the Expandi piece ran on a single first-person specific and used category-general framing everywhere else. That is the honest fallback and it worked, but the article is thinner for it, and the next LinkedIn piece hits the same wall on the same day it starts.
+
+What to capture, from one Salesforge sequence, so the numbers land usable rather than needing a follow-up:
+
+- **Connection requests sent, accepted, and the window.** Raw counts, not a percentage. A rate computed here is traceable, a rate typed in from memory is not.
+- **Messages sent to accepted connections, and replies.** Kept separate from the accept figures, since a reply rate on sends and a reply rate on accepts are different claims and get confused constantly.
+- **Which of the six LinkedIn actions the sequence actually used**, and whether email steps ran alongside. A multichannel number cannot be quoted as a LinkedIn-only number.
+- **The daily send volume and whether it hit the 30-per-type cap.** A result at cap and a result well under it are not comparable, and the cap is a claim we make often.
+- **Dates the sequence ran**, so seasonality is on the record.
+
+One sequence with these five recorded beats three sequences summarised. Add it as an entry, do not paste it into a draft.
+
+Also wanted, lower priority:
+
 - Time from Mailforge signup to first mailbox live, measured rather than quoted from the marketing page
 - Heat Score™ progression on a fresh mailbox, week by week
 - Placement test results comparing a matched-ESP send against a mismatched one

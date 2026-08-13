@@ -45,29 +45,37 @@
    passed. Now an HTML tag immediately before the name also counts as opening. This
    matters because the mandated comparison table is HTML, not markdown.
 
+8. **A sentence ending on a single capital letter now splits.** Fixed 2026-08-13 by
+   deleting the initials rule rather than narrowing it. It stripped the period from
+   `\b[A-Z]\.` to keep "Frank S. Sondors" whole, and that ate the period in
+   "LinkedIn, email and X. Every other tool", counting two sentences as one long
+   one. Every narrower rule tried broke on either "J. Smith" or "Category A. Category
+   B". What settled it was checking the corpus: across every draft and article, that
+   pattern matched the bug twice and a real initial zero times, and the byline is
+   fixed as "Frank Sondors" with no middle initial. So the rule was protecting
+   nothing. If an initial ever appears it splits into a sub-three-word fragment the
+   filter drops, which under-reports instead of inventing an error. The Expandi draft
+   went from 393 sentences to 394, still 0 errors.
+
+9. **`PreToolUse` only sees Write and Edit.** Closed 2026-08-13 by correcting the
+   claim rather than widening the matcher. A file written through Bash, such as a
+   heredoc doing a bulk find-and-replace, never reaches the gate, so `CLAUDE.md`'s
+   claim that a violation "cannot reach disk" was only true for Write and Edit.
+   Widening to Bash would fire the linter on every unrelated shell command, so
+   `CLAUDE.md` now states the guarantee that actually holds, which is the `Stop`
+   hook: a violation cannot survive a turn. It also tells you to run the linter
+   yourself after a Bash write. Found during the judge pass on the Expandi draft,
+   where the whole contraction rewrite went in through Bash.
+
 ## Open
 
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the
   product, but adding bare `Seamless` to the exemption list would let real uses of
   the banned word through. Leaving it to fire and be dismissed by a human. One
   false positive per article is an acceptable price for not opening that hole.
-- **A sentence ending on a single capital letter does not split.** The initials rule
-  strips the period from `\b[A-Z]\.` so "Frank S. Sondors" stays one sentence, and
-  that also eats the period in "LinkedIn, email and X. It is cheaper", gluing two
-  sentences together. X is a real brand in this category, so this will recur. Every
-  narrower rule tried also matches "J. Smith", so it needs a real fix rather than a
-  tweak. Worked around in the Expandi draft by not ending a sentence on X.
 - **`meta-missing` on every published page.** Either Webflow sets the description
   somewhere the extractor does not read, or the articles genuinely ship without
   one. Needs a look in Webflow before it can be treated as a real defect.
-
-- **`PreToolUse` only sees Write and Edit.** A file written through Bash, such as a
-  Python heredoc doing a bulk find-and-replace across a draft, never reaches the
-  gate. The `Stop` hook still lints the tree and holds the turn open, so a violation
-  cannot survive a turn, but `CLAUDE.md`'s stronger claim that it "cannot reach
-  disk" is only true for Write and Edit. Either widen the matcher to Bash or soften
-  the claim. Found during the judge pass on the Expandi draft, where the whole
-  contraction rewrite went in through Bash.
 
 ## Rule promotion status
 

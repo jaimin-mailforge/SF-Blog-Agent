@@ -37,7 +37,7 @@ Never draft a section before the outline is approved. Step 6 of `rules/process.m
 
     python3 lint/run.py
 
-It checks every `[LINT]` rule and it blocks. A `PreToolUse` hook runs it on anything you write into `drafts/` or `articles/`, so a violation cannot reach disk, and a `Stop` hook refuses to end the turn while errors remain.
+It checks every `[LINT]` rule and it blocks. A `PreToolUse` hook runs it on every Write and Edit into `drafts/` or `articles/`, so a violation cannot reach disk that way. A file written through Bash skips that gate, a heredoc doing a bulk find-and-replace being the usual case, so the guarantee that actually holds is the `Stop` hook: it lints the tree and refuses to end the turn while errors remain. A violation cannot survive a turn. Run the linter yourself after any Bash write rather than waiting for the Stop hook to catch it.
 
 When it fires, fix the named violation at the named location and run it again. Do not argue with it and do not hand-check what it covers. Read for the `[JUDGE]` items instead: voice, real first-hand moments, competitor fairness, opening-frame variety across tool sections.
 
