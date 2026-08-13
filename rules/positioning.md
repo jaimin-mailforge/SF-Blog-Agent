@@ -177,8 +177,15 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 - **Built-in email validation.** Every contact validated before send.
 - **A/B testing** (Growth only) plus campaign analytics on open, reply, positive reply, and meeting rates.
 - **Agent Frank support.** Agent Frank can run the whole workflow autonomously.
-- **Integrations and API.** HubSpot, Pipedrive, plus open API access on Growth.
+- **Integrations and API.** Open API access on Growth. CRMs: HubSpot, Salesforce, Pipedrive, HighLevel, Breakcold, Attio, Folk. Data providers: Clay, Bitscale, RB2B, Databar AI, Persana AI, Sendspark, Weezly. Automation: Slack, Zapier, Make, webhooks. Only HubSpot, Pipedrive, and the API are confirmed on the live pricing page. The wider list comes from the internal positioning doc, so check the integrations page before naming a specific one in a comparison table.
 - **Salesforge MCP and CLI** (Growth only). Agent-native access from Claude, Cursor, or a custom agent.
+
+**Two-layer framing, required in every multichannel article.** Anchor the piece in the category buyers actually search, then use the stack as the reason we win it.
+
+- **The category: multichannel outreach platform.** This is what buyers compare inside. Direct competitors are Outreach, Salesloft, Reply.io, Lemlist, and LaGrowthMachine, plus stitched stacks like Instantly with Expandi bolted on.
+- **The wedge: a deliverability-first outbound operating system.** Competitors sell the outreach layer alone. Salesforge comes with the deliverability layer (Warmforge), the infrastructure layer (Mailforge, Infraforge, Primeforge), the lead layer (Leadsforge), and the autonomous execution layer (Agent Frank).
+
+Position Salesforge as the answer in the category, and pull wedge evidence to justify why.
 
 ### Leadsforge
 
@@ -191,30 +198,31 @@ AI-native lead finder. Plain-English chat instead of filter stacking.
 - **Company Lookalikes.** Feed it accounts you already close and it returns similar companies. Charged per company.
 - **Company Followers search.** Give it a company domain and get the people following that page. The vendor calls these "company followers", so do not write "competitor followers".
 - **Waterfall enrichment.** Each lookup cascades across multiple verified providers until it finds a match. Never name the underlying providers, because the site does not.
-- **Signals, event-based sourcing.** Five signal types: **job change, acquisition, funding, investor, and hiring.** You pick the trigger, narrow by location, industry, company size and role, then extract and enrich. Every match carries evidence for why it matched. **Hiring signals are currently US-only.**
-- **API, MCP, and CLI** for programmatic access.
+- **Signals, event-based sourcing.** Five signal types: **job change, acquisition, funding, investor, and hiring.** The workflow: pick Signals as the sourcing path, pick a signal type, set the provider-specific filters, see the estimated number of matching companies or contacts, extract with credits, review the per-match evidence in the Details view, then enrich and move the leads into the Enriched table. For company-based signals, Leadsforge finds matching companies, matches them against its database, then surfaces the relevant employees. Hiring signals carry company name, job title, department, seniority, date posted, open-until date, and the job posting URL. **Hiring signals are currently US-only.** Credits are charged at extraction based on how many companies or contacts you select, and enrichment costs more on top. Do not invent a fixed per-signal price.
+- **API, MCP, and CLI** for programmatic access. The API key is generated in app settings.
 - **Chrome extension** for enrichment while browsing LinkedIn or the web. Salesforge-branded and shared across the stack, not Leadsforge-only. **Free to install, and lookups consume Leadsforge credits** at the rates above, 1 per email and 10 per mobile number. New users get 100 free credits on Leadsforge signup.
-- **Integrations** across the Forge stack and third-party CRMs.
+- **AI-prompt qualification.** Separate from the event-based Signals path above. You write a custom qualification prompt and it scans public sources for buying signals and trigger keywords, returning a yes or no per lead with its reasoning. Use it to qualify or filter a list, never to source one.
+- **Integrations.** Hands lists to Salesforge under the shared login. Native HubSpot, with the wider stack adding Pipedrive, Salesforce, Slack, Clay, Zapier, and webhooks, plus the public API.
 
-**Accuracy guardrail, confirmed against the live site:** Signals are event-based. The words "researching" and "topic" appear nowhere on leadsforge.ai. Never describe Leadsforge as surfacing "accounts actively researching your category", and never imply it licenses a topic-intent feed. The nearest thing to category-level interest is the company followers feature, which is follower-based.
+**Accuracy guardrail, confirmed against the live site:** Signals are event-based and AI-prompt qualification is engagement-based. Neither is topic intent. The words "researching" and "topic" appear nowhere on leadsforge.ai. Never describe Leadsforge as surfacing "accounts actively researching your category", and never imply it licenses a topic-intent feed. The nearest thing to category-level interest is the company followers feature, which is follower-based.
 
 ### Mailforge
 
 Distributed shared email infrastructure for cold outreach. Setup in under five minutes with automated DNS and no server maintenance.
 
-**Must-cover features:** shared IP pool built for cold email rather than everyday business mail, distributed across a pool used by 10,000+ businesses. Bulk domain and mailbox creation in minutes, with guided setup that works out how many you need for your target volume. Automated SPF, DKIM, DMARC, and custom domain tracking, with bulk DNS updates. Domain flexibility with no lock-in, in or out. Workspaces per project or client, with free movement between them. SSL and domain masking as an add-on. Works with any sending software, and natively with Salesforge under a shared login. MCP and CLI for agent-native provisioning.
+**Must-cover features:** shared IP pool built for cold email rather than everyday business mail, distributed across a pool used by 10,000+ businesses. Bulk domain and mailbox creation in minutes, with guided setup that works out how many you need for your target volume. Automated SPF, DKIM, DMARC, and custom domain tracking, with bulk DNS updates. Domain forwarding, so you can point secondary domains at your main site or a landing page from inside the platform, with no external registrar. Domain flexibility with no lock-in, in or out. Workspaces per project or client, with free movement between them. SSL and domain masking as an add-on. Works with any sending software, and natively with Salesforge under a shared login. MCP and CLI for agent-native provisioning.
 
 ### Infraforge
 
 Private email infrastructure with dedicated IPs. Built for agencies and high-volume senders who want full control.
 
-**Must-cover features:** dedicated IP per mailbox on dedicated servers, so reputation is yours alone and not shared with strangers in a pool. Pre-warmed mailboxes available separately for day-one sending, otherwise expect the standard two to four week warm up. Multi-IP provisioning, each IP with its own independent reputation, so one campaign's deliverability cannot drag down another. Unlimited domains and mailboxes with automated DNS. Bulk domain and mailbox generators. Real-time deliverability monitoring with live alerts. Masterbox for viewing every reply across a workspace in one place. SSL and domain masking. Workspaces. White-label for agencies and resellers. Infraforge API, MCP, and CLI. Native Salesforge integration.
+**Must-cover features:** dedicated IP per mailbox on dedicated servers, so reputation is yours alone and not shared with strangers in a pool. Pre-warmed mailboxes available separately for day-one sending, otherwise expect the standard two to four week warm up. Multi-IP provisioning, each IP with its own independent reputation, so one campaign's deliverability cannot drag down another. Unlimited domains and mailboxes with automated DNS. Bulk domain and mailbox generators. Domain forwarding from inside the platform. Real-time deliverability monitoring with live alerts. Masterbox for viewing every reply across a workspace in one place. SSL and domain masking. Workspaces. White-label for agencies and resellers. Infraforge API, MCP, and CLI. Native Salesforge integration.
 
 ### Primeforge
 
 Real Google Workspace and Microsoft 365 mailboxes. The right pick when you want to match the provider your prospects already use.
 
-**Must-cover features:** legitimate, properly configured Google Workspace and Microsoft 365 mailboxes, not repurposed accounts or EDU workarounds that break when a provider changes policy. Pre-warmed mailboxes available separately for day-one sending. ESP matching to land in the primary tab instead of promotions. Automated SPF, DKIM, and DMARC. Mailbox profile branding out of the box, including profile pictures. Workspaces for organising across projects and clients. Works with any sending software, natively with Salesforge. Primeforge API, MCP, and CLI.
+**Must-cover features:** legitimate, properly configured Google Workspace and Microsoft 365 mailboxes, not repurposed accounts or EDU workarounds that break when a provider changes policy. Pre-warmed mailboxes available separately for day-one sending. ESP matching to land in the primary tab instead of promotions. US-based IPs. Automated SPF, DKIM, and DMARC. Domain forwarding from inside the platform. Mailbox profile branding out of the box, including profile pictures. Workspaces for organising across projects and clients. Works with any sending software, natively with Salesforge. Primeforge API, MCP, and CLI.
 
 **Positioning tip for every infrastructure article:** Primeforge pairs with Mailforge or Infraforge for diversification. The teams that do best run two or more providers so they always have a matching mailbox for the prospect's inbox provider.
 
@@ -276,6 +284,22 @@ Every comparison piece includes the first two. Use the others where they fit.
 **Best-of listicles.** These are not a place to pitch. They are a place to be the most useful reference on the internet for the category. Cover the obvious competitors, including Instantly, Smartlead, Apollo, and HubSpot Sales Hub. Skipping them makes the piece read as agenda-driven.
 
 **Head-to-head.** The reader has already narrowed to two. Help them pick correctly instead of trashing the competitor. Name the parts where the competitor is genuinely better.
+
+### First-party data and statistics posts
+
+A separate article type, and the highest-authority thing this blog can publish, because the underlying data is ours and no competitor sitting outside the stack can reproduce it. Saleshandy's cold email statistics post is built on an analysis of 53.1 million cold emails sent through their platform, and it carries organic authority for their whole blog. We have equivalent or larger data across Warmforge, Mailforge, Infraforge, and Salesforge.
+
+Article ideas that fit: reply-rate benchmarks by industry, team size, or sequence length from Salesforge send data. Deliverability benchmarks on bounce rate, spam rate, and primary placement from Warmforge placement tests plus infrastructure send logs. LinkedIn connection-accept and message-reply benchmarks. Heat Score™ progression and time-to-healthy from Warmforge. Agent Frank meetings booked per active contact. Cost per mailbox at scale across Mailforge, Infraforge, and Primeforge.
+
+Required in every one of these:
+
+- **A data methodology block right after the intro.** Name the dataset, the number of emails or sequences or accounts, the date range, and the filters applied. Pattern: "This analysis covers X million cold emails sent through Salesforge between [month] and [month], across N connected accounts and M sequences. Warm-up traffic and internal team emails were excluded."
+- **First-party charts** built from the raw data by our own team, never lifted from a third-party market report. Make the underlying numbers available to readers who want to cite them.
+- **A named data steward.** The person accountable for the dataset and reachable for methodology questions. With Frank as the byline this is usually Frank, but name whoever actually owns the numbers.
+- **A comparison against public industry benchmarks** where they exist, with an honest explanation of why ours differ. Better warm up, tighter targeting, and a different sender profile are all legitimate reasons. Say which one applies.
+- **An action per benchmark.** "Average reply rate is X percent" is a statistic. "The top decile hit Y percent and shared these three habits" is a benchmark. Close every benchmark section by telling the reader what to do about it.
+
+Aim for four to six of these a year, roughly quarterly. Version the dataset and note what changed at each refresh. These get refreshed quarterly rather than annually, and they deserve distribution beyond the blog: a LinkedIn post from Frank carrying the two or three strongest charts, a drop to the Slack community, and at least one podcast or guest pitch built around the dataset.
 
 ---
 
