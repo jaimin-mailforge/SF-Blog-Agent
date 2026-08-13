@@ -1,9 +1,22 @@
-<!-- Forge comparison table. Paste into the Webflow rich-text block, then confirm this CSS
-     survived the paste. Rules: rules/writing.md section 14. -->
+<!-- Forge comparison table. Paste into the Webflow rich-text block as an embed, then confirm
+     this CSS survived the paste. Rules: rules/writing.md section 14.
+
+     Ship the whole <style> block every article. Do not trim it and do not retype it.
+
+     Structure: Feature column plus up to 6 tool columns. The routed Forge product takes
+     column 2, carries class="highlight-col" on its <th> and on every <td>, wears the
+     "Best Overall" badge, and links to its signup URL. Competitor headers are jumplinks
+     to their sections. In an alternatives post one column is the incumbent.
+
+     Rows below are the canonical fourteen for LinkedIn, cold email, and multichannel
+     articles. Cover all of them. Row swaps for other routed products are in section 14.
+
+     No semicolons in cell text. Pricing cells carry the annual rate only. -->
 <style>
   :root {
     --primary-color: #6E40D7;
     --primary-dark: #5B35C9;
+    --primary-light: #F5EFFF;
     --text-color: #1F2430;
     --border-color: #E6E1F2;
     --row-alt: #FAF8FF;
@@ -35,14 +48,18 @@
     background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: #fff; position: relative;
   }
-  .table-container thead .highlight-col .header-wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .table-container thead .highlight-col .header-wrap {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
   .table-container thead .highlight-col .header-link {
     color: #fff; text-decoration: underline;
     text-decoration-color: rgba(255, 255, 255, 0.7);
     text-underline-offset: 4px; text-decoration-thickness: 2px;
     transition: text-decoration-color 0.2s ease, opacity 0.2s ease;
   }
-  .table-container thead .highlight-col .header-link:hover { text-decoration-color: #fff; opacity: 0.95; }
+  .table-container thead .highlight-col .header-link:hover {
+    text-decoration-color: #fff; opacity: 0.95;
+  }
   .table-container thead .highlight-col .badge {
     display: inline-flex; align-items: center; justify-content: center;
     padding: 5px 10px; border-radius: 999px;
@@ -61,12 +78,14 @@
   }
   .table-container tbody tr:last-child td { border-bottom: none; }
   .table-container tbody td:last-child { border-right: none; }
-  .table-container tbody td:first-child { width: 18%; font-weight: 700; color: #111827; }
+  .table-container tbody td:first-child { width: 16%; font-weight: 700; color: #111827; }
   .table-container tbody .highlight-col {
     background: linear-gradient(180deg, #FAF7FF 0%, #F4EDFF 100%);
     color: #1F1B2D; font-weight: 500;
   }
-  .table-container tbody tr:hover .highlight-col { background: linear-gradient(180deg, #FAF7FF 0%, #F4EDFF 100%); }
+  .table-container tbody tr:hover .highlight-col {
+    background: linear-gradient(180deg, #FAF7FF 0%, #F4EDFF 100%);
+  }
   .table-container tbody tr:hover { background: #FCFBFF; }
   .table-container th { text-transform: none; white-space: normal; }
   @media screen and (max-width: 992px) {
@@ -75,7 +94,6 @@
     .table-container thead .highlight-col .badge { font-size: 10px; padding: 4px 8px; }
   }
 </style>
-
 <div class="table-container">
   <table>
     <thead>
@@ -83,27 +101,144 @@
         <th>Feature</th>
         <th class="highlight-col">
           <div class="header-wrap">
-            <a href="[FORGE_SIGNUP_URL]" class="header-link" target="_blank" rel="noopener">[Forge Product]</a>
+            <a href="https://app.salesforge.ai/signup" class="header-link" target="_blank" rel="noopener">Salesforge</a>
             <span class="badge">Best Overall</span>
           </div>
         </th>
-        <th><a href="#tool-2">[Competitor 1]</a></th>
-        <th><a href="#tool-3">[Competitor 2]</a></th>
-        <th><a href="#tool-4">[Competitor 3]</a></th>
+        <th><a href="#heyreach">HeyReach</a></th>
+        <th><a href="#expandi">Expandi</a></th>
+        <th><a href="#dripify">Dripify</a></th>
+        <th><a href="#waalaxy">Waalaxy</a></th>
+        <th><a href="#lemlist">Lemlist</a></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Pricing</td>
-        <td class="highlight-col">[price, unlimited mailboxes included]</td>
-        <td>[price]</td>
-        <td>[price]</td>
-        <td>[price]</td>
+        <td>Best for</td>
+        <td class="highlight-col">GTM teams and Agencies who need to run LinkedIn and email in one platform</td>
+        <td>Agencies scaling LinkedIn across many senders</td>
+        <td>Power users wanting cloud automation with a dedicated IP</td>
+        <td>Solo reps wanting simple LinkedIn drip campaigns</td>
+        <td>Solo users and beginners on a budget</td>
+        <td>Email-led teams wanting creative personalization plus LinkedIn</td>
       </tr>
-      <!-- Canonical rows, then drop or swap per article: Email accounts and mailboxes,
-           Data coverage and verification, Deliverability suite, AI sequences and personalization,
-           CRM and integrations, Agency and team support, Best for.
-           Keep class="highlight-col" on the Forge product cell in every row. -->
+      <tr>
+        <td>Mailboxes and LinkedIn senders</td>
+        <td class="highlight-col">Unlimited mailboxes. 1 LinkedIn sender on Pro, unlimited on Growth</td>
+        <td>Per-sender pricing, unlimited seats</td>
+        <td>Per LinkedIn account</td>
+        <td>Per user, 1 seat included</td>
+        <td>Per user</td>
+        <td>Per user on Multichannel, per workspace on Email</td>
+      </tr>
+      <tr>
+        <td>AI personalization</td>
+        <td class="highlight-col">21+ languages, with AI variables pulling company news and LinkedIn activity</td>
+        <td>Via Clay and integrations</td>
+        <td>Image or GIF via paid add-ons (Hyperise, Sendspark)</td>
+        <td>Template variables (20+)</td>
+        <td>Waami assistant (1 draft per campaign)</td>
+        <td>Dynamic images and landing pages</td>
+      </tr>
+      <tr>
+        <td>LinkedIn actions</td>
+        <td class="highlight-col">Connection, message, InMail, like, follow, withdraw</td>
+        <td>Connection, message, follow, profile view</td>
+        <td>Connection, InMail, message, profile visit</td>
+        <td>Connection, message, profile visit, endorse, follow</td>
+        <td>Invitations, messages, profile visits, follows</td>
+        <td>Connection, message, profile visit (via extension)</td>
+      </tr>
+      <tr>
+        <td>Multichannel (LinkedIn + email)</td>
+        <td class="highlight-col">Native LinkedIn and email with if/else branching</td>
+        <td>LinkedIn native, email via Instantly or Smartlead integrations</td>
+        <td>LinkedIn plus email with smart sequences</td>
+        <td>LinkedIn-first plus light email</td>
+        <td>LinkedIn plus email on the Business tier only</td>
+        <td>Email, LinkedIn, calls (Aircall) and WhatsApp (Expert)</td>
+      </tr>
+      <tr>
+        <td>LinkedIn account safety</td>
+        <td class="highlight-col">Cloud with built-in limits, sender rotation, and session-token auth</td>
+        <td>Cloud plus dedicated residential proxy per sender on Growth, BYOP at Agency and above</td>
+        <td>Cloud plus dedicated country IP per account</td>
+        <td>Cloud plus country-aware IP on the Advanced tier</td>
+        <td>Chrome extension plus desktop companion (higher detection risk)</td>
+        <td>Cloud, email-first with LinkedIn steps</td>
+      </tr>
+      <tr>
+        <td>Unified reply inbox</td>
+        <td class="highlight-col">Primebox™ with Auto-Pilot and Co-Pilot modes</td>
+        <td>Unified LinkedIn inbox</td>
+        <td>Basic inbox</td>
+        <td>Dedicated inbox on Pro and above</td>
+        <td>Inbox add-on at about EUR 20 per user per month, billed annually</td>
+        <td>Unified inbox</td>
+      </tr>
+      <tr>
+        <td>Native integrations</td>
+        <td class="highlight-col">HubSpot, Salesforce, GoHighLevel, Attio, Slack, Sendspark, Clay, folk</td>
+        <td>HubSpot, Clay, Instantly, Smartlead, Zapier, Make (27+)</td>
+        <td>Zapier, Make, HubSpot, Sales Navigator</td>
+        <td>HubSpot, Salesforce, Pipedrive via Zapier on Pro and above</td>
+        <td>Zapier, Make, N8N (2,000+ tools)</td>
+        <td>HubSpot, Salesforce, Pipedrive, Zapier</td>
+      </tr>
+      <tr>
+        <td>Free Chrome Extension</td>
+        <td class="highlight-col">Yes. Email 1 credit, mobile 10 credits, 100 free credits on signup</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes, lead capture</td>
+        <td>Yes, core architecture</td>
+        <td>Yes, 100 leads a month on the free plan</td>
+      </tr>
+      <tr>
+        <td>AI SDR</td>
+        <td class="highlight-col">Agent Frank, $499/month billed annually</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No, AI features only</td>
+      </tr>
+      <tr>
+        <td>MCP + CLI</td>
+        <td class="highlight-col">Yes, Forge MCP and CLI on Growth</td>
+        <td>Yes, MCP and CLI</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Agency support</td>
+        <td class="highlight-col">Unlimited workspaces on both plans, unlimited users on Growth</td>
+        <td>Whitelabel plus multi-workspace on Agency and above</td>
+        <td>Enterprise, custom, 10+ seats</td>
+        <td>Team management on Advanced</td>
+        <td>Enterprise plan</td>
+        <td>Outreach Scale, custom, 5+ seats</td>
+      </tr>
+      <tr>
+        <td>Free trial</td>
+        <td class="highlight-col">14 days, no credit card</td>
+        <td>14 days on Growth, 3 accounts, no card</td>
+        <td>7 days, no card</td>
+        <td>7 days, no card</td>
+        <td>14 days on all three plans</td>
+        <td>14 days</td>
+      </tr>
+      <tr>
+        <td>Starting price</td>
+        <td class="highlight-col">Pro $40/month (billed annually)</td>
+        <td>Growth $63/sender/month (billed annually)</td>
+        <td>Business $79/seat/month (billed annually)</td>
+        <td>Basic $39/user/month (billed annually)</td>
+        <td>Pro $16/user/month (billed annually)</td>
+        <td>Email $55/month (billed annually)</td>
+      </tr>
     </tbody>
   </table>
 </div>

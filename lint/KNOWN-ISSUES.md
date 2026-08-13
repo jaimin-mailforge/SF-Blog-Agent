@@ -31,6 +31,20 @@
    wrong. Verified against 13 cases including both traps written correctly, written
    backwards, and split across sentences.
 
+6. **The colon rule double-charged the 25-word ceiling.** Jaimin's 2026-08-13 format
+   change put a colon after the feature name in TL;DR entries and key-feature
+   bullets, where a period used to be. That merged a label and its description into
+   one sentence for the splitter, and 7 of the 17 over-25-word findings on the
+   Expandi draft were bullets whose prose had not changed at all. `sentences()` now
+   strips a leading bolded label plus colon before splitting, so the label is not
+   charged against the sentence budget. The remaining 10 findings were real and were
+   split by hand.
+7. **Lowercase brands could not open an HTML table cell.** The `opens` check claimed
+   in its own comment to allow a table cell, but the regex only recognised a markdown
+   pipe, so `<th><a href="#lemlist">Lemlist</a></th>` failed while `| Lemlist |`
+   passed. Now an HTML tag immediately before the name also counts as opening. This
+   matters because the mandated comparison table is HTML, not markdown.
+
 ## Open
 
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the

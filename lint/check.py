@@ -76,6 +76,10 @@ def sentences(prose_lines):
     out = []
     for l in prose_lines:
         l = re.sub(r'^\s*[-*]\s*', '', l)
+        # a bolded label followed by a colon is a label, not part of the sentence.
+        # TL;DR entries and key-feature bullets are required to carry one, and
+        # counting it would charge the same words twice against the 25-word ceiling.
+        l = re.sub(r'^\*\*(.+?)(?:\*\*\s*:|\s*:\*\*)\s*', '', l)
         l = l.replace('**', '')
         l = re.sub(r'\b([A-Z])\.', r'\1', l)              # initials
         for s in re.split(r'(?<=[.!?])\s+' + _SENT_START, l):
@@ -83,12 +87,69 @@ def sentences(prose_lines):
             if len(s.split()) > 2: out.append(s)
     return out
 
+def _sections(text, head_re):
+    """Bodies of every section whose heading matches, each stopping at the next heading."""
+    out = []
+    for m in re.finditer(head_re, text, re.I | re.M):
+        rest = text[m.end():]
+        nxt = re.search(r'^#{1,6}\s', rest, re.M)
+        out.append(rest[:nxt.start()] if nxt else rest)
+    return out
+
+# A tool name followed by a colon, then "Best for". Accepts the colon inside or
+# outside the bold, since both render the same.
+_TLDR_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)\s*Best for\b')
+_FEATURE_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)')
+_G2_SHAPE = re.compile(r'G2 puts .+ at [\d.]+ from [\d,]+ reviews', re.I)
+
+
+def structure(text, add):
+    """Rules about the shape of a section rather than the words in it."""
+    # per-tool disqualifier lines. Removed from the guidelines 2026-08-13 by Jaimin
+    for m in re.finditer(r'\*\*Not for:?\*\*', text, re.I):
+        add('ERROR', 'not-for-line', ctx(text, m.start()))
+
+    # TL;DR entries read "Tool: Best for ..."
+    for sec in _sections(text, r'^#{2,3}\s*TL;DR.*$'):
+        for line in sec.splitlines():
+            if line.lstrip().startswith('- ') and not _TLDR_SHAPE.match(line.strip()):
+                add('ERROR', 'tldr-shape', line.strip()[:88])
+
+    # key feature bullets carry a colon after the feature name
+    for sec in _sections(text, r'^#{3,4}\s*Key features.*$'):
+        for line in sec.splitlines():
+            s = line.strip()
+            if s.startswith('- **') and not _FEATURE_SHAPE.match(s):
+                add('ERROR', 'feature-bullet-colon', s[:88])
+
+    # the ratings line is one sentence and nothing else. Screenshots go in by hand
+    for sec in _sections(text, r'^#{3,4}\s*(?:What real users say|G2 [Rr]ating).*$'):
+        live = [l.strip() for l in sec.splitlines() if l.strip()]
+        if len(live) > 1:
+            add('ERROR', 'ratings-section-long(%d lines)' % len(live), live[0][:88])
+        elif live and not _G2_SHAPE.search(live[0]):
+            add('WARN', 'ratings-line-shape', live[0][:88])
+
+    # "why people leave X" subsections stay short
+    for head in re.finditer(r'^##\s*Why [Pp]eople (?:[Ll]eave|[Ll]ook).*$', text, re.M):
+        rest = text[head.end():]
+        nxt = re.search(r'^##\s', rest, re.M)
+        block = rest[:nxt.start()] if nxt else rest
+        for sub in _sections(block, r'^###\s.*$'):
+            paras = [p for p in re.split(r'\n\s*\n', sub) if p.strip()]
+            if len(paras) > 2:
+                add('WARN', 'why-leave-subsection(%d paras)' % len(paras),
+                    paras[0].strip()[:88])
+
+
 def check(title, meta, text, label):
     body = mask(text)
     lines = body.splitlines()
     prose = [l for l in lines if l.strip() and not l.lstrip().startswith(('#', '|'))]
     findings = []
     def add(sev, rule, detail): findings.append((sev, rule, detail))
+
+    structure(text, add)
 
     # words and phrases
     prot = _protected_spans(body)
@@ -146,9 +207,12 @@ def check(title, meta, text, label):
         cap = brand[0].upper() + brand[1:]
         for m in re.finditer(r'\b' + re.escape(cap) + r'\b', text):
             before = text[:m.start()]
-            # opens a heading, a line, a list item, a table cell, or a new sentence
+            # opens a heading, a line, a list item, a table cell, or a new sentence.
+            # the HTML clause covers the comparison table, where the name opens a
+            # <th> or <td> and there is no markdown pipe to recognise it by.
             opens = (not before.strip()
                      or re.search(r'(?:^|\n)[#>|\s*_\-\d.)]*$', before) is not None
+                     or re.search(r'<[^<>]*>\s*$', before) is not None
                      or re.search(r'[.?!:]["\')\]]?\s+$', before) is not None)
             if not opens:
                 add('ERROR', 'brand-casing:' + brand,

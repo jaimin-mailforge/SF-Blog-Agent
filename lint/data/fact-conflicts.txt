@@ -8,10 +8,13 @@
 # sentence containing the product name, which is how a Forge fact rule stays out of
 # the way of a true fact about a competitor. No field may contain a pipe.
 #
-21+ languages|canonical is "20+ languages"
+20+ languages|canonical is "21+ languages", fixed by the Forge Stack Positioning Guidelines
 100 personalization credits|live page says 300/month on Pro
-1000+ integrations|hero copy; 27 documented integrations
-re:(?<![^.\n])(?=[^.\n]*Salesforge)(?=[^.\n]*withdraw)[^.\n]*|Salesforge withdraw action|not a Salesforge LinkedIn action; the sixth is profile views. Competitors do have it, Meet Alfred auto-withdraws pending invitations
+1000+ integrations|hero copy, 27 documented integrations
+re:(?<![^.\n])(?=[^.\n]*Salesforge)(?=[^.\n]*profile view)[^.\n]*|Salesforge profile-view action|not a Salesforge LinkedIn action. The six are connection requests, messages, InMails, post likes, follows, withdraw requests. Competitors do have it
+re:(?<![^.\n])(?=[^.\n]*Salesforge)(?=[^.\n]*[Nn]ative)(?=[^.\n]*Pipedrive)[^.\n]*|Pipedrive called native|Pipedrive is mediated through Zapier or webhooks. Never list it as a Salesforge native integration
 re:(?<![^.\n])(?=[^.\n]*Leadsforge)(?=[^.\n]*intent signal)[^.\n]*|Leadsforge intent signals|Leadsforge signals are event-based, not topic intent. Competitors do sell intent signals, lemlist prices them in credits
 re:(?<![^.\n])(?=[^.\n]*Agent Frank)(?=[^.\n]*\$499)(?=[^.\n]*quarter)[^.\n]*|Agent Frank $499 quarterly|Agent Frank quarterly is $599 per month. The $499 is the annual rate, or the 1,000-contact add-on slider
 re:(?<![^.\n])(?=[^.\n]*Infraforge)(?=[^.\n]*billed monthly)[^.\n]*|Infraforge billed monthly|Infraforge's short cycle is quarterly, not monthly
+Billed monthly|pricing is annual-only. Drop the monthly column and quote the annual rate as "$X/month billed annually"
+Billed quarterly|pricing is annual-only. Drop the quarterly column and quote the annual rate as "$X/month billed annually"

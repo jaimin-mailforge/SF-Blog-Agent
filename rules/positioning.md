@@ -2,6 +2,8 @@
 
 What we say. Voice and structure live in `rules/writing.md`.
 
+**Read `rules/forge-positioning-guidelines.md` first.** It is the locked positioning reference and it wins on feature names, feature descriptions, must-cover checklists, positioning statements, and the article-type playbooks. This file is the evidence layer and it wins on live-verified prices, the pricing traps, and the resolved-decision log. Its reconciliation section lists the nine conflicts between the two files and how each one resolves.
+
 Every figure below was read from the vendor's own page on **2026-08-13**. The source column is the page to re-check. Re-verify pricing on every rewrite, because these pages change without notice.
 
 If a fact is not in this file, do not write it. Ask.
@@ -19,6 +21,18 @@ If a fact is not in this file, do not write it. Ask.
 ---
 
 ## Pricing
+
+### Annual format only `[LINT]`
+
+**Every price in every article is the annual-billing rate, phrased as "$X/month billed annually".** Added 2026-08-13 by Jaimin. This applies to Forge products and to every competitor.
+
+- Pricing tables carry one price column, the annual one. No "Billed monthly" column, no "Billed quarterly" column. The linter blocks both headers.
+- Prose quotes the annual rate and nothing else. "Dripify Basic is $39 per user per month billed annually", not "$59 monthly, $39 annually".
+- Where a vendor's cheaper cycle is the only rate published, say so plainly and name the cycle.
+- Where a vendor's page opens on a different cycle, still quote annual, and tell the reader which tab the page opens on if it is not annual.
+- Cost-at-scale math uses annual rates throughout. Never mix cycles inside one calculation.
+
+The tables further down this file keep both cycles on purpose. They are the evidence layer, not article copy. Read the annual column.
 
 ### The four traps
 
@@ -58,7 +72,7 @@ Overage is slider-priced on the same page. Quote it only when the article does p
 
 Base plan covers up to 1,000 active contacts. Beyond 2,000 contacts per month the page quotes $0.25 per contact. Access requires booking a demo first, so the CTA for Agent Frank is a demo, not a trial.
 
-Includes: 24/7 automated prospecting, Auto-Pilot and Co-Pilot modes, fully customizable agent, 500M+ contact search engine, 20+ languages, dedicated account manager, shared Slack channel.
+Includes: 24/7 automated prospecting, Auto-Pilot and Co-Pilot modes, fully customizable agent, 500M+ contact search engine, 21+ languages, dedicated account manager, shared Slack channel.
 
 ### Leadsforge
 
@@ -166,8 +180,8 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 
 - **Unlimited mailboxes, users, and workspaces.** No per-seat or per-mailbox pricing. Unlimited mailboxes on both plans. 1 LinkedIn sender on Pro, unlimited on Growth.
 - **Multichannel with conditional sequences.** LinkedIn and email steps in one sequence with real if/then branching. If a connection request is accepted, send a LinkedIn message. If not, fall back to email. Not two parallel campaigns stitched together.
-- **Six native LinkedIn actions:** connection requests, messages, InMails, profile views, post likes, and follows. Each action type is capped at 30 per 24 hours per profile to stay inside LinkedIn's safe range. Each action uses 1 social action credit. A profile at full capacity needs roughly 400 to 500 social actions per month.
-- **AI personalization across 20+ languages.** AI variables pull prospect-specific details like company news, LinkedIn activity, and industry context. The site says "20+ languages" and names 21 of them in its FAQ.
+- **Six native LinkedIn actions:** connection requests, messages, InMails, post likes, follows, and withdraw requests. Each action type is capped at 30 per 24 hours per profile to stay inside LinkedIn's safe range. Each action uses 1 social action credit. A profile at full capacity needs roughly 400 to 500 social actions per month. Withdraw requests let a sequence clean up stale invites, which is how an actual SDR works the channel.
+- **AI personalization across 21+ languages.** AI variables pull prospect-specific details like company news, LinkedIn activity, and industry context. Always "21+", never "20+".
 - **LinkedIn account safety.** Actions route through high-quality shared proxies with optional custom proxy support. Authentication is session-token only, so the LinkedIn password is never stored. No Chrome extension injection, no DOM manipulation.
 - **Primebox™ with Auto-Pilot and Co-Pilot modes.** Every email and LinkedIn reply lands in one inbox. Auto-Pilot handles replies end to end. Co-Pilot drafts them for a human to approve.
 - **Free unlimited warm up via Warmforge.** Included with the subscription, unlimited slots, any mailbox type.
@@ -187,6 +201,13 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 - **The wedge: a deliverability-first outbound operating system.** Competitors sell the outreach layer alone. Salesforge comes with the deliverability layer (Warmforge), the infrastructure layer (Mailforge, Infraforge, Primeforge), the lead layer (Leadsforge), and the autonomous execution layer (Agent Frank).
 
 Position Salesforge as the answer in the category, and pull wedge evidence to justify why.
+
+**How the Salesforge section is written.** Fixed by Jaimin on 2026-08-13. These are not suggestions.
+
+- **The Best for line always opens "Best for GTM teams and Agencies".** Then continue with what the article is about. "Best for GTM teams and Agencies running LinkedIn and email in one platform, with unlimited mailboxes and unlimited LinkedIn senders on Growth."
+- **The cons column carries exactly one point: "No free plan. A 14-day free trial is available."** One point, not four. Do not add a learning-curve con, a credit-cap con, or a plan-gating con, and do not pad the column to match the pros. Plan gating belongs in the pricing paragraph, where it reads as a fact rather than a complaint.
+- **Every must-cover feature above appears somewhere in the section.** All of them. The comparison table rows carry a good share, and the key-features list carries the rest.
+- **Cross-product stories are required in every comparison piece.** Under one roof, and two ways to run it, three with partners. See the cross-product section below.
 
 ### Integrations
 
@@ -262,7 +283,7 @@ Deliverability tool with premium warm up and inbox placement testing. Free and u
 
 Fully autonomous AI SDR that runs the whole outbound workflow using the Forge stack as its operating environment.
 
-**Must-cover capabilities:** prospects continuously from the Leadsforge 500M+ database, enriches contact and company data before outreach, writes personalized email and LinkedIn messages, runs multichannel sequences and follow-ups, manages replies through Primebox™, books meetings on the rep's calendar, runs 24/7 without manual intervention. Base plan covers up to 1,000 active contacts. Available in 20+ languages. Comes with a dedicated account manager and a shared Slack channel.
+**Must-cover capabilities:** prospects continuously from the Leadsforge 500M+ database, enriches contact and company data before outreach, writes personalized email and LinkedIn messages, runs multichannel sequences and follow-ups, manages replies through Primebox™, books meetings on the rep's calendar, runs 24/7 without manual intervention. Base plan covers up to 1,000 active contacts. Available in 21+ languages. The pricing-page card reads 20+, and the fixed count across the stack is 21+, so write 21+. Comes with a dedicated account manager and a shared Slack channel.
 
 Agent Frank is he/him. You hire him. He is an AI SDR, never a bot, an automation, or a workflow.
 
@@ -335,10 +356,10 @@ None currently open. Add one here the moment a fact looks uncertain, rather than
 
 **Integrations.** Verified against salesforge.ai/integrations on 2026-08-13. Every one of the 18 names carried by the old positioning doc turned out to be real and vendor-documented, so the list was accurate and the earlier decision to cut it back to three was wrong. Two things had gone wrong in the other direction: the claim that salesforge.ai/pricing confirms HubSpot and Pipedrive came from a false positive, since those strings live inside a HubSpot booking-tracker script in the page head and the pricing page names no partner at all. And Pipedrive is mediated rather than native, on the evidence of its own page. Details in the integrations subsection above.
 
-**AI personalization language count.** Use **"20+ languages"**, the phrase the vendor uses on its own pages. Decided by Jaimin on 2026-08-13, overriding the previous rule set's "always 21+, never 20+". The FAQ names 21 individual languages, so 21 is countable, but we quote the vendor's phrasing rather than our own arithmetic.
+**AI personalization language count.** Use **"21+ languages"**, never "20+". Reversed by Jaimin on 2026-08-13 when the Forge Stack Positioning Guidelines landed, which fix 21+ in their own do-not-paraphrase list. The earlier entry in this slot had chosen "20+" as the vendor's own site phrasing. The guidelines are the prescriptive layer, so they win. The linter now bans "20+ languages".
 
 **Pre-warmed mailbox pricing.** Decided by Jaimin on 2026-08-13: never print a figure. See the pre-warmed section above.
 
-**LinkedIn actions.** Six, exactly as the live product page and the help-desk action-cap list name them: connection requests, messages, InMails, profile views, post likes, follows. Decided by Jaimin on 2026-08-13. Withdraw requests appeared in both previous rule sets and is not a Salesforge LinkedIn action. Do not add it back.
+**LinkedIn actions.** Six: connection requests, messages, InMails, post likes, follows, **withdraw requests**. Reversed by Jaimin on 2026-08-13. The earlier entry in this slot named profile views as the sixth and said withdraw requests must not be added back. Two independent signals overturned it on the same day: the Forge Stack Positioning Guidelines list withdraw requests, and Jaimin's own comparison-table template lists "Connection, message, InMail, like, follow, withdraw". Profile views is now the banned one, and the linter flags it next to Salesforge.
 
 **Chrome extension credit consumption.** Verified by Jaimin directly in-app on 2026-08-13: the extension is free to install and lookups do consume Leadsforge credits, 1 per email and 10 per mobile. Recorded here because the Chrome Web Store listing says "Free Unlimited contact lookups", which contradicts it. That listing is marketing copy, and in-app behaviour wins. Do not "correct" this back off the store page.

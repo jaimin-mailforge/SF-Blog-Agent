@@ -35,8 +35,23 @@ The founder byline and the practitioner voice fit together. Frank can credibly c
 
 ## 2. Voice `[LINT]` `[JUDGE]`
 
+**The hard rule, and it governs every other rule in this file.** Fixed by Jaimin on 2026-08-13.
+
+> Active voice, first person point of view wherever it makes sense, authentic human voice. Absolutely no AI slop, no fluff, simple sentences and simple English. Content is factual and accurate, based on research.
+
+Six words of that carry the weight, so read them as tests you can fail:
+
+- **Active voice.** Name the doer. "Expandi charges per seat", not "a per-seat charge is applied".
+- **First person where it makes sense.** "I" for what Frank did or saw. Not forced into a sentence that has no person in it.
+- **Authentic human voice.** A practitioner talking, not a brand announcing.
+- **No AI slop, no fluff.** Every sentence carries a fact, a number, an opinion, or a decision. If cutting a sentence loses the reader nothing, it was slop. Sentences that describe the article, the data, or the reviewers instead of presenting the content are the most common form of it. See the banned narrator framings in section 5.
+- **Simple sentences, simple English.** One idea per sentence, everyday words. See sections 3 and 6.
+- **Factual and accurate, based on research.** Every claim traces to the brief, to `rules/positioning.md`, or to `rules/observations.md`. Nothing traces to a plausible-sounding guess. See section 7.
+
+The numbered rules:
+
 1. First person "I" only. Never "we", "our", or "us". `[LINT]`
-2. Prefer active voice. Passive is acceptable only when the actor genuinely does not matter. If you can name the doer, name them. `[JUDGE]`
+2. Active voice. Passive is acceptable only when the actor genuinely does not matter. If you can name the doer, name them. `[JUDGE]`
 3. Write like you talk. If you would not say the sentence out loud to a colleague, rewrite it. `[JUDGE]`
 4. Contractions are good: I've, it's, don't, that's, you'll. `[JUDGE]`
 5. Starting a sentence with And, But, or So is fine. People do it. `[JUDGE]`
@@ -48,10 +63,18 @@ The founder byline and the practitioner voice fit together. Frank can credibly c
 
 - Ideal sentence length: 12 to 20 words.
 - Hard ceiling: 25 words. Go over only when there is a reason, and never twice in a row.
+- A bolded label followed by a colon does not count toward the 25. "**Bounce Shield:**" is a label, not part of the sentence, and the linter strips it before measuring.
 - One idea per sentence. If an "and" joins two full thoughts, split it.
 - Vary the rhythm. Follow a medium sentence with a short one. Like this.
 - Paragraphs: 1 to 3 sentences. New idea means new paragraph.
 - Skim test: if a section cannot be skimmed in 5 seconds, rewrite it.
+
+**Section length.** Fixed by Jaimin on 2026-08-13. Diagnosis sections stay short and to the point. That covers "Why people leave [Competitor]", "Why people look for [Competitor] alternatives", and any H2 whose job is to name a problem rather than review a product.
+
+- **Two short paragraphs per subsection is enough.** The linter warns past two.
+- One point per subsection. The H3 says what the problem is, the two paragraphs say what it costs the reader, and the section ends.
+- No third paragraph adding a comparison, a caveat, and a scaled-up example. Pick the strongest one.
+- The arithmetic goes in the paragraph that needs it, not in a paragraph of its own.
 
 ---
 
@@ -179,31 +202,93 @@ Human does not mean fake typos, deliberate grammar mistakes, lowercase "i", or m
 
 1. **Intro**, 3 to 6 short paragraphs. Open on the problem or a personal moment. Never "in this article we will". Say how many tools you tested and why most did not make it.
 2. **How I chose.** Your criteria as a short list. Be specific: what you tested, for how long, what you measured.
-3. **Quick list.** Plain numbered list of every tool, each name a jumplink.
+3. **TL;DR.** One bullet per tool, in the article's running order. See section 9a for the fixed shape.
 4. **Comparison table.** The HTML template in `assets/comparison-table.html`. See section 14.
-5. **Tool sections.** The routed Forge product first and deepest. Each tool uses this skeleton:
-   - H2: "1. [Tool Name]"
-   - **Best for:** one specific line, never "everyone"
-   - **Pricing:** starting price, one line
-   - **How I use it:** one line
-   - 2 to 4 paragraphs of experience-based description with one specific story
-   - "Here's what I like about [Tool]:" 3 to 6 specific bullets
-   - "Where it falls short:" 2 to 4 real bullets
-   - Pricing plans, short list, real numbers
-   - Rating with review count from G2, Capterra, or Product Hunt
-   - One transition sentence into the next tool when it reads naturally
+5. **Tool sections.** The routed Forge product first and deepest. See section 9b for the fixed skeleton.
 6. **"Which one should you pick?"** Answer by use case, not by hype.
 7. **FAQs.** Minimum 5, direct answer in the first sentence of each.
+
+---
+
+## 9a. The TL;DR block `[LINT]`
+
+Fixed by Jaimin on 2026-08-13. The linter blocks any TL;DR bullet that misses the shape.
+
+**Tool name, colon, then "Best for".** Every bullet, no exceptions.
+
+    - **[Salesforge](#salesforge):** Best for GTM teams and Agencies running LinkedIn plus
+      email plus AI in one platform, with unlimited mailboxes and unlimited LinkedIn senders
+      on Growth. Primebox™ unifies replies across every channel, and Warmforge warm up is
+      bundled at no extra cost.
+
+Rules for the bullet:
+
+- The tool name is a jumplink to its section, and it carries the colon.
+- "Best for" is the first thing after the colon. Not "runs", not "charges", not "is the cheapest".
+- Then who it is for, in the words a buyer would use about themselves.
+- Then one or two sentences on the mechanics that earn that fit. Named features, real numbers.
+- Then the annual price where the article is price-led. See section 9c.
+- No "Not for" clause. See section 13.
+
+The point of the fixed shape is that this block is what AI Overviews and Perplexity lift. A bullet that opens on the buyer is quotable as a recommendation. A bullet that opens on a feature is not.
+
+---
+
+## 9b. The tool section skeleton `[LINT]`
+
+Every product section in a listicle, an alternatives post, or a category page uses this order.
+
+1. **H2:** "N. [Tool Name]"
+2. **Best for:** one line, the buyer in their own words, never "everyone". For Salesforge this line always opens "Best for GTM teams and Agencies". See `rules/positioning.md`.
+3. **G2 Rating:** "X out of 5 (N reviews)".
+4. **A plain explainer sentence, and it opens the prose.** "[Tool] is a [what kind of tool] that [what it does]." Say what the thing is before you say what is interesting about it. A reader who has never heard of the tool must be able to follow the second paragraph.
+5. **2 to 4 more paragraphs.** The mechanics, the billing unit, the trade-off, one specific first-hand moment where `rules/observations.md` funds one.
+6. **H3 "Key features".** 5 to 8 bullets. Colon after the feature name. See below.
+7. **H3 "Pros and cons".** A two-column table, lopsided and honest. For Salesforge the cons column carries exactly one point. See `rules/positioning.md`.
+8. **H3 "Pricing".** Annual rates only. See section 9c.
+9. **H3 "What real users say".** One line, and only one. See below.
+
+**The plain explainer, rule 4, is the one that gets skipped.** Opening on the most interesting fact reads well to someone who already knows the category and loses everyone else. Explain, then argue.
+
+- Wrong: "Every other tool on this list runs email and LinkedIn as two campaigns you keep in step by hand."
+- Right: "Salesforge is a multichannel outreach tool that runs cold email and LinkedIn as two channels of one sequence." Then the contrast.
+
+**Key features bullets carry a colon after the feature name.** `[LINT]`
+
+- Right: "Flat per-sender pricing with free unlimited users: The vendor FAQ is explicit that teammates, VAs and clients are not charged for."
+- Wrong: "Flat per-sender pricing with free unlimited users. The vendor FAQ is explicit..."
+
+The feature name is the bolded part and it is a name, not a sentence. Then the colon, then what it does in one or two sentences.
+
+**The ratings section is one line.** `[LINT]` Fixed by Jaimin on 2026-08-13.
+
+    ### What real users say
+
+    G2 puts Salesforge at 4.6 from 137 reviews.
+
+Nothing else goes in that section. No con-tag breakdown, no one-star arithmetic, no reading of what the reviews cluster on. Jaimin adds review screenshots by hand directly below that line, and prose underneath it gets in the way. The linter blocks a second line.
+
+Complaint themes still belong in the article. Put them where they are load-bearing: in the cons column, in the pricing paragraph when the complaint is about price, or in the "Best for" line when the complaint decides who should walk away.
+
+---
+
+## 9c. Pricing in prose and tables `[LINT]`
+
+**Annual rates only, everywhere, for every tool.** Fixed by Jaimin on 2026-08-13. The full rule and its edge cases are in `rules/positioning.md` under "Annual format only". The short version:
+
+- Pricing tables carry one price column and it is the annual one. The linter blocks a "Billed monthly" or "Billed quarterly" column header.
+- Prose says "$39 per user per month billed annually". Never "$59 monthly, $39 annually".
+- Cost-at-scale math runs on annual rates end to end.
 
 ---
 
 ## 10. Structure: alternatives post, "X alternatives"
 
 1. **Intro.** Acknowledge the competitor is a good tool. Then give the true reasons people look elsewhere: price jumps, seat limits, missing channels, deliverability trouble.
-2. **"Why people look for [Competitor] alternatives".** 3 to 5 specific reasons drawn from real public complaints, never invented.
-3. **Quick list and comparison table**, same rules as the listicle.
+2. **"Why people leave [Competitor]".** 3 to 5 specific reasons drawn from real public complaints, never invented. One H3 per reason, two short paragraphs each. See the section-length rule in section 3.
+3. **TL;DR and comparison table**, same rules as the listicle. See sections 9a and 14.
 4. **The Forge product first and deepest.** Frame it as "why I moved" or "what I found", not "why it is better".
-5. **Other alternatives**, same skeleton, each matched to a reader type.
+5. **Other alternatives**, same skeleton as section 9b, each matched to a reader type.
 6. **"When [Competitor] is still the better choice".** Always include this. It is the highest-trust section in the post, and it is not optional.
 7. **FAQs.** Minimum 5.
 
@@ -227,23 +312,31 @@ Human does not mean fake typos, deliberate grammar mistakes, lowercase "i", or m
 3. Feature walkthrough in the order a user meets them. Steps and before-and-after examples where they help.
 4. Pricing with real numbers.
 5. Pros and cons, lopsided and honest.
-6. Who should use it, and who should not. Both, always.
+6. Who should use it. The reader who should walk away is routed in the verdict, never in a "Not for" label. See section 13.
 7. Verdict and one CTA.
 8. FAQs. Minimum 5.
 
 ---
 
-## 13. Who it's for, and who it's not for `[JUDGE]`
+## 13. Who it's for `[LINT]` `[JUDGE]`
 
-**Every article states both. Per tool it is optional.** Changed 2026-08-13 by Jaimin, on the Expandi alternatives outline. The per-tool disqualifier was previously required in every product section and is now carried at article level instead: the Final Verdict routes by reader type, the "When [Competitor] Is Still the Better Choice" section does it for the incumbent, and each tool's cons already carry the signal. Write the per-tool line when a tool has a sharp disqualifier worth naming. Do not pad one in for symmetry.
+**No per-tool "Not for:" line. Ever.** Fixed by Jaimin on 2026-08-13, reversing the rule that stood here earlier the same day. The linter blocks the line on sight.
 
-What has not changed is the requirement itself. An article that never tells a reader to walk away fails this rule no matter how many tool sections it has.
+The line was required in every product section, then made optional, and is now banned outright. Three shapes are gone with it:
 
-This is the single highest-value habit in the file, for two reasons.
+- `**Not for:** anyone who wants LinkedIn on its own.`
+- `**Not for:** anyone sending real email volume.`
+- Any bolded disqualifier label under a tool's H2, whatever it is called.
 
-Readers trust a writer who tells them to walk away. And LLM recommendations are personalised to the person asking, so their real prompt carries company size, budget, and deal size. Content that says "good fit if your ACV runs $5K to $100K and you sell to 3,000-plus-employee companies, not a fit for Fortune 500 RFP motions" can be matched to the right person. Honest disqualification is how we get recommended, not a weakness.
+**Disqualification still has to happen.** It moves to the three places where it reads as advice instead of a warning label:
 
-Write the "not for" line as plainly as the "for" line. No hedging.
+1. **The Best for line.** Naming the buyer precisely already excludes everyone else. "Best for solo operators and two-person teams who want native email at the lowest price" tells a fifteen-person team to keep reading.
+2. **The cons column.** A real limitation stated plainly does the disqualifying work. "One mailbox per account, capped at 200 emails a day" is the disqualifier for anyone sending volume.
+3. **The Final Verdict, and "When [Competitor] is still the better choice".** These route by reader type across the whole article, including the reader who should not buy anything on the list.
+
+An article that never tells a reader to walk away still fails this rule. What changed is the mechanism, not the obligation.
+
+Why it matters, unchanged: readers trust a writer who tells them to walk away, and LLM recommendations are personalised to the person asking, so their prompt carries company size, budget, and deal size. Content that names the fit precisely can be matched to the right person. Honest disqualification is how we get recommended. It just belongs in prose a reader can act on, not in a label under every heading.
 
 ---
 
@@ -254,23 +347,33 @@ Almost every article needs one. Use the HTML template in `assets/comparison-tabl
 - The routed Forge product column carries `class="highlight-col"` on its `<th>` and on every `<td>`, plus the "Best Overall" badge.
 - The Forge product header links to its signup URL.
 - The purple highlight stays whichever Forge product is routed. Only the label and the link change.
-- Maximum 6 columns.
-- Every tool name in the table is a jumplink to its section.
+- **Ship the full CSS block every time.** Fixed by Jaimin on 2026-08-13. The `<style>` block in the template goes into the article verbatim, every article, no trimming and no "the site already has these styles". Copy the file, do not retype it.
+- Up to 6 tool columns plus the Feature column, so 7 in total. An alternatives post includes the incumbent as one of the 6, because a reader comparing alternatives needs the thing they are leaving in the table.
+- Every tool name in the table is a jumplink to its section. The routed Forge product links to its signup URL instead.
 - Cells state what the tool actually is, in one to three lines. "No, email only" beats an X mark. "Yes, native. 6 LinkedIn actions with conditional branching" beats a check mark.
-- Pricing cells follow the pricing rules in `rules/positioning.md`.
+- **No semicolons in cells.** Section 4 applies inside the table. Use a comma or a period.
+- Pricing cells carry the annual rate only, phrased "$40/month (billed annually)". See section 9c.
 
-**Canonical row set.** Start here, then drop or swap rows for the article. Do not invent new categories per article.
+**Canonical row set for LinkedIn, cold email, and multichannel articles.** Fixed by Jaimin on 2026-08-13. Cover all fourteen. Do not invent new categories per article and do not quietly drop a row because a competitor looks bad in it.
 
-1. Pricing
-2. Email accounts and mailboxes
-3. Data coverage and verification
-4. Deliverability suite
-5. AI sequences and personalization
-6. CRM and integrations
-7. Agency and team support
-8. Best for
+1. Best for
+2. Mailboxes and LinkedIn senders
+3. AI personalization
+4. LinkedIn actions
+5. Multichannel (LinkedIn + email)
+6. LinkedIn account safety
+7. Unified reply inbox
+8. Native integrations
+9. Free Chrome Extension
+10. AI SDR
+11. MCP + CLI
+12. Agency support
+13. Free trial
+14. Starting price
 
-Row swaps by routed product: for Leadsforge, replace rows 3 and 5 with "Chat-based lead finder" and "Company Lookalikes and Competitor Followers". For Warmforge, replace row 5 with "Heat Score™ tracking" and add "Inbox placement tests". For Mailforge, Infraforge, or Primeforge, replace rows 5 and 6 with "DNS setup (SPF, DKIM, DMARC)" and "Pre-warmed mailboxes".
+Two things that row set does deliberately. It opens on "Best for" rather than price, so the table reads as a routing aid instead of a price list. And rows 9 through 11 are where the Forge stack is structurally ahead, so they stay in even when a competitor column is a wall of "No".
+
+Row swaps by routed product: for Leadsforge, replace rows 4 through 7 with "Database size", "Chat-based lead finder", "Company Lookalikes and Company Followers", and "Waterfall enrichment". For Warmforge, replace rows 4 through 7 with "Warmup pool quality", "Heat Score™ tracking", "Inbox placement tests", and "Health checks". For Mailforge, Infraforge, or Primeforge, replace rows 3 through 7 with "IP model", "Pre-warmed mailboxes", "DNS setup (SPF, DKIM, DMARC)", "Domain forwarding", and "Deliverability monitoring".
 
 Check that the CSS block survived the paste into Webflow. Rich-text editors sometimes strip an inline `<style>`, and the table looks broken without it.
 
@@ -342,6 +445,10 @@ Never: SalesForge, Sales Forge, Frank AI, the Agent, AgentFrank, Autopilot, Copi
 
 Collective term: "Forge stack".
 
+**Fixed feature names live in `rules/forge-positioning-guidelines.md`.** That file's do-not-paraphrase list is the authority: Bounce Shield, Primebox™, Heat Score™, "AI personalization across 21+ languages", waterfall enrichment, ESP matching. Always 21+, never 20+.
+
+**One open conflict, flagged 2026-08-13.** The guidelines write "Autopilot and Co-pilot modes". This section and the linter require "Auto-Pilot" and "Co-Pilot" and ban "Autopilot". Autopilot is not in the guidelines' own fixed-names list, so drafts keep Auto-Pilot and Co-Pilot until Jaimin picks one. Do not flip it on your own.
+
 Agent Frank is he/him. You hire Agent Frank. You never buy him or activate him. He is an AI SDR, never a bot, an automation, or a workflow.
 
 Competitors are spelled exactly as they spell themselves on their own site.
@@ -359,9 +466,12 @@ The linter runs items marked `[LINT]` and blocks on failure. Do not hand-check t
 - [ ] At least 2 first-hand moments with specifics
 - [ ] At least 1 real limitation of our own product
 - [ ] Every competitor has a real strength
-- [ ] "Who it's for" and "who it's not for" both present at article level. Per tool, "who it's for" on every product section and "who it's not for" wherever the disqualifier is sharp. See section 13
+- [ ] A "Best for" line on every product section, and the reader who should walk away routed in the Final Verdict. No "Not for" labels anywhere. See section 13
+- [ ] Every tool section opens on a plain explainer sentence saying what the tool is. See section 9b
+- [ ] Every must-cover feature for the routed product appears somewhere. See `rules/forge-positioning-guidelines.md`
+- [ ] Cross-product stories present: under one roof, and two ways to run it, three with partners
 - [ ] Outcomes hedged as experience, product facts stated exactly
-- [ ] Tool section openings vary. No two use the same entry angle
+- [ ] Tool section openings vary after the explainer sentence. No two use the same entry angle
 - [ ] "When [Competitor] is still the better choice" present in alternatives posts
 - [ ] Paragraph rhythm mixes lengths
 
