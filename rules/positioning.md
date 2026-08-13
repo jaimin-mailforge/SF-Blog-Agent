@@ -202,6 +202,16 @@ Multichannel outreach platform running cold email and LinkedIn as coordinated ch
 
 Position Salesforge as the answer in the category, and pull wedge evidence to justify why.
 
+**Which must-cover list governs.** The list above is the whole product. `rules/forge-positioning-guidelines.md` splits Salesforge into three sections, and the article type picks one of them as the checklist for the key features.
+
+| Article type | Checklist section | Bullets |
+|---|---|---|
+| LinkedIn outreach alternatives | Salesforge: LinkedIn | 12 |
+| Cold email tool alternatives | Salesforge: Cold Email | 16 |
+| Multichannel, VS posts, category pages | Salesforge: Multichannel | 9 Category A, 8 Leaning B |
+
+The key features carry one bullet per feature on the governing list, and the same number of bullets. Features on the other two lists are still true, and they go in the table, the prose, or the pricing paragraph when they earn a place. They do not pad the bullet list.
+
 **How the Salesforge section is written.** Fixed by Jaimin on 2026-08-13. These are not suggestions.
 
 - **The Best for line always opens "Best for GTM teams and Agencies".** Then continue with what the article is about. "Best for GTM teams and Agencies running LinkedIn and email in one platform, with unlimited mailboxes and unlimited LinkedIn senders on Growth."

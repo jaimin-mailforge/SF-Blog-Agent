@@ -243,7 +243,7 @@ Every product section in a listicle, an alternatives post, or a category page us
 3. **G2 Rating:** "X out of 5 (N reviews)".
 4. **A plain explainer sentence, and it opens the prose.** "[Tool] is a [what kind of tool] that [what it does]." Say what the thing is before you say what is interesting about it. A reader who has never heard of the tool must be able to follow the second paragraph.
 5. **2 to 4 more paragraphs.** The mechanics, the billing unit, the trade-off, one specific first-hand moment where `rules/observations.md` funds one.
-6. **H3 "Key features".** 5 to 8 bullets for a competitor. Up to 12 for the routed Forge product, because must-cover coverage sets the count, not the other way round. Colon after the feature name. See below.
+6. **H3 "Key features".** 5 to 8 bullets for a competitor. For the routed Forge product, **one bullet per must-cover feature in that product's section of `rules/forge-positioning-guidelines.md`, and the same number of bullets as that section lists.** Colon after the feature name. See below.
 7. **H3 "Pros and cons".** A two-column table, lopsided and honest. For Salesforge the cons column carries exactly one point. See `rules/positioning.md`.
 8. **H3 "Pricing".** Annual rates only. See section 9c.
 9. **H3 "What real users say".** One line, and only one. See below.
@@ -260,7 +260,16 @@ Every product section in a listicle, an alternatives post, or a category page us
 
 The feature name is the bolded part and it is a name, not a sentence. Then the colon, then what it does in one or two sentences.
 
-**Do not bundle must-cover features into one bullet to hit a bullet count.** The article-type playbook in `rules/forge-positioning-guidelines.md` lists the features that have to appear, and each one earns its own bullet or its own place in the prose. Bundling four of them behind a single label is how a must-cover silently goes missing, which is exactly what happened on the first pass of the Expandi draft: A/B testing, the API and MCP survived as words inside another bullet, while campaign analytics and the Leadsforge followers search vanished. Run the playbook list against the finished draft, name by name.
+**The bullet count is not yours to choose. It is the length of the must-cover list.** Fixed by Jaimin on 2026-08-13.
+
+Work out which list governs before writing the section:
+
+- **The routed product's own section in `rules/forge-positioning-guidelines.md` is the checklist.** For a LinkedIn-focused article that is "Salesforge: LinkedIn", which lists 12 must-cover features, so the key features carry 12 bullets. For a cold email article it is "Salesforge: Cold Email". For a multichannel piece it is "Salesforge: Multichannel", and that one also requires the Category A and Leaning B framing.
+- **One bullet per feature, using the doc's feature name.** Reword for cadence, never for meaning.
+- **Shuffle the order between articles.** The doc says so directly. Lead with whatever the article is about, so a LinkedIn piece opens on the six native LinkedIn actions rather than on unlimited mailboxes.
+- **Supporting products are not entries on that list.** Warmforge, the Leadsforge Company Followers search and the infrastructure products belong in the prose, the pricing paragraph, or the Final Verdict. The playbook names them separately for exactly this reason.
+
+**Never bundle must-covers behind one label.** Two failures on the Expandi draft, both caused by it. The first pass hid A/B testing, the API and MCP inside an Agent Frank bullet, and campaign analytics and the followers search were never written at all. The second pass still merged the API, Integrations and MCP CLI into one bullet, which read as complete and was three features short. Count the bullets against the doc, then check each name.
 
 **The ratings section is one line.** `[LINT]` Fixed by Jaimin on 2026-08-13.
 

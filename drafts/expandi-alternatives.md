@@ -335,23 +335,28 @@ The branching is the part worth understanding. Send a connection request, and if
 
 One sequence, one set of exit rules. Not two campaigns and a spreadsheet to reconcile which prospect is in which.
 
+Two things behind it come from the rest of the stack. Warmforge warms every connected mailbox free with unlimited slots, which matters because the email half of a LinkedIn sequence still has to land.
+
+Point Leadsforge's Company Followers search at a competitor's page and you get the people following it, at 1 credit each. That's a warm audience rather than a cold list.
+
 The billing unit matters more than any of that. Mailboxes are unlimited on both plans, and I've connected 22 to a single account without the bill changing. (Yes, I counted.)
 
 Pricing runs on active contacts and email volume instead of per mailbox or per seat. It also has more surface than a LinkedIn-only tool, so give yourself a few days with it rather than an afternoon.
 
 ### Key features
 
-- **Six native LinkedIn actions:** Connection requests, messages, InMails, post likes, follows and withdraw requests. Each is capped at 30 per 24 hours per profile, which keeps a profile inside LinkedIn's safe range. Withdraw requests clear stale invites, which most tools leave you to do by hand.
-- **Multichannel with conditional sequences:** LinkedIn and email steps branch on real if-then logic inside one sequence, rather than two parallel campaigns stitched together at the reporting layer.
-- **AI personalization across 21+ languages:** AI variables bring company news, LinkedIn activity and industry context into both the LinkedIn copy and the email copy. A localized campaign doesn't need a copywriter per region.
-- **Primebox™ with Auto-Pilot and Co-Pilot modes:** One inbox for every email and LinkedIn reply, with sentiment analysis on incoming messages. Auto-Pilot answers them end to end, and Co-Pilot drafts a reply for you to approve first.
-- **Unlimited mailboxes and free Warmforge warm up:** Warmforge is included on both plans, with unlimited slots and any mailbox type. Six of the eight tools here have no warm-up product at all.
-- **LinkedIn account safety as standard:** Actions route through high-quality shared proxies with optional custom proxy support. Authentication is session-token only, so your LinkedIn password is never stored, and there's no Chrome extension injecting into the page.
+- **Six native LinkedIn actions:** Connection requests, messages, InMails, post likes, follows and withdraw requests. Each is capped at 30 per 24 hours per profile. Withdraw requests clear stale invites, which is how an actual SDR works the channel.
+- **Multichannel with conditional sequences:** LinkedIn steps branch on what the prospect did, accepted, replied or ignored you, and combine with email touches in the same sequence. Real if-then logic, not two parallel campaigns.
+- **Account safety as standard:** Actions route through high-quality shared proxies, with optional custom proxies. Authentication is session-token only, so your password is never stored, and nothing injects into the page.
+- **Primebox™ with Auto-Pilot and Co-Pilot modes:** Every LinkedIn and email reply lands in one inbox, with sentiment analysis on the way in. Auto-Pilot handles replies end to end, and Co-Pilot drafts them for you to approve.
+- **Unlimited senders and mailboxes:** No per-seat or per-mailbox cap. Pro connects 1 LinkedIn account, Growth connects unlimited LinkedIn accounts and mailboxes, so headcount doesn't move the bill.
+- **AI personalization across 21+ languages:** AI variables bring company news, LinkedIn activity and industry context into the copy. A localized campaign doesn't need a copywriter per region.
 - **LinkedIn email and phone finder Chrome extension:** Powered by Leadsforge and its 500M+ contact database. Free to install, with 100 free credits on signup, then 1 credit an email and 10 a mobile number.
-- **Company Followers search in Leadsforge:** Point it at a competitor's company page and get the people following it, at 1 credit per follower. That's a warm LinkedIn audience rather than a cold list.
-- **A/B testing and campaign analytics:** Test messaging variants on Growth, then read send volume, connect rate, reply rate and meeting conversion in one dashboard. Both channels report side by side.
-- **Agent Frank, an autonomous AI SDR:** He prospects from the Leadsforge database, writes the messages, runs the sequence, handles replies in Primebox™ and books meetings, 24/7.
-- **Integrations, the API, MCP and CLI:** HubSpot, Salesforce, GoHighLevel, Attio, folk, Clay, RB2B, Sendspark, Slack, Zapier and Make, plus webhooks. The API, MCP server and CLI are Growth features.
+- **Testing and analytics:** A/B test messaging variants on Growth, then read send volume, connect rate, reply rate and meeting conversion per campaign.
+- **Agent Frank support:** An autonomous AI SDR who can run the whole email and LinkedIn workflow, prospecting, sequencing, replying and booking meetings, 24/7.
+- **Integrations:** HubSpot, Salesforce, GoHighLevel, Attio and folk on the CRM side. Clay, RB2B, Databar.ai, Persana AI and Sendspark for data. Slack, Zapier, Make and webhooks for automation.
+- **Open API access:** Programmatic control over sequences, contacts and campaigns, on the Growth plan.
+- **MCP and CLI:** Agent-native access from Claude, Cursor or your own agent, for scripted campaign operations.
 
 ### Pros and cons
 
