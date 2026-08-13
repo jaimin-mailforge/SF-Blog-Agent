@@ -27,6 +27,10 @@ Nine conflicts surfaced when this file landed. Each one is resolved below. Do no
 5. **Delivery models.** This file's Delivery models section lists two ways to run the stack and then calls it a three-way model. The third is a Forge Expert agency, named in the cross-product section. Write it as "two ways to run it, three with partners".
 6. **Salesforge plan prices.** This file lists Pro $48 and Growth $96, which are the monthly-billing rates. Articles quote annual only, so Pro is $40/month and Growth is $80/month, both billed annually.
 
+**Resolved on vendor naming.**
+
+10. **Competitor Followers Search.** This file names the Leadsforge feature "Competitor Followers Search". The live site calls it company followers, and `rules/positioning.md` carries an explicit guardrail against writing "competitor followers". Both are describing the same feature, so write the name as **Company Followers search** and keep this file's use case, which is pointing it at a competitor's page to work their audience.
+
 **Open, awaiting Jaimin.**
 
 7. **Autopilot spelling.** This file writes "Autopilot and Co-pilot modes". `rules/writing.md` section 20 and the linter require "Auto-Pilot" and "Co-Pilot" and explicitly ban "Autopilot". Autopilot is not in this file's own fixed-names list, so the drafts keep Auto-Pilot and Co-Pilot until Jaimin picks one.

@@ -348,7 +348,10 @@ Pricing runs on active contacts and email volume instead of per mailbox or per s
 - **Unlimited mailboxes and free Warmforge warm up:** Warmforge is included on both plans, with unlimited slots and any mailbox type. Six of the eight tools here have no warm-up product at all.
 - **LinkedIn account safety as standard:** Actions route through high-quality shared proxies with optional custom proxy support. Authentication is session-token only, so your LinkedIn password is never stored, and there's no Chrome extension injecting into the page.
 - **LinkedIn email and phone finder Chrome extension:** Powered by Leadsforge and its 500M+ contact database. Free to install, with 100 free credits on signup, then 1 credit an email and 10 a mobile number.
-- **Agent Frank, plus the API, MCP and CLI:** Agent Frank is an autonomous AI SDR who can run prospecting, sequencing, replying and meeting booking on his own. The API, MCP server, CLI, A/B testing and ESP matching are Growth features.
+- **Company Followers search in Leadsforge:** Point it at a competitor's company page and get the people following it, at 1 credit per follower. That's a warm LinkedIn audience rather than a cold list.
+- **A/B testing and campaign analytics:** Test messaging variants on Growth, then read send volume, connect rate, reply rate and meeting conversion in one dashboard. Both channels report side by side.
+- **Agent Frank, an autonomous AI SDR:** He prospects from the Leadsforge database, writes the messages, runs the sequence, handles replies in Primebox™ and books meetings, 24/7.
+- **Integrations, the API, MCP and CLI:** HubSpot, Salesforce, GoHighLevel, Attio, folk, Clay, RB2B, Sendspark, Slack, Zapier and Make, plus webhooks. The API, MCP server and CLI are Growth features.
 
 ### Pros and cons
 
