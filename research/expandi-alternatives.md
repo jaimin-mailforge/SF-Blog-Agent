@@ -32,7 +32,7 @@ Measured with `lint/publish-check.py` on 2026-08-13. This is the number the rewr
 |---|---|
 | Errors | 8 |
 | First-person-plural | 3, including the heading "How **We** Evaluated Each LinkedIn Automation Tool" |
-| Banned words | seamlessly, robust x2, streamline |
+| Banned words | `seamlessly`, `robust` x2, `streamline` |
 | Fact conflicts | "withdraw requests" listed as a LinkedIn action |
 | Warnings | 19 |
 | Sentences over 25 words | 13 of 349 |
@@ -137,7 +137,7 @@ Addressable set is roughly 500 searches a month. **Noise, do not build sections 
 
 **Honest ceiling.** This is a low-volume, high-intent, brand-modified SERP. The number one result is credited with 16 estimated monthly visits. Win it for conversion, not for traffic. Do not let anyone judge this rewrite on sessions.
 
-**Current rank.** Two Ahrefs endpoints disagree and both are recorded rather than reconciled by guesswork. `serp-overview` puts the page at **position 9** with URL rating 4, 12 referring domains, 276 backlinks. `site-explorer-organic-keywords` in exact mode returned zero rows across four attempts, so Ahrefs attributes no ranking keyword and no traffic to the URL. Position 9 is the only figure that exists. Current title tag is "7 Best Expandi Alternatives I Actually Tested (2026)".
+**Current rank.** Two Ahrefs endpoints disagree and both are recorded rather than reconciled by assumption. `serp-overview` puts the page at **position 9** with URL rating 4, 12 referring domains, 276 backlinks. `site-explorer-organic-keywords` in exact mode returned zero rows across four attempts, so Ahrefs attributes no ranking keyword and no traffic to the URL. Position 9 is the only figure that exists. Current title tag is "7 Best Expandi Alternatives I Actually Tested (2026)".
 
 **No link gap. This is winnable on content.** Keyword difficulty is 0. The number one page has **one referring domain** and a URL rating of 4. Positions 5, 8, 10, 11, 12, 14, 17, 18 and 19 have **zero** referring domains. Our page already carries more page-level link equity than both number one and number three. Domain rating is not the sort key either: DR 32 ranks tenth, DR 4 ranks twelfth, while DR 78 sits at eighteen. No link campaign is required.
 
