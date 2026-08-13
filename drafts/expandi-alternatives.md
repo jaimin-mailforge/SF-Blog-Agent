@@ -278,3 +278,116 @@ Every price below came off the vendor's own live pricing page this week, on both
 Read the pricing row against the billing unit row, not on its own. Snov.io looks like the cheapest tool here until you add a LinkedIn slot per account. Dripify looks cheaper than Salesforge until you need a second seat.
 
 The warm-up row is the one people forget. Two of these five include it, and the other three mean a separate subscription on top of everything in the pricing row.
+
+## 1. Salesforge {#salesforge}
+
+**Best for:** teams of three to fifteen running email and LinkedIn as one motion, who need several LinkedIn senders without paying per seat.
+
+**Not for:** anyone who wants LinkedIn on its own. You would be paying for email infrastructure you never touch.
+
+**G2 Rating:** 4.6 out of 5 (137 reviews)
+
+Every other tool on this list runs email and LinkedIn as two campaigns you keep in step by hand. Salesforge runs them as steps in one sequence, with conditions between them.
+
+The branching is the part worth understanding. Send a connection request, and if it is accepted the next step is a LinkedIn message. If it is not, the sequence falls back to email instead.
+
+One sequence, one set of exit rules. Not two campaigns and a spreadsheet to reconcile which prospect is in which.
+
+Replies from both channels arrive in Primebox™, so a LinkedIn reply and an email reply are in the same place. Auto-Pilot answers them end to end, and Co-Pilot drafts a reply for you to approve first.
+
+The billing unit is where this article's argument lands. Mailboxes are unlimited on both plans, and I have connected 22 to a single account without the bill changing. Pricing runs on active contacts and email volume instead.
+
+### Key features
+
+- **Six native LinkedIn actions.** Connection requests, messages, InMails, profile views, post likes and follows. Each is capped at 30 per 24 hours per profile, which keeps a profile inside LinkedIn's safe range.
+- **Conditional multichannel sequences.** Real if-then branching between LinkedIn and email steps, rather than two parallel campaigns stitched together at the reporting layer.
+- **Primebox™ with Auto-Pilot and Co-Pilot.** One inbox for every email and LinkedIn reply, with sentiment analysis on incoming messages.
+- **Unlimited mailboxes and unlimited premium warm-up.** Warmforge is included on both plans and covers any mailbox type, at no extra cost and with no slot cap.
+- **Unlimited users and LinkedIn senders on Growth.** Pro includes one of each. This is the only real sender difference between the two plans.
+- **AI personalization across 20+ languages.** AI variables pull company news, LinkedIn activity and industry context into the copy.
+- **Session-token LinkedIn authentication.** Actions route through high-quality shared proxies with optional custom proxy support. No password is stored, and there is no Chrome extension injecting into the page.
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Flat pricing with unlimited mailboxes, users and workspaces | The interface takes a few days to get comfortable with. Learning Curve is the top con tag on G2 at 15 mentions, ahead of Complexity at 5 |
+| Email and LinkedIn branch inside one sequence | One LinkedIn sender on Pro, so a second sender means the Growth plan |
+| Warm-up included free on both plans, any mailbox type | 300 social action credits on Pro do not cover a LinkedIn profile running at full capacity |
+| Replies from both channels land in one inbox | ESP matching, A/B testing and the API are Growth-only |
+
+### Pricing
+
+| Plan | Billed monthly | Billed annually | Contacts in sequence | Emails per month |
+|---|---|---|---|---|
+| Pro | $48/month | **$40/month** | 1,000 | 5,000 |
+| Growth | $96/month | **$80/month** | 10,000 | 50,000 |
+
+Both plans include unlimited mailboxes, unlimited Warmforge warm-up, unlimited workspaces and Primebox™. Growth adds unlimited users, unlimited LinkedIn senders and 1,000 of each credit type per month.
+
+The credit line is worth doing the arithmetic on. Each LinkedIn action costs one social action credit, and a profile running at full capacity needs roughly 400 to 500 a month. Pro grants 300, Growth grants 1,000.
+
+There is a 14-day free trial with no credit card, capped at 50 contacts and 100 emails. [Start a free 14-day trial](https://app.salesforge.ai/signup), no credit card needed.
+
+### What real users say
+
+G2 puts Salesforge at 4.6 from 137 reviews, with 5 one-star reviews, so 3.6% of the total. That is the third-lowest one-star share in this comparison.
+
+The con tags are consistent about what the difficulty is. Learning Curve leads at 15 mentions, then Missing Features at 7, Expensive at 7, Complexity at 5 and Confusion at 4.
+
+Read those together and the picture is a product with more surface than most, which costs a new user a few days. If you want something you can learn in an afternoon, Waalaxy or Dripify will suit you better.
+
+## 2. HeyReach {#heyreach}
+
+**Best for:** agencies and sales teams running many LinkedIn accounts, where several people work the same accounts and email already lives somewhere else.
+
+**G2 Rating:** 4.6 out of 5 (71 reviews)
+
+HeyReach is built for one buyer and makes no attempt to hide it. If you run LinkedIn outreach for clients across a lot of accounts, this is the tool in the category designed around you.
+
+The billing unit is why. HeyReach charges per LinkedIn sender, where a sender is one LinkedIn account, and human users are free and unlimited on every plan.
+
+So the VA who works the accounts, the client who wants read access, and the second closer you hired last month all cost nothing. Add a LinkedIn account and you pay. Add a person and you do not.
+
+The agency plumbing goes further than pricing. Per-client workspaces run under one login, senders rotate across a campaign, and one unified inbox covers every connected LinkedIn account.
+
+### Key features
+
+- **Flat per-sender pricing with free unlimited users.** The vendor FAQ is explicit that teammates, VAs and clients are not charged for.
+- **A unified inbox across every connected account.** One place for LinkedIn conversations from all senders, rather than one tab per account.
+- **Per-client workspaces under a single login.** Whitelabel is available on the Agency plan, and $500 per additional brand on Unlimited.
+- **Sender rotation across a campaign.** Spread the same campaign across many LinkedIn accounts to keep per-account volume inside safe limits.
+- **Bidirectional Instantly and Smartlead sync.** A reply on either channel pauses the remaining steps on both, which is the closest thing here to a shared exit rule across two vendors.
+- **Real integration surface.** A public API, webhooks and an MCP server, which is more plumbing than most tools in this list publish.
+- **A dedicated residential proxy per sender on Growth.** Agency and Unlimited expect you to bring your own.
+
+### Pros and cons
+
+| Pros | Cons |
+|---|---|
+| Humans are free. Only LinkedIn accounts are billable | No native email sending, so multichannel means paying for Instantly, Smartlead or similar on top |
+| One inbox and one login across every client account | The Agency bundle only pays off above roughly 12 senders, which leaves mid-size teams in a gap |
+| Whitelabel, workspaces and sender rotation are built in rather than bolted on | Confirmed LinkedIn actions are connection requests, messages, follows and profile views. Fewer than Expandi or Salesforge |
+| API, webhooks and an MCP server | Growth includes a proxy per sender, Agency and Unlimited do not |
+
+### Pricing
+
+| Plan | Billed monthly | Billed quarterly | Billed yearly | Senders |
+|---|---|---|---|---|
+| Growth | $79 per sender | $71 per sender | **$63 per sender** | Choose your own number |
+| Agency | $999 | $899 | **$799** | 25, expandable to 50 |
+| Unlimited | $2,999 | $2,699 | **$2,399** | Unlimited |
+
+There is also a managed Done For You tier, which is a service rather than a plan.
+
+Do the Agency arithmetic before you buy it. At $79 a sender, twelve senders comes to $948, so the $999 bundle only starts saving you money at thirteen. A team on eight senders is paying $632 and should stay on Growth.
+
+The trial is 14 days with no credit card and covers three LinkedIn accounts.
+
+### What real users say
+
+G2 puts HeyReach at 4.6 from 71 reviews, with 2 one-star reviews, so 2.8% of the total. Capterra shows 5.0, but from two reviews, which is too small a base to mean anything.
+
+The con tags are the interesting part, because there is no theme in them. Update Issues, Poor Customer Support, Limited Features and Expensive are all tagged twice, and nothing goes above two.
+
+For a tool with 71 reviews that is a genuinely clean record. I am not going to manufacture a complaint section where the evidence does not support one.

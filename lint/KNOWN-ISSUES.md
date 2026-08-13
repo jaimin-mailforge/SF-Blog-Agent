@@ -20,6 +20,17 @@
    the fix moved the over-25-word counts by roughly one percent, which confirms
    those long sentences are genuine and not artifacts.
 
+5. **A fact rule fired on a correct competitor fact.** `billed quarterly` was written
+   to catch the Agent Frank price error and blocked a HeyReach pricing table whose
+   quarterly column is accurate. Quarterly billing is not a Forge-only cycle, so
+   banning the phrase was never the right shape. Fact needles can now be regexes
+   (prefix `re:`, with an explicit label since a raw pattern reads badly in a
+   finding), and the two Forge billing traps are expressed as "wrong figure in the
+   same sentence as the product" instead. Fact rules still run against raw text
+   rather than masked text, deliberately: a wrong price inside a table is still
+   wrong. Verified against 13 cases including both traps written correctly, written
+   backwards, and split across sentences.
+
 ## Open
 
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the

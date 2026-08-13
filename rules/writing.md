@@ -359,7 +359,7 @@ The linter runs items marked `[LINT]` and blocks on failure. Do not hand-check t
 - [ ] At least 2 first-hand moments with specifics
 - [ ] At least 1 real limitation of our own product
 - [ ] Every competitor has a real strength
-- [ ] "Who it's for" and "who it's not for" both present in every product section
+- [ ] "Who it's for" and "who it's not for" both present at article level. Per tool, "who it's for" on every product section and "who it's not for" wherever the disqualifier is sharp. See section 13
 - [ ] Outcomes hedged as experience, product facts stated exactly
 - [ ] Tool section openings vary. No two use the same entry angle
 - [ ] "When [Competitor] is still the better choice" present in alternatives posts

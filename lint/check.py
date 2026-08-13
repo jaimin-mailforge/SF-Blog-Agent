@@ -10,7 +10,15 @@ BANNED_WORDS = load('banned-words.txt')
 PRODUCT_NAMES = load('product-names.txt')
 BANNED_PHRASES = load('banned-phrases.txt')
 FIG_VERBS = load('figurative-verbs.txt')
-FACTS = [l.split('|', 1) for l in load('fact-conflicts.txt')]
+def _fact(line):
+    """`needle|why`, or `re:pattern|label|why` when the rule needs a regex.
+    A regex rule carries its own label because the pattern itself reads badly in a
+    finding. Neither the pattern nor the label nor the reason may contain a pipe."""
+    p = [f.strip() for f in line.split('|')]
+    if p[0].startswith('re:') and len(p) == 3: return (p[0], p[1], p[2])
+    return (p[0], p[0], p[1])
+
+FACTS = [_fact(l) for l in load('fact-conflicts.txt')]
 LOWERCASE_BRANDS = load('lowercase-brands.txt')
 
 def _protected_spans(text):
@@ -58,13 +66,19 @@ def mask(text):
     t = re.sub(r'<[^>]+>', blank, t)                     # html tag markup, cell text survives
     return t
 
+# A sentence can also open with a markdown link, a quote, a price, a digit, or a
+# lowercase-branded competitor. Missing those glued two sentences into one and hid
+# real over-25-word findings.
+_SENT_START = ('(?=[A-Z(\\[“"$0-9]'
+               + ''.join('|' + re.escape(b) + r'\b' for b in LOWERCASE_BRANDS) + ')')
+
 def sentences(prose_lines):
     out = []
     for l in prose_lines:
         l = re.sub(r'^\s*[-*]\s*', '', l)
         l = l.replace('**', '')
         l = re.sub(r'\b([A-Z])\.', r'\1', l)              # initials
-        for s in re.split(r'(?<=[.!?])\s+(?=[A-Z(])', l):
+        for s in re.split(r'(?<=[.!?])\s+' + _SENT_START, l):
             s = s.strip()
             if len(s.split()) > 2: out.append(s)
     return out
@@ -120,10 +134,12 @@ def check(title, meta, text, label):
     if meta and len(meta) > 155: add('WARN', 'meta>155(%d)' % len(meta), meta[:80])
     if not meta: add('WARN', 'meta-missing', 'no meta description on page')
 
-    # facts
-    for needle, why in FACTS:
-        n = len(re.findall(re.escape(needle), text, re.I))
-        if n: add('ERROR', 'fact:' + needle, '%dx  %s' % (n, why))
+    # facts. a needle prefixed `re:` is a regex, so a rule can require a wrong
+    # figure near a phrase instead of banning the phrase outright.
+    for needle, label, why in FACTS:
+        pat = needle[3:] if needle.startswith('re:') else re.escape(needle)
+        n = len(re.findall(pat, text, re.I))
+        if n: add('ERROR', 'fact:' + label, '%dx  %s' % (n, why))
 
     # lowercase-branded competitor names, capitalised only to open a heading or sentence
     for brand in LOWERCASE_BRANDS:

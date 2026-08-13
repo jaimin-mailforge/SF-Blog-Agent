@@ -3,4 +3,5 @@ withdraw request|not a Salesforge LinkedIn action; the sixth is profile views
 100 personalization credits|live page says 300/month on Pro
 intent signal|Leadsforge signals are event-based, not topic intent
 1000+ integrations|hero copy; 27 documented integrations
-billed quarterly|only Agent Frank at $599 is quarterly; check the figure
+re:(?<![^.\n])(?=[^.\n]*Agent Frank)(?=[^.\n]*\$499)(?=[^.\n]*quarter)[^.\n]*|Agent Frank $499 quarterly|Agent Frank quarterly is $599 per month. The $499 is the annual rate, or the 1,000-contact add-on slider
+re:(?<![^.\n])(?=[^.\n]*Infraforge)(?=[^.\n]*billed monthly)[^.\n]*|Infraforge billed monthly|Infraforge's short cycle is quarterly, not monthly
