@@ -572,7 +572,9 @@ That 800 is the ceiling on every tier, including Business, which is a deliberate
 | Business | **$55 per user** | 800 | LinkedIn and email |
 | Enterprise | Not published | Not published | Teams of 5+ |
 
-Those are the yearly rates, which is the tab the page opens on. The toggle states 20% off for yearly billing, so the monthly rate is higher on all three tiers. Read it on the page rather than from this table if you're buying month to month.
+Those are the yearly rates, which is the tab the page opens on. Monthly costs more on all three tiers.
+
+Check the toggle yourself before you buy. Waalaxy is serving more than one version of this pricing page right now, with different billing cycles and different discounts on each.
 
 The invitations column belongs next to the price. Pro at 300 a month is a different product from Advanced at 800, and that jump is the real reason to move up a tier.
 

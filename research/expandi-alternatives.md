@@ -319,6 +319,10 @@ Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 per
 
 **Gating facts, from the screenshot's own feature lists.** Cold email sequences and multichannel LinkedIn-plus-email campaigns are **Business only**, which also adds 500 email finder credits. Pro covers unlimited campaigns, pre-built prospecting sequences, automated follow-ups, CRM synchronisation and team collaboration tools. **Advanced is where the maximum LinkedIn invitation limits, API access, the Make, Zapier and N8N modules, and live chat support begin.** The invite ceiling is **800 a month even at the top tier**, and Pro is capped at 300. No email warm-up anywhere on the site.
 
+**Waalaxy is serving more than one version of this pricing page.** Checked again 2026-08-13: the server-rendered HTML carries a **three-way toggle, Monthly / Quarterly -20% / Yearly -50%**, while Jaimin's screenshot of the rendered page shows a **two-way toggle, Monthly / Yearly -20%**. Different cycles and different discounts. That is the likeliest explanation for the euro figures too, and it means **no discount percentage for Waalaxy can be stated as fact.** The draft now tells the reader to read the toggle and says the page has more than one version. Prices are JS-injected and absent from the HTML, so the screenshot remains the only readable source.
+
+**The free-plan claim is still unconfirmed.** The rendered page text contains no "free plan", "freemium" or "free forever", only "free trial" 18 times, which is consistent with the free plan being gone but is not proof. Absence of the phrase is not evidence. Confirm before publishing or cut the sentence from the FAQ.
+
 **Two claims from the old extraction are now unverified and are out of the draft.** The **€20 per month LinkedIn Inbox add-on** with a 500-conversation free tier does not appear anywhere in the screenshot, and the pricing that surrounded it was wrong, so it cannot be trusted. The claim that **the free plan is discontinued** is still in the draft's FAQ and needs a second look on the live page before publishing.
 
 **Ratings.** Capterra **4.4 from 253 reviews**, ease 4.3, customer service 4.5.
