@@ -22,6 +22,18 @@ FACTS = [_fact(l) for l in load('fact-conflicts.txt')]
 LOWERCASE_BRANDS = load('lowercase-brands.txt')
 SPELLINGS = [tuple(f.strip() for f in l.split('|', 1)) for l in load('spellings.txt')]
 
+# Subjects that can be given a figurative body: pronouns, relative pronouns, and every
+# product name. Longest-first so "Snov.io" wins over a shorter prefix.
+_FIG_SUBJ = r'\b(?:The|the|It|it|This|this|That|that|Which|which|Who|who|' + '|'.join(
+    re.escape(n) for n in sorted(PRODUCT_NAMES, key=len, reverse=True)) + r')'
+
+# Thresholds for the four style checks added 2026-08-13. All WARN: they are judgment
+# calls on prose, and the repo convention is that warnings report and do not block.
+NEGATION_CAP = 10        # "rather than" alone
+NEGATION_TOTAL_CAP = 15  # plus "instead of" and bare ", not"
+SCOPED_CAP = 12          # "here" / "of the nine" / "on this list" as comparison anchors
+SUPERLATIVE_ENTRY_CAP = 3  # tool sections allowed to open on a superlative
+
 def _protected_spans(text):
     """Character ranges covered by a product name. Banned-word hits inside these are exempt."""
     spans = []
@@ -73,7 +85,11 @@ def mask(text):
 _SENT_START = ('(?=[A-Z(\\[“"$0-9]'
                + ''.join('|' + re.escape(b) + r'\b' for b in LOWERCASE_BRANDS) + ')')
 
-def sentences(prose_lines):
+def sentences(prose_lines, min_words=3):
+    """min_words drops fragments that are not sentences. It defaults to 3 because the
+    25-word check does not want table debris or a bare label counted as prose.
+    Paragraph-shape counting passes min_words=1: a two-word sentence like "Two caveats."
+    is a real sentence, and dropping it undercounted a four-sentence paragraph as three."""
     out = []
     for l in prose_lines:
         l = re.sub(r'^\s*[-*]\s*', '', l)
@@ -93,8 +109,34 @@ def sentences(prose_lines):
         # inventing an error, which is the safer direction to fail in.
         for s in re.split(r'(?<=[.!?])\s+' + _SENT_START, l):
             s = s.strip()
-            if len(s.split()) > 2: out.append(s)
+            if len(s.split()) >= min_words: out.append(s)
     return out
+
+def _tool_sections(text):
+    """(name, body) for every numbered tool H2, each stopping at the next H2."""
+    out = []
+    for m in re.finditer(r'^##\s+\d+\.\s+(.+?)\s*(?:\{#[^}]*\})?\s*$', text, re.M):
+        rest = text[m.end():]
+        nxt = re.search(r'^##\s', rest, re.M)
+        out.append((m.group(1).strip(), rest[:nxt.start()] if nxt else rest))
+    return out
+
+def _proscons(sec):
+    """(pros, cons) cell counts from a section's two-column Pros/Cons table."""
+    rows = re.findall(r'^\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*$', sec, re.M)
+    rows = [r for r in rows if r[0].strip() not in ('Pros', '') and '---' not in r[0]]
+    return sum(1 for r in rows if r[0].strip()), sum(1 for r in rows if r[1].strip())
+
+def _entry_sentence(sec):
+    """First sentence of the paragraph after the mandated explainer, which is the entry
+    angle section 21 requires to vary. Skips the Best for and G2 Rating lines."""
+    paras = [p.strip() for p in re.split(r'\n\s*\n', sec)
+             if p.strip() and not p.lstrip().startswith(('#', '-', '*', '|', '<'))
+             and not p.lstrip().startswith('**Best for')
+             and not p.lstrip().startswith('**G2 Rating')
+             and not p.lstrip().startswith('**Not for')]
+    if len(paras) < 2: return ''
+    return re.split(r'(?<=[.!?])\s+', paras[1])[0]
 
 def _sections(text, head_re):
     """Bodies of every section whose heading matches, each stopping at the next heading."""
@@ -177,8 +219,15 @@ def check(title, meta, text, label):
         add('ERROR', 'first-person-plural:' + w, ctx(body, m.start()))
 
     # figurative verbs where the subject looks like a product
+    # Figurative verbs, meaning a product or feature given a body. The subject list has to
+    # include product names and relative pronouns, not just the/it: the commonest form of
+    # this is a named product as the actor ("Waalaxy sits at 0.5%") or a relative clause
+    # inside the mandated explainer sentence ("a tool that puts email steps inside"), and
+    # both walked straight through the old the/it-only pattern.
+    # "G2 puts X at 4.6" is the wording section 9b mandates, and G2 is deliberately not a
+    # subject here, so it does not match and needs no exemption.
     for v in FIG_VERBS:
-        for m in re.finditer(r'\b(?:The|the|It|it)\s+\w*\s?\b' + v + r'\b', body):
+        for m in re.finditer(_FIG_SUBJ + r"(?:'s|’s)?\s+(?:\w+\s+){0,2}?\b" + v + r'\b', body):
             add('WARN', 'figurative-verb:' + v, ctx(body, m.start()))
 
     # punctuation
@@ -195,7 +244,7 @@ def check(title, meta, text, label):
         add('WARN', 'sentence>25w(%dw)' % len(s.split()), s[:100])
     paras = [p for p in re.split(r'\n\s*\n', body)
              if p.strip() and not p.lstrip().startswith(('#', '-', '*', '|'))]
-    pcounts = [len(sentences([p])) for p in paras]
+    pcounts = [len(sentences([p], min_words=1)) for p in paras]
     for p, c in zip(paras, pcounts):
         if c > 3: add('WARN', 'paragraph>3sent(%d)' % c, p.strip()[:100])
 
@@ -216,6 +265,63 @@ def check(title, meta, text, label):
     for wrong, fix in SPELLINGS:
         for m in re.finditer(r'(?<![\w-])' + re.escape(wrong) + r'(?![\w-])', text):
             add('ERROR', 'spelling:' + wrong, 'write ' + fix + '  ' + ctx(text, m.start()))
+
+    # --- style checks added 2026-08-13, all for rules that were already written down ---
+
+    # Section 5 bans "perfectly balanced pros and cons, four against four, all the same
+    # length. Real reviews are lopsided." Nothing checked it, and the Expandi draft ran
+    # 4-against-4 in seven of seven competitor sections.
+    tool_secs = _tool_sections(text)
+    sym = []
+    for name, sec in tool_secs:
+        pros, cons = _proscons(sec)
+        if pros and pros == cons:
+            sym.append('%s %dv%d' % (name, pros, cons))
+            if pros == 4:
+                add('WARN', 'proscons-4x4:' + name, 'four against four, the shape section 5 bans by name')
+    if len(sym) >= 3:
+        add('WARN', 'proscons-symmetry(%d)' % len(sym), ', '.join(sym))
+
+    # Section 21 requires tool-section entry angles to vary. Two checks: a repeated opening
+    # signature, and too many sections entering on a superlative.
+    frames, supers = {}, []
+    for name, sec in tool_secs:
+        opener = _entry_sentence(sec)
+        if not opener: continue
+        key = ' '.join(opener.lower().split()[:3])
+        frames.setdefault(key, []).append(name)
+        if re.search(r'\b(?:cheapest|widest|largest|best-rated|most granular|nothing else|'
+                     r'no other tool|only tool|unmatched)\b', opener, re.I):
+            supers.append(name)
+    for key, names in frames.items():
+        if len(names) > 1:
+            add('WARN', 'entry-frame-repeat', '"%s..." opens %s' % (key, ' and '.join(names)))
+    if len(supers) > SUPERLATIVE_ENTRY_CAP:
+        add('WARN', 'entry-superlative(%d)' % len(supers), 'sections opening on a superlative: ' + ', '.join(supers))
+
+    # Section 6 bans trailing add-on clauses, and defining a thing by what it is not is the
+    # same reflex. Counted rather than located: one instance is fine, thirty is a tic.
+    n_rt = len(re.findall(r'\brather than\b', body, re.I))
+    n_io = len(re.findall(r'\binstead of\b', body, re.I))
+    n_bare = len(re.findall(r',\s+not\s+\w', body))
+    if n_rt > NEGATION_CAP or (n_rt + n_io + n_bare) > NEGATION_TOTAL_CAP:
+        add('WARN', 'define-by-negation(%d)' % (n_rt + n_io + n_bare),
+            '"rather than" %d, "instead of" %d, bare ", not" %d' % (n_rt, n_io, n_bare))
+
+    # Section 17 wants claims that survive being quoted off the page. "the widest here" and
+    # "the only one of the nine" mean nothing in an LLM answer or a snippet.
+    scoped = []
+    for pat, label in ((r'\bof the (?:nine|eight|seven|ten|six|five)\b', 'of the N'),
+                       (r'\bon this list\b', 'on this list'),
+                       (r'\bin this comparison\b', 'in this comparison'),
+                       (r'(?:est|widest|only|nothing|no other|more|fewer|better|worse|first|last)'
+                        r'\b[^.]{0,40}?\bhere\b', 'scoped "here"')):
+        n = len(re.findall(pat, body, re.I))
+        if n: scoped.append('%s %d' % (label, n))
+    total_scoped = sum(int(s.rsplit(' ', 1)[1]) for s in scoped)
+    if total_scoped > SCOPED_CAP:
+        add('WARN', 'unscoped-comparison(%d)' % total_scoped,
+            'name the comparison set: ' + ', '.join(scoped))
 
     # lowercase-branded competitor names, capitalised only to open a heading or sentence
     for brand in LOWERCASE_BRANDS:

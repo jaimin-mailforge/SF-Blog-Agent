@@ -141,7 +141,9 @@ If a sentence describes the article, the data, or the reviewers rather than pres
 
 ---
 
-## 6. Preferred language `[JUDGE]`
+## 6. Preferred language `[JUDGE]` `[LINT]`
+
+**Partly enforced since 2026-08-13.** `define-by-negation` counts "rather than", "instead of" and bare ", not". One is fine, thirty is a tic. The Expandi draft ran 28.
 
 Small everyday verbs and concrete nouns: set up, run, send, check, connect, fix, break, cost, save, switch, land in the inbox, burn a domain.
 
@@ -411,7 +413,9 @@ Check that the CSS block survived the paste into Webflow. Rich-text editors some
 
 ---
 
-## 17. LLM visibility `[JUDGE]`
+## 17. LLM visibility `[JUDGE]` `[LINT]`
+
+**Partly enforced since 2026-08-13.** `unscoped-comparison` counts "of the nine", "on this list" and scoped "here". A claim that means nothing lifted off the page cannot be quoted by an LLM or a snippet. Name the comparison set instead. The Expandi draft ran 32.
 
 LLMs search the web and quote what they find. The goal is to be the source they quote.
 

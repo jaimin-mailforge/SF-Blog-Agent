@@ -67,6 +67,47 @@
    yourself after a Bash write. Found during the judge pass on the Expandi draft,
    where the whole contraction rewrite went in through Bash.
 
+10. **Figurative verbs only fired when the subject was "the" or "it".** Fixed 2026-08-13.
+   The pattern was `\b(?:The|the|It|it)\s+\w*\s?VERB`, which misses the two commonest
+   forms: a named product as the actor ("Waalaxy sits at 0.5%") and a relative clause in
+   the mandated explainer sentence ("a LinkedIn automation tool that puts email steps
+   inside"). Four clear violations in the Expandi draft, all reported clean. The subject
+   list now includes every name in `product-names.txt` plus this/that/which/who. "G2 puts
+   X at 4.6" is the wording section 9b mandates and G2 is deliberately not a subject, so
+   it needs no exemption. Verified: catches all four, does not fire on the mandated line.
+
+11. **The banned-verb data file was two verbs short of the rule.** Fixed 2026-08-13.
+   `writing.md` section 5 bans nine figurative verbs. `figurative-verbs.txt` carried seven,
+   missing **lives** and **flows**, so those two were unenforceable no matter what the
+   subject pattern did. Both added, third-person-singular only. Bare "live" and "living"
+   are deliberately not banned: the subject pattern would flag "the live pricing page",
+   which is correct usage and appears in the draft's own methodology line.
+
+12. **A four-sentence paragraph reported as three.** Fixed 2026-08-13. Paragraph shape
+   reused `sentences()`, which drops fragments under three words so that table debris and
+   bare labels do not get charged against the 25-word ceiling. That filter also ate real
+   short sentences, so the Skylead FAQ paragraph's "Two caveats." vanished and a
+   four-sentence paragraph counted as three. `sentences()` now takes `min_words`, still 3
+   by default for the word-count check, and paragraph counting passes 1.
+
+13. **Four rules had no checker at all.** Added 2026-08-13, all WARN, since they are
+   judgment calls on prose and the repo convention is that warnings report and do not
+   block. Each one reproduced a finding an independent editorial read had made by hand,
+   which is how they were calibrated.
+
+   - `proscons-4x4` and `proscons-symmetry` for section 5's named ban on "perfectly
+     balanced pros and cons, four against four". The Expandi draft ran 4v4 in seven of
+     seven competitor sections.
+   - `entry-frame-repeat` and `entry-superlative` for section 21's requirement that tool
+     section entry angles vary. Five sections opened on a superlative.
+   - `define-by-negation` for section 6. Counts "rather than", "instead of" and bare
+     ", not". The draft ran 28.
+   - `unscoped-comparison` for section 17. Counts "of the nine", "on this list" and scoped
+     "here", none of which survive being quoted off the page by an LLM or a snippet. The
+     draft ran 32.
+
+   Thresholds are constants at the top of `check.py`, not magic numbers inline.
+
 ## Open
 
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the
