@@ -236,7 +236,7 @@ Two hard sourcing warnings:
 
 ### Expandi's genuine strengths, for section 14
 
-1. **The widest LinkedIn campaign surface of any tool here.** 11 named campaign types including Mobile Connector, which Expandi says adds 100 connection requests a week, plus free Open InMail, Group, Event Invite, Company Follow Invite, Inbound and Recovery.
+1. **The widest LinkedIn campaign surface of any tool here.** 11 named campaign types including Mobile Connector, which Expandi says adds between 50 and 100 connection requests a week, plus free Open InMail, Group, Event Invite, Company Follow Invite, Inbound and Recovery.
 2. **A real conditional builder.** Three true/false conditions plus engagement actions nothing else here matches: skill endorsement, like a post, like a company post, invite to follow company, and signals on profile visits, company visits and post engagement.
 3. **Safety scaffolding as a product feature.** Cloud-based, a dedicated country-based IP per account, profile auto warm-up, and randomised limits the tool refuses to let you exceed.
 
@@ -317,6 +317,8 @@ Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 per
 
 **What the earlier extraction got wrong, recorded so the same error is not repeated.** It reported €19 / €49 / €69 against an actual $16 / $32 / $55, and a 50 percent annual discount against an actual 20 percent. The euro figures were probably a geolocated variant, a stale render, or the JSON-LD this brief already flagged as contradictory. **A screenshot of the rendered page beats any extraction of it.**
 
+**Re-checked independently 2026-08-13, and the euro rendering reproduces.** A second pass tried waalaxy.com/pricing, ?currency=USD, /en/pricing, /us/pricing and the fr, de and es localized routes. Every one served EUR at 19, 49 and 69 per user per month with a toggle reading Monthly, Quarterly -20 percent, Yearly -50 percent. There is no dollar sign followed by a digit anywhere in the 1.4 MB of served HTML. So the USD figures rest on Jaimin's screenshot alone and no automated route reproduces them. Treat $16 / $32 / $55 as the decision of record per Jaimin, and treat the euro rendering as what a reader outside the US may see. Do not convert between them.
+
 **Gating facts, from the screenshot's own feature lists.** Cold email sequences and multichannel LinkedIn-plus-email campaigns are **Business only**, which also adds 500 email finder credits. Pro covers unlimited campaigns, pre-built prospecting sequences, automated follow-ups, CRM synchronisation and team collaboration tools. **Advanced is where the maximum LinkedIn invitation limits, API access, the Make, Zapier and N8N modules, and live chat support begin.** The invite ceiling is **800 a month even at the top tier**, and Pro is capped at 300. No email warm-up anywhere on the site.
 
 **Waalaxy is serving more than one version of this pricing page.** Checked again 2026-08-13: the server-rendered HTML carries a **three-way toggle, Monthly / Quarterly -20% / Yearly -50%**, while Jaimin's screenshot of the rendered page shows a **two-way toggle, Monthly / Yearly -20%**. Different cycles and different discounts. That is the likeliest explanation for the euro figures too, and it means **no discount percentage for Waalaxy can be stated as fact.** The draft now tells the reader to read the toggle and says the page has more than one version. Prices are JS-injected and absent from the HTML, so the screenshot remains the only readable source.
@@ -329,9 +331,9 @@ Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 per
 
 **Complaints.** Missing features and thin native integrations, around 8 reviewers. Extension and reliability bugs, around 6. Price against value, around 6. LinkedIn limits and account restrictions, around 5, including a suspension after four months and campaigns blocking before reaching daily limits. **Caveat: a large share of Waalaxy's Reddit threads are authored by competing vendors.** Only first-person user statements were counted.
 
-**Strengths.** Cheapest genuine entry point in the set at €19 with unlimited campaigns included. Customer service is its best-scoring dimension. Import breadth covers LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of post likers and commenters.
+**Strengths.** Cheapest genuine entry point in the set at $16 with unlimited campaigns included. Customer service is its best-scoring dimension. Import breadth covers LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of post likers and commenters.
 
-**Wrong for** agencies running multiple LinkedIn accounts at volume, and for anyone email-led: email needs the €69 tier, invites never exceed 800 a month, there is no warm-up, and the inbox costs extra.
+**Wrong for** agencies running multiple LinkedIn accounts at volume, and for anyone email-led: email needs the $55 Business tier, invites never exceed 800 a month, there is no warm-up, and the inbox costs extra.
 
 ## Evidence: La Growth Machine
 
@@ -341,7 +343,7 @@ Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 per
 |---|---|---|---|---|
 | Basic | €60 / $70 | **€50 / $60** | LinkedIn, email | 3 included |
 | Pro | €120 / $135 | **€100 / $110** | plus calls | **25 free** |
-| Ultimate | €180 / $195 | **€150 / $165** | plus X | unlimited |
+| Ultimate | $195 | **$165** | plus X | unlimited |
 
 **The gating fact that matters for this article: the unified LinkedIn-and-email inbox is Pro and above. Basic explicitly excludes it, and Basic also gives you one email sender.** So the cheap-looking tier lacks the two things a LinkedIn-plus-email motion needs. Identities are billed separately on every tier. Agency needs 6 identities minimum, Custom needs a 6-month commitment. 14-day trial, no card. No email warm-up product.
 
@@ -363,7 +365,9 @@ Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 per
 
 **Multichannel, per user:** $109 monthly, $99 quarterly, **$87 yearly**. Enterprise is talk-to-sales, 5 users minimum.
 
-**Email, flat by volume with unlimited users:** 50,000 emails at $69 monthly and **$55 yearly**. Then 100,000 at $89 / $80, 200,000 at $159 / $127, 500,000 at $359 / $287, 1,000,000 at $659 / $527.
+**Email, flat by volume with unlimited users:** 50,000 emails at $69 monthly and **$55 yearly**. Then 100,000 at $89 / $80, 200,000 at $159 / $127, 500,000 at $359 / $287, 1,000,000 at $659 / $527. A sixth option reads "Custom emails limit, talk to sales".
+
+**Conflict on the 100,000 tier, unresolved 2026-08-13.** The pricing page yearly cell reads $80, which is also its quarterly cell. The help centre gives $89 monthly, $80 quarterly, $71 yearly, and every other tier satisfies the page's own 20 percent yearly discount exactly while this one does not. The draft keeps $80 because the live pricing page is the source of record, but $71 is probably the real annual rate and the cell is stale. Re-check before reuse.
 
 **LinkedIn automation requires the Multichannel plan**, confirmed twice: it appears only in that plan's feature block, and the comparison table gates LinkedIn profile visits, follows and invites, text messages, voice messages, in-app calling, VoIP, SMS, the WhatsApp add-on and the unified inbox to Multichannel and Enterprise. **The unified inbox is Multichannel only**, despite the Email plan's marketing card listing it. Another internal contradiction, and the comparison table is the more specific source.
 
@@ -373,7 +377,7 @@ Enterprise unpriced, for teams of 5+. **The toggle states Yearly at minus 20 per
 
 **Ratings.** Capterra **4.6 from 387 reviews**, ease 4.5, customer service 4.6.
 
-**Complaints.** Per-seat cost at team scale, around 8 voices, including criticism of no discounts until 20+ seats. **Lead database value below the pitch, around 4 users**, with the most concrete being a trialist who ran 130 target companies through Sales Navigator, Scrupp, Clay and lemlist and found only 9 unique to lemlist, about 12 percent, verdict "wouldn't be worth the price of admission". Support depth, around 4 voices, including "their support is not technical and only relays what their technical people tell them". Reporting accuracy, 2 voices.
+**Complaints.** Per-seat cost at team scale, around 8 voices, including criticism of no discounts until 20+ seats [RETRACTED 2026-08-13: no Waalaxy or lemlist page publishes any seat-based volume discount. Verified absent from lemlist.com/pricing and the help centre. Never reuse.]. **Lead database value below the pitch, around 4 users**, with the most concrete being a trialist who ran 130 target companies through Sales Navigator, Scrupp, Clay and lemlist and found only 9 unique to lemlist, about 12 percent, verdict "wouldn't be worth the price of admission". Support depth, around 4 voices, including "their support is not technical and only relays what their technical people tell them". Reporting accuracy, 2 voices.
 
 **Strengths.** Widest channel span in one sequence: email, LinkedIn with 4 action types, SMS, WhatsApp, and in-app calling, with **conditional next steps on every plan including Email**. Email infrastructure bundled rather than bolted on, including lemwarm, inbox rotation, rotating IPs, custom tracking domain, deliverability hub, and in-app domain and mailbox purchase. The Email plan's unlimited-users volume pricing is genuinely cheap for email-only teams.
 
@@ -439,7 +443,7 @@ These are the three patterns the article's argument rests on. All from the evide
 
 **2. A unified inbox covering both channels is rarer still.** Expandi, HeyReach, Meet Alfred and Waalaxy are all **LinkedIn-only inboxes**, and Waalaxy charges €20 a month for its. Dripify's email-reply handling is unverified. La Growth Machine gates it to Pro. lemlist gates it to Multichannel. Only **Snov.io** includes it on every paid plan. Salesforge's Primebox™ carries both channels on both plans.
 
-**3. Seven different billing units, which is the spine of the piece.** Per seat where a seat is one LinkedIn account: **Expandi** $99 / $79, **Dripify** $59 to $99 / $39 to $79. Per sender with humans free: **HeyReach** $79 / $63. Per identity with humans free: **La Growth Machine** €60 / €50. Per user: **Meet Alfred** $59 / $29, **Waalaxy** €19 to €69, **lemlist Multichannel** $109 / $87. Flat with unlimited seats: **Snov.io** $39 / $29.25 plus $69 per LinkedIn slot, and **lemlist Email** $55 flat by volume. Salesforge is flat with unlimited mailboxes on both plans and unlimited LinkedIn senders and users on Growth at $80 annual.
+**3. Seven different billing units, which is the spine of the piece.** Per seat where a seat is one LinkedIn account: **Expandi** $99 / $79, **Dripify** $59 to $99 / $39 to $79. Per sender with humans free: **HeyReach** $79 / $63. Per identity with humans free: **La Growth Machine** €60 / €50. Per user: **Meet Alfred** $59 / $29, **Waalaxy** $16 to $55, **lemlist Multichannel** $109 / $87. Flat with unlimited seats: **Snov.io** $39 / $29.25 plus $69 per LinkedIn slot, and **lemlist Email** $55 flat by volume. Salesforge is flat with unlimited mailboxes on both plans and unlimited LinkedIn senders and users on Growth at $80 annual.
 
 That third pattern is the honest reason Salesforge earns the top slot on this article's dimension. Not "more features". A team of five running five LinkedIn accounts pays five multiples almost everywhere in this set.
 
@@ -481,7 +485,7 @@ Computed from G2's own star distributions. This is the strongest evidence in the
 | lemlist | 20 of 1,906 | 1.0% |
 | Waalaxy | 7 of 1,503 | 0.5% |
 
-**Expandi's one-star share is roughly ten times Waalaxy's and nineteen times lemlist's**, against a respectable 4.2 overall. That is a bimodal distribution: most users are happy and a hard tenth are not. State the arithmetic, do not speculate about what those 15 reviews say, because the review text is not reachable.
+**Expandi's one-star share is roughly nineteen times Waalaxy's and ten times lemlist's**, against a respectable 4.2 overall. That is a bimodal distribution: most users are happy and a hard tenth are not. State the arithmetic, do not speculate about what those 15 reviews say, because the review text is not reachable.
 
 Meet Alfred at 21.6 percent is worse still, and it is the lowest-rated tool on **both** platforms, 3.4 on G2 and 2.8 on Capterra. Two independent platforms agreeing is far stronger than the 13-review Capterra base alone.
 
@@ -493,7 +497,7 @@ G2 counts these across its full review set, so they are better evidence than per
 |---|---|---|
 | Expandi.io | Technical Issues (4), Delays (4), Integration Issues (2), Credit Limitations (2) | Campaign instability, and note that **no ban or restriction tag appears at all** |
 | Dripify | **Expensive (37)**, Limited Features (22), Inefficient Workflow (15), **Email Limitations (11)** | The cost complaint, and independently the 200-a-day single-mailbox email cap |
-| Waalaxy | **Expensive (30)**, Campaign Management (22), Missing Features (21), **Plan Limitations (19)** | Price against value, and the tier gating that puts email on the €69 plan |
+| Waalaxy | **Expensive (30)**, Campaign Management (22), Missing Features (21), **Plan Limitations (19)** | Price against value, and the tier gating that keeps email on the $55 Business plan |
 | lemlist | **Missing Features (208)**, **Expensive (140)**, Learning Curve (125), Email Management (77) | Per-seat cost at team scale |
 | Snov.io | **Email Issues (46)**, Email Management (32), Missing Features (29) | Deliverability degradation at scale. Its top con is email, on an email-first tool |
 | La Growth Machine | Technical Issues (3), Software Bugs (3), Error Issues (3), Data Inaccuracy (2) | The bugs theme, and confirms it stays thin |

@@ -18,7 +18,7 @@ Then there's the line its own pricing page footnotes. Image and GIF personalizat
 
 So the setup people are actually comparing against costs roughly $136.50 per seat per month.
 
-I haven't found a single article that prints that number.
+Two other comparison articles print a combined figure. Both use monthly rates, which is why theirs run higher and mine is the annual one.
 
 I went through the live pricing page, the product docs and the G2 review data for every tool I considered. Eight made the list.
 
@@ -31,7 +31,7 @@ Most of the ones that did not fell down on the same thing. They do LinkedIn only
 - **[Dripify](#dripify):** Best for solo operators and two-person teams who want native email inside the LinkedIn sequence at the lowest price here. It publishes exact daily action limits per plan, from $39 per user per month billed annually.
 - **[Meet Alfred](#meet-alfred):** Best for solo operators who want LinkedIn, email and a third channel in one sequence on the tightest budget. That's $29 per user per month billed annually, and go in with your eyes open about its support record.
 - **[Waalaxy](#waalaxy):** Best for solo operators and small teams running LinkedIn only, who want the widest import options at the cheapest entry price. $16 per user per month billed annually, capped at 300 invites.
-- **[La Growth Machine](#la-growth-machine):** Best for small teams where enrichment quality decides everything. It bills per sending identity rather than per person, so teammates cost nothing, from €50 per identity per month billed annually.
+- **[La Growth Machine](#la-growth-machine):** Best for small teams where enrichment quality decides everything. It bills per sending identity rather than per person, so teammates cost nothing, from $60 per identity per month billed annually.
 - **[lemlist](#lemlist):** Best for email-led teams who want the widest channel span in one sequence, with lemwarm included on every plan. Email from $55 a month billed annually, and LinkedIn needs Multichannel at $87 per user.
 - **[Snov.io](#snov-io):** Best for email-first teams at low volume who want native warm up and unlimited seats without a per-user multiplier. $29.25 a month billed annually, plus $62 for each LinkedIn slot.
 
@@ -43,11 +43,11 @@ Stay where you are.
 
 Expandi holds a 4.2 out of 5 on G2 from 158 reviews, which is a respectable score. Look at the shape of it and something else shows up.
 
-Fifteen of those 158 reviews are one star, which is 9.5% of the total. Waalaxy sits at 0.5% and lemlist at 1.0%, so most Expandi users are happy and a hard tenth are not. Three things account for most of what I hear from the second group.
+Fifteen of those 158 reviews are one star, which is 9.5% of the total. Waalaxy's share is 0.5% and lemlist's is 1.0%, so most Expandi users are happy and a hard tenth are not. Three things account for most of what I hear from the second group.
 
 ### The $79 Seat That Becomes $136.50
 
-Expandi has one self-serve plan, and Business runs $79 per seat per month billed annually. That's the number every comparison article prints. It's not the number you pay.
+Expandi has one self-serve plan, and Business runs $79 per seat per month billed annually. That's the number Expandi leads with. It's not the number you pay.
 
 Image and GIF personalization is the feature Expandi built its reputation on, and it's also not included. That cost is Hyperise, at about $57.50 per seat per month on annual billing, which covers 5,000 image views and up to 5 active images. One seat with the personalization is therefore about $136.50 a month, and five seats is $682.50.
 
@@ -81,7 +81,7 @@ One thing I did not do.
 
 I have not run 90-day tests on all eight tools.
 
-Every price here is the annual-billing rate, read off the vendor's own live pricing page this week. Every rating came off the tool's own G2 page. Where a figure is not published, I say so instead of estimating it.
+Every price here is the annual-billing rate, read off the vendor's own live pricing page this week. Every rating came off the tool's own G2 and Capterra pages, captured by hand because G2 blocks automated access. Where a figure is not published, I say so instead of estimating it.
 
 ## Feature Comparison: Expandi vs the Top 5 Alternatives
 
@@ -226,7 +226,7 @@ Every price here is the annual-billing rate, read off the vendor's own live pric
       <tr>
         <td>Multichannel (LinkedIn + email)</td>
         <td class="highlight-col">Native LinkedIn and email with if/else branching</td>
-        <td>LinkedIn native, email via Instantly or Smartlead</td>
+        <td>LinkedIn native, email via Instantly, Smartlead or EmailBison</td>
         <td>Email is one step inside the Builder campaign only</td>
         <td>Native email on every paid plan, your own mailbox</td>
         <td>LinkedIn plus email on the Business tier only</td>
@@ -247,7 +247,7 @@ Every price here is the annual-billing rate, read off the vendor's own live pric
         <td>Unified LinkedIn inbox across every sender</td>
         <td>LinkedIn and Sales Navigator only, no email replies</td>
         <td>LinkedIn inbox from the Pro plan</td>
-        <td>Inbox add-on at about €20 per user per month</td>
+        <td>Paid add-on, priced separately</td>
         <td>Multichannel and Enterprise only</td>
       </tr>
       <tr>
@@ -317,7 +317,7 @@ Every price here is the annual-billing rate, read off the vendor's own live pric
   </table>
 </div>
 
-Read the starting-price row against the billing-unit row, not on its own. Waalaxy looks like the cheapest tool here until you need email, which lives two tiers up. Dripify looks cheaper than Salesforge until you need a second seat.
+Read the starting-price row against the billing-unit row, not on its own. Waalaxy looks like the cheapest tool here until you need email, which is two tiers up. Dripify looks cheaper than Salesforge until you need a second seat.
 
 The warm-up row is the one people forget, because it isn't in the table at all for most of these tools. Only Salesforge and lemlist include it, and the other four mean a separate subscription on top of everything in the pricing row.
 
@@ -329,7 +329,7 @@ The warm-up row is the one people forget, because it isn't in the table at all f
 
 Salesforge is a multichannel outreach tool that runs cold email and LinkedIn as two channels of one sequence, with one inbox behind both.
 
-Every other tool on this list treats those as two campaigns you keep in step by hand. Salesforge runs them as steps in the same sequence, with conditions between them.
+Dripify, lemlist and Meet Alfred also put both channels in one sequence. What differs is the billing unit, and whether one set of exit rules governs both.
 
 The branching is the part worth understanding. Send a connection request, and if it's accepted the next step is a LinkedIn message. If it isn't, the sequence falls back to email instead.
 
@@ -417,14 +417,14 @@ The agency plumbing goes further than pricing. Per-client workspaces run under o
 | Humans are free. Only LinkedIn accounts are billable | No native email sending, so multichannel means paying for Instantly, Smartlead or similar on top |
 | One inbox and one login across every client account | The Agency bundle only pays off above 12 senders, which leaves mid-size teams in a gap |
 | Whitelabel, workspaces and sender rotation are built in rather than bolted on | Confirmed LinkedIn actions are connection requests, messages, follows and profile views, fewer than Expandi |
-| API, webhooks and an MCP server | Growth includes a proxy per sender, Agency and Unlimited do not |
+| API, webhooks and an MCP server | Growth includes a proxy per sender, Agency and Unlimited expect you to bring your own |
 
 ### Pricing
 
 | Plan | Billed annually | Senders |
 |---|---|---|
 | Growth | **$63 per sender** | Choose your own number |
-| Agency | **$799** | 25, expandable to 50 |
+| Agency | **$799** | 25 senders |
 | Unlimited | **$2,399** | Unlimited |
 
 There's also a managed Done For You tier, which is a service rather than a plan.
@@ -443,7 +443,7 @@ G2 puts HeyReach at 4.6 from 71 reviews.
 
 **G2 Rating:** 4.5 out of 5 (348 reviews)
 
-Dripify is a LinkedIn automation tool that puts email steps inside the same drip campaign, on every paid plan including the cheapest one.
+Dripify is a LinkedIn automation tool with email steps inside the same drip campaign, on every paid plan including the cheapest one.
 
 It's the cheapest route to LinkedIn and email in one sequence, and the arithmetic decides whether that stays true for you.
 
@@ -512,7 +512,7 @@ If you want the three-channel sequence, run the trial hard and open a support ti
 - **The cheapest annual entry here at $29 per user per month:** EUR and GBP are published alongside USD rather than converted at checkout.
 - **The broadest LinkedIn entry points and relationship tooling:** Including auto-withdrawal of pending invitations and automated greetings on birthdays and job changes.
 - **A 600+ template library:** The largest published by any tool on this list.
-- **White label from five users:** That puts agency features below the price point most tools gate them at.
+- **White label from five users:** You get agency features below the price point most tools gate them at.
 - **Three separate inboxes:** LinkedIn, InMail and Sales Navigator. The pricing table lists no email inbox, so email replies live in your mail client.
 
 ### Pros and cons
@@ -622,18 +622,20 @@ The billing unit is unusual too, and in a good way for teams. An identity is a s
 |---|---|
 | Best-rated tool of the nine on both platforms | The unified LinkedIn and email inbox is Pro and above. Basic excludes it |
 | Teammates are free, so cost scales by sending profile rather than headcount | Basic gives you one email sender, so the entry tier fits one person |
-| Waterfall enrichment and voice messages are genuinely unmatched here | Per-identity billing gets expensive fast. Three senders on Pro is €300 a month |
+| Waterfall enrichment and voice messages are genuinely unmatched here | Per-identity billing gets expensive fast. Three identities on Pro is $330 a month |
 | Published support SLAs by tier, and a 5.0 customer service score on Capterra | Agency requires 6 identities minimum, and Custom needs a 6-month commitment |
 
 ### Pricing
 
 | Plan | Billed annually | Channels | Team members |
 |---|---|---|---|
-| Basic | **€50 / $60** | LinkedIn, email | 3 included |
-| Pro | **€100 / $110** | plus calls | **25 free** |
-| Ultimate | **€150 / $165** | plus a third social channel | Unlimited |
+| Basic | **$60** | LinkedIn, email | 3 included |
+| Pro | **$110** | plus calls | **25 free** |
+| Ultimate | **$165** | plus a third social channel | Unlimited |
 
 Those prices are per identity, and identities are billed separately on every tier. One person with one sending profile pays one unit. An agency running six clients pays six.
+
+Identities and team members are two different limits, which is easy to miss. Basic caps you at three identities, while Pro and Ultimate have no identity limit. The team members are the free seats on top.
 
 The gate to check before you buy is the inbox. Basic has LinkedIn and email but no unified inbox, and one email sender, so the real LinkedIn-plus-email motion starts at Pro.
 
@@ -671,7 +673,7 @@ So the honest way to read lemlist is to decide which half of the reply-rate prob
 
 | Pros | Cons |
 |---|---|
-| More channels in one sequence than anything else here | LinkedIn requires Multichannel at $87 per user, with no volume discount until 20+ seats |
+| More channels in one sequence than anything else here | LinkedIn requires Multichannel at $87 per user, and the Email plan cannot reach it |
 | lemwarm and a full deliverability stack included on every plan | The unified inbox is gated to Multichannel, despite the Email plan's card listing it |
 | The Email plan is flat by volume with unlimited users | Missing Features is its top con tag at 208 mentions, the highest count of the nine |
 | Conditional branching even on the entry plan | Reviewers rate the built-in lead database below the pitch. One trialist found only 12% of their target list was unique to it |
@@ -690,7 +692,7 @@ Multichannel is **$87 per user per month billed annually.** The Email plan is fl
 
 Two things on lemlist's own pricing page contradict each other, so check both at signup. The Email plan card reads $55 a month with unlimited users, while the comparison header above it says "From $55 per user per month".
 
-The plan card and the feature table both check unlimited users for that plan, so the per-user header looks like the error. The same page also lists the unified inbox on the Email card while the feature table gates it to Multichannel. Where they disagree, the feature table is the more specific source.
+The plan card and the feature table both check unlimited users for that plan, so the per-user header looks like the error. The same page lists the unified inbox on the Email card and then leaves that row unchecked for Email in its own comparison table. The help centre settles it: the multichannel inbox is Multichannel and Enterprise only.
 
 ### What real users say
 
@@ -762,7 +764,7 @@ That's a pricing argument, not a product one.
 
 On LinkedIn alone, Expandi does things none of the eight can.
 
-**It has the widest LinkedIn campaign surface of the nine, by a distance.** Eleven campaign types, including Mobile Connector, which Expandi says adds 100 connection requests a week on top of your normal quota. Open InMail, Group, Event Invite, Company Follow Invite, Inbound and Recovery all exist as their own campaign types rather than as steps.
+**It has the widest LinkedIn campaign surface of the nine, by a distance.** Eleven campaign types, including Mobile Connector, which Expandi says adds between 50 and 100 connection requests a week on top of your normal quota. Open InMail, Group, Event Invite, Company Follow Invite, Inbound and Recovery all exist as their own campaign types rather than as steps.
 
 **Its conditional builder is genuinely deeper than the alternatives.** Three true or false conditions, plus engagement actions no other tool here offers. Skill endorsement, liking a post, liking a company post, and inviting someone to follow your company page.
 
@@ -824,7 +826,9 @@ The Agency tier starts at ten seats and its rate is not published anywhere.
 
 Skylead's All-in-one plan is $100 per seat per month, and that price includes unlimited image and GIF personalization plus email warm up. Expandi charges for neither, because it has no warm up and routes personalization through Hyperise as a separate subscription.
 
-So on a like-for-like basis Skylead is $100 where Expandi's comparable configuration is about $136.50. Two caveats. Skylead publishes only that per-seat rate and leaves its annual plan unpriced, so a true annual comparison isn't possible yet. And Skylead's agency pricing is published, at $999 for 50 seats or $1,999 for unlimited seats, where Expandi's sits behind a sales call.
+So on a like-for-like basis Skylead is $100 where Expandi's comparable configuration is about $136.50. Two caveats.
+
+Skylead publishes only that per-seat rate and leaves its annual plan unpriced, so a true annual comparison isn't possible yet. Its agency pricing is published though, at $999 for 50 seats or $1,999 for unlimited seats, where Expandi's needs a sales call.
 
 **What is the difference between Meet Alfred and Expandi?**
 
@@ -836,7 +840,7 @@ Expandi is the stronger LinkedIn product and has the better record. On G2 it hol
 
 Yes, with a specific caveat. It rates 4.2 out of 5 on G2 from 158 reviews and 4.4 on Capterra from 31. It also has the deepest LinkedIn campaign builder of the nine.
 
-The caveat is the shape of that score. 9.5% of its G2 reviews are one star, which is roughly ten times Waalaxy's share, so satisfaction is split rather than middling. It's also LinkedIn-first: email is a single step inside one campaign type, email replies don't reach the inbox, and there is no warm up.
+The caveat is the shape of that score. 9.5% of its G2 reviews are one star, which is roughly nineteen times Waalaxy's share, so satisfaction is split rather than middling. It's also LinkedIn-first: email is a single step inside one campaign type, email replies don't reach the inbox, and there is no warm up.
 
 **What is the best free Expandi alternative?**
 
