@@ -22,8 +22,11 @@ for label, title, meta, text in ARTS:
     print('=' * 78)
     print('%s' % label.upper())
     print('  %s' % title[:70])
-    print('  chars %-6d sentences %-4d over-25w %-3d paras %-4d over-3-sent %-3d avg-para %s'
-          % (st['chars'], st['sentences'], st['over25'], st['paras'], st['over3'], st['avg_para']))
+    print('  chars %-6d sentences %-4d over-25w %-3d paras %-4d over-%dw %-3d avg-para %s'
+          % (st['chars'], st['sentences'], st['over25'], st['paras'],
+             C.PARA_WORD_CAP, st['over_para_cap'], st['avg_para']))
+    print('  rhythm  stdev %-5.2f (7.0+)  <=6w %-5.1f%% (18+)  >25w %-5.1f%% (5+)'
+          % (st['stdev'], st['short_pct'], st['long_pct']))
     print('  blog interlinks %-3d (min 5)   all links %-3d   title %d   meta %s'
           % (bl, al, len(title), len(meta) if meta else 'MISSING'))
     if of: print('  per-tool opener "%s": %d of %d sections' % (of[0], of[1], of[2]))
@@ -33,9 +36,9 @@ for label, title, meta, text in ARTS:
         print('     %-34s %d' % (rule, n))
     for sev, rule, det in err[:12]:
         print('     ! %-26s %s' % (rule[:26], det[:88]))
-    summary.append((label, len(err), len(warn), bl, st['over25'], st['over3']))
+    summary.append((label, len(err), len(warn), bl, st['over25'], st['over_para_cap']))
 
 print('=' * 78)
-print('%-26s %6s %6s %6s %8s %8s' % ('ARTICLE', 'ERR', 'WARN', 'ILINK', '>25w', '>3sent'))
+print('%-26s %6s %6s %6s %8s %8s' % ('ARTICLE', 'ERR', 'WARN', 'ILINK', '>25w', '  >60w'))
 for s in summary:
     print('%-26s %6d %6d %6d %8d %8d' % s)

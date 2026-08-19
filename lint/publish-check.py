@@ -44,8 +44,10 @@ def main():
     print('PUBLISH CHECK  %s' % target)
     print('  title %d chars   meta %s   blog interlinks %d (min 5)'
           % (len(title), len(meta) if meta else 'MISSING', bl))
-    print('  sentences %d, over 25 words %d   paragraphs %d, over 3 sentences %d'
-          % (st['sentences'], st['over25'], st['paras'], st['over3']))
+    print('  rhythm: stdev %.2f (need 7.0+)   <=6w %.1f%% (need 18+)   >25w %.1f%% (need 5+)'
+          % (st['stdev'], st['short_pct'], st['long_pct']))
+    print('  sentences %d, over 25 words %d   paragraphs %d, over %dw %d'
+          % (st['sentences'], st['over25'], st['paras'], C.PARA_WORD_CAP, st['over_para_cap']))
 
     # the leak this file exists for
     fp = [f for f in err if f[1].startswith('first-person-plural')]

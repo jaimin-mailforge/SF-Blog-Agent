@@ -35,7 +35,11 @@ def extract(path):
     m = re.search(r'(?is)<title>(.*?)</title>', src)
     if m: title = html.unescape(re.sub(r'(?s)<[^>]+>', '', m.group(1))).strip()
     meta = ''
-    m = re.search(r'(?is)<meta[^>]+name="description"[^>]+content="([^"]*)"', src)
+    # Order-agnostic. Webflow emits content= before name=, so a name-first pattern
+    # reported meta-missing on every published page. That false positive sat in
+    # KNOWN-ISSUES as an open mystery about the articles; it was always this regex.
+    m = (re.search(r'(?is)<meta[^>]+name=["\']description["\'][^>]*content=["\']([^"\']*)["\']', src)
+         or re.search(r'(?is)<meta[^>]+content=["\']([^"\']*)["\'][^>]*name=["\']description["\']', src))
     if m: meta = html.unescape(m.group(1)).strip()
     return {'title': title, 'meta': meta, 'text': text}
 

@@ -34,6 +34,15 @@ NEGATION_TOTAL_CAP = 15  # plus "instead of" and bare ", not"
 SCOPED_CAP = 12          # "here" / "of the nine" / "on this list" as comparison anchors
 SUPERLATIVE_ENTRY_CAP = 3  # tool sections allowed to open on a superlative
 
+# Rhythm, calibrated 2026-08-19 against the editor-approved RocketReach article
+# (stdev 8.55, 28.0% at <=6 words, 10.3% over 25) and our flat Expandi draft
+# (5.82, 13.9%, 0.0%). Floors matter as much as the ceiling.
+HARD_SENTENCE_CAP = 45   # ERROR. nothing in a body paragraph needs 45 words
+STDEV_FLOOR = 7.0        # spread of sentence length
+SHORT_FLOOR = 18.0       # min share of sentences at six words or fewer
+LONG_FLOOR = 5.0         # min share over 25 words
+PARA_WORD_CAP = 60       # replaces the 3-sentence cap
+
 def _protected_spans(text):
     """Character ranges covered by a product name. Banned-word hits inside these are exempt."""
     spans = []
@@ -79,6 +88,18 @@ def mask(text):
     t = re.sub(r'<[^>]+>', blank, t)                     # html tag markup, cell text survives
     return t
 
+def punct_text(text):
+    """Text for the punctuation checks. Unlike mask(), this KEEPS table cells, because
+    section 14 says section 4 applies inside the table. It drops only the places a
+    semicolon or a dash is legitimate: css blocks, code, link targets and bare urls."""
+    def blank(m): return ' ' * len(m.group(0))
+    t = re.sub(r'(?is)<style\b.*?</style>', blank, text)
+    t = re.sub(r'```.*?```', blank, t, flags=re.S)
+    t = re.sub(r'`[^`\n]*`', blank, t)
+    t = re.sub(r'\]\([^)\s]*\)', blank, t)
+    t = re.sub(r'https?://\S+', blank, t)
+    return t
+
 # A sentence can also open with a markdown link, a quote, a price, a digit, or a
 # lowercase-branded competitor. Missing those glued two sentences into one and hid
 # real over-25-word findings.
@@ -92,7 +113,10 @@ def sentences(prose_lines, min_words=3):
     is a real sentence, and dropping it undercounted a four-sentence paragraph as three."""
     out = []
     for l in prose_lines:
-        l = re.sub(r'^\s*[-*]\s*', '', l)
+        # Strip a list marker, but never the first * of a bold **label**. The old
+        # `[-*]` ate it, which defeated the label pattern below, so every
+        # **Best for:** line at paragraph start was measured with its label counted.
+        l = re.sub(r'^\s*(?:-|\*(?!\*)|\d+\.)\s+', '', l)
         # a bolded label followed by a colon is a label, not part of the sentence.
         # TL;DR entries and key-feature bullets are required to carry one, and
         # counting it would charge the same words twice against the 25-word ceiling.
@@ -115,7 +139,7 @@ def sentences(prose_lines, min_words=3):
 def _tool_sections(text):
     """(name, body) for every numbered tool H2, each stopping at the next H2."""
     out = []
-    for m in re.finditer(r'^##\s+\d+\.\s+(.+?)\s*(?:\{#[^}]*\})?\s*$', text, re.M):
+    for m in re.finditer(r'^##\s+\d+\s*[.)\-–]\s*(.+?)\s*(?:\{#[^}]*\})?\s*$', text, re.M):
         rest = text[m.end():]
         nxt = re.search(r'^##\s', rest, re.M)
         out.append((m.group(1).strip(), rest[:nxt.start()] if nxt else rest))
@@ -238,22 +262,58 @@ def check(title, meta, text, label):
             add('WARN', 'figurative-verb:' + v, ctx(body, m.start()))
 
     # punctuation
-    for m in re.finditer(r';', body):
-        if 'TL;DR' in ctx(body, m.start(), 8): continue
-        add('ERROR', 'semicolon', ctx(body, m.start()))
+    # Punctuation runs on cell-inclusive text. mask() blanks table rows, so six of the
+    # seven semicolons in the approved RocketReach article were invisible to this check
+    # while section 14 explicitly extends section 4 into cells.
+    ptext = punct_text(text)
+    for m in re.finditer(r';', ptext):
+        if 'TL;DR' in ctx(ptext, m.start(), 8): continue
+        add('ERROR', 'semicolon', ctx(ptext, m.start()))
+    # Section 4 bans em and en dashes and was tagged [LINT] with no implementation at all.
+    for ch, label in (('\u2014', 'em-dash'), ('\u2013', 'en-dash')):
+        for m in re.finditer(ch, ptext):
+            add('ERROR', label, ctx(ptext, m.start()))
     for m in re.finditer(r'!', body):
         add('WARN', 'exclamation', ctx(body, m.start()))
 
     # sentence + paragraph shape
     ss = sentences(prose)
-    over = [s for s in ss if len(s.split()) > 25]
-    for s in over[:40]:
-        add('WARN', 'sentence>25w(%dw)' % len(s.split()), s[:100])
+    L = [len(s.split()) for s in ss]
+
+    # Hard stop only. The old rule warned on every sentence over 25 words, and clearing
+    # those warnings is what flattened the Expandi draft: measured against the
+    # editor-approved RocketReach article, both sit at a 13-word mean, but the approved
+    # article has stdev 8.55 against our 5.82, 28% of sentences at six words or fewer
+    # against our 14%, and 10.3% over 25 words against our 0%. A ceiling with no floor
+    # makes writers converge on the middle, which is the one thing section 3 asks them
+    # not to do. So the ceiling is a soft target in prose and the linter checks spread.
+    for s in ss:
+        if len(s.split()) >= HARD_SENTENCE_CAP:
+            add('ERROR', 'sentence>=%dw(%dw)' % (HARD_SENTENCE_CAP, len(s.split())), s[:100])
+    if len(L) >= 80:
+        import statistics as _st
+        sd = _st.pstdev(L)
+        short = 100.0 * sum(1 for x in L if x <= 6) / len(L)
+        long_ = 100.0 * sum(1 for x in L if x > 25) / len(L)
+        if sd < STDEV_FLOOR:
+            add('WARN', 'rhythm-flat(stdev %.1f)' % sd,
+                'needs %.1f+. same mean, less spread. add very short and very long sentences' % STDEV_FLOOR)
+        if short < SHORT_FLOOR:
+            add('WARN', 'too-few-short(%.0f%%)' % short,
+                'needs %.0f%%+ of sentences at six words or fewer' % SHORT_FLOOR)
+        if long_ < LONG_FLOOR:
+            add('WARN', 'too-few-long(%.0f%%)' % long_,
+                'needs %.0f%%+ over 25 words. a coordinate series may run long' % LONG_FLOOR)
     paras = [p for p in re.split(r'\n\s*\n', body)
              if p.strip() and not p.lstrip().startswith(('#', '-', '*', '|'))]
-    pcounts = [len(sentences([p], min_words=1)) for p in paras]
-    for p, c in zip(paras, pcounts):
-        if c > 3: add('WARN', 'paragraph>3sent(%d)' % c, p.strip()[:100])
+    # Cap words, not sentences. Section 3's stated purpose is the five-second skim test,
+    # which is word density. The sentence cap inverted it: a 74-word three-sentence
+    # paragraph passed while a 28-word four-sentence pricing paragraph failed, and it
+    # capped the approved article's best tonal paragraph, which runs six short sentences.
+    for p in paras:
+        w = len(p.split())
+        if w > PARA_WORD_CAP:
+            add('WARN', 'paragraph>%dw(%dw)' % (PARA_WORD_CAP, w), p.strip()[:100])
 
     # seo
     if title and len(title) > 55: add('WARN', 'title>55(%d)' % len(title), title)
@@ -269,8 +329,20 @@ def check(title, meta, text, label):
 
     # case-sensitive spellings. the fact and banned-phrase checks are both case-
     # insensitive, so neither can tell Co-pilot from Co-Pilot. this one can.
+    # Forge-scoped. The Primebox mode spellings must not fire on a competitor's real
+    # product name: ZoomInfo ships "Copilot AI", and section 20 says competitors are
+    # spelled the way they spell themselves. Unscoped, this rule produced 9 of the 26
+    # errors on the approved RocketReach article, all of them false positives.
+    _FORGE = re.compile(r'\b(?:Salesforge|Primebox|Agent Frank|Warmforge|Leadsforge|'
+                        r'Mailforge|Infraforge|Primeforge|Forge)\b')
     for wrong, fix in SPELLINGS:
         for m in re.finditer(r'(?<![\w-])' + re.escape(wrong) + r'(?![\w-])', text):
+            # Scope to the containing sentence, not a character window: a Forge mention
+            # in an adjacent paragraph must not license a hit on a competitor's product.
+            lo = max((text.rfind(c, 0, m.start()) for c in '.!?\n'), default=-1) + 1
+            hi = min((x for x in (text.find(c, m.end()) for c in '.!?\n') if x != -1),
+                     default=len(text))
+            if not _FORGE.search(text[lo:hi]): continue
             add('ERROR', 'spelling:' + wrong, 'write ' + fix + '  ' + ctx(text, m.start()))
 
     # --- style checks added 2026-08-13, all for rules that were already written down ---
@@ -351,9 +423,14 @@ def check(title, meta, text, label):
     for m in re.finditer(r'\[\[FIGURE:', text):
         add('WARN', 'unresolved-placeholder', ctx(text, m.start()))
 
-    return findings, {'sentences': len(ss), 'over25': len(over),
-                      'paras': len(paras), 'over3': sum(1 for c in pcounts if c > 3),
-                      'avg_para': round(sum(pcounts)/max(1, len(pcounts)), 1),
+    import statistics as _st
+    pw = [len(p.split()) for p in paras] or [0]
+    return findings, {'sentences': len(ss), 'over25': sum(1 for x in L if x > 25),
+                      'paras': len(paras), 'over_para_cap': sum(1 for x in pw if x > PARA_WORD_CAP),
+                      'stdev': round(_st.pstdev(L), 2) if len(L) > 1 else 0.0,
+                      'short_pct': round(100.0 * sum(1 for x in L if x <= 6) / max(1, len(L)), 1),
+                      'long_pct': round(100.0 * sum(1 for x in L if x > 25) / max(1, len(L)), 1),
+                      'avg_para': round(sum(pw)/max(1, len(pw)), 1),
                       'chars': len(text)}
 
 def ctx(t, i, w=42):

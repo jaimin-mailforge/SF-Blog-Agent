@@ -61,12 +61,25 @@ The numbered rules:
 
 ## 3. Sentences and paragraphs `[LINT]`
 
-- Ideal sentence length: 12 to 20 words.
-- Hard ceiling: 25 words. Go over only when there is a reason, and never twice in a row.
-- A bolded label followed by a colon does not count toward the 25. "**Bounce Shield:**" is a label, not part of the sentence, and the linter strips it before measuring.
+**Rewritten 2026-08-19, calibrated against the editor-approved RocketReach article.** The old rule set a 12-to-20-word target and a hard 25-word ceiling. That is a mathematical instruction to write the middle, and it worked: the Expandi draft cleared the ceiling to literally zero violations and read flat. Measured side by side, both articles sit at a 13-word mean. The difference is spread.
+
+| | Approved | Expandi draft |
+|---|---|---|
+| Mean sentence | 13.1 | 13.0 |
+| Standard deviation | **8.55** | 5.82 |
+| Six words or fewer | **28.0%** | 13.9% |
+| Over 25 words | **10.3%** | 0.0% |
+
+- **Aim at 12 to 20 words, and treat 25 as a soft target, not a wall.** Go past it when the sentence earns it.
+- **Hard ceiling: 45 words, and the linter blocks it.** Nothing in a body paragraph needs 45.
+- **The floors matter as much as the ceiling, and the linter checks all three.** Standard deviation of sentence length at least 7.0, at least 18% of sentences at six words or fewer, at least 5% over 25 words. Prose that never breaks 25 words by aiming everything at 15 fails this rule with zero over-25 findings. That is the intended behaviour.
+- **A long sentence has to be a list, not a weld.** It may run long when it enumerates: "Every deal is a quote, annual-only, and reported contracts run $15,000 to $60,000 a year depending on seats, credits, and whether you take the Diamond tier." It may not when it fuses two complete statements with a comma and an "and".
+- A bolded label followed by a colon does not count toward sentence length, whether it opens a bullet or a paragraph. "**Bounce Shield:**" is a label, not part of the sentence.
 - One idea per sentence. If an "and" joins two full thoughts, split it.
-- Vary the rhythm. Follow a medium sentence with a short one. Like this.
-- Paragraphs: 1 to 3 sentences. New idea means new paragraph.
+- **Open a section with two sentences under eight words before any sentence over twenty.** The short pair buys the licence to sprawl. "Buying it is a project. Cognism does not publish pricing." Then the 31-word unpacking.
+- **Paragraphs: 60 words maximum. Sentence count is not capped.** The old 1-to-3-sentence cap inverted its own purpose, which is the five-second skim test. A 74-word three-sentence paragraph passed it while a 28-word four-sentence pricing paragraph failed, and it made the approved article's best paragraph illegal, six short sentences that resolve a contradiction for the reader.
+- New idea means new paragraph. A paragraph over 60 words is usually two ideas.
+- A direct-answer FAQ paragraph is exempt from the word cap. "Yes." plus three supporting sentences is the shape section 16 asks for.
 - Skim test: if a section cannot be skimmed in 5 seconds, rewrite it.
 
 **Section length.** Fixed by Jaimin on 2026-08-13. Diagnosis sections stay short and to the point. That covers "Why people leave [Competitor]", "Why people look for [Competitor] alternatives", and any H2 whose job is to name a problem rather than review a product.
@@ -245,6 +258,18 @@ Every product section in a listicle, an alternatives post, or a category page us
 3. **G2 Rating:** "X out of 5 (N reviews)".
 4. **A plain explainer sentence, and it opens the prose.** "[Tool] is a [what kind of tool] that [what it does]." Say what the thing is before you say what is interesting about it. A reader who has never heard of the tool must be able to follow the second paragraph.
 5. **2 to 4 more paragraphs.** The mechanics, the billing unit, the trade-off, one specific first-hand moment where `rules/observations.md` funds one.
+5b. **The first-person verdict, one sentence, in every tool section.** `[JUDGE]` Added 2026-08-19. It goes after the explainer and the mechanism paragraph, before the caveat. The approved RocketReach article carries one in 8 of its 9 sections. The Expandi draft carried one in 0 of 8, which is why its narrator reads as a bibliography rather than a practitioner.
+
+    The shape: **I [recommend / reach for / point buyers at / put] [tool] when [the reader's condition].**
+
+    > "I reach for it when the ICP has an EU postcode."
+    > "I recommend Uplead when the RocketReach complaint is specifically about bounces."
+    > "I point most RocketReach buyers at it first because it turns two invoices into one."
+
+    A grep for `I (recommend|reach for|point|put|pick|choose|prefer|think)` returned six hits in the approved article and **zero** in our 7,800-word draft. The draft had all the same conditions, in second person, with the recommender stripped out of the front: "If you run LinkedIn outreach for clients across a lot of accounts". Same information, and nobody is doing the recommending.
+
+    **Also required: one first-person opinion per article with no number in it.** "I have complicated feelings about it." Cheapest rule in this file to satisfy, because `rules/observations.md` cannot gate an opinion that carries no figure.
+
 6. **H3 "Key features".** 5 to 8 bullets for a competitor. For the routed Forge product, **one bullet per must-cover feature in that product's section of `rules/forge-positioning-guidelines.md`, and the same number of bullets as that section lists.** Colon after the feature name. See below.
 7. **H3 "Pros and cons".** A two-column table, lopsided and honest. For Salesforge the cons column carries exactly one point. See `rules/positioning.md`.
 8. **H3 "Pricing".** Annual rates only. See section 9c.
@@ -273,7 +298,13 @@ Work out which list governs before writing the section:
 
 **Never bundle must-covers behind one label.** Two failures on the Expandi draft, both caused by it. The first pass hid A/B testing, the API and MCP inside an Agent Frank bullet, and campaign analytics and the followers search were never written at all. The second pass still merged the API, Integrations and MCP CLI into one bullet, which read as complete and was three features short. Count the bullets against the doc, then check each name.
 
-**The ratings section is one line.** `[LINT]` Fixed by Jaimin on 2026-08-13.
+**The ratings section is one line of prose, and it carries its citation.** `[LINT]` Fixed by Jaimin on 2026-08-13, amended 2026-08-19.
+
+**Amendment.** The one-line rule was stripping our citations. The approved RocketReach article carries **20 external links against our 0**: for each of its nine tools it links the G2 product page on the rating sentence, then a permalink to one specific numbered review under a captioned screenshot. It also links the incumbent's own refund policy on the two sentences that accuse. A review screenshot and its source link are not a second line of prose. What stays banned is prose under the rating: no con-tag breakdown, no one-star arithmetic, no reading of what the reviews cluster on. Those live in the pros and cons cells.
+
+Every rating line carries the review count. "G2 puts Salesforge at 4.6 from 137 reviews", never "Salesforge holds 4.6 out of 5 on G2". A rating with no denominator is the weakest form of the claim, and the approved article gets this wrong in all nine sections while arguing elsewhere that sample size matters.
+
+**Any accusation sourced to a document the vendor published must link that document.** Our draft cites Expandi's pricing-page footnote, its purchased-versus-connected seat clause and its own Smartlead guide, and links none of the three. That is the cheapest credibility fix available to us.
 
     ### What real users say
 
@@ -459,6 +490,20 @@ Correct, always: Salesforge, Mailforge, Primeforge, Leadsforge, Infraforge, Warm
 Never: SalesForge, Sales Forge, Frank AI, the Agent, AgentFrank, Autopilot, Copilot, Prime Inbox, bounce protection, or any invented abbreviation.
 
 Collective term: "Forge stack".
+
+**Never park "I" in a trailing clause after a superlative.** `[LINT]` Added 2026-08-19. "the widest I found", "the lowest rating I recorded", "the only published SLA I found", "no other tool I compared". Cap: two per article.
+
+This is a self-inflicted tic and worth understanding, because fixing one rule created it. Section 17 flagged 32 unscoped comparisons in the Expandi draft, things like "the widest here" and "the lowest of the nine", which do not survive being quoted off the page. The fix attributed them to the researcher instead. That satisfied section 17 and turned 18 of the draft's 32 first-person sentences into research footnotes. The approved article does it once in 21.
+
+Both rules are satisfiable at once, by a third form: **name the number, not the comparison set and not the researcher.**
+
+| | |
+|---|---|
+| Unscoped, fails section 17 | "Its LinkedIn campaign surface is the widest here." |
+| Attributed, fails this rule | "Its LinkedIn campaign surface is the widest I found." |
+| **Right** | **"It has eleven campaign types. Nothing else on this list has more than seven."** |
+
+A count is quotable off the page, needs no narrator, and is checkable. Prefer it to both.
 
 **Fixed feature names live in `rules/forge-positioning-guidelines.md`.** That file's do-not-paraphrase list is the authority: Bounce Shield, Primebox™, Heat Score™, "AI personalization across 21+ languages", waterfall enrichment, ESP matching. Always 21+, never 20+.
 
