@@ -61,7 +61,7 @@ Email exists as a single step, an Email action and an "If email exists" conditio
 
 A seat connects to one LinkedIn account at a time, and pricing is per seat. You pay for every seat you have purchased, whether or not it's connected. Read that last part again if you manage clients, because a churned client whose account you disconnected is still billable until you remove the seat.
 
-HeyReach bills per LinkedIn sender and hands you unlimited human users. La Growth Machine bills per sending identity, and Snov.io charges flat with unlimited seats. Expandi is the only tool here where headcount and LinkedIn accounts are the same billable unit, and where an idle unit still costs you.
+HeyReach bills per LinkedIn sender and hands you unlimited human users. La Growth Machine bills per sending identity, and Snov.io charges flat with unlimited seats. Among these alternatives, only Expandi makes headcount and LinkedIn accounts the same billable unit, and only Expandi bills an idle one.
 
 ## How I Evaluated These Expandi Alternatives
 
@@ -72,7 +72,7 @@ The differences that matter are structural, and they turn up in seven places. I 
 - **What the billing unit actually is.** Per user, per LinkedIn account, per sending identity, or flat. This is the biggest swing in what you pay at five seats.
 - **Whether email runs in the same sequence.** Native steps with branching, or a handoff into another tool you also pay for.
 - **Whether one inbox carries both channels.** A LinkedIn-only inbox means a second tab open all day.
-- **Whether warm up is included.** Six of the eight have no warm-up product at all, so that becomes another subscription.
+- **Whether warm up is included.** Two of these tools include it. For the other six it becomes another subscription.
 - **How many LinkedIn actions, and the daily caps.** Four actions isn't the same product as seven.
 - **What it costs at five seats, not one.** Every vendor quotes a headline price in the unit that flatters it.
 - **What the one-star reviews cluster on.** G2 tags its own review set, so those counts come from the platform.
@@ -458,7 +458,7 @@ So Dripify is the value pick at one or two seats and loses ground steadily after
 
 ### Key features
 
-- **Published daily action quotas, per plan:** Nothing else here publishes them. Basic allows 20 connection requests, 30 messages and 10 InMails a day. Pro and Advanced allow 75, 100+ and 30.
+- **Published daily action quotas, per plan:** No other vendor I checked publishes them. Basic allows 20 connection requests, 30 messages and 10 InMails a day. Pro and Advanced allow 75, 100+ and 30.
 - **Native email inside the sequence on every paid plan:** Including the $39 tier. This is a real step with branching, not a handoff into another tool.
 - **A built-in email finder:** 100 credits a month on every plan, valid 30 days with no rollover. Credit packs run $29 per 1,000 up to $99 per 10,000.
 - **15+ LinkedIn actions and conditions:** Covering connection requests, messages, InMails, profile visits, endorsements, post likes and follows.
@@ -655,11 +655,11 @@ Lemlist is a cold email tool with LinkedIn, SMS, WhatsApp and calling added to t
 
 Reply rates are what it sells, and reply rates depend on two things. Whether your email lands, and whether you can follow up on a second channel when it doesn't.
 
-lemlist bundles the first half everywhere. lemwarm is on every plan, alongside inbox rotation, rotating IPs, a custom tracking domain and a deliverability hub. That's more email infrastructure than anything else here.
+lemlist bundles the first half everywhere. lemwarm is on every plan, alongside inbox rotation, rotating IPs, a custom tracking domain and a deliverability hub. That's more email infrastructure than any other tool I compared.
 
 The second half is where the price changes. LinkedIn automation exists only on the Multichannel plan at $87 per user per month billed annually.
 
-So the honest way to read lemlist is to decide which half of the reply-rate problem you have. If it's deliverability, the Email plan at $55 a month with unlimited users is the best value on this page. If you need LinkedIn in the sequence, a five-rep team is $435 a month, the most expensive configuration of the nine.
+So the honest way to read lemlist is to decide which half of the reply-rate problem you have. If it's deliverability, the Email plan at $55 a month with unlimited users is the best value on this page. If you need LinkedIn in the sequence, a five-rep team is $435 a month, the most expensive configuration I priced.
 
 ### Key features
 
@@ -802,7 +802,7 @@ Here's how I'd route it.
 
 **Three channels on the tightest budget:** Meet Alfred, with your eyes open about the support record.
 
-**And who none of this is for.** If you run one LinkedIn account and send nothing by email, every option here costs you something and saves you nothing. Stay on Expandi.
+**And who none of this is for.** If you run one LinkedIn account and send nothing by email, every option above costs you something and saves you nothing. Stay on Expandi.
 
 So count what you're billed for before you count features.
 
