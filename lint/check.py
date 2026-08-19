@@ -122,9 +122,16 @@ def _tool_sections(text):
     return out
 
 def _proscons(sec):
-    """(pros, cons) cell counts from a section's two-column Pros/Cons table."""
-    rows = re.findall(r'^\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*$', sec, re.M)
-    rows = [r for r in rows if r[0].strip() not in ('Pros', '') and '---' not in r[0]]
+    """(pros, cons) cell counts from a section's Pros/Cons table only.
+
+    Two bugs fixed 2026-08-13. It scanned every two-column table in the section, so a
+    per-volume pricing table inflated the count. And it dropped rows whose pros cell was
+    empty, which made an asymmetric table invisible whenever cons was the longer column,
+    the exact shape the rule wants writers to reach for."""
+    m = re.search(r'###\s+Pros and cons\s*\n(.*?)(?=\n###|\Z)', sec, re.S)
+    if not m: return 0, 0
+    rows = re.findall(r'^\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*$', m.group(1), re.M)
+    rows = [r for r in rows if r[0].strip() != 'Pros' and '---' not in r[0]]
     return sum(1 for r in rows if r[0].strip()), sum(1 for r in rows if r[1].strip())
 
 def _entry_sentence(sec):
