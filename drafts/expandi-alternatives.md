@@ -434,7 +434,7 @@ The agency plumbing goes further than pricing. Per-client workspaces run under o
 
 There's also a managed Done For You tier. That's a service, so it sits outside this table.
 
-Do the Agency arithmetic before you buy it. Do the arithmetic. At $63 a sender, twelve senders comes to $756, so the $799 bundle only starts saving you money at thirteen. A team on eight senders is paying $504 and should stay on Growth.
+Do the Agency arithmetic before you buy it. At $63 a sender, twelve senders comes to $756, so the $799 bundle only starts saving you money at thirteen. A team on eight senders is paying $504 and should stay on Growth.
 
 The trial is 14 days with no credit card and covers three LinkedIn accounts.
 
@@ -454,7 +454,7 @@ Whether that stays true turns on one thing. How many seats you need.
 
 Basic is $39 per user per month billed annually. That tier includes email steps inside the sequence. The $79 Expandi seat does not.
 
-Then the billing unit catches up. One seat buys one LinkedIn account, so five reps on Basic comes to $195 a month and five on Pro comes to $295.
+Then the billing unit catches up. One seat buys one LinkedIn account, so five reps on Basic comes to $195 a month.
 
 Move up to Pro, where the daily action quotas stop constraining you, and five seats is $295 a month. Salesforge Growth is $80 flat. Same five LinkedIn senders.
 
