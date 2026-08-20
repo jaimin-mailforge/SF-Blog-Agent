@@ -436,7 +436,7 @@ There's also a managed Done For You tier. That's a service, so it sits outside t
 
 Do the Agency arithmetic before you buy it. At $63 a sender, twelve senders comes to $756, so the $799 bundle only starts saving you money at thirteen. A team on eight senders is paying $504 and should stay on Growth.
 
-The trial is 14 days with no credit card and covers three LinkedIn accounts.
+The trial runs 14 days. No card, three LinkedIn accounts.
 
 ### What real users say
 
@@ -516,7 +516,7 @@ I'd only pick it if the third channel is genuinely part of the plan. If you want
 
 ### Key features
 
-- **Three channels in one sequence:** LinkedIn, email and X. Every other tool here stops at two.
+- **Three channels in one sequence:** LinkedIn, email and X, with one set of exit rules covering all three.
 - **The cheapest annual entry I found, at $29 per user per month:** EUR and GBP are published alongside USD, so nothing converts at checkout.
 - **The broadest LinkedIn entry points and relationship tooling:** Including auto-withdrawal of pending invitations and automated greetings on birthdays and job changes.
 - **A 600+ template library:** The largest any of these vendors publishes.
@@ -565,11 +565,11 @@ I point people here when LinkedIn is the whole job and the budget is small.
 
 The invite allowance is the second gate and it runs per tier: Pro allows 300 invitations a month, and only Advanced and Business reach LinkedIn's maximum invitation limit of 800.
 
-That 800 is the ceiling on every tier, Business included. It's a safety decision, not a defect. It also means the tool has a volume you can't buy your way past.
+That 800 is the ceiling on every tier, Business included. It's a safety decision, not a defect. There's a volume you can't buy your way past.
 
 ### Key features
 
-- **The widest import surface I saw:** LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of the people who liked or commented on a post, which is the widest set of entry points I found.
+- **The widest import surface I saw:** LinkedIn Basic, Sales Navigator and Recruiter Lite, plus auto-import of the people who liked or commented on a post, so intent and firmographics both feed the same list.
 - **Unlimited campaigns on the $16 tier:** Alongside pre-built prospecting sequences, automated follow-ups and CRM synchronisation, none of which is gated behind a higher tier the way the email features are.
 - **Customer service is its best-scoring dimension:** 4.5 on Capterra against a 4.4 overall.
 - **A 14-day trial on all three plans:** No credit card needed to start one.
@@ -612,9 +612,9 @@ La Growth Machine is a multichannel outreach tool that bills per sending identit
 
 There's one workflow it runs end to end that no other tool I compared can. Import the people who liked a post, enrich them across nine email providers in sequence until one returns a verified address, then open with an AI-generated voice message on LinkedIn.
 
-Each piece exists elsewhere. In fragments. The waterfall enrichment is the part that matters. It tries providers in order until one returns a verified address. A single-provider lookup just fails on the first miss.
+Each piece exists elsewhere. In fragments. The waterfall enrichment is the part that matters, because a single-provider lookup just fails on the first miss and this one keeps going.
 
-The voice message is the other half. Nobody else ships one. It's a native action, and no other tool I compared has one.
+The voice message is the other half. It's a native action, and nobody else I compared ships one.
 
 I reach for it when list quality is the bottleneck, not the sending.
 
@@ -679,7 +679,7 @@ So decide which half of the reply-rate problem you have. If it is deliverability
 
 - **The widest channel span in one sequence:** Email, LinkedIn with four action types, SMS, WhatsApp and in-app calling, all inside the same sequence and all governed by one set of exit rules.
 - **Conditional next steps on every plan:** Including the cheap Email plan, which most tools gate to a higher tier.
-- **lemwarm on every plan:** Warm up is included on every plan, where most vendors in this category sell it as a separate subscription with its own renewal date.
+- **lemwarm on every plan:** Warm up is bundled, where most vendors in this category sell it as a separate subscription with its own renewal date and its own invoice.
 - **Email infrastructure built in:** Inbox rotation, rotating IPs, a custom tracking domain, a deliverability hub, and domain and mailbox purchase in the app.
 - **Volume-based pricing on the Email plan:** Unlimited users, from 50,000 emails a month up to a million.
 - **Credits for data:** One credit costs $0.01, a verified email is 5 credits, a phone number is 20, and buying signals run from 20 credits up to 400.
