@@ -26,14 +26,14 @@ Most of the ones that did not fell down on the same thing. They do LinkedIn only
 
 ## TL;DR: 8 Expandi Alternatives
 
-- **[Salesforge](#salesforge):** Best for GTM teams and Agencies running LinkedIn plus email plus AI in one platform, with unlimited mailboxes and unlimited LinkedIn senders on Growth. Primebox™ unifies replies across every channel, and Warmforge warm up is bundled at no extra cost. From $40 a month billed annually. [Start a 14-day free trial](https://app.salesforge.ai/signup), no credit card needed.
-- **[HeyReach](#heyreach):** Best for agencies running many LinkedIn accounts with several people on each. It charges per LinkedIn sender and hands you unlimited human seats free, at $63 per sender per month billed annually.
-- **[Dripify](#dripify):** Best for solo operators and two-person teams who want native email inside the LinkedIn sequence at the lowest price I found. It publishes exact daily action limits per plan, from $39 per user per month billed annually.
-- **[Meet Alfred](#meet-alfred):** Best for solo operators who want LinkedIn, email and a third channel in one sequence on the tightest budget. That's $29 per user per month billed annually, and go in with your eyes open about its support record.
-- **[Waalaxy](#waalaxy):** Best for solo operators and small teams running LinkedIn only, who want the widest import options at the cheapest entry price. $16 per user per month billed annually, capped at 300 invites.
-- **[La Growth Machine](#la-growth-machine):** Best for small teams where enrichment quality decides everything. It bills per sending identity, so teammates cost nothing, from $60 per identity per month billed annually.
-- **[lemlist](#lemlist):** Best for email-led teams who want the widest channel span in one sequence, with lemwarm included on every plan. Email from $55 a month billed annually, and LinkedIn needs Multichannel at $87 per user.
-- **[Snov.io](#snov-io):** Best for email-first teams at low volume who want native warm up and unlimited seats without a per-user multiplier. $29.25 a month billed annually, plus $62 for each LinkedIn slot.
+- **[Salesforge](#salesforge):** Best for GTM teams and Agencies running LinkedIn plus email plus AI in one platform, with unlimited mailboxes and unlimited LinkedIn senders on Growth. Primebox™ unifies replies across every channel, and Warmforge warm up is bundled at no extra cost. [Start a 14-day free trial](https://app.salesforge.ai/signup), no credit card needed.
+- **[HeyReach](#heyreach):** Best for agencies running many LinkedIn accounts with several people on each. It charges per LinkedIn sender and hands you unlimited human seats free, so headcount never moves the bill.
+- **[Dripify](#dripify):** Best for solo operators and two-person teams who want native email inside the LinkedIn sequence at the lowest price I found. It publishes exact daily action limits per plan, and email steps are on every paid tier including the cheapest.
+- **[Meet Alfred](#meet-alfred):** Best for solo operators who want LinkedIn, email and a third channel in one sequence on the tightest budget. Go in with your eyes open about its support record.
+- **[Waalaxy](#waalaxy):** Best for solo operators and small teams running LinkedIn only, who want the widest import options at the cheapest entry price. The entry tier caps you at 300 invitations a month.
+- **[La Growth Machine](#la-growth-machine):** Best for small teams where enrichment quality decides everything. It bills per sending identity, so teammates cost nothing and only the sending profiles do.
+- **[lemlist](#lemlist):** Best for email-led teams who want the widest channel span in one sequence, with lemwarm included on every plan. LinkedIn needs the Multichannel plan, which the Email plan cannot reach.
+- **[Snov.io](#snov-io):** Best for email-first teams at low volume who want native warm up and unlimited seats without a per-user multiplier. Every LinkedIn account is a separately paid add-on slot.
 
 If you run one LinkedIn account and send nothing by email, Expandi is fine.
 

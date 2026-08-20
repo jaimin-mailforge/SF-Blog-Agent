@@ -27,7 +27,7 @@ Precedence when files disagree. `rules/forge-positioning-guidelines.md` wins on 
 - **Every product section carries a "Best for" line. None carries a "Not for" line.** The reader who should walk away is routed in the Final Verdict instead.
 - **Every price is the annual rate**, phrased "$X/month billed annually". No monthly or quarterly columns in a pricing table.
 - **Every tool section opens by saying what the tool is.** "[Tool] is a [category] that [does what]." Explain before you argue.
-- **TL;DR bullets read "Tool: Best for ..."** Tool name, colon, then the buyer.
+- **TL;DR bullets route by buyer, and carry no price.** Tool name, colon, then one of four openers: "Best for", "Best overall for", "Cheapest pick for", "Best if you want". No rate, no currency figure. A relative claim like "at the cheapest entry price" is fine. Price lives in the comparison table and the tool's pricing section, not in three places at once.
 
 ## The hard stop
 

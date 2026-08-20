@@ -247,6 +247,20 @@ Fixed by Jaimin on 2026-08-13. The linter blocks any TL;DR bullet that misses th
 Rules for the bullet:
 
 - The tool name is a jumplink to its section, and it carries the colon.
+- **No price figures in the TL;DR.** `[LINT]` Fixed by Jaimin on 2026-08-19. Not a rate, not a currency figure, not "from $40 a month billed annually". The block routes by buyer, and price is a different axis that already has two homes: the comparison table's starting-price row and each tool's own pricing section.
+
+    Three reasons, and the third is the one that decided it.
+
+    First, a price in the TL;DR competes with the routing job. A reader scanning eight bullets for "which of these is me" does not want to be doing arithmetic at the same time.
+
+    Second, prices go stale faster than anything else in an article. Carrying one in the TL;DR as well as the table and the pricing section means the same figure lives in three places, so a single vendor change makes two of them wrong. The Expandi draft had Waalaxy's rate in ten places, and correcting it was a ten-edit job that a reviewer had to check ten times.
+
+    Third, AI Overviews lift the TL;DR bullet whole. A bullet that gets quoted into an AI answer with a rate that changed last month is the worst version of being cited.
+
+    **Relative price claims are still fine**, because they do not go stale the same way and they do real routing work. "at the cheapest entry price" and "at the lowest price I found" both stay. What goes is the number.
+
+    Non-price limits that decide fit also stay, and often they are the better thing to put in the freed-up space. "The entry tier caps you at 300 invitations a month" tells a reader more about whether Waalaxy suits them than "$16 per user per month billed annually" does.
+
 - **The opener comes from a closed set of four.** `[LINT]` Widened by Jaimin on 2026-08-19 from the single mandatory "Best for". Permitted: **"Best for"**, **"Best overall for"**, **"Cheapest pick for"**, **"Best if you want"**. Nothing else. Not "runs", not "charges", not "is the cheapest".
 
     The set stays closed because AI Overviews lift the bullet whole, so a predictable shape is the point. It was widened because the editor-approved RocketReach article used all four, and a tool whose entire case is price routes better with "Cheapest pick for email-only lookups" than with a forced ninth "Best for".

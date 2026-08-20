@@ -200,6 +200,9 @@ def _sections(text, head_re):
 # variants. The set stays closed so AI Overviews still lift a predictable shape, but a
 # tool whose whole case is price can say so: "Cheapest pick for email-only lookups".
 TLDR_OPENERS = ('Best for', 'Best overall for', 'Cheapest pick for', 'Best if you want')
+# A currency symbol followed by a digit. Deliberately narrow: a bare number plus
+# "a month" would flag "caps you at 300 invitations a month", which is not a price.
+_TLDR_PRICE = re.compile(r'[$\u20ac\u00a3]\s?\d')
 _TLDR_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)\s*(?:'
                          + '|'.join(re.escape(o) for o in TLDR_OPENERS) + r')\b')
 _FEATURE_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)')
@@ -215,9 +218,16 @@ def structure(text, add):
     # TL;DR entries read "Tool: Best for ..."
     for sec in _sections(text, r'^#{2,3}\s*TL;DR.*$'):
         for line in sec.splitlines():
-            if line.lstrip().startswith('- ') and not _TLDR_SHAPE.match(line.strip()):
+            if not line.lstrip().startswith('- '): continue
+            if not _TLDR_SHAPE.match(line.strip()):
                 add('ERROR', 'tldr-shape', 'open with one of ' + ', '.join(TLDR_OPENERS)
                     + '  ' + line.strip()[:70])
+            # No price figures in the TL;DR. Decided by Jaimin on 2026-08-19. Relative
+            # claims like "at the cheapest entry price" are fine; a currency figure is not.
+            m = _TLDR_PRICE.search(line)
+            if m:
+                add('ERROR', 'tldr-price', 'no price figures in the TL;DR, it routes by buyer  '
+                    + line.strip()[max(0, m.start() - 40):m.start() + 30])
 
     # key feature bullets carry a colon after the feature name
     for sec in _sections(text, r'^#{3,4}\s*Key features.*$'):
