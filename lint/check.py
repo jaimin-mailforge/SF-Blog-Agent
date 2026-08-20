@@ -43,6 +43,37 @@ SHORT_FLOOR = 18.0       # min share of sentences at six words or fewer
 LONG_FLOOR = 5.0         # min share over 25 words
 PARA_WORD_CAP = 60       # replaces the 3-sentence cap
 
+# Continuity and narrator position, calibrated 2026-08-20 against the approved RocketReach
+# article. Both discriminate cleanly: approved scores 1 and 0, the Expandi draft scored 15
+# and 8. Section 9b has capped trailing-superlative "I" at two per article since 2026-08-19
+# and had no checker, which is how fifteen of them survived a full review cycle.
+TRAILING_I_CAP = 2       # "the widest I've seen", "no other vendor I checked"
+FRAME_RESTART_CAP = 2    # "X is what matters", "Two things...", "matters most"
+
+# A superlative, then an "I"-clause after it in the same sentence. The narrator is being used
+# as a citation to license the claim instead of leading the sentence.
+_SUPER = (r"\b(?:widest|lowest|highest|cheapest|deepest|best|worst|largest|biggest|smallest|"
+          r"fewest|broadest|tightest|cleanest|strongest|weakest|only|first|most\s+\w+|"
+          r"least\s+\w+|no\s+other|nobody\s+else|nothing\s+else|any\s+other|"
+          r"more\s+than\s+(?:any|most))\b")
+_ICITE = (r"\bI(?:'ve|\s+have)?\s+(?:found|checked|compared|recorded|priced|saw|seen|tested|"
+          r"looked|read|counted|scored|reviewed|measured|encountered)\b")
+
+# Topic announcements. Each one opens a new frame instead of developing the previous one, and
+# a section carrying four of them has no argument at all. "is the real reason" is deliberately
+# not here: it reads as a paragraph closing line as often as a restart, and cost 50% precision.
+_FRAME = (
+    (r"\b(?:is|are)\s+what\s+matters\b",                     'is what matters'),
+    (r"\bmatters\s+most\b",                                   'matters most'),
+    (r"\bworth\s+understanding\b",                            'worth understanding'),
+    (r"^\s*(?:Two|Three|Four)\s+things\b",                     'Two/Three things'),
+    (r"^\s*There\s+are\s+(?:two|three|four)\s+reasons\b",     'There are N reasons'),
+    (r"^\s*(?:The|This|That)\s+\w+(?:\s+\w+){0,2}\s+is\s+the\s+(?:thing|point|part)\b",
+                                                              'X is the thing/part'),
+    (r"\bis\s+the\s+(?:second|third)\s+gate\b",              'is the Nth gate'),
+    (r"^\s*What\s+(?:differs|matters)\b",                      'What differs/matters'),
+)
+
 def _protected_spans(text):
     """Character ranges covered by a product name. Banned-word hits inside these are exempt."""
     spans = []
@@ -490,6 +521,32 @@ def check(title, meta, text, label):
     if total_scoped > SCOPED_CAP:
         add('WARN', 'unscoped-comparison(%d)' % total_scoped,
             'name the comparison set: ' + ', '.join(scoped))
+
+    # Section 9b, the narrator as citation. A superlative followed by an "I"-clause in the same
+    # sentence parks the narrator in a trailing position to license the claim. The rule has
+    # existed since 2026-08-19 with a cap of two and no checker. Fix is one of two things: make
+    # the narrator lead the sentence, or scope the claim inside it and drop the "I" entirely.
+    trailing = []
+    for sent in sentences(prose):
+        m = re.search(_ICITE, sent)
+        if m and re.search(_SUPER, sent[:m.start()], re.I):
+            trailing.append(sent.strip())
+    if len(trailing) > TRAILING_I_CAP:
+        add('WARN', 'trailing-superlative-i(%d)' % len(trailing),
+            'narrator used as a citation, cap %d: %s' % (TRAILING_I_CAP, trailing[0][:70]))
+
+    # Section 3, the through-line. Counted rather than located, because one topic announcement
+    # in an article is a signpost and eight is a prose habit that leaves every section without
+    # an argument.
+    restarts = []
+    for sent in sentences(prose):
+        for pat, name in _FRAME:
+            if re.search(pat, sent, re.I):
+                restarts.append((name, sent.strip())); break
+    if len(restarts) > FRAME_RESTART_CAP:
+        add('WARN', 'frame-restart(%d)' % len(restarts),
+            'develop the argument, do not restart it: ' +
+            ', '.join('"%s"' % n for n, _ in restarts[:4]))
 
     # lowercase-branded competitor names, capitalised only to open a heading or sentence
     for brand in LOWERCASE_BRANDS:

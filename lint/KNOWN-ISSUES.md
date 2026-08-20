@@ -108,6 +108,31 @@
 
    Thresholds are constants at the top of `check.py`, not magic numbers inline.
 
+14. **Two rules for prose continuity, and one of them had been unenforced for a cycle.** Added
+   2026-08-20 after Jaimin read the Expandi draft as disconnected and lacking a practitioner
+   narrator. Both WARN.
+
+   Worth recording how they were calibrated, because the first four instruments I built all said
+   the draft was *better* than the editor-approved article and all four were measuring the wrong
+   thing. Connective openers: draft 27.7%, approved 12.1%. Back-reference: draft 31.5%, approved
+   20.6%. Subordination: draft 11.4%, approved 7.4%. Runs of short parallel sentences: draft
+   17.4%, approved 28.6%. On every count the draft won, and the draft was the one that read
+   broken. The defect was one level up, at the paragraph and section, and it does not show in any
+   sentence statistic.
+
+   - `trailing-superlative-i`. A superlative followed by an "I"-clause in the same sentence, which
+     parks the narrator in a trailing position to license the claim. Section 20 has capped this at
+     two per article since 2026-08-19 and never had a checker, so fifteen shipped. Approved
+     article: 1. Draft: 15.
+   - `frame-restart`. Topic announcements: "is what matters", "matters most", "worth
+     understanding", "Two things", "There are N reasons", "X is the thing/part", "is the Nth
+     gate", "What differs". Approved article: 0. Draft: 7. "is the real reason" was tried and
+     dropped: it reads as a paragraph closing line as often as a restart and cost half the
+     precision.
+
+   Both counted rather than located, on the same reasoning as the four checks in item 13: one
+   instance is a signpost, eight is a prose habit.
+
 ## Open
 
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the

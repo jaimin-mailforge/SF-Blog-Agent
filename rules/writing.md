@@ -57,6 +57,22 @@ The numbered rules:
 5. Starting a sentence with And, But, or So is fine. People do it. `[JUDGE]`
 6. Talk to the reader with "you". "You'll need about 10 mailboxes for this volume." `[JUDGE]`
 
+**The practitioner sentence, and it is a shape not a sentiment.** `[LINT]` `[JUDGE]` Added by Jaimin on 2026-08-20, after a draft that satisfied "first person where it makes sense" on the count and still read like a bibliography.
+
+> **I + present-tense verb + object + a "when" or "because" clause.**
+
+That is the whole pattern, and the approved RocketReach article runs it six times:
+
+> "I point most RocketReach buyers at it first because it turns two invoices into one."
+> "I reach for it when the ICP has an EU postcode."
+> "I recommend Uplead when the RocketReach complaint is specifically about bounces."
+
+The clause is the part that carries the experience. "I recommend Uplead" is a preference. "I recommend Uplead when the complaint is specifically about bounces" is a decision rule, and only somebody who has made the decision more than once can write the second half.
+
+**What fails this rule is not an absent "I". It is an "I" that never leads.** The Expandi draft carried 25 first-person sentences against the approved article's 21, so it passed on density and failed on position. Fifteen of the 25 parked the narrator in a trailing clause to license a superlative: "the widest I've seen", "no other vendor I checked publishes them", "the most expensive configuration I priced", "the cleanest agency structure I found". Section 20 has banned that since 2026-08-19 with a cap of two per article. The checker landed 2026-08-20 as `trailing-superlative-i` and immediately found all fifteen, so the rule was unenforced for a full review cycle. The approved article scores 1.
+
+Test a first-person sentence by deleting the "I" clause. If the sentence still says everything it said, the narrator was decoration and the clause should go. If the sentence loses its decision, the narrator was doing work.
+
 ---
 
 ## 3. Sentences and paragraphs `[LINT]`
@@ -98,6 +114,35 @@ The numbered rules:
     **How to hit the floor honestly.** Split a sentence where both halves stand alone, and keep the left half short. "Expandi has one self-serve plan, and Business runs $79 per seat per month billed annually" becomes two sentences, the first of them five words. That is a real short sentence. Eleven of those splits carried the Expandi draft back over the floor after the fragments came out.
 
     **What the linter can and cannot do here.** `sentence-fragment` is a heuristic with no parser behind it, so it is tuned to never block good prose and therefore misses about half the cases. It catches "Genuinely." and "All of it." It does not catch "Two caveats." or "In fragments.", because an inflected word inside them reads as a possible verb. Do not treat a clean linter run as proof. Read the draft.
+
+- **One argument per section, developed and then qualified.** `[LINT]` `[JUDGE]` Added by Jaimin on 2026-08-20. This is the rule the Expandi draft broke hardest, and no sentence-level metric caught it: measured against the approved article the draft had *higher* subordination, *more* connective openers and *fewer* runs of short parallel sentences. It still read as disconnected, because every paragraph announced a new frame.
+
+    What the Salesforge section did across nine paragraphs:
+
+    > "The branching is what matters." ... "Two things behind it come from the rest of the stack." ... "The billing unit matters most." ... "Pricing runs on active contacts and email volume instead of per mailbox or per seat."
+
+    Four topic announcements in one section. Each is a competent sentence and each starts a different article. The reader is handed a new frame every forty words and never learns where any of the previous ones went. That is what "the sentences are not interconnected" means in practice, and adding connectives to the front of them makes it worse, not better, because a "So" on a sentence that does not follow is a lie about the logic.
+
+    **The shape that works,** from the approved article's Apollo section, which runs one argument for its whole length:
+
+    | Move | The sentence |
+    |---|---|
+    | State it | "I point most RocketReach buyers at it first because it turns two invoices into one." |
+    | Develop it, with the numbers doing the work | "If you were paying RocketReach $829 a year for data and a separate cold email tool, Apollo's $49 to $79 per seat starts looking like fewer bills to reconcile." |
+    | Qualify it | "However, Apollo has database depth concerns." |
+    | Land the real cost | "Most importantly, the per-seat pricing scales fast once you get past 5 to 10 reps." |
+
+    State it, develop it to its consequence, qualify it honestly. Three moves, one argument. A tool section does not need a second argument and cannot hold one.
+
+    **Banned shapes, because each one restarts the article.** `[LINT]` The linter counts them as `frame-restart` and caps them at two per article. The approved article scores zero.
+
+    > "X is what matters." / "X matters most." / "The X is the part worth understanding." / "Two things behind it..." / "There are three reasons." / "X is the second gate." / "What differs is..."
+
+    If a section genuinely has two things to say, the second one is a consequence of the first and should be written as one. If it is not a consequence, it belongs in a different section.
+
+- **Paragraphs chain. They do not sit side by side.** `[JUDGE]` Added 2026-08-20 alongside the rule above, because it is the same defect one level down. The second sentence of a paragraph develops the first rather than listing another fact about the same subject. The next paragraph opens on something the previous paragraph established, and names it rather than pointing at it with a bare "that" or "it".
+
+    Discourse markers are allowed where the logic is real and nowhere else: However, Then, So, Most importantly, The catch, Which is why. A marker in front of a sentence that does not follow from the one before it is the cheap version of continuity and reads worse than no marker at all.
 
 - **Name the doer.** `[JUDGE]` See section 2. This belongs next to the fragment rule because the two fail together: a verbless sentence has no actor in it by definition. When a vendor withholds something, the vendor is the subject. "HeyReach does not document it", never "whether email replies land there is not documented".
 
@@ -553,7 +598,7 @@ Never: SalesForge, Sales Forge, Frank AI, the Agent, AgentFrank, Autopilot, Copi
 
 Collective term: "Forge stack".
 
-**Never park "I" in a trailing clause after a superlative.** `[LINT]` Added 2026-08-19. "the widest I found", "the lowest rating I recorded", "the only published SLA I found", "no other tool I compared". Cap: two per article.
+**Never park "I" in a trailing clause after a superlative.** `[LINT]` Added 2026-08-19. "the widest I found", "the lowest rating I recorded", "the only published SLA I found", "no other tool I compared". Cap: two per article. **Checker added 2026-08-20** as `trailing-superlative-i`, after the rule sat unenforced through a full review cycle and fifteen instances shipped. The sentence-level shape that replaces it is in section 2.
 
 This is a self-inflicted tic and worth understanding, because fixing one rule created it. Section 17 flagged 32 unscoped comparisons in the Expandi draft, things like "the widest here" and "the lowest of the nine", which do not survive being quoted off the page. The fix attributed them to the researcher instead. That satisfied section 17 and turned 18 of the draft's 32 first-person sentences into research footnotes. The approved article does it once in 21.
 
