@@ -143,6 +143,43 @@
    the allowlist grows with the prose, so expect to add to it after any pass that changes the verbs
    in use.
 
+16. **The documented linter command crashed on a fresh clone.** Fixed 2026-08-20.
+   `CLAUDE.md` told every session to run `python3 lint/run.py` as the linter. That file
+   was a calibration harness that opened `/tmp/bench.md` and three `/tmp/*.html` pages,
+   none of them in git, so on any fresh clone the documented command died with
+   FileNotFoundError. It survived this long only because one container persisted.
+
+   Split in two rather than patched. `lint/run.py` is now the linter and takes nothing
+   from `/tmp`: no args lints the tree, a path lints one file, a URL fetches and extracts
+   a live page, `--quiet` gives one line each, and the exit code is the number of files
+   with errors. `lint/calibrate.py` keeps the threshold work, skips missing corpus files
+   with a warning instead of crashing, and grows a `--fetch` mode to rebuild them.
+
+   Worth noting why it mattered beyond tidiness: the URL mode is what makes a rewrite
+   auditable in one command, and that was already sitting in `publish-check.py` unused
+   by anything the docs pointed at.
+
+17. **Two rules had no checker because they were counting jobs, not prose jobs.** Added
+   2026-08-20 as standalone tools rather than `check.py` rules, because both need a
+   second file to compare against.
+
+   - `lint/coverage.py`. The guidelines say every must-cover feature of a featured
+     product must appear, "Not most. All." I got that wrong by hand twice on one draft,
+     first bundling three must-covers into a single bullet and then shipping 11 bullets
+     against 12. It parses the guidelines, resolves the section from the playbook table,
+     and reports in-section / elsewhere-only / uncertain / missing plus a bullet-count
+     check. The elsewhere-only bucket is the important one: a must-cover matching only a
+     comparison-table row is the bundling failure wearing a pass.
+   - `lint/prices.py`. Re-verifies every price a brief claims against the vendor's live
+     page. Deliberately does not pick a number. It reproduces both known traps on
+     demand: Waalaxy serves EUR only, and the brief's USD figures appear nowhere in the
+     HTML. Two calibration lessons went into it. Requiring a read date made it skip
+     Waalaxy entirely, the least-verified price in the brief, so the date is optional
+     and its absence is the flag. And flagging every figure missing from the served HTML
+     produced 40-odd false alarms from billing toggles curl cannot flip, so that signal
+     is labelled weak when a toggle or a currency switcher is present. A verifier that
+     cries wolf gets ignored, and then prices are unverified again.
+
 ## Open
 
 - **`sentence-fragment` cannot see a verbless FAQ opener.** Surfaced 2026-08-20 by a reading pass,

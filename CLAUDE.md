@@ -36,6 +36,40 @@ Precedence when files disagree. `rules/forge-positioning-guidelines.md` wins on 
 
 Never draft a section before the outline is approved. Step 6 of `rules/process.md` lists what the outline has to contain. A single word approves it.
 
+## Starting a job
+
+Three entry points, each a skill. Invoke by name.
+
+| You have | Command | What it does |
+|---|---|---|
+| A target keyword | `/new-article <keyword>` | Ahrefs keyword and SERP research, playbook selection, live price verification, brief, then stops for outline approval |
+| A published URL to refresh | `/rewrite-article <url>` | Audits the live page against every current rule, diffs coverage, re-verifies every price it states, brief, then stops |
+| A finished draft that reads flat | `/polish-draft <path>` | One argument per section, narrator leading, then adversarial verify for fabricated figures |
+| Any brief or article | `/verify-prices <path-or-url>` | Re-checks every recorded price against the vendor's live page |
+
+A first draft you already have is raw material for the brief, nothing more. Its prose
+has passed no rule in this repo, so it does not shortcut the outline stop.
+
+## The tools
+
+    python3 lint/run.py                     lint every draft and article
+    python3 lint/run.py <path>              one file
+    python3 lint/run.py <url>               a live page, fetched and extracted
+    python3 lint/run.py --quiet             one line per file
+
+    python3 lint/coverage.py <path>         must-cover coverage vs the guidelines
+    python3 lint/coverage.py --list         every product section and its count
+
+    python3 lint/prices.py <brief>          re-verify every recorded price
+    python3 lint/prices.py --url <url>      probe one vendor pricing page
+
+    python3 lint/calibrate.py               thresholds vs the reference corpus
+    python3 lint/calibrate.py --fetch       rebuild that corpus
+
+`coverage.py` exists because the must-cover count is binding and I got it wrong by
+hand twice on the same draft. `prices.py` exists because a bot cannot settle a vendor
+contradiction and must hand it to a human instead of picking.
+
 ## The linter
 
     python3 lint/run.py
