@@ -723,7 +723,7 @@ G2 puts lemlist at 4.6 from 1,906 reviews.
 
 **G2 Rating:** 4.5 out of 5 (497 reviews)
 
-Snov.io is an email outreach and lead data tool with LinkedIn automation sold as a per-account add-on, priced flat with unlimited seats, which inverts the moment LinkedIn becomes your main channel.
+Snov.io is an email outreach and lead data tool with LinkedIn automation sold as a per-account add-on, priced flat with unlimited seats and no per-user multiplier anywhere in the plan.
 
 Starter is $29.25 a month billed annually, and that price carries unlimited team seats.
 
@@ -740,7 +740,7 @@ So a three-rep team is $186 a month of slots. Before the plan itself. The cheape
 ### Key features
 
 - **Flat pricing with unlimited seats on every paid plan:** No per-user multiplier anywhere in the product.
-- **Seven LinkedIn actions, the most granular set I found:** Messages, InMail, connection requests, follows, skill endorsements, post likes and profile visits, which is the most granular set of actions any vendor here documents.
+- **Seven LinkedIn actions, the most granular set I found:** Messages, InMail, connection requests, follows, skill endorsements, post likes and profile visits, each schedulable as its own step in a sequence.
 - **Native warm up:** Three slots on Starter and unlimited on the Pro tiers, with a premium business-domain pool behind it, which is unusually deep tooling at this price.
 - **Unibox on every paid plan:** It covers both channels, a recipient is charged once whether the first touch is email or LinkedIn, and campaign state is genuinely shared across the two rather than reconciled by hand.
 - **A 7-tier email verifier:** Plus mailbox rotation, placement checks, and blacklist and reputation checks, so the deliverability stack is genuinely complete at the entry tier.
@@ -782,7 +782,7 @@ G2 puts Snov.io at 4.5 from 497 reviews.
 
 Expandi's billing unit is wrong for most teams.
 
-That's a pricing argument about the billing unit. The product is fine.
+That's a pricing argument. The product is fine.
 
 On LinkedIn alone, Expandi does things no alternative here matches.
 
