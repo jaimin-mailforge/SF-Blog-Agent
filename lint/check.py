@@ -88,6 +88,44 @@ def mask(text):
     t = re.sub(r'<[^>]+>', blank, t)                     # html tag markup, cell text survives
     return t
 
+# Finite verbs, for the sentence-fragment check. Not a parser, a heuristic: a short
+# stretch of prose with none of these is almost always a fragment.
+_FINITE = re.compile(
+    r"\b(?:is|are|was|were|be|been|being|am|has|have|had|do|does|did|can|could|will|would|"
+    r"shall|should|may|might|must|let|"
+    r"run|runs|ran|get|gets|got|go|goes|went|come|comes|came|make|makes|made|take|takes|took|"
+    r"give|gives|gave|put|puts|pay|pays|paid|cost|costs|charge|charges|bill|bills|add|adds|"
+    r"send|sends|sit|sits|mean|means|need|needs|want|wants|work|works|use|uses|keep|keeps|kept|"
+    r"land|lands|leave|leaves|left|start|starts|stop|stops|include|includes|carry|carries|"
+    r"cover|covers|read|reads|show|shows|tell|tells|say|says|find|finds|found|reach|reaches|"
+    r"point|points|recommend|recommends|pick|picks|stay|stays|count|counts|move|moves|know|knows|"
+    r"treat|treats|ask|asks|spread|clear|clears|route|routes|branch|branches|combine|combines|"
+    r"handle|handles|draft|drafts|score|scores|rate|rates|hold|holds|publish|publishes|"
+    r"connect|connects|expect|expects|explain|explains|decide|decides|cap|caps|exist|exists|"
+    r"arrive|arrives|invert|inverts|matter|matters|depend|depends|turn|turns|deserve|deserves|"
+    r"sell|sells|buy|buys|help|helps|beat|beats|stand|stands|fit|fits|fail|fails|grow|grows|"
+    r"drift|drifts|apply|applies|price|prices|quote|quotes|list|lists|name|names|"
+    r"burn|burns|roll|rolls|refund|refunds|verify|verifies|enrich|enriches|warm|warms)\b"
+    r"|\b\w+(?:'s|'re|'ve|'ll|'d|n't)\b", re.I)
+
+def _is_fragment(s):
+    """True when a short stretch of prose carries no finite verb.
+
+    A heuristic, so it is deliberately conservative: a missed fragment costs a reader
+    nothing, while a wrongly flagged one would block a publish. Hence the exemptions.
+    Any -ed word counts as a verb, and an FAQ direct answer opening "Yes," or "No," is
+    exempt because section 16 mandates that shape."""
+    s = s.strip().strip('()')
+    if not s or len(s.split()) > 8: return False
+    if re.match(r'^(?:Yes|No)\b', s): return False        # mandated FAQ answer shape
+    # Any inflected word counts as a possible verb. This makes the check miss fragments
+    # like "Two caveats." and "In fragments.", and that is the deliberate trade: without
+    # a parser, the alternative is flagging "Pro grants 300." and "lemlist bundles the
+    # first half everywhere." as verbless, which would block a publish over good prose.
+    # The check catches the blatant cases only. The rest is section 2's job, and a read.
+    if re.search(r'\b\w{3,}(?:s|ed|ing)\b', s): return False
+    return not _FINITE.search(s)
+
 def punct_text(text):
     """Text for the punctuation checks. Unlike mask(), this KEEPS table cells, because
     section 14 says section 4 applies inside the table. It drops only the places a
@@ -346,6 +384,19 @@ def check(title, meta, text, label):
         w = len(p.split())
         if w > PARA_WORD_CAP:
             add('WARN', 'paragraph>%dw(%dw)' % (PARA_WORD_CAP, w), p.strip()[:100])
+
+    # Sentence fragments. Added 2026-08-19 after the short-sentence floor was gamed with
+    # them: chasing "18% of sentences at six words or fewer" produced "Genuinely.",
+    # "All of it.", "Connected or not.", "In fragments.", "At that price." and ten more.
+    # A short sentence and a fragment are not the same thing, and the fragment pile-up is
+    # the AI-slop staccato the voice rule exists to prevent. The floor wants short
+    # COMPLETE sentences, so this check keeps the two apart.
+    # Paragraph prose only: a bullet may legitimately end on a list.
+    for para in paras:
+        if para.lstrip().startswith(('-', '*', '|', '#', '<')): continue
+        for s in sentences([para], min_words=1):
+            if _is_fragment(s):
+                add('WARN', 'sentence-fragment', 'no verb: "%s"' % s.strip()[:60])
 
     # seo
     if title and len(title) > 55: add('WARN', 'title>55(%d)' % len(title), title)

@@ -73,6 +73,34 @@ The numbered rules:
 - **Aim at 12 to 20 words, and treat 25 as a soft target, not a wall.** Go past it when the sentence earns it.
 - **Hard ceiling: 45 words, and the linter blocks it.** Nothing in a body paragraph needs 45.
 - **The floors matter as much as the ceiling, and the linter checks all three.** Standard deviation of sentence length at least 7.0, at least 18% of sentences at six words or fewer, at least 5% over 25 words. Prose that never breaks 25 words by aiming everything at 15 fails this rule with zero over-25 findings. That is the intended behaviour.
+- **A short sentence is a complete sentence.** `[LINT]` `[JUDGE]` Added by Jaimin on 2026-08-19, after the six-word floor above got satisfied with fragments instead of sentences. Every short sentence needs a subject and a finite verb. An imperative counts, because the subject is understood: "Stay put." is a sentence, "Genuinely." is not.
+
+    What the floor produced when it was chased carelessly, all of it now removed from the Expandi draft:
+
+    > "Expandi is a good one. **Genuinely.**"
+    > "They're unhappy with the bill. **All of it.**"
+    > "You pay for the seat. **Connected or not.**"
+    > "Each piece exists elsewhere. **In fragments.**"
+    > "The deliverability tooling surprised me. **At that price.**"
+    > "Salesforge Growth is $80 flat. **Same five LinkedIn senders.**"
+    > "So a three-rep team is $186 a month of slots. **Before the plan itself.**"
+
+    Each one is an adverb or a noun phrase bolted onto the sentence before it with a period. It reads as emphasis and it is padding. Fourteen of them went into one draft in a single pass, which is what the pattern does once you start.
+
+    **The banned shape, specifically.** Two or three consecutive verbless noun phrases used as a drumbeat. This is the most recognisable AI tell in the file and it survived a whole review cycle:
+
+    > "One sequence. One set of exit rules. Not two campaigns and a spreadsheet to reconcile who is in which."
+
+    No main verb in any of the three. Rewritten with a subject and a verb doing the work:
+
+    > "That gives you one set of exit rules across both channels. You don't run two campaigns and then reconcile a spreadsheet to work out which prospect is in which one."
+
+    **How to hit the floor honestly.** Split a sentence where both halves stand alone, and keep the left half short. "Expandi has one self-serve plan, and Business runs $79 per seat per month billed annually" becomes two sentences, the first of them five words. That is a real short sentence. Eleven of those splits carried the Expandi draft back over the floor after the fragments came out.
+
+    **What the linter can and cannot do here.** `sentence-fragment` is a heuristic with no parser behind it, so it is tuned to never block good prose and therefore misses about half the cases. It catches "Genuinely." and "All of it." It does not catch "Two caveats." or "In fragments.", because an inflected word inside them reads as a possible verb. Do not treat a clean linter run as proof. Read the draft.
+
+- **Name the doer.** `[JUDGE]` See section 2. This belongs next to the fragment rule because the two fail together: a verbless sentence has no actor in it by definition. When a vendor withholds something, the vendor is the subject. "HeyReach does not document it", never "whether email replies land there is not documented".
+
 - **A long sentence has to be a list, not a weld.** It may run long when it enumerates: "Every deal is a quote, annual-only, and reported contracts run $15,000 to $60,000 a year depending on seats, credits, and whether you take the Diamond tier." It may not when it fuses two complete statements with a comma and an "and".
 - A bolded label followed by a colon does not count toward sentence length, whether it opens a bullet or a paragraph. "**Bounce Shield:**" is a label, not part of the sentence.
 - One idea per sentence. If an "and" joins two full thoughts, split it.

@@ -18,6 +18,7 @@ Precedence when files disagree. `rules/forge-positioning-guidelines.md` wins on 
 
 - **The byline is Frank Sondors.** First person "I" only. Never "we", "our", or "us".
 - **Active voice, first person where it makes sense, authentic human voice.** No AI slop, no fluff. Simple sentences, simple English. Every claim factual and traceable to research. This governs every other rule.
+- **A short sentence is a complete sentence.** Subject and verb, every time. An imperative counts. "Genuinely.", "All of it.", "In fragments." are fragments bolted onto the sentence before them, and two or three verbless noun phrases in a row is the most recognisable AI tell we produce. Name the doer.
 - **No em dashes, no en dashes, no semicolons.** Commas, periods, colons.
 - **Every price comes from the vendor's live pricing page**, never from G2, Capterra, a listicle, Reddit, an AI summary, or one of our older articles. Record the URL and the date.
 - **Never invent a first-person specific.** Any claim with a number, a timing, or a personal observation has to trace to an entry in `rules/observations.md`. If there is no entry, use category-general framing, cite a verified source, or make a broad tenure claim with no numbers. Do not manufacture a detail to fit the voice.
