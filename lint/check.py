@@ -158,6 +158,21 @@ def _proscons(sec):
     rows = [r for r in rows if r[0].strip() != 'Pros' and '---' not in r[0]]
     return sum(1 for r in rows if r[0].strip()), sum(1 for r in rows if r[1].strip())
 
+_FORGE_TOOL = re.compile(r'\b(?:Salesforge|Leadsforge|Mailforge|Infraforge|Primeforge|'
+                         r'Warmforge|Megaforge|Agent Frank)\b', re.I)
+
+# A con cell earns its imbalance by citing something checkable.
+_CITED_CON = re.compile(r'\b\d[\d,.]*\s*(?:mentions|reviews)\b'
+                        r'|\bcon tag\b'
+                        r'|\b(?:scores?|rated|rating|holds)\b[^|]{0,30}\b\d[\d.]*\b'
+                        r'|\b\d[\d.]*\s*(?:out of|/)\s*5\b'
+                        r'|\b\d[\d.]*%', re.I)
+
+def _proscons_text(sec):
+    """Raw text of the Pros and cons table, for citation checks."""
+    m = re.search(r'###\s+Pros and cons\s*\n(.*?)(?=\n###|\Z)', sec, re.S)
+    return m.group(1) if m else ''
+
 def _entry_sentence(sec):
     """First sentence of the paragraph after the mandated explainer, which is the entry
     angle section 21 requires to vary. Skips the Best for and G2 Rating lines."""
@@ -180,7 +195,13 @@ def _sections(text, head_re):
 
 # A tool name followed by a colon, then "Best for". Accepts the colon inside or
 # outside the bold, since both render the same.
-_TLDR_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)\s*Best for\b')
+# Closed set of TL;DR openers. Decided by Jaimin on 2026-08-19, widened from the
+# single mandatory "Best for" after the editor-approved RocketReach article used four
+# variants. The set stays closed so AI Overviews still lift a predictable shape, but a
+# tool whose whole case is price can say so: "Cheapest pick for email-only lookups".
+TLDR_OPENERS = ('Best for', 'Best overall for', 'Cheapest pick for', 'Best if you want')
+_TLDR_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)\s*(?:'
+                         + '|'.join(re.escape(o) for o in TLDR_OPENERS) + r')\b')
 _FEATURE_SHAPE = re.compile(r'^-\s+\*\*.+?(?:\*\*\s*:|\s*:\*\*)')
 _G2_SHAPE = re.compile(r'G2 puts .+ at [\d.]+ from [\d,]+ reviews', re.I)
 
@@ -195,7 +216,8 @@ def structure(text, add):
     for sec in _sections(text, r'^#{2,3}\s*TL;DR.*$'):
         for line in sec.splitlines():
             if line.lstrip().startswith('- ') and not _TLDR_SHAPE.match(line.strip()):
-                add('ERROR', 'tldr-shape', line.strip()[:88])
+                add('ERROR', 'tldr-shape', 'open with one of ' + ', '.join(TLDR_OPENERS)
+                    + '  ' + line.strip()[:70])
 
     # key feature bullets carry a colon after the feature name
     for sec in _sections(text, r'^#{3,4}\s*Key features.*$'):
@@ -350,16 +372,22 @@ def check(title, meta, text, label):
     # Section 5 bans "perfectly balanced pros and cons, four against four, all the same
     # length. Real reviews are lopsided." Nothing checked it, and the Expandi draft ran
     # 4-against-4 in seven of seven competitor sections.
+    # Competitor pros/cons balance. Decided by Jaimin on 2026-08-19, replacing the old
+    # "four against four is banned" check. The editor-approved RocketReach article runs
+    # every competitor within one of balanced and puts all its imbalance in the house
+    # product, on the reasoning that bias in the Forge cons cell is discounted by every
+    # reader while bias in a rival's table is where trust actually leaks. So a competitor
+    # may run net-negative only when a con cell cites evidence: a con-tag mention count,
+    # a review score, a sub-score, or a share.
     tool_secs = _tool_sections(text)
-    sym = []
     for name, sec in tool_secs:
         pros, cons = _proscons(sec)
-        if pros and pros == cons:
-            sym.append('%s %dv%d' % (name, pros, cons))
-            if pros == 4:
-                add('WARN', 'proscons-4x4:' + name, 'four against four, the shape section 5 bans by name')
-    if len(sym) >= 3:
-        add('WARN', 'proscons-symmetry(%d)' % len(sym), ', '.join(sym))
+        if not pros and not cons: continue
+        if _FORGE_TOOL.search(name): continue          # house product is exempt by design
+        if cons - pros >= 2 and not _CITED_CON.search(_proscons_text(sec)):
+            add('WARN', 'proscons-uncited:' + name,
+                '%d cons against %d pros with nothing cited. balance it or cite a con tag, '
+                'a score or a share' % (cons, pros))
 
     # Section 21 requires tool-section entry angles to vary. Two checks: a repeated opening
     # signature, and too many sections entering on a superlative.

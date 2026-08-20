@@ -147,7 +147,15 @@ If a sentence describes the article, the data, or the reviewers rather than pres
 **Banned patterns** `[JUDGE]`
 
 - Formal transitions between paragraphs. Just start the next thought.
-- Perfectly balanced pros and cons, four against four, all the same length. Real reviews are lopsided.
+- **Competitor pros and cons stay within one of balanced, unless the extra con cites evidence.** `[LINT]` Decided by Jaimin on 2026-08-19, replacing the old flat ban on four against four.
+
+    The editor-approved RocketReach article runs every one of its eight competitors at 4:4 or 5:5 and puts all its imbalance in the house product at 8:1. The reasoning holds: bias in the Forge cons cell is discounted by every reader who sees it, while bias in a rival's table is where trust actually leaks. A reader who knows Dripify well and sees us shading it stops believing the other seven.
+
+    So a competitor may run net-negative by two or more only when a con cell cites something checkable: a con-tag mention count, a review score, a sub-score, or a share. Meet Alfred at 2 pros against 5 cons is fine, because the cons carry 3.4 on G2, 2.8 on Capterra and a 1.9 support score. The same shape with four cons of pure judgement is not.
+
+    Extra **pros** are not covered by this. Handing a competitor a fifth pro costs us nothing and the reader nothing.
+
+    The routed Forge product is exempt, and its single con states the limit and stops. Never rebut the con inside the con cell: "No free plan" and not "No free plan, a 14-day free trial is available".
 - Three-item lists in every sentence. "Fast, reliable, and scalable" is a tell.
 - Repeating the product name at the start of consecutive sentences.
 - Every paragraph the same length.
@@ -239,7 +247,9 @@ Fixed by Jaimin on 2026-08-13. The linter blocks any TL;DR bullet that misses th
 Rules for the bullet:
 
 - The tool name is a jumplink to its section, and it carries the colon.
-- "Best for" is the first thing after the colon. Not "runs", not "charges", not "is the cheapest".
+- **The opener comes from a closed set of four.** `[LINT]` Widened by Jaimin on 2026-08-19 from the single mandatory "Best for". Permitted: **"Best for"**, **"Best overall for"**, **"Cheapest pick for"**, **"Best if you want"**. Nothing else. Not "runs", not "charges", not "is the cheapest".
+
+    The set stays closed because AI Overviews lift the bullet whole, so a predictable shape is the point. It was widened because the editor-approved RocketReach article used all four, and a tool whose entire case is price routes better with "Cheapest pick for email-only lookups" than with a forced ninth "Best for".
 - Then who it is for, in the words a buyer would use about themselves.
 - Then one or two sentences on the mechanics that earn that fit. Named features, real numbers.
 - Then the annual price where the article is price-led. See section 9c.
@@ -323,6 +333,16 @@ Complaint themes still belong in the article. Put them where they are load-beari
 - Pricing tables carry one price column and it is the annual one. The linter blocks a "Billed monthly" or "Billed quarterly" column header.
 - Prose says "$39 per user per month billed annually". Never "$59 monthly, $39 annually".
 - Cost-at-scale math runs on annual rates end to end.
+- **One saving line is allowed under a pricing table.** `[LINT]` Added by Jaimin on 2026-08-19. It may name the monthly rate for the sole purpose of showing the annual discount: "Monthly is $48, so the annual plan saves two months." No monthly column, no monthly row, one line. The editor-approved RocketReach article ran a monthly row beside the annual one to make the same point, which reintroduces the ambiguity this rule exists to remove. The line does the job without the column.
+
+**When a vendor publishes no price.** `[LINT]` `[HUMAN]` Added by Jaimin on 2026-08-19. Some vendors are quote-only, Cognism and ZoomInfo among them, and until now this rule made "custom pricing, sales contact required" the only compliant thing we could write about them. That is worse for the reader than a labelled range.
+
+- Say plainly that the vendor does not publish pricing. That sentence comes first, always.
+- A range may follow **only** if it comes from a named third-party source **with a sample size**, and it is labelled as reported rather than published. "Cognism does not publish pricing. Reported contracts run $15,000 to $60,000 a year."
+- Link the source. An unlinked reported range is a guess with a decimal point.
+- Use the same range in every section of the article. The approved article printed "$15,000 to $60,000-plus" in one place and "$14,995 to $45,000" in another, for the same vendor.
+- Never launder a reported range into a published one, and never collapse a range into a single figure.
+- A reported range never goes in the comparison table's price cell. That cell carries vendor-published rates or "Not published".
 
 ---
 
