@@ -133,6 +133,16 @@
    Both counted rather than located, on the same reasoning as the four checks in item 13: one
    instance is a signpost, eight is a prose habit.
 
+15. **`sentence-fragment` false-positived on clean prose.** Fixed 2026-08-20. The continuity pass
+   produced "You source the other end with Leadsforge.", which has a subject and a finite verb and
+   was reported as verbless. `_FINITE` is an allowlist of verbs, not a parser, so any legitimate
+   verb missing from it reads as a fragment. Added the fourteen the new prose needed: source, hear,
+   govern, split, chain, earn, lift, drop, check, scale, track, trade and their -s forms. Regression
+   checked against the five fragments the rule exists to catch, and the two it already documented
+   as misses ("In fragments.", "Connected or not.") are still misses, unchanged. The lesson is that
+   the allowlist grows with the prose, so expect to add to it after any pass that changes the verbs
+   in use.
+
 ## Open
 
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the
