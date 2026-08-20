@@ -444,7 +444,7 @@ Basic is $39 per user per month billed annually, and email steps run inside the 
 
 The single-seat price advantage inverts as soon as you hire. One seat buys one LinkedIn account. Five reps on Basic comes to $195 a month. Move them to Pro, where the daily action quotas stop constraining you. Five seats is $295 a month. Salesforge Growth is $80 flat for the same five LinkedIn senders.
 
-I recommend Dripify when it's one or two people and the budget is the constraint. So it's the value pick at one or two seats and loses ground steadily after that. Count the seats first.
+I recommend Dripify when it's one or two people and the budget is the constraint. It loses ground steadily above that. Count the seats first.
 
 ### Key features
 
@@ -490,13 +490,13 @@ Meet Alfred is a LinkedIn outreach tool that runs three channels inside one sequ
 
 Those three all stop at two channels, which is why Meet Alfred is on this page.
 
-I reach for Meet Alfred only when posting on X is a real part of the plan, because the review record makes me cautious about everything else.
-
 It rates 3.4 on G2 from 37 reviews, the lowest rating of the tools on this page, and eight of those 37 are one star. Capterra is lower still at 2.8 from 13 reviews, where ease of use scores 2.7 and customer service scores 1.9.
 
 The two platforms measure different things and still agree, which is worth more than either score alone.
 
 Reviewers keep coming back to support responsiveness, roughly five of the thirteen readable reviews. One reports up to four days without a reply.
+
+I reach for Meet Alfred only when posting on X is a real part of the plan, because that record makes me cautious about everything else.
 
 I have complicated feelings about recommending it at all. Run the trial hard if you want the three-channel sequence. Open a support ticket during it deliberately. You'll learn more from the reply time than from any feature page.
 
@@ -598,7 +598,7 @@ Import the people who liked a post, enrich them across nine email providers in s
 
 A single-provider lookup ends on the first miss. La Growth Machine keeps going through the queue until an address verifies. The chain then ends on LinkedIn, where the voice message runs as a native action that nothing else here ships.
 
-La Growth Machine charges per sending identity. An identity is a sending profile. Basic includes 3 team members and Pro includes 25, all free. So the people cost nothing and the profiles cost.
+The billing unit is the sending identity, and an identity is a sending profile. Basic includes 3 team members and Pro includes 25, all free. So the people cost nothing and the profiles cost.
 
 I reach for it when list quality is the bottleneck, not the sending.
 
