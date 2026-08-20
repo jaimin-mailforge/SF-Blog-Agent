@@ -139,7 +139,8 @@ _FINITE = re.compile(
     r"burn|burns|roll|rolls|refund|refunds|verify|verifies|enrich|enriches|warm|warms|"
     # added 2026-08-20: false-positived on clean prose from the continuity pass
     r"source|sources|hear|hears|govern|governs|split|splits|chain|chains|earn|earns|"
-    r"lift|lifts|drop|drops|check|checks|scale|scales|track|tracks|trade|trades)\b"
+    r"lift|lifts|drop|drops|check|checks|scale|scales|track|tracks|trade|trades|"
+    r"bundle|bundles|diverge|diverges|settle|settles|route|branch|serve|serves)\b"
     r"|\b\w+(?:'s|'re|'ve|'ll|'d|n't)\b", re.I)
 
 def _is_fragment(s):

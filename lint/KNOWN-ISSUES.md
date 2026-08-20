@@ -145,6 +145,15 @@
 
 ## Open
 
+- **`sentence-fragment` cannot see a verbless FAQ opener.** Surfaced 2026-08-20 by a reading pass,
+  not by the linter. `_is_fragment` returns early on anything matching `^(?:Yes|No)\b`, because
+  section 16 mandates the "Yes." plus support shape and the article's own approved phrasing includes
+  "Yes, with a specific caveat.", which is verbless and correct. That exemption also passed
+  "Yes, but not as a channel.", a real regression from a finite-verb original. Narrowing the
+  exemption to a bare "Yes." would flag the mandated caveat form, so the gap stays open and the
+  FAQ openers are a read-for item. Caught here by an adversarial reviewer, which is what `[JUDGE]`
+  is for.
+
 - **Bare `Seamless` in a slash list.** `Apollo/Seamless/HeyReach` is clearly the
   product, but adding bare `Seamless` to the exemption list would let real uses of
   the banned word through. Leaving it to fire and be dismissed by a human. One
