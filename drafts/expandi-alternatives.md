@@ -4,23 +4,21 @@
 
 ---
 
-I've run LinkedIn outreach across most of the tools in this category, and Expandi is a good one. The product is not the problem. The bill is.
+You run LinkedIn in one tool and email in another. Every week you export from one, import into the other, and work out by hand which prospect already replied somewhere.
 
-Its campaign builder gives you eleven campaign types, real if-then branching, and daily limits the tool refuses to let you exceed even when you ask it to.
+That is the job most people are actually trying to fix when they start looking at Expandi alternatives. The automation is rarely the complaint.
 
-But most people searching for Expandi alternatives aren't unhappy with the automation. They're unhappy with the bill, because the headline price is not the price you pay.
+Expandi is good at the LinkedIn half. I still send LinkedIn-only operators there. Eleven campaign types, real if-then branching, and daily limits the tool refuses to let you exceed even when you ask it to.
 
-The published price is $79 per seat per month billed annually. One seat means one LinkedIn account. You pay for the seat whether anything is connected to it or not.
+Three things send people looking anyway, and all three come off Expandi's own pages. The $79 seat is not the price. The image and GIF personalization Expandi built its name on runs through Hyperise, which takes the real figure to roughly $136.50.
 
-Then Expandi footnotes the rest on [its own pricing page](https://expandi.io/pricing/). The plan does not include image and GIF personalization, the feature Expandi is best known for. It runs through Hyperise, at about $57.50 per seat per month on annual billing.
+A seat you have stopped using keeps billing you, which [Expandi's own help centre](https://help.expandi.io/en/articles/10261458-manage-subscriptions-seats-for-your-linkedin-accounts-workspace) states plainly. And email is not a channel in the product. It is one action inside a single campaign type, its replies never reach the unified inbox, and nothing in Expandi warms the mailbox you send from.
 
-So the setup people actually compare against costs roughly $136.50 per seat per month, well above the headline.
+Most Expandi buyers run into at least one of those. It holds a respectable 4.2 on G2, and about one in ten of those reviewers left a single star.
 
-Two other articles print a combined figure. Both use monthly rates, which is why theirs run higher and mine is the annual one.
+So I read every price off the vendor's own [live pricing page](https://expandi.io/pricing/), went through the product docs, and pulled the G2 star distribution for all eight tools I shortlisted.
 
-So I read every price off the vendor's own live page, alongside the product docs and the G2 review data, for every tool I considered. Eight made the list.
-
-Most of the ones that did not fell down on the same thing. They do LinkedIn only, and email arrives later as a step rather than a channel.
+Most of the ones that did not make it failed on the same thing. They run LinkedIn only, and email arrives later as a step rather than a channel.
 
 ## TL;DR: 8 Expandi Alternatives
 
@@ -325,17 +323,19 @@ The warm-up row is the one people forget, because most of these tools leave it o
 
 Salesforge is a multichannel outreach tool that runs cold email and LinkedIn as two channels of one sequence, with one inbox behind both.
 
-I point teams here when the email half and the LinkedIn half keep drifting out of sync. One sequence runs both channels. One set of exit rules governs them.
+I point teams here when the email half and the LinkedIn half keep drifting out of sync. One sequence carries both channels, under one set of exit rules.
 
-However, Dripify, lemlist and Meet Alfred also run both channels in one sequence. They differ on the billing unit, and on whether one set of exit rules governs both.
+Dripify, lemlist and Meet Alfred put both channels in one sequence too. They differ on the billing unit, and on whether a reply anywhere stops the whole sequence.
 
-Salesforge branches on what the prospect did. Send a connection request, and if it's accepted the next step is a LinkedIn message. If it isn't, the sequence falls back to email instead. You don't run two campaigns and then reconcile a spreadsheet to work out which prospect is in which one.
+Salesforge branches on what the prospect did. Send a connection request, and an accept routes the next step to a LinkedIn message. A non-accept routes it to email instead. Nobody exports a list, reconciles it in a spreadsheet, and works out which prospect belongs to which campaign.
 
-That email fallback needs mailboxes. Mailboxes are unlimited on both plans. I've connected 22 to a single account without the bill changing. (Yes, I counted.) Salesforge prices on active contacts and email volume instead of per mailbox or per seat.
+That email fallback needs mailboxes. Mailboxes are unlimited on both plans. I've connected 22 to a single account without the bill changing. (Yes, I counted.) Salesforge prices on active contacts and email volume, so neither mailbox count nor headcount moves the invoice.
 
-Warmforge warms every connected mailbox free, with unlimited slots, because the email half of a LinkedIn sequence still has to land. It lands better on an audience that already knows the space, so point Leadsforge's Company Followers search at a competitor's page and you get the people following it, at 1 credit each.
+The fallback also has to reach an inbox, which is why Warmforge warms every connected mailbox free with unlimited slots. Deliverability is the constraint on that half, not send volume.
 
-The catch is that Salesforge does more than a LinkedIn-only tool, so give yourself a few days with it rather than an afternoon.
+Targeting is the other half. Point Leadsforge's Company Followers search at a competitor's page and you get the people already following it, at 1 credit each. Those prospects know the category before your first touch lands.
+
+The catch is scope. Salesforge does more than a LinkedIn-only tool, so budget a few days to learn it rather than an afternoon.
 
 ### Key features
 

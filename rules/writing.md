@@ -247,7 +247,51 @@ Small everyday verbs and concrete nouns: set up, run, send, check, connect, fix,
 
 Numbers make writing believable. Use exact prices, times, counts, and ratings with review counts.
 
-**Layman language only.** Plain everyday words a non-marketer would say. If a word would slow down a reader who sees it once, replace it.
+**Removed 2026-08-21: "Layman language only."** It said "plain everyday words a
+non-marketer would say, and if a word would slow down a reader who sees it once,
+replace it." Jaimin cut it because it was producing oversimplified words, and the
+measurement below says he is right: we already use *fewer* long words than the
+editor-approved article, so the rule was pushing further in a direction we had
+overshot. Stripping `deliverability` down to "getting into the inbox" every time does
+not make the writing clearer to a founder buying outreach software. It makes it sound
+like it was written for somebody else.
+
+What replaces it: **use the precise word when the precise word is the plain one for
+this reader.** The audience runs cold email and LinkedIn for a living. `Deliverability`,
+`per-seat`, `waterfall enrichment`, `session-token auth` and `warm up` are their
+everyday vocabulary, not jargon. Explain a term the first time if it is genuinely
+niche, then use it. What section 6 still bans is unchanged and is a different thing:
+marketing abstraction with no referent, "affordable pricing options", "significantly
+improved results", "robust solution". Those are not hard words. They are empty ones.
+
+**Simple sentence structure and simple vocabulary.** `[JUDGE]` Restated by Jaimin on
+2026-08-21 alongside section 9d, then narrowed the same day when the measurement came
+back. Measured before writing a rule for it:
+
+| | Approved article | Expandi draft |
+|---|---|---|
+| Words of four or more syllables | 3.4% | **2.6%** |
+| Words of three syllables | 8.1% | **5.6%** |
+| Sentences opening on a subordinate clause | 3.0% | **1.6%** |
+| Sentences with three or more clauses | 3.0% | **1.4%** |
+| Subject separated from its verb by an insertion | 0.0% | 0.0% |
+
+We are already simpler than the benchmark on every measure, and on vocabulary we are
+simpler by a third. **So there is deliberately no vocabulary or structure checker, and
+nobody should build one.** A syllable ceiling would fire on `personalization`,
+`deliverability`, `invitations` and `infrastructure`, which are this reader's own
+vocabulary. A clause-count ceiling would fire on the pricing sentences that carry three
+figures, which is the shape those sentences need.
+
+Read the table the other way round too. The gap on four-syllable words is not a score we
+are winning. It is the measurement that got "Layman language only" deleted.
+
+This is the fourth time a plausible-sounding metric has said our prose was fine when a
+human said it was not, or said it was worse when it was better. Connective openers,
+back-reference, subordination and short-sentence runs all did the same thing before
+section 3's through-line rule found the real defect one level up. **When prose reads
+wrong and every sentence-level metric says it is fine, the defect is at the paragraph,
+the section, or the substance. Look there.** Do not add a fifth metric.
 
 **No trailing add-on clauses.** Do not write a main clause, then a comma, then a tail. That shape reads as machine-written.
 
@@ -430,6 +474,60 @@ Complaint themes still belong in the article. Put them where they are load-beari
 - Use the same range in every section of the article. The approved article printed "$15,000 to $60,000-plus" in one place and "$14,995 to $45,000" in another, for the same vendor.
 - Never launder a reported range into a published one, and never collapse a range into a single figure.
 - A reported range never goes in the comparison table's price cell. That cell carries vendor-published rates or "Not published".
+
+---
+
+## 9d. The introduction `[JUDGE]` `[LINT]`
+
+**Added by Jaimin on 2026-08-21.** Section 9 already sets the intro's shape, 3 to 6
+short paragraphs, open on the problem, never "in this article we will". That governs
+form. This section governs substance, because a correctly shaped intro can still be
+the weakest part of the page.
+
+> Well-researched, matching search intent, addressing common pain points.
+
+Three tests, and the intro fails if it misses any.
+
+**1. It matches what the SERP says the query means, not what we assume it means.**
+The brief's SERP section is the authority. Read it before writing a word of the intro.
+On the Expandi keyword the brief found intent blending: a competitor ranks third with a
+*review* page and Google reads the query as partly a review, so the winning page has to
+evaluate the competitor and not only list alternatives. An intro written on the
+assumption "they already decided, get to the list" would have been wrong on that
+keyword and right on a different one. You cannot know which without reading the SERP.
+
+**2. It names the reader's situation before it argues anything.** The reader has to see
+their own week in the first two paragraphs. The approved RocketReach article spends
+three paragraphs on a click sequence the reader performs from memory, "pick SaaS, pick
+Series A to B, pick United States, hit search, wait, scroll, uncheck the ones that don't
+fit, export", before it makes a single claim. That recognition is what buys the rest of
+the page. The brief's JTBD line is usually the raw material for it, and on the Expandi
+article it was written and then never used: "my email lives in a separate tool" and
+"without doubling my bill or my tabs" are the reader's own words about their own day.
+
+**3. Pain points are plural, they come from the evidence, and they arrive compressed.**
+`[LINT]` The approved article names five in one sentence: bounces on verified emails,
+credits burning on bad data, unused credits forfeited at cancellation, auto-renewals
+firing without warning, and a database that runs thin outside US tech. Then one line
+lands it: "Every RocketReach buyer eventually runs into at least one."
+
+The Expandi draft named one, the bill, and then proved it across six of nine paragraphs.
+Meanwhile the brief carried three verified pains and a fourth piece of evidence sitting
+unused. **Minimum two distinct pain points in the intro, each traceable to the brief.**
+Counting them is a judgment call and the linter does not pretend to. What it does
+check is the failure below, `intro-duplicates-next`, plus the paragraph shape.
+
+**And the intro does not prove what the next section proves.** This is the specific
+failure to watch. The Expandi intro ran the $79 to $136.50 arithmetic in three
+paragraphs, and "Why People Leave Expandi" then ran the identical arithmetic
+immediately after, at more length and with the sources. The intro should have named the
+number once and moved on. An intro that duplicates the section beneath it has no reason
+to exist, and the reader feels the repetition even if they cannot name it.
+
+**Close on the promise.** What was checked, and what the reader is getting. "I've
+tested 15 RocketReach alternatives, evaluated each on several criteria, and shortlisted
+the top 9." Ours said "Eight made the list" as an aside, after the methodology sentence.
+State the promise plainly and put it last, where it hands off to the TL;DR.
 
 ---
 

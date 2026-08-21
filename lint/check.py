@@ -48,6 +48,7 @@ PARA_WORD_CAP = 60       # replaces the 3-sentence cap
 # and 8. Section 9b has capped trailing-superlative "I" at two per article since 2026-08-19
 # and had no checker, which is how fifteen of them survived a full review cycle.
 TRAILING_I_CAP = 2       # "the widest I've seen", "no other vendor I checked"
+INTRO_SHARED_FIGURES = 2  # money figures the intro and the next section may share
 FRAME_RESTART_CAP = 2    # "X is what matters", "Two things...", "matters most"
 
 # A superlative, then an "I"-clause after it in the same sentence. The narrator is being used
@@ -551,6 +552,30 @@ def check(title, meta, text, label):
         add('WARN', 'frame-restart(%d)' % len(restarts),
             'develop the argument, do not restart it: ' +
             ', '.join('"%s"' % n for n, _ in restarts[:4]))
+
+    # Section 9d, the introduction. Two things here are mechanical. Whether the intro
+    # names plural pain points is not, so it stays a [JUDGE] read and this code does
+    # not pretend otherwise.
+    #
+    # The duplication check is the one that matters. The Expandi intro ran the $79 to
+    # $136.50 arithmetic across three paragraphs and "Why People Leave Expandi" ran the
+    # identical arithmetic immediately after, with the sources. An intro that proves
+    # what the next section proves has no reason to exist.
+    parts = re.split(r'^##\s+(?!#)', body, flags=re.M)
+    if len(parts) >= 3:
+        intro, first_sec = parts[0], parts[1]
+        money = re.compile(r'[$\u20ac\u00a3]\s?\d[\d,]*(?:\.\d{1,2})?(?<![,.])')
+        a = {m.group(0).replace(' ', '') for m in money.finditer(intro)}
+        b = {m.group(0).replace(' ', '') for m in money.finditer(first_sec)}
+        shared = a & b
+        if len(shared) > INTRO_SHARED_FIGURES:
+            add('WARN', 'intro-duplicates-next(%d)' % len(shared),
+                'intro and the next section both prove %s. Name it once in the intro.'
+                % ', '.join(sorted(shared)[:5]))
+        # No intro paragraph-count check. Section 9 asks for "3 to 6 short paragraphs"
+        # and the editor-approved article runs 9, so a count check would flag the
+        # benchmark. That conflict belongs in the rules file, not in a warning nobody
+        # can act on. Flagged to Jaimin 2026-08-21.
 
     # lowercase-branded competitor names, capitalised only to open a heading or sentence
     for brand in LOWERCASE_BRANDS:
