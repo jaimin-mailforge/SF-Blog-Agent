@@ -23,6 +23,17 @@ most expensive when it is wrong. Two specific failures are why:
     python3 lint/prices.py --url https://x.com/pricing  one vendor page
     python3 lint/prices.py research/<slug>.md --stale 7 tighter staleness threshold
 
+Then close the loop on everything a fetch cannot settle:
+
+    python3 lint/evidence.py research/<slug>.md         every claim needs a file
+    python3 lint/evidence.py research/<slug>.md --probe  also fetch each vendor page
+    python3 lint/evidence.py --list                      what is on disk
+
+`prices.py` finds the symptom. `evidence.py` finds the cause, which is a screenshot that
+arrived in chat, got transcribed by hand, and left nothing on disk connecting the claim to
+the image. Every rating needs a file, because G2 and Capterra both 403. A price needs one
+only when `--probe` says the page cannot be machine-read.
+
 ## What the output means
 
 - `serves EUR/GBP/USD` — the page has a currency switcher. Which one you read is now

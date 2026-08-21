@@ -250,6 +250,42 @@
    vocabulary is a judgment call, not a mechanical failure. The must-not-fire table is
    where a phrase goes once somebody has argued for it, so the argument is not had twice.
 
+20. **Evidence intake: every unverifiable claim now needs a file on disk.** Added
+   `lint/evidence.py` and the `assets/evidence/<slug>/` convention 2026-08-21.
+
+   `prices.py` catches the symptom of an unverified price. It cannot catch the cause,
+   which is that a screenshot arrives in chat, gets transcribed into a brief by hand, and
+   from that moment nothing on disk connects the claim to the image. That is exactly how
+   Waalaxy went wrong: the brief said USD 16/32/55, every automated route served EUR
+   19/49/69, and behind the USD figures was a screenshot nobody could re-open.
+
+   Targeted rather than blanket, on purpose. Ratings always need a file, because G2 and
+   Capterra both 403 and every rating in every brief is hand-captured by definition.
+   Prices need one only when `--probe` finds the page unreadable: JS-rendered, geolocated,
+   or behind a currency switcher. Demanding an image for every price would bury the ones
+   that matter.
+
+   Found on first run: **8 real gaps in the Expandi brief.** Every Capterra rating the
+   published article states has nothing on disk behind it.
+
+   Two calibration notes:
+
+   - The first run also flagged a G2 figure inside `## Evidence: access limits`, which
+     turned out to be the brief *quoting a competitor's unsourced claim in order to
+     debunk it*. Fixed by reusing `check.py`'s `_mask_paired_quotes` rather than writing
+     new masking, since that function is already tested.
+   - It reports orphans too: a file on disk that no provenance line references. An
+     unreferenced screenshot is evidence nobody can find.
+
+   Verified on all three paths: a rating with no file opens a gap, referencing a real file
+   closes it, and referencing a file that does not exist reports MISSING. The stub PNG used
+   to test the happy path was deleted and the Waalaxy line reverted afterwards, because a
+   file that looks like verification and settles nothing is the precise failure this gate
+   exists to prevent.
+
+   Not wired into the `Stop` hook. A pending screenshot is a normal state to be in for
+   days, and blocking every turn on it would train people to bypass the hook.
+
 ## Open
 
 - **`sentence-fragment` cannot see a verbless FAQ opener.** Surfaced 2026-08-20 by a reading pass,

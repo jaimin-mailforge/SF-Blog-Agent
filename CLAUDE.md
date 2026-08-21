@@ -65,6 +65,9 @@ has passed no rule in this repo, so it does not shortcut the outline stop.
     python3 lint/prices.py <brief>          re-verify every recorded price
     python3 lint/prices.py --url <url>      probe one vendor pricing page
 
+    python3 lint/evidence.py <brief>        every unverifiable claim needs a file
+    python3 lint/evidence.py --list         what is in assets/evidence/
+
     python3 lint/selftest.py                regression test, run after ANY rule change
     python3 lint/selftest.py --rules        rule integrity only, what the Stop hook runs
 
@@ -73,7 +76,11 @@ has passed no rule in this repo, so it does not shortcut the outline stop.
 
 `coverage.py` exists because the must-cover count is binding and I got it wrong by
 hand twice on the same draft. `prices.py` exists because a bot cannot settle a vendor
-contradiction and must hand it to a human instead of picking.
+contradiction and must hand it to a human instead of picking. `evidence.py` exists because
+`prices.py` only catches the symptom: a screenshot that arrives in chat and is transcribed
+by hand leaves nothing on disk tying the claim to the image, which is how Waalaxy's price
+went wrong. Every rating needs a file, since G2 and Capterra both 403. A price needs one
+only when the page cannot be machine-read.
 
 **`selftest.py` is the one to run before committing a change to `lint/check.py` or
 `lint/data/`.** Three linter bugs shipped in a single session on 2026-08-21 and all three
