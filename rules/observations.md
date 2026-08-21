@@ -45,6 +45,14 @@ Real first-hand observations, recorded so the practitioner voice has true materi
 - **Reusable as:** the screening count in the Expandi alternatives intro, which section 9d requires the intro to close on. Use "screened", never "tested": the methodology section of that article states plainly that no 90-day test was run on all eight, and "tested 20" would contradict it.
 - **Careful with:** the 20 belongs to this article's tool set. Do not attach it to a different article covering a different category, and do not let it drift into a claim about hands-on testing.
 
+### OBS-006 | Outreach alternatives screening set
+- **Observed:** 20 sales engagement and outreach tools screened for the Outreach alternatives article. Eight were shortlisted for a section, so twelve were dropped.
+- **When:** August 2026
+- **Verified by:** Jaimin, confirmed 2026-08-21
+- **Reusable as:** the screening count in the Outreach alternatives intro, which section 9d requires the intro to close on.
+- **Careful with:** **screened, not tested.** Jaimin confirmed this explicitly on 2026-08-21. No hands-on test ran on these 20, so "I tested 20" is false and "I screened 20" is true. The live page's current title tag says "Tested & Ranked", which the rewrite has to correct.
+- **Careful with, second:** this entry and OBS-005 both record 20, and they are **different tool sets**. OBS-005 is 20 LinkedIn and multichannel tools for the Expandi article. This is 20 sales engagement tools for the Outreach article. The matching number is a coincidence, not a house default, so do not reach for "20" on a third article without running the screen and adding a third entry.
+
 ---
 
 ## Wanted

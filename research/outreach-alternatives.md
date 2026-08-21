@@ -93,13 +93,16 @@ the opposite failure from the Expandi draft: this page is choppy, not flat.
 
 ## Open, blocking
 
-Nothing below can be resolved from a public page and each one blocks a specific sentence.
+One of the six below is resolved. The rest cannot be settled from a public page, and each one blocks a specific sentence.
 
-1. **The screening count.** Jaimin's copy says "I tested 15+ outreach alternatives".
-   `rules/observations.md` has no entry for an Outreach test, so section 7 blocks the
-   claim. Also note the verb: the Expandi article uses "screened" rather than "tested"
-   because no 90-day test was run, and OBS-005 records that constraint. Needs the real
-   number, and needs deciding whether a hands-on test actually happened.
+**Jaimin is supplying screenshots for item 3.**
+
+1. ~~**The screening count.**~~ **Resolved 2026-08-21 by Jaimin: 20 tools, screened
+   rather than tested.** Logged as OBS-006. The intro says "I screened 20 alternatives
+   and shortlisted eight". Two consequences. The live page's title tag currently reads
+   "Tested & Ranked" and is therefore wrong, so the rewrite has to change it. And
+   OBS-006 carries a warning that its 20 and OBS-005's 20 are different tool sets whose
+   matching count is a coincidence.
 2. **The entry-price range.** The copy says tools start "between $32.50 and $63 a month
    (billed annually)". No vendor page has been read for this article and the eight tools
    are not chosen yet, so there is no provenance for either end of that range. Both
