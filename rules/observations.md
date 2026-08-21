@@ -38,6 +38,13 @@ Real first-hand observations, recorded so the practitioner voice has true materi
 - **Reusable as:** the testing-methodology basis for the cold email software article and any piece drawing on the same test. The eight questions are the openly-stated selection criteria.
 - **Careful with:** the 90 days and the eight tools belong to this specific test. Do not attach them to a different article covering a different tool set.
 
+### OBS-005 | Expandi alternatives screening set
+- **Observed:** 20 LinkedIn and multichannel outreach tools screened for the Expandi alternatives article. Eight were shortlisted for a section, so twelve were dropped. The commonest reason for dropping one was that it runs LinkedIn only, with email arriving as a step inside a campaign rather than as a channel of its own.
+- **When:** August 2026
+- **Verified by:** Jaimin, confirmed 2026-08-21
+- **Reusable as:** the screening count in the Expandi alternatives intro, which section 9d requires the intro to close on. Use "screened", never "tested": the methodology section of that article states plainly that no 90-day test was run on all eight, and "tested 20" would contradict it.
+- **Careful with:** the 20 belongs to this article's tool set. Do not attach it to a different article covering a different category, and do not let it drift into a claim about hands-on testing.
+
 ---
 
 ## Wanted

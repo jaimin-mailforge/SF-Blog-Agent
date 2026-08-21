@@ -16,9 +16,9 @@ A seat you have stopped using keeps billing you, which [Expandi's own help centr
 
 Most Expandi buyers run into at least one of those. It holds a respectable 4.2 on G2, and about one in ten of those reviewers left a single star.
 
-So I read every price off the vendor's own [live pricing page](https://expandi.io/pricing/), went through the product docs, and pulled the G2 star distribution for all eight tools I shortlisted.
+So I screened 20 alternatives. Eight made the list. For each of those eight I read every price off the vendor's own [live pricing page](https://expandi.io/pricing/), went through the product docs, and pulled the G2 star distribution.
 
-Most of the ones that did not make it failed on the same thing. They run LinkedIn only, and email arrives later as a step rather than a channel.
+The twelve that did not make it mostly failed on the same thing. They run LinkedIn only, and email arrives later as a step rather than a channel.
 
 ## TL;DR: 8 Expandi Alternatives
 
