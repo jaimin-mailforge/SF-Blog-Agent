@@ -180,6 +180,39 @@
      is labelled weak when a toggle or a currency switcher is present. A verifier that
      cries wolf gets ignored, and then prices are unverified again.
 
+18. **AI framings: one index, and the measurement that said not to build a checker.**
+   Added 2026-08-21 on Jaimin's instruction to strictly avoid typical AI framings.
+
+   Twenty-five candidate framings counted across the approved article, the Expandi draft
+   and three published articles first. Almost nothing hit. Structural tells scored zero:
+   no punchline paragraphs anywhere, no negation-then-correction pairs in the Expandi
+   draft against one in the approved article, colon-explainers level at two each,
+   pronoun-subject openers 9.5% against the approved article's 6.9%. The earlier passes
+   had already removed them, so section 5a is written as a preventive index rather than
+   a repair list, and it says so at the top. No new checker: section 6 had just finished
+   recording that four metrics in a row said our prose was fine when a human said
+   otherwise, and adding a fifth on the same day would have been the trap.
+
+   Three calibration decisions worth keeping:
+
+   - `at scale` was a candidate and is **allowed**. The approved article uses it three
+     times. Banning it would flag the benchmark, the same error an intro paragraph-count
+     check made earlier the same day.
+   - `whether you're X or Y` stays a judgment call. Slop as an audience hedge, precise as
+     a plan comparison, same construction. A hard ban is an ERROR that blocks a write, so
+     anything with a legitimate twin cannot have one.
+   - `source of truth` was banned and unbanned within the hour. It caught two genuine
+     instances and both were correct usage, because single source of truth is how CRM
+     vendors describe themselves. Section 6 had removed the layman-language rule that
+     same day to stop us stripping this reader's own vocabulary, and banning this would
+     have been that deleted rule returning through a different file. The lesson is that a
+     phrase can be corporate jargon and still be the plain word for the person reading.
+
+   Net: `leverage` and its forms plus `landscape` to banned-words, nineteen phrases to
+   banned-phrases, all verified to fire zero times on the approved article before landing.
+   The two genuine catches in the corpus were `that said` once and, before the reversal,
+   `source of truth` twice.
+
 ## Open
 
 - **`sentence-fragment` cannot see a verbless FAQ opener.** Surfaced 2026-08-20 by a reading pass,

@@ -235,6 +235,99 @@ If a sentence describes the article, the data, or the reviewers rather than pres
 
 ---
 
+## 5a. AI framings, and the one index for all of them `[LINT]` `[JUDGE]`
+
+**Added by Jaimin on 2026-08-21: strictly avoid typical AI framings.** Read this section
+before drafting. It is deliberately the single place that names all of them, because they
+were previously spread across two data files, three rule sections and two linter checks,
+and a drafting session had no one thing to read.
+
+**What the measurement found first, because it changes how to use this section.** Twenty-five
+candidate framings were counted across the editor-approved article, our Expandi draft and
+three published articles. Almost nothing hit. "that said" appeared once in one article and
+"source of truth" twice in one draft. Structural tells scored zero: no punchline
+paragraphs, no negation-then-correction pairs in the Expandi draft against one in the
+approved article, colon-explainers level at two each.
+
+So this is a **preventive** list, not a repair list. The earlier passes already removed
+these: the fragment rule in section 3 killed the punchline paragraph, the through-line
+rule killed the cleft, and the banned-word file killed the vocabulary. Do not go looking
+for a problem in a clean draft. Section 6 records that four separate metrics said our
+prose was fine when a human said otherwise, and adding a fifth is the trap, not the fix.
+
+### Enforced, and the linter blocks on them
+
+New entries added 2026-08-21, all verified to fire zero times on the editor-approved
+article before being added:
+
+`lint/data/banned-words.txt` gains **leverage** in all its forms, and **landscape**.
+
+`lint/data/banned-phrases.txt` gains: more than just, when it comes to, that said, with
+that said, think of it as, the bottom line, in summary, to sum up, the good news is,
+here's where it gets, deep dive, under the hood, heavy lifting, move the needle, in the
+world of, the reality is, the truth is, one thing is clear, battle-tested.
+
+Each one has an unambiguous slop reading and no legitimate twin, which is the bar for a
+hard ban. A banned phrase is an ERROR and blocks a write, so a false positive costs more
+than a missed instance.
+
+### Deliberately NOT banned
+
+**"at scale" is allowed.** The approved article uses it three times and it is ordinary
+vocabulary for this reader. Banning it would flag the benchmark, which is the mistake an
+intro paragraph-count check made on the same day.
+
+**"whether you're X or Y" stays a judgment call.** As an audience hedge it is pure slop:
+"whether you're a solo founder or an agency, this tool scales with you." As a plan
+comparison it is useful and precise: "whether you're on Pro or Growth". Same construction,
+opposite value, so a hard ban would block the good one.
+
+**"navigate" stays allowed.** "Navigating the dashboard" is real UI language. Only
+"navigating the landscape" is slop, and `landscape` is banned on its own.
+
+**"source of truth" was banned on 2026-08-21 and unbanned the same hour.** It caught two
+genuine instances, and then both turned out to be correct usage: "I use it when the CRM is
+the source of truth" and a Klenty feature label. Single source of truth is how CRM vendors
+describe themselves, so it is this reader's own vocabulary, and section 6 removed the
+layman-language rule precisely to stop us stripping that out. Banning it would have been
+that rule coming back in through the side door, one section later in the same file. Worth
+recording because it is the easiest mistake to repeat: a phrase can be corporate jargon
+and still be the plain word for the person reading.
+
+### Judgment calls, no checker, read for them
+
+- **The false contrast.** "It's not just X, it's Y." "This isn't a feature, it's a
+  philosophy." The construction promises a reveal and delivers a synonym. State the thing.
+- **The rhetorical question as a paragraph opener.** "So what does this mean for your
+  team?" Nobody asked. Answer the question instead of staging it.
+- **The rule of three, used as rhythm rather than as a list.** "Faster, cheaper, and more
+  reliable." Three adjectives with no figures behind them is one adjective's worth of
+  information. Section 6 already wants the number.
+- **The analogy reflex.** "Think of it as a Swiss Army knife for outreach." Banned as a
+  phrase now, but the reflex outlives the phrasing. Describe the mechanism.
+- **Hedge stacking.** "may potentially help improve" is three hedges for one claim. Pick
+  one or drop it.
+- **The summary that adds nothing.** A closing sentence that restates the paragraph in
+  shorter words. If cutting it loses the reader nothing, it was slop. See section 2.
+
+### Already enforced elsewhere, listed here so this is a real index
+
+| Framing | Where it lives | Checker |
+|---|---|---|
+| Verbless punchline, drumbeat fragments | Section 3 | `sentence-fragment` |
+| A new frame every paragraph | Section 3 | `frame-restart` |
+| "I" trailing a superlative as a citation | Sections 2 and 20 | `trailing-superlative-i` |
+| Narrator describing the article or the data | Section 5 | `banned-phrase` |
+| Defining a thing by what it is not | Section 6 | `define-by-negation` |
+| Comparisons that die when quoted off the page | Section 17 | `unscoped-comparison` |
+| Intro proving what the next section proves | Section 9d | `intro-duplicates-next` |
+| Marketing vocabulary with no referent | Section 5 | `banned-word` |
+
+If a framing is not in this table and not in the two lists above, it is a judgment call
+and the linter will not save you. Read the draft.
+
+---
+
 ## 6. Preferred language `[JUDGE]` `[LINT]`
 
 **Partly enforced since 2026-08-13.** `define-by-negation` counts "rather than", "instead of" and bare ", not". One is fine, thirty is a tic. The Expandi draft ran 28.
