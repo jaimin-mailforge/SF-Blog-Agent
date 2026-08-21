@@ -25,7 +25,25 @@ Do not re-derive those. The defect is at the paragraph and the section, and no
 sentence statistic reaches it. Read `rules/writing.md` sections 2 and 3 for the two
 rules that do catch it.
 
-## 1. Measure the two things that do discriminate
+## 1. Scope the pass before you spend anything on it
+
+    python3 lint/sections.py <path>              ranked, with the reason per section
+    python3 lint/sections.py <path> --targets    just the section headings to polish
+
+**Polish only the sections it names.** The first continuity pass on the Expandi draft
+fanned out over all eleven prose units, spent 1.1M subagent tokens across 22 agents, and
+hit the org's monthly spend limit mid-run. On that draft the spend was justified, 13 of 16
+sections scored above the threshold. On the same draft after the pass it is 2 of 16. A
+re-polish, or a draft written section by section under the current rules, is where a
+full-file fan-out burns most of its budget on prose that is already right.
+
+The scorer counts raw per-section instances, not the capped article-level findings, because
+`trailing-superlative-i` and `frame-restart` both cap at two per article and a section
+carrying one is invisible in the article-level output. So a clean `lint/run.py` does not
+mean there is nothing to polish, and `sections.py` reporting a target does not mean the
+linter is failing.
+
+## 2. Measure the two things that do discriminate
 
     python3 lint/run.py <path>
 
@@ -36,7 +54,7 @@ Then read the draft yourself, section by section, and for each one write down th
 single argument it runs. If you cannot state it in one sentence, or if you find
 yourself writing two, that section has no argument and needs this pass.
 
-## 2. Split the prose into units and rewrite each one
+## 3. Split the prose into units and rewrite each one
 
 Work per section, not per file, and do not touch tables, key-feature bullets or
 `**Best for:**` lines unless they carry a defect.
@@ -65,7 +83,7 @@ If the work is large enough to fan out, one subagent per section with the brief 
 each writing its replacement to a scratch file rather than editing the draft, so
 parallel writes cannot collide.
 
-## 3. Adversarially verify every rewrite
+## 4. Adversarially verify every rewrite
 
 This is not optional and it is where the value is. On the Expandi pass the verify
 stage found 82 defects the linter could not see, including:
@@ -85,7 +103,7 @@ drift, and meaning drift toward an absolute.
 
 Default to reporting a defect when unsure. Reject a finding only with a reason.
 
-## 4. Deterministic fact check, not a judgment call
+## 5. Deterministic fact check, not a judgment call
 
 Before and after, diff every figure and URL across the whole file:
 
@@ -106,7 +124,7 @@ Before and after, diff every figure and URL across the whole file:
 A figure appearing more often is fine. A figure that appears nowhere in the original
 is a fabrication and has to come out.
 
-## 5. Rhythm follows, it does not lead
+## 6. Rhythm follows, it does not lead
 
 Do not chase the distribution floors directly. Real chaining produces variance on its
 own: the Expandi pass cleared a standing `rhythm-flat` warning as a side effect,
@@ -117,7 +135,7 @@ and keep the left half short. Never bolt on a fragment or an extra clause. Bolti
 produced 14 fragments and roughly 10 redundancies on earlier passes, both of which had
 to be undone.
 
-## 6. Read it yourself last
+## 7. Read it yourself last
 
 The linter and the verifiers both miss things a read catches. On the Expandi pass a
 final read found a verdict sentence sitting before the evidence its "because" clause

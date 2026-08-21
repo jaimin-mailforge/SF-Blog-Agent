@@ -149,6 +149,18 @@ def run_cases(verbose):
     return fails
 
 
+def _sections_agree(text, findings):
+    """sections.py recomputes rules for targeting. It must not disagree with check.py."""
+    try:
+        import sections as S
+    except Exception:
+        return True, 'sections.py not importable, skipped'
+    per_section = sum(S.score_section(body)['frags']
+                      for _, body in S.split_sections(text))
+    article = sum(1 for f in findings if f[1] == 'sentence-fragment')
+    return per_section == article, 'per-section %d, article-level %d' % (per_section, article)
+
+
 def run_invariants(verbose):
     """Sanity bounds on the live draft. These catch a stat that silently collapses."""
     fails = []
@@ -168,6 +180,11 @@ def run_invariants(verbose):
         ('sentence count is sane',     st['sentences'] > 300,   'sentences=%d' % st['sentences']),
         ('paras fewer than sentences', st['paras'] < st['sentences'],
          'paras=%d sentences=%d' % (st['paras'], st['sentences'])),
+        # sections.py must agree with the article-level fragment count. It did not on
+        # first run: filtering by line instead of by paragraph reported the Final
+        # Verdict's six mandated routing labels as fragments while check.py said zero.
+        ('sections.py agrees on fragments', _sections_agree(text, findings)[0],
+         _sections_agree(text, findings)[1]),
         ('rhythm floors hold',
          st['stdev'] >= C.STDEV_FLOOR and st['short_pct'] >= C.SHORT_FLOOR
          and st['long_pct'] >= C.LONG_FLOOR,
@@ -225,7 +242,7 @@ def main():
     if not rules_only:
         fails += run_invariants(verbose)
     print('  %d micro-cases, %s invariants, benchmark ceiling %d'
-          % (len(CASES), 'skipped' if rules_only else '6', BENCHMARK_ERROR_CEILING))
+          % (len(CASES), 'skipped' if rules_only else '7', BENCHMARK_ERROR_CEILING))
     if not fails:
         print('\nPASS. Safe to commit a rule change.')
         return 0

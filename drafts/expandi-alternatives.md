@@ -10,7 +10,7 @@ That is the job most people are actually trying to fix when they start looking a
 
 Expandi is good at the LinkedIn half. I still send LinkedIn-only operators there. Eleven campaign types, real if-then branching, and daily limits the tool refuses to let you exceed even when you ask it to.
 
-Three things send people looking anyway, and all three come off Expandi's own pages. The $79 seat is not the price. The image and GIF personalization Expandi built its name on runs through Hyperise, which takes the real figure to roughly $136.50.
+The reasons people leave are all on Expandi's own pages. The $79 seat is not the price. The image and GIF personalization Expandi built its name on runs through Hyperise, which takes the real figure to roughly $136.50.
 
 A seat you have stopped using keeps billing you, which [Expandi's own help centre](https://help.expandi.io/en/articles/10261458-manage-subscriptions-seats-for-your-linkedin-accounts-workspace) states plainly. And email is not a channel in the product. It is one action inside a single campaign type, its replies never reach the unified inbox, and nothing in Expandi warms the mailbox you send from.
 

@@ -286,6 +286,45 @@
    Not wired into the `Stop` hook. A pending screenshot is a normal state to be in for
    days, and blocking every turn on it would train people to bypass the hook.
 
+21. **Polish-pass scoping, and a claim of mine the tool falsified.** Added
+   `lint/sections.py` 2026-08-21.
+
+   The continuity pass fanned out over eleven prose units, spent 1.1M subagent tokens
+   across 22 agents and hit the org spend limit mid-run. I told Jaimin most of that was
+   waste and the linter could have named three or four sections. **The tool says I was
+   wrong.** Run against the pre-polish draft it scores 13 of 16 sections above the
+   threshold, 81%, and ranks Salesforge first on 4 frame restarts, which is the same
+   section a human read as the worst offender. The fan-out was justified.
+
+   The value is forward-looking. The same draft after the pass scores 1 of 16, so a
+   re-polish is a 6% job. A draft written section by section under the current rules is
+   where a full-file fan-out burns the budget on prose that is already right.
+
+   It recomputes rather than reading findings, because `trailing-superlative-i` and
+   `frame-restart` both cap at two per article: a section carrying one is invisible in the
+   article-level output. So a clean `lint/run.py` does not mean nothing needs polishing.
+
+   Three calibration decisions:
+
+   - **It disagreed with check.py on its first run and that was the tool's bug, not the
+     checker's.** Filtering by line instead of by paragraph reported the Final Verdict's
+     six mandated routing labels ("**Email-only at volume:** the lemlist Email plan...")
+     as fragments while check.py correctly said zero. Fixed by mirroring check.py's own
+     paragraph iteration, which skips anything opening with `-*|#<`. A scorer that
+     disagrees with the tested checker is worse than none, because it sends a polish pass
+     at prose that is already right. Now pinned by a selftest invariant that compares the
+     per-section total against the article-level count, verified to fail at
+     "per-section 8, article-level 0" when the bug is reintroduced.
+   - **No per-section rhythm score.** The three floors were calibrated on whole articles
+     of 300 to 440 sentences. Scoring a 21-sentence section flagged the intro and Waalaxy
+     as flat while the article clears every floor. Same wrong-instrument mistake
+     writing.md section 6 records four times over. Rhythm is an article-level property.
+   - **It surfaced a real rule collision.** Section 9d wants plural pain points in the
+     intro, section 3 bans "Three things..." as a frame restart, and the intro I wrote
+     did both. Recorded in 9d: the ban is right because the defect is announcing an
+     enumeration and not delivering it, no checker can tell that apart, so the intro now
+     signals plurality without counting out loud.
+
 ## Open
 
 - **`sentence-fragment` cannot see a verbless FAQ opener.** Surfaced 2026-08-20 by a reading pass,

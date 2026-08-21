@@ -65,6 +65,9 @@ has passed no rule in this repo, so it does not shortcut the outline stop.
     python3 lint/prices.py <brief>          re-verify every recorded price
     python3 lint/prices.py --url <url>      probe one vendor pricing page
 
+    python3 lint/sections.py <draft>        score sections, scope a polish pass
+    python3 lint/sections.py <draft> --targets   just the headings to polish
+
     python3 lint/evidence.py <brief>        every unverifiable claim needs a file
     python3 lint/evidence.py --list         what is in assets/evidence/
 

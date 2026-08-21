@@ -610,6 +610,17 @@ unused. **Minimum two distinct pain points in the intro, each traceable to the b
 Counting them is a judgment call and the linter does not pretend to. What it does
 check is the failure below, `intro-duplicates-next`, plus the paragraph shape.
 
+**A collision to know about, found by `lint/sections.py` on 2026-08-21.** This section
+wants plural pain points and section 3 bans "Two things..." and "Three things..." as frame
+restarts. Writing "Three things send people looking anyway" satisfies 9d and trips 3.
+
+The ban is right and this section is right, because the banned shape is announcing an
+enumeration and then not delivering it, which is what "Two things behind it come from the
+rest of the stack" did. An intro that says "three things" and then delivers all three is
+not the same defect. But no checker can tell those apart, so the shape stays banned and
+the intro signals plurality without counting out loud: "The reasons people leave are all
+on Expandi's own pages", then the reasons. Same information, no banned opener.
+
 **And the intro does not prove what the next section proves.** This is the specific
 failure to watch. The Expandi intro ran the $79 to $136.50 arithmetic in three
 paragraphs, and "Why People Leave Expandi" then ran the identical arithmetic
