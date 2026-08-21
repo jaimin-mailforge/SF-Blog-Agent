@@ -65,12 +65,24 @@ has passed no rule in this repo, so it does not shortcut the outline stop.
     python3 lint/prices.py <brief>          re-verify every recorded price
     python3 lint/prices.py --url <url>      probe one vendor pricing page
 
+    python3 lint/selftest.py                regression test, run after ANY rule change
+    python3 lint/selftest.py --rules        rule integrity only, what the Stop hook runs
+
     python3 lint/calibrate.py               thresholds vs the reference corpus
     python3 lint/calibrate.py --fetch       rebuild that corpus
 
 `coverage.py` exists because the must-cover count is binding and I got it wrong by
 hand twice on the same draft. `prices.py` exists because a bot cannot settle a vendor
 contradiction and must hand it to a human instead of picking.
+
+**`selftest.py` is the one to run before committing a change to `lint/check.py` or
+`lint/data/`.** Three linter bugs shipped in a single session on 2026-08-21 and all three
+were caught by hand, which is luck. It has three layers: 37 micro-cases where a rule must
+fire on its violation and must not fire on prose that only looks like one, sanity bounds
+on the live draft, and the editor-approved article vendored as a fixture whose error count
+may not rise. A rule that fires on the benchmark is mis-calibrated by definition. The
+`Stop` hook runs the rule-integrity half automatically and refuses to end the turn if it
+fails, so a broken rule cannot survive a turn either.
 
 ## The linter
 

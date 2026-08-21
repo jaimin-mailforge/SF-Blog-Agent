@@ -53,8 +53,31 @@ def pretooluse():
     }))
     return 0
 
+def rule_integrity():
+    """Fail the turn if a rule change broke the rules themselves.
+
+    Runs selftest's CASES and BENCHMARK layers, not its draft invariants: those assert
+    the live draft sits at 0 errors and 0 warnings, which is true between jobs and false
+    mid-job, so including them would block ordinary editing. Rule integrity cannot be
+    tripped that way. Added 2026-08-21 after three linter bugs in one session, two of
+    which this catches.
+    """
+    import subprocess
+    here = os.path.dirname(os.path.abspath(__file__))
+    r = subprocess.run([sys.executable, os.path.join(here, 'selftest.py'), '--rules'],
+                       capture_output=True, text=True)
+    if r.returncode == 0:
+        return []
+    return [l for l in (r.stdout + r.stderr).splitlines() if l.strip()]
+
+
 def stop():
     root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    broken = rule_integrity()
+    if broken:
+        sys.stderr.write('Rule selftest FAILED. A change to check.py or lint/data broke '
+                         'the rules.\n%s\n' % '\n'.join(broken[:30]))
+        return 2
     total = []
     for scope in SCOPES:
         for f in glob.glob(os.path.join(root, scope, '**', '*.md'), recursive=True):

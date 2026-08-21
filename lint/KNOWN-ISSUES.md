@@ -213,6 +213,43 @@
    The two genuine catches in the corpus were `that said` once and, before the reversal,
    `source of truth` twice.
 
+19. **The rules had no test, and three bugs shipped in one day because of it.** Added
+   `lint/selftest.py` 2026-08-21. 2,030 lines of rules and 1,445 lines of checker with
+   zero tests, and `calibrate.py` prints numbers for a human to read, which is not a test.
+
+   Three layers, each aimed at a bug class that actually happened:
+
+   - **CASES**, 37 micro-fixtures. A rule must fire on the violation it was written for
+     and must not fire on prose that merely resembles one. Every entry in the must-not-fire
+     half is a false positive that shipped once: "You source the other end with Leadsforge"
+     read as verbless, `Seamless.AI` read as the banned word, "G2 puts X at 4.6" read as a
+     figurative verb, "Yes, with a specific caveat." read as a fragment.
+   - **INVARIANTS**, sanity bounds on the live draft rather than exact values, because the
+     draft changes legitimately. A 400-sentence document cannot have 9 paragraphs, which is
+     precisely what the `paras` shadowing bug produced with no error raised.
+   - **BENCHMARK**, the editor-approved article vendored at
+     `lint/fixtures/approved-rocketreach.txt` so the check is hermetic on a fresh clone.
+     Its error count may fall and never rise. A rule that fires on the benchmark is
+     mis-calibrated by definition, which is how the intro paragraph-count check was caught.
+
+   Verified by reintroducing all three bugs and confirming each fails, then reverting:
+   the paras collapse trips INVARIANTS, the intro-shape rule trips BENCHMARK at 28 against
+   a ceiling of 27, and removing `source` from `_FINITE` trips the CASES entry.
+
+   Wired into the `Stop` hook as `--rules`, which runs CASES and BENCHMARK but skips the
+   draft invariants. Those assert the draft sits at 0 errors and 0 warnings, true between
+   jobs and false mid-job, so including them would block ordinary editing. Rule integrity
+   cannot be tripped that way, so a broken rule now cannot survive a turn either.
+
+   The first run failed on my own test case: I wrote `spelling:autopilot` where the finding
+   is `spelling:Autopilot`. The test found a bug in the test, which still counts, and the
+   case now matches on the prefix.
+
+   **What it deliberately does not catch:** a rule that contradicts another rule. Banning
+   `source of truth` while section 6 had just been rewritten to protect this reader's
+   vocabulary is a judgment call, not a mechanical failure. The must-not-fire table is
+   where a phrase goes once somebody has argued for it, so the argument is not had twice.
+
 ## Open
 
 - **`sentence-fragment` cannot see a verbless FAQ opener.** Surfaced 2026-08-20 by a reading pass,
