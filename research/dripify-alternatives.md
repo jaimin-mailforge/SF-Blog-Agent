@@ -33,6 +33,52 @@ Pipedrive. Both are wrong.
 nine fact errors in one sitting, with no research, no new tools, and no outline. If the
 answer to the prioritisation question is "not now", that is the version to run.
 
+## Decisions resolved 2026-08-24 by Jaimin
+
+1. **Full rewrite**, not a mechanical pass, and not deferred behind Outreach. The
+   40-volume prioritisation flag above was read and overridden deliberately.
+2. **Skylead keeps a full tool section**, overriding the 2026-08-13 resolution that made
+   it FAQ-only on the Expandi article, on condition that it gets verified. What that
+   verification actually returned is below, and it is only partly good news.
+3. **Nine tools. PhantomBuster is cut** on category grounds: it is a scraper rather than a
+   LinkedIn sequencer, and it ranks seventh for this term with its own competitor page.
+   Dux-Soup stays. The title changes from "10 Best" to nine.
+4. **Salesforge keeps the top slot**, earned on this article's dimension, which is escaping
+   Dripify's per-seat model with both channels in one sequence.
+
+### What the Skylead verification returned, and what it did not
+
+Re-probed skylead.io/pricing on 2026-08-24, 387,011 bytes, USD, http 200. Figures served:
+$100, $999, $1,999. **Identical to the 2026-08-13 read. Nothing has changed in 11 days.**
+
+**Still not published: the annual rate.** The Annual plan card reads "For sales teams &
+agencies with a steady seat count", then **"Let's talk"**, then "Pay 10 months & get 2
+months free". So Skylead publishes a monthly seat rate and an annual *structure*, and no
+annual number.
+
+**This is writable, and section 9c already says how.** Its "when a vendor publishes no
+price" clause, added 2026-08-19, permits saying plainly that the vendor does not publish
+the figure. So the Skylead pricing block states: All-in-one at $100 per seat per month,
+Agency at $999 for 50 seats or $1,999 for unlimited, both talk-to-sales, and the annual
+plan unpriced with the ten-for-twelve structure named as the vendor names it.
+
+**Do not compute $83.33.** Ten months over twelve is arithmetic Skylead has not published,
+and the Waalaxy precedent in the Expandi brief is explicit: do not derive a rate from a
+stated discount, because the rounding is unknown.
+
+**Two things remain blocked and they gate the section, not the article.**
+
+- **The rating.** G2 and Capterra both 403. Needs a screenshot or the section carries no
+  rating line, which would make it the only one of nine without one.
+- **The LinkedIn action list.** The pricing page verifies "LinkedIn automation" as a
+  feature but publishes no granular action list. On a LinkedIn-focused article the action
+  count is a comparison-table row, so either a source is found for it or that cell reads
+  "Not published" and the article says so.
+
+**If the rating screenshot does not arrive, the honest fallback is the 2026-08-13
+resolution:** Skylead returns to FAQ-only. Flagging that now rather than discovering it
+at draft time.
+
 ## Article
 
 Target primary keyword: **dripify alternatives**. Competitor is Dripify, a LinkedIn
@@ -204,7 +250,7 @@ PhantomBuster.
   automation tool, not a LinkedIn sequencer, and it ranks at 7 for this term with its own
   competitor page. Including it invites the comparison it wants.
 
-**Recommendation, flagged not decided: cut to nine and drop PhantomBuster only.**
+**RESOLVED 2026-08-24: cut to nine, drop PhantomBuster only.** Reasoning kept below.
 
 **Revised 2026-08-24.** The earlier recommendation also dropped Dux-Soup, and the reason
 given was that it could not be priced by fetch. That was a bug in our own prober, not a
