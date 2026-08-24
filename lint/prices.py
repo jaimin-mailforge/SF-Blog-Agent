@@ -40,7 +40,15 @@ PROV = re.compile(
     re.I)
 # "## Evidence: Waalaxy" -> a vendor the brief covers
 EVIDENCE = re.compile(r'^##\s+Evidence:\s*(.+?)\s*$', re.M)
-MONEY = re.compile(r'[$\u20ac\u00a3]\s?\d[\d,]*(?:\.\d{1,2})?(?<![,.])')
+# \s* not \s?, and a magnitude suffix is not a price. Both found 2026-08-24 on
+# dux-soup.com/pricing, which serves "$  11.25" with two spaces and a case study reading
+# "3 closed deals worth $175k". The old pattern missed all seven tier prices and reported
+# the case study as the page's only price, which is the worst possible failure for the
+# tool that guards the price step.
+#
+# The trailing (?![\dkKmMbB]) rejects the digit as well as the letter on purpose. Without
+# the \d, backtracking on "$175k" would fail at "$175", retry, and happily match "$17".
+MONEY = re.compile(r'[$\u20ac\u00a3]\s*\d[\d,]*(?:\.\d{1,2})?(?<![,.])(?![\dkKmMbB])')
 CURRENCY = {'$': 'USD', '€': 'EUR', '£': 'GBP'}
 
 
@@ -61,6 +69,10 @@ def probe(url):
     url, code, body = fetch(url)
     text = re.sub(r'(?is)<(script|style)\b.*?</\1>', ' ', body)
     text = html.unescape(re.sub(r'(?s)<[^>]+>', ' ', text))
+    # Collapse whitespace. Stripping tags leaves runs of spaces and newlines between a
+    # currency symbol and its digits, and without this the price regex never sees them
+    # as adjacent.
+    text = re.sub(r'\s+', ' ', text)
     served = sorted({CURRENCY[c] for c in CURRENCY if c in text})
     figures = MONEY.findall(text)
     seen, uniq = set(), []

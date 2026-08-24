@@ -155,6 +155,39 @@ def run_cases(verbose):
     return fails
 
 
+# prices.py's MONEY regex guards the price step, so it gets its own layer. Both cases
+# marked "dux-soup" are real failures found on 2026-08-24: the regex missed every tier
+# price on a page serving "$  11.25" with two spaces, and reported a case study reading
+# "$175k" as that page's only price.
+PRICE_CASES = [
+    ('spaced single',   '$ 11.25',               ['$ 11.25']),
+    ('spaced double',   'Pro $  41.25 a month',  ['$  41.25']),
+    ('tight',           'Basic $39 per user',    ['$39']),
+    ('thousands',       'Agency $1,999 flat',    ['$1,999']),
+    ('magnitude k',     'deals worth $175k',     []),
+    ('magnitude M',     'raised $12M last year', []),
+    ('trailing comma',  'tiers at $127, $287',   ['$127', '$287']),
+    ('euro spaced',     'from \u20ac 19 a month',   ['\u20ac 19']),
+]
+
+
+def run_price_cases(verbose):
+    """MONEY must find a real tier price and must not report a magnitude."""
+    try:
+        from prices import MONEY
+    except Exception as e:
+        return ['PRICE  prices.py not importable: %s' % e]
+    fails = []
+    for label, text, want in PRICE_CASES:
+        got = MONEY.findall(text)
+        if got != want:
+            fails.append('PRICE  %-18s on %-26s got %s, want %s'
+                         % (label, repr(text)[:26], got, want))
+        elif verbose:
+            print('  ok    %-34s %s' % ('price: ' + label, got))
+    return fails
+
+
 def _sections_agree(text, findings):
     """sections.py recomputes rules for targeting. It must not disagree with check.py."""
     try:
@@ -244,11 +277,12 @@ def main():
     # hook runs this mode: rule integrity cannot be tripped by ordinary draft editing.
     rules_only = '--rules' in sys.argv
     print('RULE SELFTEST' + (' (rules only)' if rules_only else ''))
-    fails = run_cases(verbose) + run_benchmark(verbose)
+    fails = run_cases(verbose) + run_price_cases(verbose) + run_benchmark(verbose)
     if not rules_only:
         fails += run_invariants(verbose)
-    print('  %d micro-cases, %s invariants, benchmark ceiling %d'
-          % (len(CASES), 'skipped' if rules_only else '7', BENCHMARK_ERROR_CEILING))
+    print('  %d micro-cases, %d price cases, %s invariants, benchmark ceiling %d'
+          % (len(CASES), len(PRICE_CASES), 'skipped' if rules_only else '7',
+             BENCHMARK_ERROR_CEILING))
     if not fails:
         print('\nPASS. Safe to commit a rule change.')
         return 0

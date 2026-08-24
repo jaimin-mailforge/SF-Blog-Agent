@@ -167,8 +167,19 @@ section work.
 $16, plus $240, $588, $708, $948 which look like annual totals rather than monthly rates.
 Separate the two before quoting either.
 
-**Pricing**, dux-soup.com/pricing, read 2026-08-24. USD, billing words present, but only
-a single figure served, $175. The per-tier rates are not in the served HTML.
+**Pricing**, dux-soup.com/pricing, read 2026-08-24. USD, billing toggle present, and
+**fully readable**: $11.25, $14.99, $41.25, $55.00, $74.17, $99.00, $371.00 across its
+Pro, Turbo, Cloud and Team tiers. Separate monthly from annual before quoting, because a
+Monthly and a Yearly tab are both present.
+
+**Corrected 2026-08-24.** An earlier pass of this brief reported only "$175" here and
+recommended cutting the tool on the grounds that it could not be priced. Both were wrong,
+and the cause was two bugs in `lint/prices.py`. Its `probe()` never collapsed whitespace,
+so the page's "$  11.25" with two spaces did not match a regex allowing one, and every
+tier price was invisible. And the "$175" it did report was not a price at all, it came
+from a case study reading "3 closed deals worth $175k". Both fixed, both locked by eight
+new selftest cases. Recorded here because a tool cut for a tooling failure is the worst
+kind of editorial decision.
 
 **Pricing**, phantombuster.com/pricing, read 2026-08-24. **3,676 bytes, no figures, no
 currency symbol.** The page is JS-rendered or blocking the fetch.
@@ -193,9 +204,20 @@ PhantomBuster.
   automation tool, not a LinkedIn sequencer, and it ranks at 7 for this term with its own
   competitor page. Including it invites the comparison it wants.
 
-**Recommendation, flagged not decided: cut to eight and drop PhantomBuster and Dux-Soup.**
-That matches the Expandi article's count, removes both unpriceable vendors, and keeps
-every tool that is a genuine Dripify replacement. If the ten stays, both need screenshots.
+**Recommendation, flagged not decided: cut to nine and drop PhantomBuster only.**
+
+**Revised 2026-08-24.** The earlier recommendation also dropped Dux-Soup, and the reason
+given was that it could not be priced by fetch. That was a bug in our own prober, not a
+fact about the tool. Dux-Soup is a LinkedIn automation tool running drip campaigns, which
+makes it a direct Dripify substitute and one of the longest-established ones. It stays.
+"My script could not read the page" is never an editorial reason to cut a tool.
+
+PhantomBuster is a different case and the argument against it does not rest on tooling.
+It is a scraper and multi-platform automation product rather than a LinkedIn sequencer, so
+it answers a different question than the rest of the list. It also ranks seventh for this
+term with its own competitor page, so including it hands a rival the comparison it wants.
+Its pricing page separately serves 3,676 bytes with no figures and no currency symbol,
+confirmed after the prober was fixed, so it would need a screenshot on top of that.
 
 **Sections to keep.** The rhythm is already good and the interlink count is 16, so the
 structural bones are sound. Keep the comparison table, the use-case router, and the FAQ
@@ -204,7 +226,7 @@ shape.
 **Sections to rewrite.** All ten TL;DR bullets, the Salesforge section (to pull the three
 elsewhere-only must-covers into it), and every paragraph over 60 words.
 
-**Sections to cut.** Whatever covers the two dropped tools, if the cut is approved.
+**Sections to cut.** The PhantomBuster section, if the cut is approved.
 
 **A Forge product does not keep the top slot because it had it.** Salesforge currently
 leads. On this article's dimension, LinkedIn plus email in one sequence without per-seat
@@ -217,11 +239,15 @@ belongs in the outline rather than being inherited.
 1. **The prioritisation decision** at the top of this brief. Full rewrite, mechanical-only
    pass, or defer in favour of `outreach-alternatives`.
 2. **The tool list.** Ten or eight, and whether PhantomBuster and Dux-Soup go.
-3. **PhantomBuster pricing.** No figures in the served HTML. Needs a screenshot showing the
-   billing toggle and the currency in the same frame, or the tool gets cut.
-4. **Dux-Soup pricing.** Only $175 served. Needs a screenshot of the per-tier rates.
-5. **We-Connect pricing.** Monthly rates and annual totals are both present in the HTML and
+3. **PhantomBuster pricing.** No figures in the served HTML, re-confirmed after the prober
+   was fixed. Needs a screenshot showing the billing toggle and the currency in the same
+   frame, or the tool gets cut. Cutting it is the recommendation anyway, on category
+   grounds.
+4. **We-Connect pricing.** Monthly rates and annual totals are both present in the HTML and
    need separating. A screenshot settles it.
+5. **Dux-Soup monthly against annual.** No longer blocking. All seven tier prices are
+   readable, but a Monthly and a Yearly tab are both on the page and only one is served to
+   a fetch, so confirm which figures are the annual rates before quoting them.
 6. **Every rating on the page.** G2 and Capterra both 403, so run
    `python3 lint/evidence.py research/dripify-alternatives.md` and capture what it names.
 7. **First-person claims.** `rules/observations.md` has OBS-001 for mailbox scaling and
@@ -231,6 +257,9 @@ belongs in the outline rather than being inherited.
 
 ## Not blocking, worth knowing
 
+- **Two tooling bugs surfaced from this page and both are now fixed.** The price prober
+  missed every tier price on dux-soup.com and reported a case study figure as the only
+  price. Details in the Prices section above, eight selftest cases lock it.
 - **A linter bug surfaced from this page and is now fixed.** `We-Connect` was reported as a
   first-person-plural ERROR 12 times, because `\b` treats the hyphen as a word boundary.
   The first-person check now honours the same product-name span exemption the banned-word
