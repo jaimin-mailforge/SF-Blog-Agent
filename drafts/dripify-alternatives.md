@@ -12,7 +12,7 @@ Dripify is a good LinkedIn drip tool. The campaign UI is clean, the seven action
 
 Three things send people looking anyway, and all three come off Dripify's own pages.
 
-**The quota is the product.** The Basic ceiling of twenty connection requests a day is a different tool from the Pro ceiling of seventy-five, and most people comparing the $39 headline are picturing the Pro numbers.
+**The quota is the product.** Basic gives you twenty connection requests a day. Pro gives you seventy-five. Most people comparing the $39 headline are picturing the Pro numbers.
 
 **The seat buys one LinkedIn account.** Five reps means five seats, so five reps on Basic is $195 a month before anyone opens the app.
 
