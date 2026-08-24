@@ -64,6 +64,12 @@ CASES = [
     ('first person we',    'We tested every tool on the list.', 'first-person-plural', True),
     ('first person our',   'Our roundup covers nine tools.', 'first-person-plural', True),
     ('US not us',          'Coverage is thin outside US tech.', 'first-person-plural', False),
+    # found live on the Dripify page 2026-08-24: \b splits on the hyphen, so the product
+    # name We-Connect was reported as first-person plural 12 times.
+    ('We-Connect spared',  'We-Connect offers LinkedIn smart sequences.', 'first-person-plural', False),
+    ('Dux-Soup spared',    'Dux-Soup runs repeatable drip campaigns.', 'first-person-plural', False),
+    ('real we still caught',
+     'We-Connect is fine but we tested it ourselves.', 'first-person-plural', True),
 
     # ---- fragments. every false positive below shipped once -------------------
     ('fragment adverb',    'Expandi is a good one. Genuinely.', 'sentence-fragment', True),

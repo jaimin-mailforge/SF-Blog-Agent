@@ -30,3 +30,7 @@ GoHighLevel
 Saleshandy
 Mailshake
 QuickMail
+We-Connect
+Dux-Soup
+PhantomBuster
+Skylead

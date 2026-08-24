@@ -350,8 +350,15 @@ def check(title, meta, text, label):
             add('ERROR', 'banned-phrase:' + p, ctx(body, m.start()))
 
     # first person plural. 'us' case-sensitive lowercase only, to spare "US"
+    #
+    # Product names are exempt by span, the same way banned words are. Found 2026-08-24 on
+    # the live Dripify alternatives page, which reviews a tool called We-Connect: \b treats
+    # the hyphen as a word boundary, so every one of its 12 mentions was reported as a
+    # first-person-plural ERROR. The rule that matters most in this repo was firing on a
+    # competitor's name.
     for m in re.finditer(r'\b(?:we|We|our|Our)\b|(?<![A-Z])\bus\b(?![A-Z])', body):
         w = m.group(0)
+        if _in_spans(m.start(), prot): continue
         if w.lower() == 'us' and re.search(r'\b(US|U\.S\.)\b', body[max(0, m.start()-3):m.start()+3]): continue
         add('ERROR', 'first-person-plural:' + w, ctx(body, m.start()))
 
