@@ -39,3 +39,27 @@ The eleven that did not make it mostly failed on the same thing: LinkedIn only, 
 If your reps run one LinkedIn account each and email is somebody else's problem, Dripify is fine.
 
 Stay put. I mean it.
+
+## Why People Leave Dripify
+
+Dripify holds a 4.5 on G2 across a deep review record. The complaints cluster in two places rather than the product. **Expensive** is Dripify's top G2 con tag at 37 mentions. **Email Limitations** follows at 11. Both counts come off G2's own tag data, so neither is one reviewer.
+
+Three things drive most of what those tags describe. Each one comes off Dripify's own pages.
+
+### The Seat Is One LinkedIn Account
+
+Dripify prices per user, and a seat buys exactly one LinkedIn account. Five reps means five seats.
+
+At $39 a seat, five reps on Basic is $195 a month. Move them to Pro and five seats is $295. Salesforge Growth is $80 flat for the same five LinkedIn senders, and it runs email in the same sequence.
+
+### The Daily Quota Is the Product
+
+Basic allows twenty connection requests a day, thirty messages, and ten InMails. Pro and Advanced raise those to seventy-five, one hundred or more, and thirty. That is the same product running at less than a third of the cadence.
+
+That is the number to check before you buy, not the price. A rep at the Basic ceiling can send twenty first-touch requests in a day, and once the sequence hits that ceiling it waits until tomorrow. Whether Dripify is a $39 tool or a $59 one depends on which of those quotas your team actually runs at.
+
+### No Email Infrastructure Underneath
+
+Dripify runs email through your own Gmail or Outlook mailbox, one mailbox per user account, and Google throttles that to two hundred sends a day. There is no warm up in the product, no placement testing, and no ESP-matched sending pool.
+
+The unified inbox is on Pro and above, and Dripify does not document whether email replies land there alongside the LinkedIn ones. So deliverability, warm up, and reply triage are all somebody else's invoice.
