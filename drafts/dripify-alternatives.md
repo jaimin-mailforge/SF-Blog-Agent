@@ -23,3 +23,19 @@ The G2 con tags back this up. **Expensive** is Dripify's top con tag at 37 menti
 So I screened 20 alternatives. Nine made the list. For each of those nine I read every price off the vendor's own [live pricing page](https://dripify.io/pricing), went through the product docs, and pulled the G2 star distribution.
 
 The eleven that did not make it mostly failed on the same thing: LinkedIn only, with email arriving as a step inside a campaign rather than as a channel of its own.
+
+## TL;DR: 9 Dripify Alternatives
+
+- **[Salesforge](#salesforge):** Best for GTM teams and Agencies running LinkedIn plus email plus AI in one platform, with unlimited mailboxes and unlimited LinkedIn senders on Growth. Primebox™ unifies replies across both channels. Warmforge warm up is bundled at no extra cost. [Start a 14-day free trial](https://app.salesforge.ai/signup), no credit card needed.
+- **[HeyReach](#heyreach):** Best for agencies running many LinkedIn accounts with several people on each. It charges per LinkedIn sender and hands you unlimited human seats free, so headcount never moves the bill.
+- **[Expandi](#expandi):** Best for solo operators and power users who want the widest LinkedIn campaign builder and a dedicated IP per account. Image and GIF personalization runs through a separate Hyperise subscription.
+- **[Skylead](#skylead):** Best for small sales teams who want smart sequences with infinite email warm up included at the seat price. LinkedIn actions and annual rate are not published, so ask on the demo.
+- **[Waalaxy](#waalaxy):** Best for solo operators and small teams running LinkedIn only, who want the widest import options at the cheapest entry price. The entry tier caps you at 300 invitations a month.
+- **[Meet Alfred](#meet-alfred):** Best for solo operators who want LinkedIn, email and a third channel in one sequence on the tightest budget. Go in with your eyes open about its support record.
+- **[lemlist](#lemlist):** Best for email-led teams who want the widest channel span in one sequence, with lemwarm included on every plan. LinkedIn needs the Multichannel plan, which the Email plan cannot reach.
+- **[Dux-Soup](#dux-soup):** Best if you want an established LinkedIn drip tool with per-user pricing across four tiers and no bundled email. The starter tier runs from a Chrome extension rather than the cloud.
+- **[We-Connect](#we-connect):** Best for solo operators and small teams who want cloud-based LinkedIn automation at a flat per-user rate. Email lives on your own mailbox, and warm up is not included.
+
+If your reps run one LinkedIn account each and email is somebody else's problem, Dripify is fine.
+
+Stay put. I mean it.
