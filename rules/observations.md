@@ -53,6 +53,14 @@ Real first-hand observations, recorded so the practitioner voice has true materi
 - **Careful with:** **screened, not tested.** Jaimin confirmed this explicitly on 2026-08-21. No hands-on test ran on these 20, so "I tested 20" is false and "I screened 20" is true. The live page's current title tag says "Tested & Ranked", which the rewrite has to correct.
 - **Careful with, second:** this entry and OBS-005 both record 20, and they are **different tool sets**. OBS-005 is 20 LinkedIn and multichannel tools for the Expandi article. This is 20 sales engagement tools for the Outreach article. The matching number is a coincidence, not a house default, so do not reach for "20" on a third article without running the screen and adding a third entry.
 
+### OBS-007 | Dripify alternatives screening set
+- **Observed:** 20 LinkedIn automation and multichannel outreach tools screened for the Dripify alternatives article. Nine were shortlisted for a section, so eleven were dropped. Commonest reason for a drop, same as OBS-005: LinkedIn-only with no email as a channel.
+- **When:** August 2026
+- **Verified by:** Jaimin, confirmed 2026-08-24
+- **Reusable as:** the screening count in the Dripify alternatives intro, per section 9d.
+- **Careful with:** **screened, not tested.** Same discipline as OBS-005 and OBS-006. Jaimin confirmed this explicitly on 2026-08-24. The live page's current title tag reads "10 Best Dripify Alternatives in 2026 (Ranked)", which is safer than "Tested" but the rewrite still keeps "screened" language everywhere in the prose.
+- **Careful with, second:** **OBS-005, OBS-006 and OBS-007 all record 20, from three different tool sets** (LinkedIn/multichannel for Expandi, sales engagement for Outreach, LinkedIn automation for Dripify). The matching number across three entries is a coincidence, not a house default. Do not reach for "20" on a fourth article without running the screen and adding a fourth entry.
+
 ---
 
 ## Wanted

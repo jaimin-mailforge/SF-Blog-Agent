@@ -46,6 +46,25 @@ answer to the prioritisation question is "not now", that is the version to run.
 4. **Salesforge keeps the top slot**, earned on this article's dimension, which is escaping
    Dripify's per-seat model with both channels in one sequence.
 
+### Screenshots: drafted with [[FIGURE:]] markers, ratings added last
+
+Resolved 2026-08-24 by Jaimin. Every tool section states its facts and the "G2 puts X at Y"
+line is written as `[[FIGURE: rating]]` until the screenshots land. This is legal in a
+draft, blocking in an article: the linter's `unresolved-placeholder` warns in `drafts/`
+and errors in `articles/`, so no marker slips past the publish gate. The screenshots then
+resolve every marker in one pass at the end, no section rewrite needed.
+
+Six rating shots needed (all except Salesforge), plus one We-Connect pricing shot with
+the billing toggle visible. `lint/evidence.py` will name the exact filenames once the
+brief carries the rating claims in the tool sections.
+
+### Screening count, resolved 2026-08-24 by Jaimin
+
+**20 alternatives screened, nine shortlisted, eleven dropped.** Logged as OBS-007 in
+`rules/observations.md`. The intro closes on "I screened 20 alternatives and shortlisted
+nine". OBS-007 also carries the coincidence warning: three observation entries now record
+20 from three different tool sets, and the matching number is not a house default.
+
 ### Second round, resolved 2026-08-24 by Jaimin
 
 5. **Cut all ten "Dripify vs [Tool]" subsections.** The comparison table already carries
