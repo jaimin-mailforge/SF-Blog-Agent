@@ -46,6 +46,58 @@ answer to the prioritisation question is "not now", that is the version to run.
 4. **Salesforge keeps the top slot**, earned on this article's dimension, which is escaping
    Dripify's per-seat model with both channels in one sequence.
 
+### Second round, resolved 2026-08-24 by Jaimin
+
+5. **Cut all ten "Dripify vs [Tool]" subsections.** The comparison table already carries
+   the head-to-head data, so they read as duplication, and each one is another chance to
+   state a claim we cannot source. Matches the Expandi article, which has none.
+6. **Keep "Best Dripify Alternative by Use Case" mid-article. Cut the routing list from
+   the Final Verdict.** Front-loads the answer on a high-intent, low-volume term.
+   **This collides with two rules and the resolution is below.**
+7. **Cut all four unverifiable complaint claims and rebuild the diagnosis from verified
+   facts.** Consistent with the 2026-08-13 decision that cut the account-ban claim from
+   the Expandi article for the same reason.
+8. **Skylead gets its rating screenshot.** Jaimin is sending it, so the section is drafted
+   last and the rating line is written once the file lands.
+
+### The Final Verdict conflict, and how it resolves
+
+Decision 6 as stated would break a rule that blocks publishing. `CLAUDE.md` line 32:
+"The reader who should walk away is routed in the Final Verdict instead." It is also a
+pre-publish checklist item at `rules/writing.md` line 838, and section 9's structure notes
+at line 688 say the Final Verdict routes by reader type "including the reader who should
+not buy anything on the list."
+
+**Resolution: split the routing by kind rather than duplicating it.**
+
+- **Use Case, mid-article, carries the positive routing.** Which tool for which need.
+  This is the front-loading Jaimin asked for.
+- **The Final Verdict carries the walk-away routing only**, the reader who should stay on
+  Dripify, plus the closing argument and the Forge stack story. No second positive list.
+
+Both constraints hold, the duplication Jaimin flagged is gone, and the Final Verdict stops
+being a list and becomes an argument. Recorded as a deliberate structural departure from
+the Expandi article, which routes positively in the Final Verdict, so that the next
+article does not copy this shape without knowing why it exists.
+
+### The four cut claims, recorded so they are not reintroduced
+
+The live page attributes each of these to reviewers in aggregate with no named user, which
+is the pattern the SERP teardown identifies as a weakness in competitor pages:
+
+- Billing double-charges on monthly and yearly plans
+- A/B testing "on the roadmap since 2023"
+- Accounts restricted by Dripify's default daily limits
+- Sales Navigator Enterprise SSO not working
+
+None is verifiable from a vendor page and all four need review screenshots. The account
+restriction claim is the same shape as the Expandi ban claim cut on 2026-08-13. **Do not
+reinstate any of them without a screenshot in `assets/evidence/dripify-alternatives/`.**
+
+What replaces them, all traceable: per-seat billing where a seat is one LinkedIn account,
+the published per-plan action quotas, the absent email infrastructure, and the G2 con-tag
+counts of Expensive at 37 mentions and Email Limitations at 11.
+
 ### What the Skylead verification returned, and what it did not
 
 Re-probed skylead.io/pricing on 2026-08-24, 387,011 bytes, USD, http 200. Figures served:
