@@ -63,3 +63,21 @@ That is the number to check before you buy, not the price. A rep at the Basic ce
 Dripify runs email through your own Gmail or Outlook mailbox, one mailbox per user account, and Google throttles that to two hundred sends a day. There is no warm up in the product, no placement testing, and no ESP-matched sending pool.
 
 The unified inbox is on Pro and above, and Dripify does not document whether email replies land there alongside the LinkedIn ones. So deliverability, warm up, and reply triage are all somebody else's invoice.
+
+## How I Evaluated These Dripify Alternatives
+
+Feature lists won't help. All nine run LinkedIn campaigns and most of them send email too. The structure underneath is where they diverge, starting with what each vendor charges for.
+
+I scored every tool on these seven structural points:
+
+- **What the billing unit actually is.** Per user, per LinkedIn account, per sending identity, or flat. This is the biggest swing in what you pay at five seats.
+- **Whether daily action quotas are published, and what they are.** Dripify publishes them and most rivals do not. Where a vendor is silent, you find out at the ceiling rather than before buying.
+- **Whether email runs in the same sequence.** Native steps with branching, or a handoff into another tool you also pay for.
+- **Whether one inbox carries both channels.** A LinkedIn-only inbox means a second tab open all day.
+- **Whether warm up and deliverability tooling are included.** Two of these tools bundle both. For the rest, warm up becomes another subscription and placement testing is on you.
+- **What it costs at five seats, not one.** Every vendor quotes a headline price in the unit that flatters it.
+- **What the G2 con tags cluster on.** G2 counts tags across its full review set, so a top con tag is platform evidence rather than one reviewer's opinion.
+
+I have not run 90-day tests on all nine tools. So I stuck to what I can verify: the published price, the published quotas, and the published review record.
+
+Every price here is the annual-billing rate, read off the vendor's own live pricing page this week, and where a page served more than one version I say which one I read. Every rating came off the tool's own G2 and Capterra pages, captured by hand because G2 blocks automated access. Where a figure is not published, I say so.
